@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import GlobalStyle from "./Styles";
+import styled from "styled-components";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
+// import Leistungen from "./components/Leistungen";
+// import Kontakt from "./components/Kontakt";
+import RotatingCube from "./components/RotatingCube";
+// import Workshop from "./components/Workshop";
+// import Footer from "./components/Footer";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Impressum from "./pages/Impressum";
+import Datenschutzerklärung from "./pages/Datenschutzerklärung";
+import ErrorPage from "./pages/ErrorPage";
 
-function App() {
+export function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "Impressum",
+      element: <Impressum />,
+    },
+    { path: "datenschutzerklärung", element: <Datenschutzerklärung /> },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
-export default App;
+const Root = () => {
+  return (
+    <>
+      <div>
+        <GlobalStyle />
+        <Wrapper>
+          <NavBar />
+          <Home />
+          <AboutUs />
+          {/* <Leistungen />
+          <Workshop />
+          <Kontakt /> */}
+          <RotatingCube />
+        </Wrapper>
+        {/* <Footer /> */}
+      </div>
+      <div>
+        <Outlet />
+      </div>
+    </>
+  );
+};
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
