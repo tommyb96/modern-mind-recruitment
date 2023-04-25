@@ -12,7 +12,7 @@ const AboutUs = () => {
       rootMargin: "0px",
       threshold: 0.5,
     };
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entricdes) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setIsAnimated(true);
