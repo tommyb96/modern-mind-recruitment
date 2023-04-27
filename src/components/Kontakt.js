@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
 import emailjs from "@emailjs/browser";
-import CalendlyWidget from "./Calendly";
 
 const Kontakt = () => {
   const form = useRef();
@@ -64,7 +63,6 @@ const Kontakt = () => {
   return (
     <>
       <StyledContainer>
-        <img src={img4} width="100%" alt="kontakt" />
         <Wrapper id="kontakt">
           <h1>Kontakt</h1>
 
@@ -127,8 +125,6 @@ const Kontakt = () => {
           <SuccessMessage>Vielen Dank für Ihre Nachricht!</SuccessMessage>
         </SuccessMessageContainer>
       )}
-
-      <CalendlyWidget />
     </>
   );
 };

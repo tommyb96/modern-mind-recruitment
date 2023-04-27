@@ -56,10 +56,9 @@ const NavContainer = styled.nav`
     hasScrolled ? "rgba(255, 255, 255, 0.8)" : "none"};
   display: flex;
   position: fixed;
-  padding-left: 10.3vw;
-  height: vw;
   width: 100%;
-  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
 
   ul {
@@ -77,24 +76,15 @@ const NavContainer = styled.nav`
   }
 
   li {
-    padding: 2vw;
+    padding: 30px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 
     a {
       position: relative;
 
       &:hover {
         cursor: pointer;
-
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -1vw;
-          left: 0;
-          width: 0.5vw;
-          height: 0.5vw;
-          border-radius: 50%;
-          background-color: black;
-        }
       }
     }
   }
@@ -102,7 +92,7 @@ const NavContainer = styled.nav`
   a {
     color: black;
     text-decoration: none;
-    font-size: 1vw;
+    font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
 
