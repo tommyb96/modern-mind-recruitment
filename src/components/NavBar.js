@@ -57,15 +57,14 @@ const NavContainer = styled.nav`
   display: flex;
   position: fixed;
   width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 2;
 
   ul {
     display: flex;
     list-style: none;
-    margin: 0;
+    margin: 10px;
     padding: 0;
+    margin-left: 150px;
 
     &:hover {
       a {
@@ -76,8 +75,8 @@ const NavContainer = styled.nav`
   }
 
   li {
-    padding: 30px;
-    flex-wrap: nowrap;
+    padding: 2.5vw;
+
     white-space: nowrap;
 
     a {
@@ -98,6 +97,9 @@ const NavContainer = styled.nav`
 
     &:hover {
       filter: blur(0) !important;
+    }
+    @media (max-width: 1024px) {
+      font-size: 16px;
     }
   }
 `;

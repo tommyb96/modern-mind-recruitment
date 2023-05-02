@@ -8,14 +8,22 @@ const Cubes = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 1200) {
-        setNumCubes(17);
-        setCubeSize({ height: "5.56vw", width: "5.56vw" });
+
+      if (width < 769) {
+        setNumCubes(9);
+        setCubeSize({ height: "10.3vw", width: "10.3vw" });
       } else if (width < 992) {
-        setNumCubes(12);
+        setNumCubes(11);
+        setCubeSize({ height: "8.5vw", width: "8.5vw" });
+      } else if (width < 1024) {
+        setNumCubes(14);
+        setCubeSize({ height: "6.65vw", width: "6.65vw" });
+      } else if (width < 1280) {
+        setNumCubes(17);
+        setCubeSize({ height: "5.5vw", width: "5.5vw" });
       } else {
         setNumCubes(20);
-        setCubeSize({ height: "4.7vw", width: "4.7vw" });
+        setCubeSize({ height: "4.65vw", width: "4.65vw" });
       }
     };
 
@@ -44,11 +52,15 @@ const CubeContainer = styled.div`
 const StyledCube = styled.div`
   background-color: rgba(0, 167, 155, 0.25);
   border-radius: 0.8vw;
-  margin: 0.1vw;
+  margin: 1.3px;
   transition: transform 0.05s ease-in-out;
 
   &:hover {
     transform: scale(1.6);
     opacity: 0.9;
+  }
+  @media (max-width: 768px) {
+    margin: 1.8px;
+    border-radius: 10px;
   }
 `;
