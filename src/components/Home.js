@@ -58,11 +58,6 @@ const Logo = styled.img`
     width: 120px;
     margin: 30px;
   }
-
-  @media (max-width: 480px) {
-    width: 100px;
-    margin: 30px;
-  }
 `;
 
 const CubeWrapper = styled.div`
@@ -118,6 +113,7 @@ const SloganWrapper = styled.div`
   }
 
   @media (max-width: 680px) {
+    top: 280px;
     right: 50px;
     h1 {
       font-size: 55px;
