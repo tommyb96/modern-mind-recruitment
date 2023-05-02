@@ -113,7 +113,7 @@ const SloganWrapper = styled.div`
   }
 
   @media (max-width: 680px) {
-    top: 280px;
+    top: 250px;
     right: 50px;
     h1 {
       font-size: 55px;
