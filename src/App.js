@@ -1,7 +1,7 @@
 import React from "react";
 import GlobalStyle from "./Styles";
 import styled from "styled-components";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 // import Leistungen from "./components/Leistungen";
@@ -43,9 +43,9 @@ const Root = () => {
         <Wrapper>
           <NavBar />
           <Home />
-          <AboutUs />
+          {/* <AboutUs />
 
-          <Kontakt />
+          <Kontakt /> */}
           <RotatingCube />
         </Wrapper>
         {/* <Footer /> */}
@@ -59,4 +59,6 @@ const Root = () => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
 `;

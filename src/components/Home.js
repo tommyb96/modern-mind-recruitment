@@ -27,15 +27,15 @@ const Home = () => {
           <Cubes />
         </CubeWrapper>
         <SloganWrapper>
-          <Slogan>
-            your <Future>future</Future>
+          <h1>
+            your <span>future</span>
             <br />
             &nbsp; &nbsp;is our focus
-          </Slogan>
-          <Beschreibung>
+          </h1>
+          <div>
             Ihr Berater für internationale <br />
             Fachkräfte
-          </Beschreibung>
+          </div>
         </SloganWrapper>
       </HomeContainer>
     </>
@@ -76,47 +76,65 @@ const SloganWrapper = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   right: 110px;
   top: 320px;
-`;
 
-const Slogan = styled.h1`
-  font-family: "Comfortaa", cursive;
-  font-size: 70px;
-  margin: 0;
+  h1 {
+    font-family: "Comfortaa", cursive;
+    font-size: 70px;
+    margin: 0;
 
-  @media (max-width: 1280px) {
-    font-size: 60px;
-  }
-`;
-
-const Future = styled.span`
-  font-family: "Righteous", cursive;
-
-  color: rgb(0, 0, 255);
-  font-size: 70px;
-  transition: all 0.1s ease-in-out;
-
-  &:hover {
-    color: rgba(0, 167, 155, 0.5);
-    cursor: pointer;
+    @media (max-width: 1280px) {
+      font-size: 60px;
+    }
   }
 
-  @media (max-width: 768px) {
-    font-size: 60px;
-  }
-`;
+  span {
+    font-family: "Righteous", cursive;
 
-const Beschreibung = styled.div`
-  color: rgb(102, 102, 102);
-  display: inline-block;
-  font-family: "futura-pt", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 35px;
-  margin-left: 70px;
-  @media (max-width: 768px) {
-    font-size: 30px;
+    color: rgb(0, 0, 255);
+    font-size: 70px;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      color: rgba(0, 167, 155, 0.5);
+      cursor: pointer;
+    }
+  }
+
+  div {
+    color: rgb(102, 102, 102);
+    display: inline-block;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    margin-left: 70px;
+  }
+
+  @media (max-width: 680px) {
+    right: 50px;
+    h1 {
+      font-size: 55px;
+    }
+    span {
+      font-size: 55px;
+    }
+    div {
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 480px) {
+    right: 30px;
+    h1 {
+      font-size: 45px;
+    }
+    span {
+      font-size: 45px;
+    }
+    div {
+      margin-left: 40px;
+      font-size: 25px;
+    }
   }
 `;

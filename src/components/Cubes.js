@@ -8,8 +8,10 @@ const Cubes = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-
-      if (width < 769) {
+      if (width < 480) {
+        setNumCubes(7);
+        setCubeSize({ height: "13vw", width: "13vw" });
+      } else if (width < 769) {
         setNumCubes(9);
         setCubeSize({ height: "10.3vw", width: "10.3vw" });
       } else if (width < 992) {
@@ -60,7 +62,7 @@ const StyledCube = styled.div`
     opacity: 0.9;
   }
   @media (max-width: 768px) {
-    margin: 1.8px;
-    border-radius: 10px;
+    margin: 1.5px;
+    border-radius: 8px;
   }
 `;
