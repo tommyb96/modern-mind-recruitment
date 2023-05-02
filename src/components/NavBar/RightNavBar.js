@@ -45,16 +45,29 @@ const NavContainer = styled.nav`
     padding: 0;
     margin-left: 150px;
 
-    &:hover {
+    li {
+      padding: 2.5vw;
+      white-space: nowrap;
+
       a {
-        cursor: pointer;
-        filter: blur(1px);
+        position: relative;
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        @media (max-width: 1024px) {
+          font-size: 16px;
+        }
       }
     }
+  }
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
+    ul {
       flex-flow: column nowrap;
-      background-color: rgb(0, 0, 0, 0.1);
+      background-color: rgba(0, 0, 0, 0.1);
       position: fixed;
       margin: 0;
       top: 0;
@@ -64,35 +77,6 @@ const NavContainer = styled.nav`
       padding-top: 3.5rem;
       transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
       transition: transform 0.7s ease-in-out;
-    }
-  }
-
-  li {
-    padding: 2.5vw;
-
-    white-space: nowrap;
-
-    a {
-      position: relative;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
-
-    &:hover {
-      filter: blur(0) !important;
-    }
-    @media (max-width: 1024px) {
-      font-size: 16px;
     }
   }
 `;

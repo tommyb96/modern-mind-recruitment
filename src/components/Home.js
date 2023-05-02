@@ -58,6 +58,11 @@ const Logo = styled.img`
     width: 120px;
     margin: 30px;
   }
+
+  @media (max-width: 480px) {
+    width: 100px;
+    margin: 30px;
+  }
 `;
 
 const CubeWrapper = styled.div`
