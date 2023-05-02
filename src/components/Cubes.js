@@ -15,11 +15,9 @@ const Cubes = () => {
         setNumCubes(9);
         setCubeSize({ height: "10.3vw", width: "10.3vw" });
       } else if (width < 992) {
+      } else if (width < 1025) {
         setNumCubes(11);
         setCubeSize({ height: "8.5vw", width: "8.5vw" });
-      } else if (width < 1024) {
-        setNumCubes(14);
-        setCubeSize({ height: "6.65vw", width: "6.65vw" });
       } else if (width < 1280) {
         setNumCubes(17);
         setCubeSize({ height: "5.5vw", width: "5.5vw" });

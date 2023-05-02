@@ -24,7 +24,6 @@ const Home = () => {
           <Cubes />
           <Cubes />
           <Cubes />
-          <Cubes />
         </CubeWrapper>
         <SloganWrapper>
           <h1>
