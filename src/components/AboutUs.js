@@ -89,6 +89,14 @@ const AboutUs = () => {
           </div>
         </InfoText>
       </InfoWrapper>
+      <StyledForm>
+        <div>
+          <p>
+            LASST UNS GEMEINSAM DIE <span>ZUKUNFT </span>
+            UNSERER WIRTSCHAFT GESTALTEN
+          </p>
+        </div>
+      </StyledForm>
     </>
   );
 };
@@ -159,13 +167,14 @@ const Rectangle = styled.div`
 const InfoWrapper = styled.div`
   background-color: rgba(0, 167, 155, 0.25);
   margin-top: 100px;
+  position: relative;
 `;
 
 const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 200px 100px 200px 100px;
+  margin: 200px 100px 100px 100px;
   font-family: futura-pt, sans-serif;
   font-style: light;
   font-size: 20px;
@@ -174,7 +183,7 @@ const InfoText = styled.div`
     max-width: 600px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin: 5%;
   }
   @media (max-width: 480px) {
@@ -192,4 +201,43 @@ const RightAligned = styled.div`
 
 const BoldText = styled.div`
   font-weight: 500;
+`;
+const StyledForm = styled.div`
+  background-color: rgba(0, 167, 155, 0.25);
+  div {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 167, 155, 0.7);
+    height: 400px;
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+
+    @media (max-width: 768px) {
+      height: 300px;
+    }
+    @media (max-width: 480px) {
+      height: 280px;
+    }
+  }
+  p {
+    padding: 15% 45% 10% 5%;
+    font-weight: 500;
+    font-size: 3.7vw;
+
+    @media (max-width: 1280px) {
+      font-size: 4.5vw;
+    }
+    @media (max-width: 1024px) {
+      font-size: 5vw;
+    }
+    @media (max-width: 768px) {
+      font-size: 5.4vw;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 5.9vw;
+    }
+  }
+  span {
+    color: rgb(0, 0, 255);
+  }
 `;
