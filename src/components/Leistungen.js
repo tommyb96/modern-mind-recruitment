@@ -112,8 +112,8 @@ const CVTwo = styled.img`
 
 const CVThree = styled.img`
   position: absolute;
-  width: 400px;
-  top: 75%;
+  width: 350px;
+  top: 78%;
   right: 10%;
   z-index: -1;
   @media (max-width: 1280px) {
@@ -143,7 +143,7 @@ const InfoText = styled.div`
 
 const RightAligned = styled.div`
   align-self: flex-end;
-  padding: 40px;
+  padding: 20px;
   max-width: 700px;
 `;
 
@@ -160,7 +160,7 @@ const BoldText = styled.div`
   }
 `;
 const StyledDiv = styled.div`
-  padding: 40px;
+  padding: 20px;
   max-width: 700px;
   span {
     color: rgb(0, 0, 255);
@@ -181,7 +181,7 @@ const SuperBoldText = styled.div`
   @media (max-width: 1024px) {
     margin: 5%;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 650px) {
     margin: 0%;
     padding: 40px;
     font-size: 28px;

@@ -207,7 +207,7 @@ const InfoText = styled.div`
   font-style: light;
   font-size: 20px;
   div {
-    padding: 40px;
+    padding: 20px;
     max-width: 600px;
   }
 

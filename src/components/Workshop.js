@@ -54,7 +54,9 @@ const TextWrapper = styled.div`
   margin: 600px 100px 100px 100px;
 
   @media (max-width: 800px) {
+    padding: 0 30px 0 30px;
     margin: 0;
+    align-self: start;
   }
 `;
 
@@ -80,32 +82,20 @@ const Element = styled.img`
 
 const StyledDiv = styled.div`
   font-size: 20px;
-  padding: 40px;
+  padding: 20px;
   max-width: 800px;
-  @media (max-width: 1024px) {
-    margin: 5%;
-  }
-  @media (max-width: 480px) {
-    margin: 3%;
-  }
 `;
 
 const BoldDiv = styled.div`
   font-weight: 500;
   font-style: normal;
-  padding: 40px;
+  padding: 20px;
   font-size: 30px;
   max-width: 800px;
 
   span {
     color: rgb(0, 0, 255);
     font-family: "Righteous", cursive;
-  }
-  @media (max-width: 1024px) {
-    margin: 5%;
-  }
-  @media (max-width: 480px) {
-    margin: 3%;
   }
 `;
 
