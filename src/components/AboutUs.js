@@ -21,28 +21,25 @@ const AboutUs = () => {
       });
     }, options);
     observer.observe(document.querySelector("#welcome-message"));
-    observer.observe(document.querySelector("#rectangle"));
   }, []);
   return (
     <>
       <StyledContainer>
         <Lupe src={lupe} alt="Lupe" />
 
-        <Rectangle
-          id="rectangle"
-          className={isAnimated ? "animated" : ""}
-        ></Rectangle>
         <WelcomeMessage
           id="welcome-message"
           className={isAnimated ? "animated" : ""}
         >
+          {" "}
+          <Rectangle />
           Herzlich Willkommen bei <br />
-          <MMR>modern mind recruitment</MMR> und schön, dass sie hier sind, um
+          <span>modern mind recruitment</span> und schön, dass sie hier sind, um
           einen Ausweg aus dem Fachkräftemangel zu finden. Wir garantieren Ihnen
           Ihren Erfolg!
         </WelcomeMessage>
 
-        <Header id="über-uns">
+        {/* <Header id="über-uns">
           <span>Ü</span>
           <span>B</span>
           <span>E</span>
@@ -88,7 +85,7 @@ const AboutUs = () => {
             Pro-Kenntnisse dazu zu nutzen, anderen Unternehmen dabei zu helfen,
             diesen Prozess zu rationalisieren und zu vereinfachen.
           </div>
-        </InformationText>
+        </InformationText> */}
       </StyledContainer>
     </>
   );
@@ -99,10 +96,41 @@ export default AboutUs;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const Lupe = styled.img`
   width: 100vw;
+  margin-top: 60px;
+`;
+
+const WelcomeMessage = styled.div`
+  position: absolute;
+  top: 45%;
+
+  width: 60vw;
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 5vw;
+  transition: all 1s ease; /* CSS transition */
+  &.animated {
+    left: 10vw; /* final on-screen position */
+  }
+
+  span {
+    font-family: "Righteous", cursive;
+    color: rgb(0, 0, 255);
+  }
+
+  /* @media (max-width: 1280px) {
+    width: 700px;
+    font-size: 45px;
+  }
+  @media (max-width: 1024px) {
+    width: 700px;
+    font-size: 30px;
+  } */
 `;
 
 const Rectangle = styled.div`
@@ -119,57 +147,37 @@ const Rectangle = styled.div`
   }
 `;
 
-const WelcomeMessage = styled.div`
-  position: absolute;
-  top: 100vw;
-  left: -10vw; /* initial off-screen position */
-  width: 50vw;
-  font-family: futura-pt, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 3.5vw;
-  transition: all 1s ease; /* CSS transition */
-  &.animated {
-    left: 10vw; /* final on-screen position */
-  }
-`;
+// const Header = styled.h1`
+//   position: absolute;
+//   top: 150vw;
+//   display: flex;
+//   flex-direction: column;
+//   font-family: "Comfortaa", cursive;
+//   font-size: 5vw;
+//   color: rgba(0, 0, 0, 0.7);
+// `;
 
-const MMR = styled.span`
-  font-family: "Righteous", cursive;
-  color: rgb(0, 0, 255);
-`;
+// const InformationText = styled.div`
+//   font-family: futura-pt, sans-serif;
+//   font-style: light;
+//   font-size: 1.4vw;
+//   margin: 20vw 15vw 0 15vw;
 
-const Header = styled.h1`
-  position: absolute;
-  top: 150vw;
-  display: flex;
-  flex-direction: column;
-  font-family: "Comfortaa", cursive;
-  font-size: 5vw;
-  color: rgba(0, 0, 0, 0.7);
-`;
+//   div {
+//     padding: 1vw;
+//     width: 40vw;
+//   }
+// `;
 
-const InformationText = styled.div`
-  font-family: futura-pt, sans-serif;
-  font-style: light;
-  font-size: 1.4vw;
-  margin: 20vw 15vw 0 15vw;
+// const Statement = styled.div`
+//   font-size: 5vw;
+//   font-weight: 500;
+// `;
 
-  div {
-    padding: 1vw;
-    width: 40vw;
-  }
-`;
+// const RightAligned = styled.div`
+//   margin: 10vw 0 10vw 35vw;
+// `;
 
-const Statement = styled.div`
-  font-size: 5vw;
-  font-weight: 500;
-`;
-
-const RightAligned = styled.div`
-  margin: 10vw 0 10vw 35vw;
-`;
-
-const BoldText = styled.div`
-  font-weight: 500;
-`;
+// const BoldText = styled.div`
+//   font-weight: 500;
+// `;

@@ -45,11 +45,11 @@ export default Home;
 const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vw;
   overflow: hidden;
 `;
 
 const Logo = styled.img`
+  position: absolute;
   width: 150px;
   margin: 25px;
 
@@ -62,12 +62,12 @@ const Logo = styled.img`
 const CubeWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
+  align-items: end;
   padding: 1vw;
-  top: 70px;
-  right: 0;
+  margin-top: 70px;
+
   @media (max-width: 768px) {
-    top: 0;
+    margin-top: 0;
   }
 `;
 

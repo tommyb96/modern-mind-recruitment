@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 // import Leistungen from "./components/Leistungen";
-import Kontakt from "./components/Kontakt";
+// import Kontakt from "./components/Kontakt";
 import RotatingCube from "./components/RotatingCube";
 // import Workshop from "./components/Workshop";
 // import Footer from "./components/Footer";
@@ -43,9 +43,9 @@ const Root = () => {
         <Wrapper>
           <NavBar />
           <Home />
-          {/* <AboutUs />
+          <AboutUs />
 
-          <Kontakt /> */}
+          {/* <Kontakt /> */}
           <RotatingCube />
         </Wrapper>
         {/* <Footer /> */}
