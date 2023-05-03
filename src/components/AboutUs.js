@@ -39,7 +39,7 @@ const AboutUs = () => {
           Ihren Erfolg!
         </WelcomeMessage>
 
-        {/* <Header id="über-uns">
+        {/* <Header >
           <span>Ü</span>
           <span>B</span>
           <span>E</span>
@@ -48,8 +48,10 @@ const AboutUs = () => {
           <span>U</span>
           <span>N</span>
           <span>S</span>
-        </Header>
-        <InformationText>
+        </Header> */}
+      </StyledContainer>
+      <InfoWrapper id="über-uns">
+        <InfoText>
           <div>
             Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
             mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen Stellen
@@ -85,8 +87,8 @@ const AboutUs = () => {
             Pro-Kenntnisse dazu zu nutzen, anderen Unternehmen dabei zu helfen,
             diesen Prozess zu rationalisieren und zu vereinfachen.
           </div>
-        </InformationText> */}
-      </StyledContainer>
+        </InfoText>
+      </InfoWrapper>
     </>
   );
 };
@@ -102,12 +104,15 @@ const StyledContainer = styled.div`
 const Lupe = styled.img`
   width: 100vw;
   margin-top: 60px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const WelcomeMessage = styled.div`
   position: absolute;
   top: 45%;
-
   width: 60vw;
   font-family: futura-pt, sans-serif;
   font-weight: 500;
@@ -123,61 +128,68 @@ const WelcomeMessage = styled.div`
     color: rgb(0, 0, 255);
   }
 
-  /* @media (max-width: 1280px) {
-    width: 700px;
-    font-size: 45px;
+  @media (max-width: 769px) {
+    position: relative;
+    margin-top: 100px;
+    font-size: 8.4vw;
+    width: 85vw;
+    line-height: 12vw;
   }
-  @media (max-width: 1024px) {
-    width: 700px;
-    font-size: 30px;
-  } */
 `;
 
 const Rectangle = styled.div`
   position: absolute;
-  height: 15vw;
-  width: 10vw;
-  top: 97vw;
-  left: -10vw; /* initial off-screen position */
-  border: 0.7vw solid #0000ff;
+  height: 18vw;
+  width: 12vw;
+  top: -8%;
+  left: -10%;
+  border: 1vw solid #0000ff;
   opacity: 0.2;
-  transition: all 1s ease; /* CSS transition */
-  &.animated {
-    left: 8vw; /* final on-screen position */
+  transition: all 1s ease;
+
+  @media (max-width: 768px) {
+    top: -6%;
+    left: -5%;
+    height: 29vw;
+    width: 19vw;
+    border: 2vw solid #0000ff;
   }
 `;
 
-// const Header = styled.h1`
-//   position: absolute;
-//   top: 150vw;
-//   display: flex;
-//   flex-direction: column;
-//   font-family: "Comfortaa", cursive;
-//   font-size: 5vw;
-//   color: rgba(0, 0, 0, 0.7);
-// `;
+const InfoWrapper = styled.div`
+  background-color: rgba(0, 167, 155, 0.25);
+  margin-top: 100px;
+`;
 
-// const InformationText = styled.div`
-//   font-family: futura-pt, sans-serif;
-//   font-style: light;
-//   font-size: 1.4vw;
-//   margin: 20vw 15vw 0 15vw;
+const InfoText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 200px 100px 200px 100px;
+  font-family: futura-pt, sans-serif;
+  font-style: light;
+  font-size: 20px;
+  div {
+    padding: 40px;
+    max-width: 600px;
+  }
 
-//   div {
-//     padding: 1vw;
-//     width: 40vw;
-//   }
-// `;
+  @media (max-width: 768px) {
+    margin: 5%;
+  }
+  @media (max-width: 480px) {
+    margin: 3%;
+  }
+`;
+const Statement = styled.div`
+  font-size: 50px;
+  font-weight: 500;
+`;
 
-// const Statement = styled.div`
-//   font-size: 5vw;
-//   font-weight: 500;
-// `;
+const RightAligned = styled.div`
+  align-self: flex-end;
+`;
 
-// const RightAligned = styled.div`
-//   margin: 10vw 0 10vw 35vw;
-// `;
-
-// const BoldText = styled.div`
-//   font-weight: 500;
-// `;
+const BoldText = styled.div`
+  font-weight: 500;
+`;
