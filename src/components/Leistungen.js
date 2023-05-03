@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CV1 from "../svg/CV1.svg";
 import CV2 from "../svg/CV2.svg";
 import CV3 from "../svg/CV3.svg";
+import element6 from "../svg/Element 6.svg";
 
 export default function Leistungen() {
   return (
@@ -62,6 +63,13 @@ export default function Leistungen() {
           </StyledDiv>
         </InfoText>
       </InfoWrapper>
+      <SuperBoldText>
+        Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
+        Fragen und decken gemeinsam alle versteckten Fallstricke auf. Durch
+        unsere professionelle Unterstützung und Coaching gewährleisten wir, dass
+        die Behörden Ihnen garantiert grünes Licht geben.
+        <Element src={element6} alt="background elemetnt"></Element>
+      </SuperBoldText>
     </>
   );
 }
@@ -157,4 +165,34 @@ const StyledDiv = styled.div`
   span {
     color: rgb(0, 0, 255);
   }
+`;
+
+const SuperBoldText = styled.div`
+  position: relative;
+  align-self: center;
+  font-weight: 500;
+  font-size: 40px;
+  padding: 80px;
+  margin: 100px;
+  max-width: 1200px;
+  span {
+    color: rgb(0, 0, 255);
+  }
+  @media (max-width: 1024px) {
+    margin: 5%;
+  }
+  @media (max-width: 480px) {
+    margin: 0%;
+    padding: 40px;
+    font-size: 28px;
+  }
+`;
+
+const Element = styled.img`
+  position: absolute;
+  z-index: -1;
+  top: 10%;
+  right: 0%;
+  opacity: 0.7;
+  width: 300px;
 `;

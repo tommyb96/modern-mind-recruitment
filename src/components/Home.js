@@ -103,7 +103,7 @@ const SloganWrapper = styled.div`
   }
 
   div {
-    color: rgb(102, 102, 102);
+    color: rgb(0, 0, 0);
     display: inline-block;
     font-family: "futura-pt", sans-serif;
     font-weight: 400;
