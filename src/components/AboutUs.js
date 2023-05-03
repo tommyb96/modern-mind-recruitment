@@ -202,8 +202,10 @@ const RightAligned = styled.div`
 const BoldText = styled.div`
   font-weight: 500;
 `;
+
 const StyledForm = styled.div`
   background-color: rgba(0, 167, 155, 0.25);
+
   div {
     display: flex;
     align-items: center;
@@ -212,32 +214,51 @@ const StyledForm = styled.div`
     clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
 
     @media (max-width: 768px) {
-      height: 300px;
-    }
-    @media (max-width: 480px) {
-      height: 280px;
+      height: 100px;
+      clip-path: none;
+      overflow: hidden;
     }
   }
+
   p {
-    padding: 15% 45% 10% 5%;
+    padding: 15% 45% 10% 9%;
     font-weight: 500;
     font-size: 3.7vw;
 
     @media (max-width: 1280px) {
-      font-size: 4.5vw;
+      font-size: 4.3vw;
     }
+
     @media (max-width: 1024px) {
-      font-size: 5vw;
+      font-size: 4.9vw;
     }
+
     @media (max-width: 768px) {
-      font-size: 5.4vw;
+      font-size: 6vw;
+      white-space: nowrap;
+      padding: 0;
+      animation: marquee 25s linear infinite;
+      animation-delay: 0s;
     }
 
     @media (max-width: 480px) {
-      font-size: 5.9vw;
+      font-size: 8vw;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+      animation-delay: 0s;
     }
   }
+
   span {
     color: rgb(0, 0, 255);
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
 `;
