@@ -7,8 +7,8 @@ import AboutUs from "./components/AboutUs";
 import Leistungen from "./components/Leistungen";
 // import Kontakt from "./components/Kontakt";
 import RotatingCube from "./components/RotatingCube";
-// import Workshop from "./components/Workshop";
-// import Footer from "./components/Footer";
+import Workshop from "./components/Workshop";
+import Footer from "./components/Footer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Impressum from "./pages/Impressum";
 import Datenschutzerklärung from "./pages/Datenschutzerklärung";
@@ -45,10 +45,11 @@ const Root = () => {
           <Home />
           <AboutUs />
           <Leistungen />
+          <Workshop />
           {/* <Kontakt /> */}
           <RotatingCube />
         </Wrapper>
-        {/* <Footer /> */}
+        <Footer />
       </div>
       <div>
         <Outlet />
