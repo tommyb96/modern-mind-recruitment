@@ -46,6 +46,7 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: rgba(0, 167, 155, 0.1);
 `;
 
 const Logo = styled.img`

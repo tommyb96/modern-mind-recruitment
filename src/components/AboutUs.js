@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import lupe from "../svg/AboutUs_Hintergrund.svg";
+import element1 from "../svg/Element 1.svg";
+import element2 from "../svg/Element 2.svg";
 
 const AboutUs = () => {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -51,6 +53,8 @@ const AboutUs = () => {
         </Header> */}
       </StyledContainer>
       <InfoWrapper id="über-uns">
+        <Element1 src={element1} alt="background image"></Element1>
+        <Element2 src={element2} alt="background image"></Element2>
         <InfoText>
           <div>
             Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
@@ -168,6 +172,30 @@ const InfoWrapper = styled.div`
   background-color: rgba(0, 167, 155, 0.25);
   margin-top: 100px;
   position: relative;
+`;
+const Element1 = styled.img`
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  z-index: -1;
+  width: 500px;
+  opacity: 0.7;
+
+  @media (max-width: 600px) {
+    left: -20%;
+  }
+  @media (max-width: 480px) {
+    left: -30%;
+  }
+`;
+
+const Element2 = styled.img`
+  position: absolute;
+  width: 400px;
+  opacity: 0.7;
+  right: 5%;
+  top: 65%;
+  z-index: -1;
 `;
 
 const InfoText = styled.div`

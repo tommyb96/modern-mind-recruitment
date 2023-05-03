@@ -4,7 +4,7 @@ import styled from "styled-components";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
-// import Leistungen from "./components/Leistungen";
+import Leistungen from "./components/Leistungen";
 // import Kontakt from "./components/Kontakt";
 import RotatingCube from "./components/RotatingCube";
 // import Workshop from "./components/Workshop";
@@ -44,7 +44,7 @@ const Root = () => {
           <NavBar />
           <Home />
           <AboutUs />
-
+          <Leistungen />
           {/* <Kontakt /> */}
           <RotatingCube />
         </Wrapper>
