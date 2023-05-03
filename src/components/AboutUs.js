@@ -97,7 +97,7 @@ const AboutUs = () => {
         <div>
           <p>
             LASST UNS GEMEINSAM DIE <span>ZUKUNFT </span>
-            UNSERER WIRTSCHAFT GESTALTEN
+            UNSERER WIRTSCHAFT GESTALTEN!
           </p>
         </div>
       </StyledForm>
