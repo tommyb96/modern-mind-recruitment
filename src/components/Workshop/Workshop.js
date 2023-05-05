@@ -197,10 +197,9 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: rgb(102, 102, 102, 0.1);
   border-radius: 120px;
   /* border: 6px solid rgb(63, 167, 243, 0.2); */
-  box-shadow: 0 0 50px rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 0, 255, 0.3);
   height: 620px;
   width: 450px;
   margin: 200px 50px 50px 50px;
@@ -213,10 +212,10 @@ const Card = styled.div`
 
   @media (max-width: 768px) {
     margin: 200px 20px 20px 20px;
-
+    height: 530px;
     width: 300px;
     border-radius: 50px;
-    box-shadow: 0 0 30px rgba(0, 0, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.2);
   }
 `;
 
