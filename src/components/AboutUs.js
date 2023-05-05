@@ -6,35 +6,67 @@ import waves from "../svg/AboutUs/waves.png";
 import heading from "../svg/AboutUs/about_us_heading.svg";
 
 const AboutUs = () => {
-  const [showWelcomeMessage, setShowWelcomeMessage] = useState(false);
-  const welcomeMessageRef = useRef(null);
+  const welcomeRef = useRef(null);
+  const statementRef = useRef(null);
+  const rightAlignedRef = useRef(null);
+  const boldTextRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = welcomeMessageRef.current;
-      if (
-        !showWelcomeMessage &&
-        element.getBoundingClientRect().top < window.innerHeight * 0.5
-      ) {
-        setShowWelcomeMessage(true);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [showWelcomeMessage]);
+  const [welcomeVisible, setWelcomeVisible] = useState(false);
+  const [statementVisible, setStatementVisible] = useState(false);
+  const [rightAlignedVisible, setRightAlignedVisible] = useState(false);
+  const [boldTextVisible, setBoldTextVisible] = useState(false);
 
-  useEffect(() => {
-    if (showWelcomeMessage) {
-      welcomeMessageRef.current.classList.add("zoom");
-      welcomeMessageRef.current.style.opacity = "1";
+  const handleIntersection = (entry, observer) => {
+    if (entry.target === welcomeRef.current) {
+      setWelcomeVisible(entry.isIntersecting);
+    } else if (entry.target === statementRef.current) {
+      setStatementVisible(entry.isIntersecting);
+    } else if (entry.target === rightAlignedRef.current) {
+      setRightAlignedVisible(entry.isIntersecting);
+    } else if (entry.target === boldTextRef.current) {
+      setBoldTextVisible(entry.isIntersecting);
     }
-  }, [showWelcomeMessage]);
+  };
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observer1 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => handleIntersection(entry, observer));
+    }, options);
+
+    const observer2 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => handleIntersection(entry, observer));
+    }, options);
+
+    const observer3 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => handleIntersection(entry, observer));
+    }, options);
+
+    const observer4 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => handleIntersection(entry, observer));
+    }, options);
+
+    observer1.observe(welcomeRef.current);
+    observer2.observe(statementRef.current);
+    observer3.observe(rightAlignedRef.current);
+    observer4.observe(boldTextRef.current);
+
+    return () => {
+      observer1.disconnect();
+      observer2.disconnect();
+      observer3.disconnect();
+      observer4.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <StyledContainer>
-        <WelcomeMessage ref={welcomeMessageRef}>
+        <WelcomeMessage ref={welcomeRef} isVisible={welcomeVisible}>
           <Rectangle />
           Herzlich Willkommen bei <br />
           <span>modern mind recruitment</span> und schön, dass sie hier sind, um
@@ -51,10 +83,10 @@ const AboutUs = () => {
             mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen Stellen
             mit qualifizierten Mitarbeitern zu besetzen. Aber was tun?
           </div>
-          <Statement>
+          <Statement ref={statementRef} isVisible={statementVisible}>
             Die Lösung liegt in Fachkräften aus dem Ausland!
           </Statement>
-          <RightAligned>
+          <RightAligned ref={rightAlignedRef} isVisible={rightAlignedVisible}>
             Ganz genau, warum nicht die internationalen Talente für eure offenen
             Stellen gewinnen? Es gibt unzählige qualifizierte Fachkräfte auf der
             ganzen Welt die nicht wie Deutschland vom demografischen Wandel
@@ -63,7 +95,7 @@ const AboutUs = () => {
             und einer Chance sind, ihr Können unter Beweis zu stellen. Denn die
             alternde Bevölkerung nimmt in Deutschland jährlich zu.
           </RightAligned>
-          <BoldText>
+          <BoldText ref={boldTextRef} isVisible={boldTextVisible}>
             Aus eigener Erfahrung wissen wir, dass das Einstellen von
             internationalen Fachkräften eine Herausforderung sein kann. Aber
             keine Sorge, wir stehen Ihnen mit Rat und Tat zur Seite.
@@ -104,6 +136,8 @@ const StyledContainer = styled.div`
 `;
 
 const WelcomeMessage = styled.div`
+  position: relative;
+  color: black;
   align-self: center;
   margin: 200px 50px 0 50px;
   max-width: 1000px;
@@ -111,8 +145,11 @@ const WelcomeMessage = styled.div`
   font-family: system-ui;
   font-weight: 500;
   font-size: 40px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   span {
     font-family: "Comfortaa", cursive;
@@ -122,38 +159,18 @@ const WelcomeMessage = styled.div`
     color: rgb(0, 0, 255);
   }
 
+  //media query
   @media (max-width: 1024px) {
     margin-top: 100px;
   }
   @media (max-width: 768px) {
-    margin-top: 100px;
-    margin-bottom: 50px;
-    font-size: 30px;
-    span {
-      font-size: 33px;
-    }
+    margin: 100px 10px 50px 10px;
   }
   @media (max-width: 480px) {
-    font-size: 25px;
+    font-size: 30px;
     span {
-      font-size: 27px;
+      font-size: 32px;
     }
-  }
-
-  @keyframes zoomInOut {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  &.zoom {
-    animation: zoomInOut 1s ease-in-out;
   }
 `;
 
@@ -161,26 +178,22 @@ const Rectangle = styled.div`
   position: absolute;
   height: 170px;
   width: 170px;
-  top: 37%;
-  left: 30%;
+  top: -25%;
+  left: 25%;
   border: 15px solid #0000ff;
   opacity: 0.2;
-  transition: all 1s ease;
 
+  // media query
   @media (max-width: 1024px) {
     height: 150px;
     width: 150px;
-    top: 16%;
-    left: 20%;
-  }
-  @media (max-width: 768px) {
-    height: 130px;
-    width: 130px;
-    top: 16%;
+    top: -16%;
     left: 20%;
   }
   @media (max-width: 480px) {
-    border: 10px solid #0000ff;
+    border: 13px solid #0000ff;
+    top: -12%;
+    left: 10%;
   }
 `;
 
@@ -200,6 +213,8 @@ const Heading = styled.img`
   top: 5%;
   left: 1%;
   fill: #fff;
+
+  //media query
   @media (max-width: 786px) {
     width: 60px;
   }
@@ -213,13 +228,13 @@ const InfoText = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin: 200px 100px 100px 200px;
-  font-family: futura-pt, sans-serif;
-  font-style: light;
   font-size: 20px;
   div {
     padding: 20px;
     max-width: 600px;
   }
+
+  //media query
   @media (max-width: 768px) {
     margin: 100px;
   }
@@ -231,18 +246,36 @@ const InfoText = styled.div`
   }
 `;
 const Statement = styled.div`
-  font-family: system-ui;
+  font-family: Comfortaa;
   font-weight: 500;
   font-size: 50px;
+  color: black;
+  text-shadow: 1px 0 rgb(0, 0, 255);
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 `;
 
 const RightAligned = styled.div`
   align-self: flex-end;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 `;
 
 const BoldText = styled.div`
   font-family: system-ui;
   font-weight: 500;
+  color: black;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 `;
 
 const StyledForm = styled.div`

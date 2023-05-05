@@ -1,9 +1,26 @@
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Cubes from "./Cubes";
 import logo from "../svg/Home/logo.svg";
 
 const Home = () => {
+  const sloganRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        setIsVisible(entry.isIntersecting);
+      });
+    }, {});
+
+    observer.observe(sloganRef.current);
+
+    return () => {
+      observer.unobserve(sloganRef.current);
+    };
+  }, []);
+
   return (
     <>
       <HomeContainer id="home">
@@ -25,7 +42,7 @@ const Home = () => {
           <Cubes />
           <Cubes />
         </CubeWrapper>
-        <SloganWrapper>
+        <SloganWrapper ref={sloganRef} isVisible={isVisible}>
           <h1>
             your <span>future</span>
             <br />
@@ -83,6 +100,9 @@ const SloganWrapper = styled.div`
   flex-direction: column;
   right: 200px;
   top: 320px;
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   h1 {
     font-family: "Comfortaa", cursive;

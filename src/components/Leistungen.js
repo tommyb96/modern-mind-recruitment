@@ -176,6 +176,7 @@ const CVThree = styled.img`
 
 const BoldText = styled.div`
   font-family: system-ui;
+  color: black;
   font-weight: 500;
   font-size: 45px;
   padding: 40px;
@@ -207,6 +208,7 @@ const SuperBoldText = styled.div`
   position: relative;
   align-self: center;
   font-family: system-ui;
+  color: black;
   font-weight: 500;
   font-size: 50px;
   padding: 80px;
