@@ -198,7 +198,7 @@ const Card = styled.div`
   flex-direction: column;
   position: relative;
   border-radius: 120px;
-  /* border: 6px solid rgb(63, 167, 243, 0.2); */
+  border: 5px solid rgb(0, 167, 155, 0.3);
   box-shadow: 0 0 30px rgba(0, 0, 255, 0.3);
   height: 620px;
   width: 450px;
