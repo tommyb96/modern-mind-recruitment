@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import CV1 from "../svg/CV1.svg";
-import CV2 from "../svg/CV2.svg";
-import CV3 from "../svg/CV3.svg";
-import element6 from "../svg/Element 6.svg";
+import CV1 from "../svg/Leistungen/CV1.svg";
+import CV2 from "../svg/Leistungen/CV2.svg";
+import CV3 from "../svg/Leistungen/CV3.svg";
+import item from "../svg/Leistungen/small_form.svg";
 
 export default function Leistungen() {
   return (
     <>
       <InfoWrapper id="leistungen">
         {/* <Heading src={leistungen} alt="heading"></Heading> */}
-        <CVOne src={CV1} alt="background picture cv"></CVOne>
-        <CVTwo src={CV3} alt="background picture cv"></CVTwo>
-        <CVThree src={CV2} alt="background picture cv"></CVThree>
+
         <InfoText>
+          <CVOne src={CV1} alt="background picture cv"></CVOne>
           <RightAligned>
             In Ihrem Unternehmen mangelt es an qualifizierten Mitarbeiter oder
             sie suchen nach Fachkräften, um neue Projekte und Aufträge
@@ -30,12 +29,13 @@ export default function Leistungen() {
             rechtlichen Beratung bis hin zur Unterstützung bei sozialen
             Aspekten.
           </RightAligned>
+          <CVTwo src={CV3} alt="background picture cv"></CVTwo>
           <BoldText>
             Wir haben <span>erfolgreich</span> zahlreiche Fachkräfte aus den
             Drittstaaten unterschiedlichster Branchen an namhafte Unternehmen in
             Deutschland vermittelt und uns mit Schwerpunkten wie Anerkennung
-            ausländischer Berufs- abschlüsse, Familienzusammenführung,
-            Arbeitsmarkt- zulassung der Bundesagentur für Arbeit sowie das
+            ausländischer Berufsabschlüsse, Familienzusammenführung,
+            Arbeitsmarktzulassung der Bundesagentur für Arbeit sowie das
             beschleunigte Fachkräfteverfahren beschäftigt.{" "}
           </BoldText>
           <RightAligned>
@@ -48,18 +48,20 @@ export default function Leistungen() {
             vermitteln, die Ihnen sonst keiner verrät, um Ihre Erfolgsaussichten
             auf ein Maximum zu steigern.
           </RightAligned>
-
+          <CVThree src={CV2} alt="background picture cv"></CVThree>
           <StyledDiv>
-            Für diejenigen, die mit Begriffen wie Zustimmung,
-            Anerkennungsbescheid, Defizitbescheid, Qualifizierungsplan oder
-            Vorabzustimmung vertraut sind, ist bekannt wie komplex und
-            herausfordernd der gesamte Prozess des Einstellens von
-            internationalen Fachkräften sein kann.
-          </StyledDiv>
-          <StyledDiv>
-            Sie wurden mit großer Wahrscheinlichkeit mit einer Absage
-            konfrontiert und haben sich gefragt - was haben wir falsch gemacht
-            oder welchen Aspekt haben wir möglicherweise übersehen?
+            <div>
+              Für diejenigen, die mit Begriffen wie Zustimmung,
+              Anerkennungsbescheid, Defizitbescheid, Qualifizierungsplan oder
+              Vorabzustimmung vertraut sind, ist bekannt wie komplex und
+              herausfordernd der gesamte Prozess des Einstellens von
+              internationalen Fachkräften sein kann.
+            </div>
+            <div>
+              Sie wurden mit großer Wahrscheinlichkeit mit einer Absage
+              konfrontiert und haben sich gefragt - was haben wir falsch gemacht
+              oder welchen Aspekt haben wir möglicherweise übersehen?
+            </div>
           </StyledDiv>
         </InfoText>
       </InfoWrapper>
@@ -68,7 +70,7 @@ export default function Leistungen() {
         Fragen und decken gemeinsam alle versteckten Fallstricke auf. Durch
         unsere professionelle Unterstützung und Coaching gewährleisten wir, dass
         die Behörden Ihnen garantiert grünes Licht geben.
-        <Element src={element6} alt="background elemetnt"></Element>
+        <Element src={item} alt="background elemetnt"></Element>
       </SuperBoldText>
     </>
   );
@@ -76,25 +78,73 @@ export default function Leistungen() {
 
 const InfoWrapper = styled.div`
   position: relative;
+  margin-top: 200px;
+  @media (max-width: 1100px) {
+    margin-top: 0;
+  }
 `;
 
 // const Heading = styled.img`
 //   position: absolute;
 // `;
 
+const InfoText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: futura-pt, sans-serif;
+  font-style: light;
+  font-size: 20px;
+  margin: 100px;
+
+  @media (max-width: 1024px) {
+    margin: 5%;
+  }
+`;
+
 const CVOne = styled.img`
   position: absolute;
-  width: 400px;
-  top: 1%;
-  left: 5%;
+  width: 450px;
+  top: -8%;
+  left: 15%;
   z-index: -1;
   opacity: 0.4;
 
-  @media (max-width: 1280px) {
-    opacity: 0.3;
+  @media (max-width: 1450px) {
+    width: 350px;
+    left: 10%;
+  }
+  @media (max-width: 1230px) {
+    width: 270px;
+    left: 10%;
+    top: -5%;
+  }
+  @media (max-width: 1100px) {
+    position: relative;
+    width: 350px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 820px) {
+    left: 0;
+    width: 350px;
+    margin-bottom: 30px;
+    align-self: center;
   }
   @media (max-width: 480px) {
-    width: 200px;
+    left: 0;
+    width: 250px;
+    margin-bottom: 30px;
+  }
+`;
+
+const RightAligned = styled.div`
+  align-self: flex-end;
+  padding: 20px;
+  max-width: 600px;
+  margin-right: 50px;
+
+  @media (max-width: 1230px) {
+    margin-right: 0;
   }
 `;
 
@@ -124,54 +174,41 @@ const CVThree = styled.img`
   }
 `;
 
-const InfoText = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  font-family: futura-pt, sans-serif;
-  font-style: light;
-  font-size: 20px;
-  margin: 100px 100px 50px 100px;
-
-  @media (max-width: 1024px) {
-    margin: 5%;
-  }
-  @media (max-width: 480px) {
-    margin: 3%;
-  }
-`;
-
-const RightAligned = styled.div`
-  align-self: flex-end;
-  padding: 20px;
-  max-width: 700px;
-`;
-
 const BoldText = styled.div`
+  font-family: system-ui;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 45px;
   padding: 40px;
-  max-width: 700px;
+  max-width: 800px;
+  margin-top: 150px;
   span {
     color: rgb(0, 0, 255);
   }
-  @media (max-width: 480px) {
-    font-size: 25px;
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+  @media (max-width: 550px) {
+    font-size: 23px;
   }
 `;
 const StyledDiv = styled.div`
-  padding: 20px;
-  max-width: 700px;
-  span {
-    color: rgb(0, 0, 255);
+  max-width: 600px;
+  margin-top: 150px;
+
+  div {
+    padding: 20px;
   }
 `;
 
 const SuperBoldText = styled.div`
   position: relative;
   align-self: center;
+  font-family: system-ui;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 50px;
   padding: 80px;
   margin: 100px;
   max-width: 1200px;
@@ -179,12 +216,17 @@ const SuperBoldText = styled.div`
     color: rgb(0, 0, 255);
   }
   @media (max-width: 1024px) {
+    font-size: 40px;
     margin: 5%;
   }
   @media (max-width: 650px) {
-    margin: 0%;
+    margin: 3%;
     padding: 40px;
     font-size: 28px;
+  }
+  @media (max-width: 480px) {
+    margin: 3%;
+    font-size: 23px;
   }
 `;
 

@@ -1,60 +1,50 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import lupe from "../svg/AboutUs_Hintergrund.svg";
-import element1 from "../svg/Element 1.svg";
-import element2 from "../svg/Element 2.svg";
+
+import waves from "../svg/AboutUs/waves.png";
+import heading from "../svg/AboutUs/about_us_heading.svg";
 
 const AboutUs = () => {
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(false);
+  const welcomeMessageRef = useRef(null);
 
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
+    const handleScroll = () => {
+      const element = welcomeMessageRef.current;
+      if (
+        !showWelcomeMessage &&
+        element.getBoundingClientRect().top < window.innerHeight * 0.5
+      ) {
+        setShowWelcomeMessage(true);
+      }
     };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsAnimated(true);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-    observer.observe(document.querySelector("#welcome-message"));
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showWelcomeMessage]);
+
+  useEffect(() => {
+    if (showWelcomeMessage) {
+      welcomeMessageRef.current.classList.add("zoom");
+      welcomeMessageRef.current.style.opacity = "1";
+    }
+  }, [showWelcomeMessage]);
   return (
     <>
       <StyledContainer>
-        <Lupe src={lupe} alt="Lupe" />
-
-        <WelcomeMessage
-          id="welcome-message"
-          className={isAnimated ? "animated" : ""}
-        >
-          {" "}
+        <WelcomeMessage ref={welcomeMessageRef}>
           <Rectangle />
           Herzlich Willkommen bei <br />
           <span>modern mind recruitment</span> und schön, dass sie hier sind, um
           einen Ausweg aus dem Fachkräftemangel zu finden. Wir garantieren Ihnen
           Ihren Erfolg!
         </WelcomeMessage>
-
-        {/* <Header >
-          <span>Ü</span>
-          <span>B</span>
-          <span>E</span>
-          <span>R</span>
-          <br />
-          <span>U</span>
-          <span>N</span>
-          <span>S</span>
-        </Header> */}
       </StyledContainer>
+      <Waves src={waves} alt="waves"></Waves>
       <InfoWrapper id="über-uns">
-        <Element1 src={element1} alt="background image"></Element1>
-        <Element2 src={element2} alt="background image"></Element2>
+        <Heading src={heading} alt="heading"></Heading>
         <InfoText>
           <div>
             Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
@@ -113,96 +103,116 @@ const StyledContainer = styled.div`
   position: relative;
 `;
 
-const Lupe = styled.img`
-  width: 100vw;
-  margin-top: 60px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
 const WelcomeMessage = styled.div`
-  position: absolute;
-  top: 45%;
-  width: 60vw;
-  font-family: futura-pt, sans-serif;
+  align-self: center;
+  margin: 200px 50px 0 50px;
+  max-width: 1000px;
+  text-align: center;
+  font-family: system-ui;
   font-weight: 500;
-  font-style: normal;
-  font-size: 5vw;
-  transition: all 1s ease; /* CSS transition */
-  &.animated {
-    left: 10vw; /* final on-screen position */
-  }
+  font-size: 40px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 
   span {
-    font-family: "Righteous", cursive;
+    font-family: "Comfortaa", cursive;
+    text-shadow: 1px 0 rgb(0, 0, 255);
+    font-size: 45px;
+    font-weight: bold;
     color: rgb(0, 0, 255);
   }
 
-  @media (max-width: 769px) {
-    position: relative;
+  @media (max-width: 1024px) {
     margin-top: 100px;
-    font-size: 8.4vw;
-    width: 85vw;
-    line-height: 12vw;
+  }
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    span {
+      font-size: 33px;
+    }
+  }
+  @media (max-width: 480px) {
+    font-size: 25px;
+    span {
+      font-size: 27px;
+    }
+  }
+
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  &.zoom {
+    animation: zoomInOut 1s ease-in-out;
   }
 `;
 
 const Rectangle = styled.div`
   position: absolute;
-  height: 18vw;
-  width: 12vw;
-  top: -8%;
-  left: -10%;
-  border: 1vw solid #0000ff;
+  height: 170px;
+  width: 170px;
+  top: 37%;
+  left: 30%;
+  border: 15px solid #0000ff;
   opacity: 0.2;
   transition: all 1s ease;
 
+  @media (max-width: 1024px) {
+    height: 150px;
+    width: 150px;
+    top: 16%;
+    left: 20%;
+  }
   @media (max-width: 768px) {
-    top: -6%;
-    left: -5%;
-    height: 29vw;
-    width: 19vw;
-    border: 2vw solid #0000ff;
+    height: 130px;
+    width: 130px;
+    top: 16%;
+    left: 20%;
+  }
+  @media (max-width: 480px) {
+    border: 10px solid #0000ff;
   }
 `;
 
 const InfoWrapper = styled.div`
-  background-color: rgba(0, 167, 155, 0.25);
-  margin-top: 100px;
+  background-color: rgba(202, 231, 252);
   position: relative;
 `;
-const Element1 = styled.img`
-  position: absolute;
-  top: 25%;
-  left: 5%;
-  z-index: -1;
-  width: 500px;
-  opacity: 0.7;
 
-  @media (max-width: 600px) {
-    left: -20%;
-  }
-  @media (max-width: 480px) {
-    left: -30%;
-  }
+const Waves = styled.img`
+  width: 100vw;
+  z-index: -1;
 `;
 
-const Element2 = styled.img`
+const Heading = styled.img`
   position: absolute;
-  width: 400px;
-  opacity: 0.7;
-  right: 5%;
-  top: 65%;
-  z-index: -1;
+  width: 80px;
+  top: 5%;
+  left: 1%;
+  fill: #fff;
+  @media (max-width: 786px) {
+    width: 60px;
+  }
+  @media (max-width: 480px) {
+    width: 45px;
+  }
 `;
 
 const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 200px 100px 100px 100px;
+  margin: 200px 100px 100px 200px;
   font-family: futura-pt, sans-serif;
   font-style: light;
   font-size: 20px;
@@ -210,17 +220,20 @@ const InfoText = styled.div`
     padding: 20px;
     max-width: 600px;
   }
-
-  @media (max-width: 1024px) {
-    margin: 5%;
+  @media (max-width: 768px) {
+    margin: 100px;
+  }
+  @media (max-width: 700px) {
+    margin: 100px 10px 100px 100px;
   }
   @media (max-width: 480px) {
-    margin: 3%;
+    margin: 100px 10px 50px 60px;
   }
 `;
 const Statement = styled.div`
-  font-size: 50px;
+  font-family: system-ui;
   font-weight: 500;
+  font-size: 50px;
 `;
 
 const RightAligned = styled.div`
@@ -228,6 +241,7 @@ const RightAligned = styled.div`
 `;
 
 const BoldText = styled.div`
+  font-family: system-ui;
   font-weight: 500;
 `;
 
