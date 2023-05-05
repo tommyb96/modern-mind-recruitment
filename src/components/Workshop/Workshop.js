@@ -268,5 +268,6 @@ const Description = styled.ul`
   @media (max-width: 786px) {
     margin: 10px 10px 10px 10px;
     hyphens: auto;
+    font-size: 18px;
   }
 `;

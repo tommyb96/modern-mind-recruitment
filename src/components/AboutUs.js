@@ -7,11 +7,13 @@ import heading from "../svg/AboutUs/about_us_heading.svg";
 
 const AboutUs = () => {
   const welcomeRef = useRef(null);
+
   const statementRef = useRef(null);
   const rightAlignedRef = useRef(null);
   const boldTextRef = useRef(null);
 
   const [welcomeVisible, setWelcomeVisible] = useState(false);
+
   const [statementVisible, setStatementVisible] = useState(false);
   const [rightAlignedVisible, setRightAlignedVisible] = useState(false);
   const [boldTextVisible, setBoldTextVisible] = useState(false);
@@ -51,6 +53,7 @@ const AboutUs = () => {
     }, options);
 
     observer1.observe(welcomeRef.current);
+
     observer2.observe(statementRef.current);
     observer3.observe(rightAlignedRef.current);
     observer4.observe(boldTextRef.current);
