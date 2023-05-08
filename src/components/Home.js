@@ -25,6 +25,7 @@ const Home = () => {
     <>
       <HomeContainer id="home">
         <Logo src={logo} alt="Logo" />
+
         <CubeWrapper>
           <Cubes />
           <Cubes />
@@ -61,12 +62,13 @@ export default Home;
 
 const HomeContainer = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   overflow: hidden;
   background: linear-gradient(
     to right,
     rgb(0, 167, 155, 0.6),
-    rgb(63, 167, 243, 0.7)
+    rgb(92, 92, 255)
   );
 `;
 
@@ -87,7 +89,7 @@ const CubeWrapper = styled.div`
   align-items: end;
   padding: 1vw;
   margin-top: 70px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 
   @media (max-width: 768px) {
     margin-top: 0;

@@ -30,7 +30,7 @@ const CubeSide = styled.div`
   position: absolute;
   width: 70px;
   height: 70px;
-  background-color: rgba(0, 167, 155, 0.1);
+  background-color: rgba(102, 102, 102, 0.1);
 `;
 
 const CubeFront = styled(CubeSide)`

@@ -52,7 +52,7 @@ const CubeContainer = styled.div`
 `;
 
 const StyledCube = styled.div`
-  background-color: rgba(0, 167, 155, 0.125);
+  background-color: rgba(0, 167, 155, 0.3);
   border-radius: 0.8vw;
   margin: 1.3px;
   transition: transform 0.05s ease-in-out;
