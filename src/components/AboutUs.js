@@ -81,15 +81,15 @@ const AboutUs = () => {
           hier sind, um einen Ausweg aus dem Fachkräftemangel zu finden. Wir
           garantieren Ihnen Ihren{" "}
           <CubeTwoRelative>
-            {" "}
             <CubesTwo src={cubes2} alt="cubes"></CubesTwo>Erfolg!
           </CubeTwoRelative>
         </WelcomeMessage>
       </StyledContainer>
       <InfoWrapper id="über-uns">
         {/* <Waves src={waves} alt="waves"></Waves> */}
-        <Line />
-        <Circle />
+        <Line>
+          <Circle />
+        </Line>
         <InfoText>
           <Person src={person} alt="person icon" />
           <Heading>ÜBER UNS</Heading>
@@ -98,10 +98,12 @@ const AboutUs = () => {
             mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen Stellen
             mit qualifizierten Mitarbeitern zu besetzen. Aber was tun?
           </div>
-          <Statement ref={statementRef} isVisible={statementVisible}>
-            <Persons src={persons} alt="persons icon" /> <br />
-            Die Lösung liegt in Fachkräften aus dem Ausland!
-          </Statement>
+          <StatementWrapper>
+            <Persons src={persons} alt="persons icon" />
+            <Statement ref={statementRef} isVisible={statementVisible}>
+              Die Lösung liegt in Fachkräften aus dem Ausland!
+            </Statement>
+          </StatementWrapper>
           <BoldText ref={boldTextRef} isVisible={boldTextVisible}>
             Aus eigener Erfahrung wissen wir, dass das Einstellen von
             internationalen Fachkräften eine Herausforderung sein kann. Aber
@@ -246,9 +248,9 @@ const Waves = styled.img`
 
 const Line = styled.div`
   position: absolute;
-  left: 49%;
+  left: 50%;
   height: 100%;
-  width: 5px;
+  width: 2.5px;
   background-color: white;
   z-index: 100;
   @media (max-width: 850px) {
@@ -258,16 +260,16 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: -1%;
-  left: 47.9%;
+  top: 0%;
+  left: -14px;
   background-color: black;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 2.5px solid white;
   z-index: 200;
   @media (max-width: 850px) {
-    left: 13%;
+    left: -14px;
   }
 `;
 
@@ -316,28 +318,20 @@ const Heading = styled.div`
   }
 `;
 
-const Statement = styled.div`
-  font-weight: 500;
-  font-size: 50px;
-  color: white;
+const StatementWrapper = styled.div`
+  position: relative;
   align-self: flex-end;
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
   @media (max-width: 850px) {
-    align-self: flex-start;
-    margin-left: 70px;
+    align-self: flex-end;
   }
 `;
 
 const Persons = styled.img`
   position: absolute;
   width: 350px;
-  top: 20%;
+  top: 23%;
   left: -100%;
+  margin-bottom: 20px;
   @media (max-width: 850px) {
     position: relative;
     top: 0;
@@ -345,6 +339,25 @@ const Persons = styled.img`
   }
   @media (max-width: 480px) {
     width: 260px;
+    align-self: flex-start;
+  }
+`;
+
+const Statement = styled.div`
+  font-weight: 500;
+  font-size: 50px;
+  color: white;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  @media (max-width: 850px) {
+    margin-left: 0 !important;
+  }
+  @media (max-width: 480px) {
+    font-size: 45px;
   }
 `;
 
