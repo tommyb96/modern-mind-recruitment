@@ -187,11 +187,11 @@ const WelcomeMessage = styled.div`
 const StyledSpan = styled.span`
   font-family: "Comfortaa", cursive;
   text-shadow: 1px 0 rgb(0, 0, 255);
-  font-size: 45px;
+  font-size: 40px;
   font-weight: bold;
   color: rgb(0, 0, 255);
   @media (max-width: 600px) {
-    font-size: 33px;
+    font-size: 30px;
   }
 `;
 
@@ -211,8 +211,8 @@ const CubesOne = styled.img`
   }
   @media (max-width: 480px) {
     width: 100px;
-    top: -170%;
-    left: -5%;
+    top: -165%;
+    left: -10%;
   }
 `;
 
@@ -225,12 +225,7 @@ const CubesTwo = styled.img`
   width: 170px;
   bottom: -250%;
   right: -110%;
-  @media (max-width: 600px) {
-    width: 100px;
-    bottom: -180%;
-    right: -80%;
-  }
-  @media (max-width: 480px) {
+  @media (max-width: 850px) {
     display: none;
   }
 `;
