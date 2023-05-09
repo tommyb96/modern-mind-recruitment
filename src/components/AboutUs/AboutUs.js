@@ -2,11 +2,12 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
-import cubes1 from "../svg/AboutUs/about_us_cubes_1.svg";
-import cubes2 from "../svg/AboutUs/about_us_cubes_2.svg";
-import waves from "../svg/AboutUs/about_us_waves.png";
-import persons from "../svg/AboutUs/about_us_3d_person.svg";
-import person from "../svg/AboutUs/about_us_person.svg";
+import Cubes from "./Cubes";
+import cubes1 from "../../svg/AboutUs/about_us_cubes_1.svg";
+import cubes2 from "../../svg/AboutUs/about_us_cubes_2.svg";
+import waves from "../../svg/AboutUs/about_us_waves.png";
+import persons from "../../svg/AboutUs/about_us_3d_person.svg";
+import person from "../../svg/AboutUs/about_us_person.svg";
 
 const AboutUs = () => {
   const welcomeRef = useRef(null);
@@ -77,29 +78,33 @@ const AboutUs = () => {
             <CubesOne src={cubes1} alt="cubes"></CubesOne>Herzlich
           </CubeOneRelative>{" "}
           Willkommen bei <br />
-          <StyledSpan>modern mind recruitment</StyledSpan> und schön, dass sie
-          hier sind, um einen Ausweg aus dem Fachkräftemangel zu finden. Wir
-          garantieren Ihnen Ihren{" "}
+          <StyledSpan>
+            modern mind <GreenSpan>recruitment</GreenSpan>
+          </StyledSpan>{" "}
+          und schön, dass sie hier sind, um einen Ausweg aus dem
+          Fachkräftemangel zu finden. Wir garantieren Ihnen Ihren{" "}
           <CubeTwoRelative>
             <CubesTwo src={cubes2} alt="cubes"></CubesTwo>Erfolg!
           </CubeTwoRelative>
         </WelcomeMessage>
       </StyledContainer>
+      <Waves src={waves} alt="waves"></Waves>
+
       <InfoWrapper id="über-uns">
-        {/* <Waves src={waves} alt="waves"></Waves> */}
         <Line>
           <Circle />
         </Line>
         <InfoText>
           <Person src={person} alt="person icon" />
           <Heading>ÜBER UNS</Heading>
-          <div>
+          <LeftDiv>
             Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
             mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen Stellen
             mit qualifizierten Mitarbeitern zu besetzen. Aber was tun?
-          </div>
+          </LeftDiv>
           <StatementWrapper>
             <Persons src={persons} alt="persons icon" />
+            <Cubes />
             <Statement ref={statementRef} isVisible={statementVisible}>
               Die Lösung liegt in Fachkräften aus dem Ausland!
             </Statement>
@@ -109,7 +114,7 @@ const AboutUs = () => {
             internationalen Fachkräften eine Herausforderung sein kann. Aber
             keine Sorge, wir stehen Ihnen mit Rat und Tat zur Seite.
           </BoldText>{" "}
-          <div ref={rightAlignedRef} isVisible={rightAlignedVisible}>
+          <LeftDiv ref={rightAlignedRef} isVisible={rightAlignedVisible}>
             Ganz genau, warum nicht die internationalen Talente für eure offenen
             Stellen gewinnen? Es gibt unzählige qualifizierte Fachkräfte auf der
             ganzen Welt die nicht wie Deutschland vom demografischen Wandel
@@ -117,7 +122,7 @@ const AboutUs = () => {
             Verfügung haben, die auf der Suche nach einer neuen Herausforderung
             und einer Chance sind, ihr Können unter Beweis zu stellen. Denn die
             alternde Bevölkerung nimmt in Deutschland jährlich zu.
-          </div>
+          </LeftDiv>
           <RightAligned>
             Unser Team ist eine Gruppe von Personalberatern, die jahrelang in
             der Branche Fachkräfte aus den Drittstaaten tätig war und immer noch
@@ -157,7 +162,7 @@ const WelcomeMessage = styled.div`
   position: relative;
   color: black;
   align-self: center;
-  margin: 200px 10px 200px 10px;
+  margin: 200px 10px 0 10px;
   max-width: 850px;
   text-align: center;
   font-family: system-ui;
@@ -177,7 +182,7 @@ const WelcomeMessage = styled.div`
     font-size: 30px;
     max-width: 430px;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
   @media (max-width: 480px) {
     font-size: 30px;
@@ -193,6 +198,11 @@ const StyledSpan = styled.span`
   @media (max-width: 600px) {
     font-size: 30px;
   }
+`;
+
+const GreenSpan = styled.span`
+  color: rgba(0, 167, 155);
+  text-shadow: 1px 0 rgba(0, 167, 155);
 `;
 
 const CubeOneRelative = styled.span`
@@ -230,15 +240,22 @@ const CubesTwo = styled.img`
   }
 `;
 
+const Waves = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+`;
+
 const InfoWrapper = styled.div`
   background-color: rgba(0, 167, 155);
   position: relative;
   overflow: hidden;
-`;
-
-const Waves = styled.img`
-  width: 100vw;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 `;
 
 const Line = styled.div`
@@ -248,7 +265,7 @@ const Line = styled.div`
   width: 2.5px;
   background-color: white;
   z-index: 100;
-  @media (max-width: 850px) {
+  @media (max-width: 900px) {
     left: 15%;
   }
 `;
@@ -263,7 +280,7 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 2.5px solid white;
   z-index: 200;
-  @media (max-width: 850px) {
+  @media (max-width: 900px) {
     left: -14px;
   }
 `;
@@ -272,22 +289,12 @@ const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 850px;
-  margin-top: 50px;
+  max-width: 880px;
   margin-bottom: 200px;
   font-size: 20px;
-  div {
-    padding: 20px;
-    max-width: 420px;
-
-    @media (max-width: 850px) {
-      align-self: flex-start;
-      margin-left: 70px;
-    }
-  }
 
   //media query
-  @media (max-width: 850px) {
+  @media (max-width: 900px) {
     max-width: 500px;
   }
 `;
@@ -298,7 +305,7 @@ const Person = styled.img`
   top: 10%;
   right: -15%;
 
-  @media (max-width: 850px) {
+  @media (max-width: 900px) {
     right: -50%;
   }
 `;
@@ -307,34 +314,52 @@ const Heading = styled.div`
   font-family: Comfortaa;
   font-size: 55px;
   text-shadow: 1px 0 rgb(0, 0, 0);
-  @media (max-width: 850px) {
+  padding: 20px;
+  max-width: 420px;
+  @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
   }
 `;
 
+const LeftDiv = styled.div`
+  padding: 20px;
+  max-width: 420px;
+
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin-left: 70px;
+  }
+`;
 const StatementWrapper = styled.div`
   position: relative;
   align-self: flex-end;
-  @media (max-width: 850px) {
+  @media (max-width: 900px) {
     align-self: flex-end;
   }
 `;
 
 const Persons = styled.img`
   position: absolute;
-  width: 350px;
-  top: 23%;
-  left: -100%;
+  width: 370px;
+  top: 40%;
+  left: -105%;
   margin-bottom: 20px;
-  @media (max-width: 850px) {
+  z-index: 1;
+
+  @media (max-width: 900px) {
     position: relative;
+    margin-top: 110px;
+    margin-bottom: 100px;
     top: 0;
-    left: 0;
+    left: 20%;
   }
-  @media (max-width: 480px) {
-    width: 260px;
+
+  @media (max-width: 590px) {
+    width: 240px;
     align-self: flex-start;
+    margin: 75px 0 80px 70px;
+    left: 8%;
   }
 `;
 
@@ -342,14 +367,16 @@ const Statement = styled.div`
   font-weight: 500;
   font-size: 50px;
   color: white;
+  padding: 20px;
+  max-width: 420px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
-  @media (max-width: 850px) {
-    margin-left: 0 !important;
+  @media (max-width: 900px) {
+    margin-left: 70px;
   }
   @media (max-width: 480px) {
     font-size: 45px;
@@ -361,13 +388,15 @@ const BoldText = styled.div`
   font-weight: 500;
   color: black;
   align-self: flex-end;
+  padding: 20px;
+  max-width: 420px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
-  @media (max-width: 850px) {
+  @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
   }
@@ -375,8 +404,10 @@ const BoldText = styled.div`
 
 const RightAligned = styled.div`
   align-self: flex-end;
+  padding: 20px;
+  max-width: 420px;
 
-  @media (max-width: 850px) {
+  @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
   }
