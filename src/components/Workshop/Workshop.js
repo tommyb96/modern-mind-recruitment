@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import blue from "../../svg/Workshop/blue_ball.svg";
 
 export default function Workshop() {
   return (
@@ -26,7 +25,7 @@ export default function Workshop() {
         </BoldDiv>
       </TextWrapper>
       <StyledHeading>
-        <BlueBall src={blue} alt="blue ball"></BlueBall>
+        {/* <BlueBall src= alt="blue ball"></BlueBall> */}
         <span>Inhalt</span> des Workshops: Beschäftigung ausländischer
         Fachkräfte in Deutschland
       </StyledHeading>

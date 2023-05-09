@@ -1,17 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import CV1 from "../svg/Leistungen/CV1.svg";
-import CV2 from "../svg/Leistungen/CV2.svg";
-import CV3 from "../svg/Leistungen/CV3.svg";
-import item from "../svg/Leistungen/small_form.svg";
+
+import CV1 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
+import CV2 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
+import CV3 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
 
 export default function Leistungen() {
   return (
     <>
-      <InfoWrapper id="leistungen">
-        {/* <Heading src={leistungen} alt="heading"></Heading> */}
-
+      <StyledContainer id="leistungen">
+        <Line>
+          <Circle />
+        </Line>
         <InfoText>
+          <Heading>LEISTUNGEN</Heading>
           <CVOne src={CV1} alt="background picture cv"></CVOne>
           <RightAligned>
             In Ihrem Unternehmen mangelt es an qualifizierten Mitarbeiter oder
@@ -29,7 +31,7 @@ export default function Leistungen() {
             rechtlichen Beratung bis hin zur Unterstützung bei sozialen
             Aspekten.
           </RightAligned>
-          <CVTwo src={CV3} alt="background picture cv"></CVTwo>
+          <CVTwo src={CV2} alt="background picture cv"></CVTwo>
           <BoldText>
             Wir haben <span>erfolgreich</span> zahlreiche Fachkräfte aus den
             Drittstaaten unterschiedlichster Branchen an namhafte Unternehmen in
@@ -48,58 +50,84 @@ export default function Leistungen() {
             vermitteln, die Ihnen sonst keiner verrät, um Ihre Erfolgsaussichten
             auf ein Maximum zu steigern.
           </RightAligned>
-          <CVThree src={CV2} alt="background picture cv"></CVThree>
-          <StyledDiv>
-            <div>
-              Für diejenigen, die mit Begriffen wie Zustimmung,
-              Anerkennungsbescheid, Defizitbescheid, Qualifizierungsplan oder
-              Vorabzustimmung vertraut sind, ist bekannt wie komplex und
-              herausfordernd der gesamte Prozess des Einstellens von
-              internationalen Fachkräften sein kann.
-            </div>
-            <div>
-              Sie wurden mit großer Wahrscheinlichkeit mit einer Absage
-              konfrontiert und haben sich gefragt - was haben wir falsch gemacht
-              oder welchen Aspekt haben wir möglicherweise übersehen?
-            </div>
-          </StyledDiv>
+          <CVThree src={CV3} alt="background picture cv"></CVThree>
+          <RightAligned>
+            Für diejenigen, die mit Begriffen wie Zustimmung,
+            Anerkennungsbescheid, Defizitbescheid, Qualifizierungsplan oder
+            Vorabzustimmung vertraut sind, ist bekannt wie komplex und
+            herausfordernd der gesamte Prozess des Einstellens von
+            internationalen Fachkräften sein kann.
+          </RightAligned>
+          <RightAligned>
+            Sie wurden mit großer Wahrscheinlichkeit mit einer Absage
+            konfrontiert und haben sich gefragt - was haben wir falsch gemacht
+            oder welchen Aspekt haben wir möglicherweise übersehen?
+          </RightAligned>
         </InfoText>
-      </InfoWrapper>
+      </StyledContainer>
       <SuperBoldText>
         Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
         Fragen und decken gemeinsam alle versteckten Fallstricke auf. Durch
         unsere professionelle Unterstützung und Coaching gewährleisten wir, dass
         die Behörden Ihnen garantiert grünes Licht geben.
-        <Element src={item} alt="background elemetnt"></Element>
       </SuperBoldText>
     </>
   );
 }
 
-const InfoWrapper = styled.div`
+const StyledContainer = styled.div`
   position: relative;
-  margin-top: 200px;
-  @media (max-width: 1100px) {
-    margin-top: 0;
+  background-color: rgb(92, 92, 255);
+  clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 100%);
+
+  @media (max-width: 800px) {
+    clip-path: polygon(0% 3%, 100% 0%, 100% 100%, 0% 100%);
   }
 `;
 
-// const Heading = styled.img`
-//   position: absolute;
-// `;
+const Line = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  height: 100%;
+  width: 2.5px;
+  background-color: white;
+  z-index: 100;
+  @media (max-width: 900px) {
+    left: 15%;
+  }
+`;
+
+const Circle = styled.div`
+  position: absolute;
+  top: 10%;
+  left: -14px;
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2.5px solid white;
+  z-index: 200;
+  @media (max-width: 900px) {
+    left: -14px;
+  }
+`;
 
 const InfoText = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  font-family: futura-pt, sans-serif;
-  font-style: light;
+  margin: auto;
+  margin-top: 200px;
+  max-width: 880px;
   font-size: 20px;
-  margin: 100px;
+`;
 
-  @media (max-width: 1024px) {
-    margin: 5%;
-  }
+const Heading = styled.div`
+  font-family: Comfortaa;
+  text-shadow: 1px 0 rgb(0, 0, 0);
+  font-size: 55px;
+  align-self: center;
+  /* margin-left: 450px; */
 `;
 
 const CVOne = styled.img`
@@ -140,8 +168,7 @@ const CVOne = styled.img`
 const RightAligned = styled.div`
   align-self: flex-end;
   padding: 20px;
-  max-width: 600px;
-  margin-right: 50px;
+  max-width: 420px;
 
   @media (max-width: 1230px) {
     margin-right: 0;
@@ -178,10 +205,9 @@ const BoldText = styled.div`
   font-family: system-ui;
   color: black;
   font-weight: 500;
-  font-size: 45px;
-  padding: 40px;
-  max-width: 800px;
-  margin-top: 150px;
+  font-size: 26px;
+  padding: 20px;
+  max-width: 420px;
   span {
     color: rgb(0, 0, 255);
   }
@@ -193,14 +219,6 @@ const BoldText = styled.div`
   }
   @media (max-width: 550px) {
     font-size: 23px;
-  }
-`;
-const StyledDiv = styled.div`
-  max-width: 600px;
-  margin-top: 150px;
-
-  div {
-    padding: 20px;
   }
 `;
 
@@ -230,13 +248,4 @@ const SuperBoldText = styled.div`
     margin: 3%;
     font-size: 23px;
   }
-`;
-
-const Element = styled.img`
-  position: absolute;
-  z-index: -1;
-  top: 10%;
-  right: 0%;
-  opacity: 0.7;
-  width: 300px;
 `;

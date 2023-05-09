@@ -3,11 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import Cubes from "./Cubes";
-import cubes1 from "../../svg/AboutUs/about_us_cubes_1.svg";
-import cubes2 from "../../svg/AboutUs/about_us_cubes_2.svg";
-import waves from "../../svg/AboutUs/about_us_waves.png";
-import persons from "../../svg/AboutUs/about_us_3d_person.svg";
-import person from "../../svg/AboutUs/about_us_person.svg";
+import Filler from "./Filler";
+import cubes1 from "../../assets/svg/AboutUs/about_us_cubes_1.svg";
+import cubes2 from "../../assets/svg/AboutUs/about_us_cubes_2.svg";
+import waves from "../../assets/svg/AboutUs/about_us_waves.png";
+import person from "../../assets/svg/AboutUs/about_us_person.svg";
 
 const AboutUs = () => {
   const welcomeRef = useRef(null);
@@ -136,14 +136,7 @@ const AboutUs = () => {
           </RightAligned>
         </InfoText>
       </InfoWrapper>
-      <StyledForm>
-        <div>
-          <p>
-            LASST UNS GEMEINSAM DIE <span>ZUKUNFT </span>
-            UNSERER WIRTSCHAFT GESTALTEN!
-          </p>
-        </div>
-      </StyledForm>
+      <Filler />
     </>
   );
 };
@@ -251,6 +244,7 @@ const InfoWrapper = styled.div`
 const Line = styled.div`
   position: absolute;
   left: 50%;
+  top: 2%;
   height: 100%;
   width: 2.5px;
   background-color: white;
@@ -376,65 +370,5 @@ const RightAligned = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
-  }
-`;
-
-const StyledForm = styled.div`
-  background-color: rgba(0, 167, 155, 0.25);
-
-  div {
-    display: flex;
-    align-items: center;
-    background-color: rgba(0, 167, 155, 0.7);
-    height: 400px;
-    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
-
-    @media (max-width: 768px) {
-      height: 100px;
-      clip-path: none;
-      overflow: hidden;
-    }
-  }
-
-  p {
-    padding: 15% 45% 10% 9%;
-    font-weight: 500;
-    font-size: 3.7vw;
-
-    @media (max-width: 1280px) {
-      font-size: 4.3vw;
-    }
-
-    @media (max-width: 1024px) {
-      font-size: 4.9vw;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 6vw;
-      white-space: nowrap;
-      padding: 0;
-      animation: marquee 25s linear infinite;
-      animation-delay: 0s;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 8vw;
-      white-space: nowrap;
-      animation: marquee 20s linear infinite;
-      animation-delay: 0s;
-    }
-  }
-
-  span {
-    color: rgb(0, 0, 255);
-  }
-
-  @keyframes marquee {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
   }
 `;

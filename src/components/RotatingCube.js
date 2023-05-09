@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import logo from "../svg/Home/logo.svg";
+import logo from "../assets/svg/Home/logo.svg";
 
 const CubeSpin = keyframes`
   0% {

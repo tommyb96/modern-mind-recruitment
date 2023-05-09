@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import persons from "../../svg/AboutUs/about_us_3d_person.svg";
+import persons from "../../assets/svg/AboutUs/about_us_3d_person.svg";
 
 const Cubes = () => {
   return (

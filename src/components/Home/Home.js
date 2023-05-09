@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Cubes from "./Cubes";
-import logo from "../../svg/Home/logo.svg";
+import logo from "../../assets/svg/Home/logo.svg";
 
 const Home = () => {
   const sloganRef = useRef(null);
