@@ -89,7 +89,6 @@ const AboutUs = () => {
         </WelcomeMessage>
       </StyledContainer>
       <Waves src={waves} alt="waves"></Waves>
-
       <InfoWrapper id="über-uns">
         <Line>
           <Circle />
@@ -98,17 +97,16 @@ const AboutUs = () => {
           <Person src={person} alt="person icon" />
           <Heading>ÜBER UNS</Heading>
           <LeftDiv>
-            Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
-            mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen Stellen
-            mit qualifizierten Mitarbeitern zu besetzen. Aber was tun?
+            <div>
+              Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
+              mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen
+              Stellen mit qualifizierten Mitarbeitern zu besetzen. Aber was tun?
+            </div>
+            <Cubes></Cubes>
           </LeftDiv>
-          <StatementWrapper>
-            <Persons src={persons} alt="persons icon" />
-            <Cubes />
-            <Statement ref={statementRef} isVisible={statementVisible}>
-              Die Lösung liegt in Fachkräften aus dem Ausland!
-            </Statement>
-          </StatementWrapper>
+          <Statement ref={statementRef} isVisible={statementVisible}>
+            Die Lösung liegt in Fachkräften aus dem Ausland!
+          </Statement>
           <BoldText ref={boldTextRef} isVisible={boldTextVisible}>
             Aus eigener Erfahrung wissen wir, dass das Einstellen von
             internationalen Fachkräften eine Herausforderung sein kann. Aber
@@ -162,9 +160,9 @@ const WelcomeMessage = styled.div`
   position: relative;
   color: black;
   align-self: center;
-  margin: 200px 10px 0 10px;
+  margin: 200px 50px 50px 100px;
   max-width: 850px;
-  text-align: center;
+
   font-family: system-ui;
   font-weight: 500;
   font-size: 40px;
@@ -181,8 +179,7 @@ const WelcomeMessage = styled.div`
   @media (max-width: 600px) {
     font-size: 30px;
     max-width: 430px;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin: 100px 20px 50px 50px;
   }
   @media (max-width: 480px) {
     font-size: 30px;
@@ -219,11 +216,6 @@ const CubesOne = styled.img`
     top: -170%;
     left: -35%;
   }
-  @media (max-width: 480px) {
-    width: 100px;
-    top: -165%;
-    left: -10%;
-  }
 `;
 
 const CubeTwoRelative = styled.span`
@@ -254,8 +246,6 @@ const InfoWrapper = styled.div`
   overflow: hidden;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
 `;
 
 const Line = styled.div`
@@ -325,41 +315,11 @@ const Heading = styled.div`
 const LeftDiv = styled.div`
   padding: 20px;
   max-width: 420px;
+  position: relative;
 
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
-  }
-`;
-const StatementWrapper = styled.div`
-  position: relative;
-  align-self: flex-end;
-  @media (max-width: 900px) {
-    align-self: flex-end;
-  }
-`;
-
-const Persons = styled.img`
-  position: absolute;
-  width: 370px;
-  top: 40%;
-  left: -105%;
-  margin-bottom: 20px;
-  z-index: 1;
-
-  @media (max-width: 900px) {
-    position: relative;
-    margin-top: 110px;
-    margin-bottom: 100px;
-    top: 0;
-    left: 20%;
-  }
-
-  @media (max-width: 590px) {
-    width: 240px;
-    align-self: flex-start;
-    margin: 75px 0 80px 70px;
-    left: 8%;
   }
 `;
 
@@ -369,6 +329,7 @@ const Statement = styled.div`
   color: white;
   padding: 20px;
   max-width: 420px;
+  align-self: flex-end;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -376,8 +337,13 @@ const Statement = styled.div`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
-    margin-left: 70px;
+    margin: 450px 0 0 70px;
   }
+
+  @media (max-width: 590px) {
+    margin: 290px 0 0 70px;
+  }
+
   @media (max-width: 480px) {
     font-size: 45px;
   }

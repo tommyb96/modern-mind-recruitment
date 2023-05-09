@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import persons from "../../svg/AboutUs/about_us_3d_person.svg";
 
 const Cubes = () => {
   return (
     <>
-      `
       <Wrapper>
         <CubeContainer>
           <StyledCube />
@@ -29,6 +29,7 @@ const Cubes = () => {
           <StyledCube />
           <StyledCube />
         </CubeContainer>
+        <Persons src={persons} alt="persons icon" />
       </Wrapper>
     </>
   );
@@ -39,13 +40,12 @@ export default Cubes;
 const Wrapper = styled.div`
   position: absolute;
   z-index: 0;
-  left: -110%;
-  @media (max-width: 900px) {
-    top: 2%;
-    left: 15.5%;
-  }
+  top: 165px;
+  left: 0px;
+
   @media (max-width: 590px) {
-    left: 19%;
+    top: 105%;
+    left: 15px;
   }
 `;
 const CubeContainer = styled.div`
@@ -59,12 +59,20 @@ const StyledCube = styled.div`
   border-radius: 15px;
   margin: 1.3px;
   transition: transform 0.05s ease-in-out;
-  @media (max-width: 900px) {
-    width: 100px;
-    height: 100px;
-  }
+
   @media (max-width: 590px) {
     width: 65px;
     height: 65px;
+  }
+`;
+
+const Persons = styled.img`
+  position: absolute;
+  top: 23%;
+  left: 5%;
+  width: 370px;
+
+  @media (max-width: 590px) {
+    width: 245px;
   }
 `;
