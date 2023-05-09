@@ -38,10 +38,10 @@ const StyledContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-   video {
-    height: 500px; 
-   }
-
+    video {
+      height: 500px;
+    }
+  }
   @media (max-width: 480px) {
     div {
       font-size: 40px;
