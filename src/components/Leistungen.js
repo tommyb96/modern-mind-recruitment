@@ -228,8 +228,8 @@ const Heading = styled.div`
 
 const CVOneLeft = styled.img`
   position: absolute;
-  width: 380px;
-  top: 140px;
+  width: 330px;
+  top: 70px;
   left: -410px;
 
   @media (max-width: 900px) {
