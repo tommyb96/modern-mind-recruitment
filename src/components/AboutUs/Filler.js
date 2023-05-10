@@ -26,6 +26,10 @@ const StyledContainer = styled.div`
     z-index: -1;
   }
 
+  video::-webkit-media-controls {
+    display: none !important;
+  }
+
   div {
     /* position: absolute; */
     margin: 50px 30px 0 30px;
