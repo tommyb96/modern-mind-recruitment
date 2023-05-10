@@ -8,7 +8,7 @@ export default function Filler() {
       <StyledContainer>
         <video autoPlay loop muted playsInline>
           <source src={video} type="video/mp4" />
-        </video>
+        </video>{" "}
         <div>
           Lasst uns gemeinsam die <span>Zukunft</span> unserer Wirtschaft
           gestalten!{" "}
@@ -20,6 +20,7 @@ export default function Filler() {
 const StyledContainer = styled.div`
   overflow: hidden;
   video {
+    position: absolute;
     width: 100%;
     object-fit: cover;
     opacity: 0.5;
@@ -31,9 +32,8 @@ const StyledContainer = styled.div`
   }
 
   div {
-    /* position: absolute; */
-    margin: 50px 30px 0 30px;
-    max-width: 550px;
+    z-index: 10;
+    width: 550px;
     font-family: system-ui;
     font-weight: 500;
     font-size: 50px;
