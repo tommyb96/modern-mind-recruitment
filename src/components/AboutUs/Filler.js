@@ -24,6 +24,10 @@ const StyledContainer = styled.div`
     opacity: 0.5;
     z-index: -1;
   }
+
+  video::-webkit-media-controls {
+    display: none !important;
+  }
   div {
     margin: 50px 30px 0 30px;
     max-width: 550px;
