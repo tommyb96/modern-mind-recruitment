@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import Cubes from "./Cubes";
-import Filler from "./Filler";
 import cubes1 from "../../assets/svg/AboutUs/about_us_cubes_1.svg";
 import cubes2 from "../../assets/svg/AboutUs/about_us_cubes_2.svg";
 import waves from "../../assets/svg/AboutUs/about_us_waves.png";
@@ -136,7 +135,6 @@ const AboutUs = () => {
           </RightAligned>
         </InfoText>
       </InfoWrapper>
-      <Filler />
     </>
   );
 };
