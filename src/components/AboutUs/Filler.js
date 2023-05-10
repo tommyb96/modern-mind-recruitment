@@ -5,7 +5,7 @@ export default function Filler() {
   return (
     <>
       <StyledContainer>
-        <video autoPlay loop muted playsInline>
+        <video autoPlay loop playsInline>
           <source src={video} type="video/mp4" />
         </video>
         <div>
