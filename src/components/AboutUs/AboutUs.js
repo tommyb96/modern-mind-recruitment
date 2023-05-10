@@ -289,6 +289,7 @@ const Person = styled.img`
 
   @media (max-width: 900px) {
     right: -50%;
+    height: 60%;
   }
 `;
 

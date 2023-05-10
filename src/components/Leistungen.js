@@ -84,12 +84,17 @@ export default function Leistungen() {
           </InfoText>
         </InfoWrapper>
       </Wrapper>
-      <SuperBoldText>
-        Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
-        Fragen und decken gemeinsam alle versteckten Fallstricke auf. Durch
-        unsere professionelle Unterstützung und Coaching gewährleisten wir, dass
-        die Behörden Ihnen garantiert grünes Licht geben.
-      </SuperBoldText>
+      <BoldTextWrapper>
+        <SuperBoldTextLine>
+          <SuperBoldTextCircle />
+        </SuperBoldTextLine>
+        <SuperBoldText>
+          Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
+          Fragen und decken gemeinsam alle versteckten Fallstricke auf. Durch
+          unsere professionelle Unterstützung und Coaching gewährleisten wir,
+          dass die Behörden Ihnen garantiert grünes Licht geben.
+        </SuperBoldText>
+      </BoldTextWrapper>
     </>
   );
 }
@@ -181,7 +186,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 220px;
+  top: 20px;
   left: -14px;
   background-color: white;
   width: 30px;
@@ -189,16 +194,13 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 2.5px solid black;
   z-index: 200;
-  @media (max-width: 900px) {
-    left: -14px;
-  }
 `;
 
 const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 200px;
+  margin-bottom: 200px;
   max-width: 880px;
   font-size: 20px;
 
@@ -342,6 +344,10 @@ const BoldText = styled.div`
   }
 `;
 
+const BoldTextWrapper = styled.div`
+  position: relative;
+`;
+
 const SuperBoldText = styled.div`
   position: relative;
   align-self: center;
@@ -349,23 +355,45 @@ const SuperBoldText = styled.div`
   color: black;
   font-weight: 500;
   font-size: 50px;
-  padding: 80px;
-  margin: 100px;
+
+  margin: 150px 80px 200px 60px;
   max-width: 1200px;
   span {
     color: rgb(0, 0, 255);
   }
+
   @media (max-width: 1024px) {
     font-size: 40px;
-    margin: 5%;
   }
   @media (max-width: 650px) {
-    margin: 3%;
-    padding: 40px;
+    margin: 150px 40px 200px 40px;
     font-size: 28px;
   }
   @media (max-width: 480px) {
-    margin: 3%;
     font-size: 23px;
   }
+`;
+
+const SuperBoldTextLine = styled.div`
+  position: absolute;
+  width: 2.5px;
+  background-color: black;
+  height: 80px;
+  left: 50%;
+
+  @media (max-width: 900px) {
+    left: 15%;
+  }
+`;
+
+const SuperBoldTextCircle = styled.div`
+  position: absolute;
+  top: 60px;
+  left: -23px;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2.5px solid black;
+  z-index: 200;
 `;
