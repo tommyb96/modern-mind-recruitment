@@ -28,6 +28,24 @@ const StyledContainer = styled.div`
   video::-webkit-media-controls {
     display: none !important;
   }
+
+  video::-webkit-media-controls-panel {
+    display: none !important;
+
+    -webkit-appearance: none;
+  }
+
+  video::-webkit-media-controls-play-button {
+    display: none !important;
+
+    -webkit-appearance: none;
+  }
+
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+
+    -webkit-appearance: none;
+  }
   div {
     margin: 50px 30px 0 30px;
     max-width: 550px;
