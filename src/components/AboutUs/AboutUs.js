@@ -136,7 +136,7 @@ const AboutUs = () => {
           </RightAligned>
         </InfoText>
       </InfoWrapper>
-      {/* <Filler /> */}
+      <Filler />
     </>
   );
 };

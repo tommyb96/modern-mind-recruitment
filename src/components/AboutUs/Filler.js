@@ -5,9 +5,9 @@ export default function Filler() {
   return (
     <>
       <StyledContainer>
-        <video autoPlay loop muted>
+        {/* <video autoPlay loop muted>
           <source src={video} type="video/mp4" />
-        </video>
+        </video> */}
         <div>
           Lasst uns gemeinsam die <span>Zukunft</span> unserer Wirtschaft
           gestalten!{" "}
