@@ -17,11 +17,11 @@ export default function Filler() {
   );
 }
 const StyledContainer = styled.div`
-  overflow: hidden;
+  /* overflow: hidden; */
   video {
     position: absolute;
     width: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
     opacity: 0.5;
     z-index: -1;
   }
