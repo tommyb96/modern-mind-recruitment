@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import CV1 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
-import CV2 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
-import CV3 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
+import CV2 from "../assets/svg/Leistungen/leistungen_cv_2.svg";
+import CV3 from "../assets/svg/Leistungen/leistungen_cv_3.svg";
 import video from "../assets/video.mp4";
 
 export default function Leistungen() {
@@ -22,13 +22,15 @@ export default function Leistungen() {
             <Line />
           </StyledForm>
         </Filler>
-        <StyledContainer id="leistungen">
+        <InfoWrapper id="leistungen">
           <Line>
             <Circle />
+            <CVOneLeft src={CV1} alt="background picture cv"></CVOneLeft>
+            <CVTwoLeft src={CV2} alt="background picture cv"></CVTwoLeft>
+            <CVThreeLeft src={CV3} alt="background picture cv"></CVThreeLeft>
           </Line>
           <InfoText>
             <Heading>LEISTUNGEN</Heading>
-            <CVOne src={CV1} alt="background picture cv"></CVOne>
             <RightAligned>
               In Ihrem Unternehmen mangelt es an qualifizierten Mitarbeiter oder
               sie suchen nach Fachkräften, um neue Projekte und Aufträge
@@ -38,6 +40,7 @@ export default function Leistungen() {
               rekrutieren und den damit verbundenen rechtlichen und
               bürokratischen Prozess bewältigen können?
             </RightAligned>
+            <CVOneRight src={CV1} alt="background picture cv"></CVOneRight>
             <RightAligned>
               Als Experten im Bereich der Personalvermittlung für ausländische
               Fachkräfte können wir Ihnen helfen. Wir verfügen über jahrelange
@@ -45,7 +48,7 @@ export default function Leistungen() {
               rechtlichen Beratung bis hin zur Unterstützung bei sozialen
               Aspekten.
             </RightAligned>
-            <CVTwo src={CV2} alt="background picture cv"></CVTwo>
+            <CVTwoRight src={CV2} alt="background picture cv"></CVTwoRight>
             <BoldText>
               Wir haben <span>erfolgreich</span> zahlreiche Fachkräfte aus den
               Drittstaaten unterschiedlichster Branchen an namhafte Unternehmen
@@ -65,7 +68,7 @@ export default function Leistungen() {
               vermitteln, die Ihnen sonst keiner verrät, um Ihre
               Erfolgsaussichten auf ein Maximum zu steigern.
             </RightAligned>
-            <CVThree src={CV3} alt="background picture cv"></CVThree>
+            <CVThreeRight src={CV3} alt="background picture cv"></CVThreeRight>
             <RightAligned>
               Für diejenigen, die mit Begriffen wie Zustimmung,
               Anerkennungsbescheid, Defizitbescheid, Qualifizierungsplan oder
@@ -79,7 +82,7 @@ export default function Leistungen() {
               oder welchen Aspekt haben wir möglicherweise übersehen?
             </RightAligned>
           </InfoText>
-        </StyledContainer>
+        </InfoWrapper>
       </Wrapper>
       <SuperBoldText>
         Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
@@ -155,10 +158,12 @@ const StyledForm = styled.div`
   z-index: 0;
 `;
 
-const StyledContainer = styled.div`
+const InfoWrapper = styled.div`
   position: relative;
   background-color: rgb(92, 92, 255);
   width: 100%;
+  height: 100%;
+  overflow: hidden;
 `;
 
 const Line = styled.div`
@@ -167,7 +172,7 @@ const Line = styled.div`
   top: 0%;
   height: 100%;
   width: 2.5px;
-  background-color: white;
+  background-color: black;
   z-index: 100;
   @media (max-width: 900px) {
     left: 15%;
@@ -176,13 +181,13 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 10%;
+  top: 220px;
   left: -14px;
-  background-color: black;
+  background-color: white;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2.5px solid white;
+  border: 2.5px solid black;
   z-index: 200;
   @media (max-width: 900px) {
     left: -14px;
@@ -196,48 +201,53 @@ const InfoText = styled.div`
   margin-top: 200px;
   max-width: 880px;
   font-size: 20px;
+
+  @media (max-width: 900px) {
+    max-width: 500px;
+  }
 `;
 
 const Heading = styled.div`
   font-family: Comfortaa;
   text-shadow: 1px 0 rgb(0, 0, 0);
   font-size: 55px;
-  align-self: center;
-  /* margin-left: 450px; */
+  align-self: flex-end;
+  padding: 20px;
+  /* margin-left: 300px; */
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 39px;
+  }
 `;
 
-const CVOne = styled.img`
+const CVOneLeft = styled.img`
   position: absolute;
-  width: 450px;
-  top: -8%;
-  left: 15%;
-  z-index: -1;
-  opacity: 0.4;
+  width: 380px;
+  top: 140px;
+  left: -410px;
 
-  @media (max-width: 1450px) {
-    width: 350px;
-    left: 10%;
+  @media (max-width: 900px) {
+    display: none;
   }
-  @media (max-width: 1230px) {
-    width: 270px;
-    left: 10%;
-    top: -5%;
+`;
+
+const CVOneRight = styled.img`
+  @media (min-width: 901px) {
+    display: none;
   }
-  @media (max-width: 1100px) {
-    position: relative;
-    width: 350px;
-    margin-bottom: 30px;
-  }
-  @media (max-width: 820px) {
-    left: 0;
-    width: 350px;
-    margin-bottom: 30px;
-    align-self: center;
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin: 70px 0 70px 100px;
+    width: 370px;
   }
   @media (max-width: 480px) {
-    left: 0;
-    width: 250px;
-    margin-bottom: 30px;
+    align-self: flex-start;
+    margin: 50px 0 50px 100px;
+    width: 240px;
   }
 `;
 
@@ -246,34 +256,66 @@ const RightAligned = styled.div`
   padding: 20px;
   max-width: 420px;
 
-  @media (max-width: 1230px) {
-    margin-right: 0;
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin-left: 70px;
   }
 `;
 
-const CVTwo = styled.img`
+const CVTwoLeft = styled.img`
   position: absolute;
-  width: 250px;
-  top: 32%;
-  right: 10%;
-  z-index: -1;
-  opacity: 1;
-  @media (max-width: 1280px) {
-    opacity: 0.3;
+  width: 500px;
+  top: 900px;
+  left: 70px;
+  transform: rotate(-25deg);
+
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
 
-const CVThree = styled.img`
-  position: absolute;
-  width: 350px;
-  top: 78%;
-  right: 10%;
-  z-index: -1;
-  @media (max-width: 1280px) {
-    opacity: 0.3;
+const CVTwoRight = styled.img`
+  @media (min-width: 901px) {
+    display: none;
+  }
+  @media (max-width: 900px) {
+    z-index: 200;
+    align-self: flex-start;
+    margin: 70px 0 120px 100px;
+    width: 450px;
+    transform: rotate(-25deg);
   }
   @media (max-width: 480px) {
-    width: 300px;
+    align-self: flex-start;
+    margin: 50px 0 70px 100px;
+    width: 340px;
+  }
+`;
+
+const CVThreeLeft = styled.img`
+  position: absolute;
+  width: 400px;
+  top: 78%;
+  left: -440px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const CVThreeRight = styled.img`
+  @media (min-width: 901px) {
+    display: none;
+  }
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin: 70px 0 70px 100px;
+    width: 370px;
+  }
+  @media (max-width: 480px) {
+    align-self: flex-start;
+    margin: 50px 0 50px 100px;
+    width: 240px;
   }
 `;
 
@@ -281,20 +323,22 @@ const BoldText = styled.div`
   font-family: system-ui;
   color: black;
   font-weight: 500;
-  font-size: 26px;
+  font-size: 32px;
   padding: 20px;
   max-width: 420px;
   span {
     color: rgb(0, 0, 255);
   }
-  @media (max-width: 1024px) {
-    font-size: 35px;
+
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin-left: 70px;
   }
   @media (max-width: 768px) {
     font-size: 30px;
   }
-  @media (max-width: 550px) {
-    font-size: 23px;
+  @media (max-width: 480px) {
+    font-size: 20px;
   }
 `;
 

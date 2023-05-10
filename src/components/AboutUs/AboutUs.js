@@ -242,7 +242,7 @@ const InfoWrapper = styled.div`
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 2%;
+  top: 1%;
   height: 100%;
   width: 2.5px;
   background-color: white;
@@ -301,6 +301,10 @@ const Heading = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 39px;
   }
 `;
 
