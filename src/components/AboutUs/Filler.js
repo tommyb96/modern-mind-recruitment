@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 import video from "../../assets/video.mp4";
 
 export default function Filler() {
@@ -25,28 +26,8 @@ const StyledContainer = styled.div`
     z-index: -1;
   }
 
-  video::-webkit-media-controls {
-    display: none !important;
-  }
-
-  video::-webkit-media-controls-panel {
-    display: none !important;
-
-    -webkit-appearance: none;
-  }
-
-  video::-webkit-media-controls-play-button {
-    display: none !important;
-
-    -webkit-appearance: none;
-  }
-
-  video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-
-    -webkit-appearance: none;
-  }
   div {
+    /* position: absolute; */
     margin: 50px 30px 0 30px;
     max-width: 550px;
     font-family: system-ui;
@@ -60,7 +41,7 @@ const StyledContainer = styled.div`
 
   @media (max-width: 1024px) {
     video {
-      height: 500px;
+      height: 450px;
     }
   }
   @media (max-width: 480px) {
