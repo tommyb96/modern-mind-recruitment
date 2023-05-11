@@ -22,14 +22,14 @@ export default function WorkshopIntro() {
             beabsichtigen, auch international nach qualifizierten Fachkräften zu
             suchen. Somit ist unser Workshop genau der richtige Ansatz für Sie.
           </LeftDiv>
-          <LaptopRight src={laptop} alt="laptop" />
           <LeftDiv>
             Um die Erwerbsmigration für ausländische Fachkräfte zu erleichtern,
             hat zum 01.03.2020 die Bundesregierung mit dem
             Fachkräfteeinwanderungs<span>- </span>gesetz neue Vorraussetzungen
             geschaffen. Auf diese Bedingungen wollen wir aufbauen und unseren
             Kunden näher bringen, wie sie von diesen profitieren können.
-          </LeftDiv>
+          </LeftDiv>{" "}
+          <LaptopRight src={laptop} alt="laptop" />
           <BoldText>
             {" "}
             Gemeinsam werden wir in unserem umfangreichen <span>
@@ -99,6 +99,14 @@ const CircleTwo = styled.div`
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  @media (max-width: 900px) {
+    top: 1250px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const LaptopLeft = styled.img`
@@ -118,8 +126,9 @@ const LaptopRight = styled.img`
   }
   @media (max-width: 900px) {
     align-self: flex-start;
-    margin: 70px 0 70px 100px;
-    width: 370px;
+    margin: 0px 0 0px 20px;
+    width: 500px;
+    z-index: 100;
   }
 `;
 
