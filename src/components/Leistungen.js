@@ -5,6 +5,7 @@ import CV1 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
 import CV2 from "../assets/svg/Leistungen/leistungen_cv_2.svg";
 import CV3 from "../assets/svg/Leistungen/leistungen_cv_3.svg";
 import video from "../assets/video.mp4";
+import würfel from "../assets/svg/Leistungen/leistungen_würfel.svg";
 
 export default function Leistungen() {
   return (
@@ -23,6 +24,7 @@ export default function Leistungen() {
           </StyledForm>
         </Filler>
         <InfoWrapper id="leistungen">
+          <Würfel src={würfel} alt="würfel"></Würfel>
           <Line>
             <Circle />
             <CVOneLeft src={CV1} alt="background picture cv"></CVOneLeft>
@@ -171,6 +173,22 @@ const InfoWrapper = styled.div`
   overflow: hidden;
 `;
 
+const Würfel = styled.img`
+  position: absolute;
+  width: 100%;
+  top: 400px;
+
+  @media (max-width: 1600px) {
+    height: 1330px;
+    width: auto;
+  }
+
+  @media (max-width: 900px) {
+    height: 2000px;
+    width: auto;
+  }
+`;
+
 const Line = styled.div`
   position: absolute;
   left: 50%;
@@ -297,7 +315,7 @@ const CVTwoRight = styled.img`
 const CVThreeLeft = styled.img`
   position: absolute;
   width: 400px;
-  top: 78%;
+  top: 1550px;
   left: -440px;
 
   @media (max-width: 900px) {
