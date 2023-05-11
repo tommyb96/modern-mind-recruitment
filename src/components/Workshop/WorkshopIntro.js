@@ -139,6 +139,7 @@ const LaptopRight = styled.img`
   @media (min-width: 901px) {
     display: none;
   }
+
   @media (max-width: 900px) {
     align-self: flex-start;
     margin: 30px 0 30px 20px;
@@ -228,6 +229,7 @@ const Heading = styled.div`
   text-shadow: 1px 0 rgb(0, 0, 0);
   padding: 20px;
   max-width: 420px;
+
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
@@ -272,9 +274,11 @@ const BoldText = styled.div`
     align-self: flex-start;
     margin-left: 70px;
   }
+
   @media (max-width: 768px) {
     font-size: 30px;
   }
+
   @media (max-width: 480px) {
     font-size: 20px;
   }
