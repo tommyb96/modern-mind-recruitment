@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 import laptop from "../../assets/svg/Workshop/workshop_laptop.png";
+import foto1 from "../../assets/svg/Workshop/workshop_foto_1.png";
+import foto2 from "../../assets/svg/Workshop/workshop_foto_2.png";
+import foto3 from "../../assets/svg/Workshop/workshop_foto_3.png";
 
 export default function WorkshopIntro() {
   return (
@@ -11,6 +14,11 @@ export default function WorkshopIntro() {
           <CircleOne />
           <CircleTwo />
           <LaptopLeft src={laptop} alt="laptop" />
+          <FotosLeft>
+            <FotoOne src={foto1} alt="people at work" />
+            <FotoTwo src={foto2} alt="people at work" />
+            <FotoThree src={foto3} alt="people at work" />
+          </FotosLeft>
         </Line>
 
         <InfoText>
@@ -38,6 +46,12 @@ export default function WorkshopIntro() {
             mit Schwerpunkt auf die Fachkräfteeinwanderung auf alle wichtigen
             und ergebnisführenden Aspekte detailliert eingehen.
           </BoldText>
+          <FotosRight>
+            <FotoOne src={foto1} alt="people at work" />
+            <FotoTwo src={foto2} alt="people at work" />
+            <FotoThree src={foto3} alt="people at work" />
+          </FotosRight>
+          <Foto src={foto3} alt="people at work" />
         </InfoText>
       </IntroWrapper>
     </>
@@ -112,8 +126,9 @@ const CircleTwo = styled.div`
 const LaptopLeft = styled.img`
   position: absolute;
   width: 500px;
-  top: 290px;
-  left: -50px;
+  top: 300px;
+  left: -40px;
+  z-index: 100;
 
   @media (max-width: 900px) {
     display: none;
@@ -126,9 +141,69 @@ const LaptopRight = styled.img`
   }
   @media (max-width: 900px) {
     align-self: flex-start;
-    margin: 0px 0 0px 20px;
-    width: 500px;
+    margin: 30px 0 30px 20px;
+    width: 450px;
     z-index: 100;
+  }
+
+  @media (max-width: 480px) {
+    width: 330px;
+  }
+`;
+
+const FotosLeft = styled.div`
+  position: absolute;
+  top: 750px;
+  left: -450px;
+  display: flex;
+  max-width: 400px;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const FotosRight = styled.div`
+  @media (min-width: 901px) {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin: 40px 0 70px 100px;
+  }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const FotoOne = styled.img`
+  width: 180px;
+  margin: 6px;
+`;
+
+const FotoTwo = styled.img`
+  width: 180px;
+  margin: 6px;
+`;
+
+const FotoThree = styled.img`
+  width: 180px;
+  margin: 6px;
+`;
+
+const Foto = styled.img`
+  @media (min-width: 501px) {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    width: 250px;
+    align-self: flex-start;
+    margin: 40px 0 70px 100px;
   }
 `;
 
