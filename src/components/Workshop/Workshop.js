@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import React, { useState } from "react";
+import WorkshopIntro from "./WorkshopIntro";
 
 export default function Workshop() {
   return (
     <>
+      <WorkshopIntro />
       <TextWrapper id="workshop">
         <StyledDiv>
           Sie haben festgestellt, dass die Verfügbarkeit geeigneter Bewerber in

@@ -27,6 +27,9 @@ export default function Leistungen() {
           <Würfel src={würfel} alt="würfel"></Würfel>
           <Line>
             <Circle />
+            <CircleOne />
+            <CircleTwo />
+            <CircleThree />
             <CVOneLeft src={CV1} alt="background picture cv"></CVOneLeft>
             <CVTwoLeft src={CV2} alt="background picture cv"></CVTwoLeft>
             <CVThreeLeft src={CV3} alt="background picture cv"></CVThreeLeft>
@@ -42,15 +45,14 @@ export default function Leistungen() {
               rekrutieren und den damit verbundenen rechtlichen und
               bürokratischen Prozess bewältigen können?
             </RightAligned>
-            <CVOneRight src={CV1} alt="background picture cv"></CVOneRight>
             <RightAligned>
               Als Experten im Bereich der Personalvermittlung für ausländische
               Fachkräfte können wir Ihnen helfen. Wir verfügen über jahrelange
               Erfahrung in allen Bereichen des Einstellungsprozesses, von der
               rechtlichen Beratung bis hin zur Unterstützung bei sozialen
               Aspekten.
-            </RightAligned>
-            <CVTwoRight src={CV2} alt="background picture cv"></CVTwoRight>
+            </RightAligned>{" "}
+            <CVOneRight src={CV1} alt="background picture cv"></CVOneRight>
             <BoldText>
               Wir haben <span>erfolgreich</span> zahlreiche Fachkräfte aus den
               Drittstaaten unterschiedlichster Branchen an namhafte Unternehmen
@@ -59,7 +61,8 @@ export default function Leistungen() {
               Familienzusammenführung, Arbeitsmarktzulassung der Bundesagentur
               für Arbeit sowie das beschleunigte Fachkräfteverfahren
               beschäftigt.{" "}
-            </BoldText>
+            </BoldText>{" "}
+            <CVTwoRight src={CV2} alt="background picture cv"></CVTwoRight>
             <RightAligned>
               Unser Team steht Ihnen kompetent und engagiert zur Seite und
               begleitet Sie Schritt für Schritt durch den gesamten
@@ -194,7 +197,7 @@ const Line = styled.div`
   left: 50%;
   top: 0%;
   height: 100%;
-  width: 2.5px;
+  width: 3.5px;
   background-color: black;
   z-index: 100;
   @media (max-width: 900px) {
@@ -210,8 +213,64 @@ const Circle = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2.5px solid black;
+  border: 3.5px solid black;
   z-index: 200;
+`;
+
+const CircleOne = styled.div`
+  position: absolute;
+  top: 130px;
+  left: -9px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+`;
+
+const CircleTwo = styled.div`
+  position: absolute;
+  top: 670px;
+  left: -9px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 900px) {
+    top: 1400px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const CircleThree = styled.div`
+  position: absolute;
+  top: 1420px;
+  left: -9px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 900px) {
+    top: 2880px;
+  }
+
+  @media (max-width: 768px) {
+    top: 2730px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const InfoText = styled.div`
@@ -285,7 +344,7 @@ const RightAligned = styled.div`
 const CVTwoLeft = styled.img`
   position: absolute;
   width: 500px;
-  top: 900px;
+  top: 700px;
   left: 70px;
   transform: rotate(-25deg);
 
@@ -346,8 +405,10 @@ const BoldText = styled.div`
   font-size: 32px;
   padding: 20px;
   max-width: 420px;
+  z-index: 1;
   span {
-    color: rgb(0, 0, 255);
+    color: rgba(0, 167, 155);
+    font-family: Righteous;
   }
 
   @media (max-width: 900px) {
@@ -394,7 +455,7 @@ const SuperBoldText = styled.div`
 
 const SuperBoldTextLine = styled.div`
   position: absolute;
-  width: 2.5px;
+  width: 3.5px;
   background-color: black;
   height: 80px;
   left: 50%;
@@ -412,6 +473,6 @@ const SuperBoldTextCircle = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2.5px solid black;
+  border: 3.5px solid black;
   z-index: 200;
 `;

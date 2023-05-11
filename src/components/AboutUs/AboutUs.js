@@ -91,6 +91,9 @@ const AboutUs = () => {
       <InfoWrapper id="über-uns">
         <Line>
           <Circle />
+          <CircleOne />
+          <CircleTwo />
+          <CircleThree />
         </Line>
         <InfoText>
           <Person src={person} alt="person icon" />
@@ -244,7 +247,7 @@ const Line = styled.div`
   left: 50%;
   top: 1%;
   height: 100%;
-  width: 2.5px;
+  width: 3.5px;
   background-color: white;
   z-index: 100;
   @media (max-width: 900px) {
@@ -260,10 +263,67 @@ const Circle = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2.5px solid white;
+  border: 3.5px solid white;
   z-index: 200;
+`;
+
+const CircleOne = styled.div`
+  position: absolute;
+  top: 110px;
+  left: -9px;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid white;
+  z-index: 200;
+`;
+
+const CircleTwo = styled.div`
+  position: absolute;
+  top: 270px;
+  left: -9px;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid white;
+  z-index: 200;
+
   @media (max-width: 900px) {
-    left: -14px;
+    top: 720px;
+  }
+
+  @media (max-width: 590px) {
+    top: 560px;
+  }
+
+  @media (max-width: 480px) {
+    top: 610px;
+  }
+`;
+
+const CircleThree = styled.div`
+  position: absolute;
+  top: 1020px;
+  left: -9px;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid white;
+  z-index: 200;
+
+  @media (max-width: 900px) {
+    top: 1480px;
+  }
+
+  @media (max-width: 590px) {
+    top: 1320px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 
