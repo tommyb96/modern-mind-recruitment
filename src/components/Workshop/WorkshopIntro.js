@@ -22,7 +22,7 @@ export default function WorkshopIntro() {
         </Line>
 
         <InfoText>
-          <Heading>WORKSHOP</Heading>
+          <Heading id="workshop">WORKSHOP</Heading>
           <LeftDiv>
             {" "}
             Sie haben festgestellt, dass die Verfügbarkeit geeigneter

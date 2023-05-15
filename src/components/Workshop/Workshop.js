@@ -291,7 +291,7 @@ const InfoText = styled.div`
 
   @media (max-width: 1024px) {
     align-self: flex-end;
-    margin: 0 0 0 120px;
+    margin: 0 30px 0 120px;
   }
 
   @media (max-width: 480px) {
