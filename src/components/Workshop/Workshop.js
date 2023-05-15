@@ -366,7 +366,13 @@ const Item = styled.div`
 
   @media (max-width: 480px) {
     margin: 60px 10px 60px 30px;
-    font-size: 30px;
+    font-size: 23px;
+
+    ul {
+      li {
+        font-size: 20px;
+      }
+    }
   }
 `;
 
@@ -385,8 +391,8 @@ const Zahl = styled.div`
 
 const Linie = styled.div`
   width: 85%;
-  height: 2px;
-  background-color: grey;
+  height: 1.5px;
+  background-color: rgb(102, 102, 102, 0.4);
   margin: 0 35px 0 35px;
   @media (min-width: 481px) {
     display: none;
