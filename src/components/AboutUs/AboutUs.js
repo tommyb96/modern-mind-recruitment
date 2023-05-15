@@ -94,6 +94,7 @@ const AboutUs = () => {
           <CircleOne />
           <CircleTwo />
           <CircleThree />
+          <CircleFour />
         </Line>
         <InfoText>
           <Person src={person} alt="person icon" />
@@ -246,9 +247,9 @@ const Line = styled.div`
   position: absolute;
   left: 50%;
   top: 1%;
-  height: 100%;
+  height: 95%;
   width: 3.5px;
-  background-color: white;
+  background-color: black;
   z-index: 100;
   @media (max-width: 900px) {
     left: 15%;
@@ -258,12 +259,12 @@ const Line = styled.div`
 const Circle = styled.div`
   position: absolute;
   top: 0%;
-  left: -14px;
-  background-color: black;
-  width: 30px;
-  height: 30px;
+  left: -15px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  border: 3.5px solid white;
+  border: 3.5px solid black;
   z-index: 200;
 `;
 
@@ -271,11 +272,11 @@ const CircleOne = styled.div`
   position: absolute;
   top: 110px;
   left: -9px;
-  background-color: white;
+  background-color: black;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 3.5px solid white;
+  border: 3.5px solid black;
   z-index: 200;
 `;
 
@@ -283,11 +284,11 @@ const CircleTwo = styled.div`
   position: absolute;
   top: 270px;
   left: -9px;
-  background-color: white;
+  background-color: black;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 3.5px solid white;
+  border: 3.5px solid black;
   z-index: 200;
 
   @media (max-width: 900px) {
@@ -307,11 +308,11 @@ const CircleThree = styled.div`
   position: absolute;
   top: 1020px;
   left: -9px;
-  background-color: white;
+  background-color: black;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 3.5px solid white;
+  border: 3.5px solid black;
   z-index: 200;
 
   @media (max-width: 900px) {
@@ -325,6 +326,18 @@ const CircleThree = styled.div`
   @media (max-width: 480px) {
     display: none;
   }
+`;
+
+const CircleFour = styled.div`
+  position: absolute;
+  bottom: 0%;
+  left: -15px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
 `;
 
 const InfoText = styled.div`

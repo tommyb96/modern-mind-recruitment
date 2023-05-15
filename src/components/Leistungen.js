@@ -161,7 +161,7 @@ const Filler = styled.div`
 const StyledForm = styled.div`
   position: absolute;
   bottom: 0;
-  background-color: rgb(92, 92, 255);
+  background-color: rgb(138, 138, 255);
   clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
   height: 200px;
   width: 100%;
@@ -170,7 +170,7 @@ const StyledForm = styled.div`
 
 const InfoWrapper = styled.div`
   position: relative;
-  background-color: rgb(92, 92, 255);
+  background-color: rgb(138, 138, 255);
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -208,10 +208,10 @@ const Line = styled.div`
 const Circle = styled.div`
   position: absolute;
   top: 20px;
-  left: -14px;
+  left: -15px;
   background-color: white;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;

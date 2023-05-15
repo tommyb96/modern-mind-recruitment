@@ -1,148 +1,253 @@
 import styled from "styled-components";
 import React, { useState } from "react";
+
 import WorkshopIntro from "./WorkshopIntro";
+import cubes3 from "../../assets/svg/Workshop/workshop_three_cubes.svg";
+import cubes2 from "../../assets/svg/Workshop/workshop_two_cubes.svg";
 
 export default function Workshop() {
+  const [isOpenTwo, setIsOpenTwo] = useState(false);
+  const [isOpenThree, setIsOpenThree] = useState(false);
+  const [isOpenFour, setIsOpenFour] = useState(false);
+  const [isOpenFive, setIsOpenFive] = useState(false);
+  const [isOpenSeven, setIsOpenSeven] = useState(false);
+  const [isOpenEight, setIsOpenEight] = useState(false);
+
   return (
     <>
       <WorkshopIntro />
-      <TextWrapper id="workshop">
-        <StyledDiv>
-          Sie haben festgestellt, dass die Verfügbarkeit geeigneter Bewerber in
-          Ihrer Region abnimmt und Sie deshalb beabsichtigen, auch international
-          nach qualifizierten Fachkräften zu suchen. Somit ist unser Workshop
-          genau der richtige Ansatz für Sie.{" "}
-        </StyledDiv>
-        <StyledDiv>
-          Um die Erwerbsmigration für ausländische Fachkräfte zu erleichtern,
-          hat zum 01.03.2020 die Bundesregierung mit dem
-          Fachkräfteeinwanderungsgesetz neue Vorraussetzungen geschaffen. Auf
-          diese Bedingungen wollen wir aufbauen und unseren Kunden näher
-          bringen, wie sie von diesen profitieren können.{" "}
-        </StyledDiv>
-        <BoldDiv>
-          Gemeinsam werden wir in unserem umfangreichen <span>Workshop</span>{" "}
-          mit Schwerpunkt auf die Fachkräfteeinwanderung auf alle wichtigen und
-          ergebnisführenden Aspekte detailliert eingehen.{" "}
-        </BoldDiv>
-      </TextWrapper>
-      <StyledHeading>
-        {/* <BlueBall src= alt="blue ball"></BlueBall> */}
-        <span>Inhalt</span> des Workshops: Beschäftigung ausländischer
-        Fachkräfte in Deutschland
-      </StyledHeading>
-      <SliderWrapper>
-        <Card>
-          <Number>1</Number>
-          <Title>
-            Allgemeine Bestimmungen für eine Beschäftigung ausländischer
-            Fachkräfte
-          </Title>
-          <Description>
-            <li>
-              Grundlagen über die Beschäftigung internationaler Fachkräfte
-            </li>
-          </Description>
-        </Card>
-        <Card>
-          <Number>2</Number>
-          <Title>Visum- und Aufenthalts- regelungen</Title>
-          <Description>
+      <HeadingWrapper>
+        <Line>
+          {" "}
+          <Circle />
+        </Line>
+        <ThreeCubes src={cubes3} alt="cubes"></ThreeCubes>
+        <StyledHeading>
+          <span>Inhalt</span> des Workshops: Beschäftigung ausländischer
+          Fachkräfte in Deutschland
+        </StyledHeading>
+      </HeadingWrapper>
+      <InfoWrapper>
+        <WorkshopLine>
+          <WorkshopCircle />
+          <Circle />
+        </WorkshopLine>
+        <TwoCubes src={cubes2} alt="cubes"></TwoCubes>
+        <Item>
+          <Zahl>1</Zahl>
+          <BlueTriangle />
+          Allgemeine Bestimmungen für eine Beschäftigung ausländischer
+          Fachkräfte
+        </Item>
+        <Linie />
+        <Item>
+          <Zahl>2</Zahl>
+          <BlueTriangle
+            isOpenTwo={isOpenTwo}
+            onClick={() => setIsOpenTwo(!isOpenTwo)}
+          />
+          <span
+            isOpenTwo={isOpenTwo}
+            onClick={() => setIsOpenTwo(!isOpenTwo)}
+            style={{
+              cursor: "pointer",
+            }}
+            onMouseOver={(e) => (e.target.style.color = "blue")}
+            onMouseOut={(e) => (e.target.style.color = "")}
+          >
+            Regelungen für Visum und Aufenthalt
+          </span>
+          <ul style={{ display: isOpenTwo ? "block" : "none" }}>
             <li>Einreisevisum und Aufenthaltstitel</li>
             <li>Fachkräfte mit Berufsausbildung</li>
             <li>Fachkräfte mit akademischer Ausbildung</li>
             <li>Regelung für ausländische Auszubildende</li>
-          </Description>
-        </Card>
-        <Card>
-          <Number>3</Number>
-          <Title>Beteiligung der Bundesagnetur für Arbeit</Title>{" "}
-          <Description>
-            <li>Zustimmung der Bundesagentur für Arbeit</li>
-            <li>Arbeitsmarktzulassung</li>
-          </Description>
-        </Card>
-        <Card>
-          <Number>4</Number>
-          <Title>Ausländerbehörde</Title>
-          <Description>
+          </ul>{" "}
+        </Item>
+        <Linie />
+        <Item>
+          <Zahl>3</Zahl>
+          <BlueTriangle
+            isOpenThree={isOpenThree}
+            onClick={() => setIsOpenThree(!isOpenThree)}
+          />
+          <span
+            isOpenThree={isOpenThree}
+            onClick={() => setIsOpenThree(!isOpenThree)}
+            style={{
+              cursor: "pointer",
+            }}
+            onMouseOver={(e) => (e.target.style.color = "blue")}
+            onMouseOut={(e) => (e.target.style.color = "")}
+          >
+            Beteiligung der Bundesagentur für Arbeit
+          </span>
+          <ul style={{ display: isOpenThree ? "block" : "none" }}>
+            <li>Zustimmung der Bundesagentur für Arbeit </li>
+            <li>Arbeitsmarktzulasssung</li>
+          </ul>
+        </Item>
+        <Linie />
+        <Item>
+          <Zahl>4</Zahl>
+          <BlueTriangle
+            isOpenFour={isOpenFour}
+            onClick={() => setIsOpenFour(!isOpenFour)}
+          />
+          <span
+            isOpenFour={isOpenFour}
+            onClick={() => setIsOpenFour(!isOpenFour)}
+            style={{
+              cursor: "pointer",
+            }}
+            onMouseOver={(e) => (e.target.style.color = "blue")}
+            onMouseOut={(e) => (e.target.style.color = "")}
+          >
+            Ausländerbehörde
+          </span>
+          <ul style={{ display: isOpenFour ? "block" : "none" }}>
             <li>Das beschleunigte Fachkräfteverfahren</li>
             <li>Aufenthaltstitelbeantragung und -verlängerung</li>
-          </Description>
-        </Card>
-        <Card>
-          <Number>5</Number>
-          <Title>Anerkennung ausländischer Berufsqualifikationen</Title>
-          <Description>
+          </ul>
+        </Item>
+        <Linie />
+        <Item>
+          <Zahl>5</Zahl>
+          <BlueTriangle
+            isOpenFive={isOpenFive}
+            onClick={() => setIsOpenFive(!isOpenFive)}
+          />
+          <span
+            isOpenFive={isOpenFive}
+            onClick={() => setIsOpenFive(!isOpenFive)}
+            style={{
+              cursor: "pointer",
+            }}
+            onMouseOver={(e) => (e.target.style.color = "blue")}
+            onMouseOut={(e) => (e.target.style.color = "")}
+          >
+            Anerkennung ausländischer Berufsqualifikationen
+          </span>
+          <ul style={{ display: isOpenFive ? "block" : "none" }}>
             <li>Grundlagen der Anerkennung</li>
             <li>Anerkennungsverfahren</li>
-            <li>volle und teilweise anerkannte Gleichwertigkeit</li>
-            <li>Qualifizierungsmaßnahmen</li>
-          </Description>
-        </Card>
-        <Card>
-          <Number>6</Number>
-          <Title>Fördermittel</Title>
-        </Card>
-        <Card>
-          <Number>7</Number>
-          <Title>Erfolgskriterien</Title>
-          <Description>
+            <li>
+              Anerkennungsbescheid / Defizitbescheid
+              <ul>
+                <li>Volle und teilweise anerkannte Gleichwertigkeit</li>
+                <li>Qualifizierungsmaßnahmen</li>
+              </ul>
+            </li>
+          </ul>{" "}
+        </Item>
+        <Linie />
+        <Item>
+          <Zahl>6</Zahl>
+          <BlueTriangle />
+          Beantragung von Fördermitteln
+        </Item>
+        <Linie />
+        <Item>
+          <Zahl>7</Zahl>
+          <BlueTriangle
+            isOpenSeven={isOpenSeven}
+            onClick={() => setIsOpenSeven(!isOpenSeven)}
+          />
+          <span
+            isOpenSeven={isOpenSeven}
+            onClick={() => setIsOpenSeven(!isOpenSeven)}
+            style={{
+              cursor: "pointer",
+            }}
+            onMouseOver={(e) => (e.target.style.color = "blue")}
+            onMouseOut={(e) => (e.target.style.color = "")}
+          >
+            Erfolgskriterien
+          </span>
+          <ul style={{ display: isOpenSeven ? "block" : "none" }}>
             <li>
               allgemeine Erfolgskriterien bei der Einstellung ausländischer
-              Fachkräfte
+              Fachkräfte Eight
             </li>
             <li>Erfahrungen und Best Practices</li>
-          </Description>
-        </Card>
-        <Card>
-          <Number>8</Number>
-          <Title>Sozialer Aspekt</Title>
-          <Description>
+          </ul>{" "}
+        </Item>
+        <Linie />
+        <Item>
+          <Zahl>8</Zahl>
+          <BlueTriangle
+            isOpenEight={isOpenEight}
+            onClick={() => setIsOpenEight(!isOpenEight)}
+          />
+          <span
+            isOpenEight={isOpenEight}
+            onClick={() => setIsOpenEight(!isOpenEight)}
+            style={{
+              cursor: "pointer",
+            }}
+            onMouseOver={(e) => (e.target.style.color = "blue")}
+            onMouseOut={(e) => (e.target.style.color = "")}
+          >
+            Sozialer Aspekt
+          </span>
+          <ul style={{ display: isOpenEight ? "block" : "none" }}>
             <li>Familiennachzug</li>
             <li>Onboarding-Prozess</li>
-            <li>Integration ausländischer Fachkräfte</li>
-          </Description>
-        </Card>
-      </SliderWrapper>
+            <li>Integration der ausländischen Fachkräfte</li>
+          </ul>
+        </Item>
+      </InfoWrapper>
     </>
   );
 }
 
-const TextWrapper = styled.div`
-  display: flex;
+const HeadingWrapper = styled.div`
   position: relative;
+  display: flex;
   flex-direction: column;
-  font-family: futura-pt, sans-serif;
-  font-style: light;
-  align-self: flex-end;
-  margin: 100px;
-  @media (max-width: 1024px) {
-    margin: 5%;
-    align-self: start;
+`;
+
+const Line = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  height: 500px;
+  width: 3.5px;
+  background-color: black;
+  z-index: 100;
+  @media (max-width: 900px) {
+    left: 15%;
+  }
+
+  @media (max-width: 550px) {
+    height: 350px;
   }
 `;
 
-const StyledDiv = styled.div`
-  font-size: 20px;
-  padding: 20px;
-  max-width: 600px;
+const Circle = styled.div`
+  position: absolute;
+  bottom: 0px;
+  left: -15px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
 `;
 
-const BoldDiv = styled.div`
-  font-family: system-ui;
-  color: black;
-  font-weight: 500;
-  padding: 20px;
-  font-size: 30px;
-  max-width: 600px;
+const ThreeCubes = styled.img`
+  width: 380px;
+  margin: 60px;
 
-  span {
-    color: rgb(0, 0, 255);
-    font-family: "Righteous", cursive;
+  @media (max-width: 900px) {
+    align-self: flex-end;
+    transform: rotate(180deg);
   }
-  @media (max-width: 480px) {
-    font-size: 25px;
+
+  @media (max-width: 550px) {
+    width: 260px;
+    margin: 40px 40px 60px 40px;
   }
 `;
 
@@ -153,8 +258,7 @@ const StyledHeading = styled.h1`
   font-weight: 500;
   align-self: center;
   font-size: 40px;
-  margin-top: 100px;
-  padding: 80px;
+  margin: 0 80px 80px 80px;
 
   span {
     color: rgb(0, 0, 255);
@@ -162,112 +266,122 @@ const StyledHeading = styled.h1`
     text-shadow: 0px 0 rgb(0, 0, 0);
   }
   @media (max-width: 1024px) {
-    margin: 5%;
-    padding: 40px;
-  }
-`;
-
-const BlueBall = styled.img`
-  position: absolute;
-  z-index: -1;
-  width: 400px;
-  max-width: 100vw;
-  top: -60%;
-  right: 8%;
-
-  @media (max-width: 768px) {
-    width: 300px;
-    top: -20%;
+    margin: 0 40px 40px 40px;
   }
   @media (max-width: 480px) {
-    width: 250px;
-    top: -10%;
+    font-size: 30px;
   }
 `;
 
-const SliderWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-`;
-
-const Card = styled.div`
-  flex: none;
+const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  border-radius: 120px;
-  border: 5px solid rgb(0, 167, 155, 0.3);
-  box-shadow: 0 0 30px rgba(0, 0, 255, 0.3);
-  height: 620px;
-  width: 450px;
-  margin: 200px 50px 50px 50px;
-
-  &:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 50px rgba(0, 0, 255, 0.5);
-    transition: all 0.3s ease-in-out;
-  }
-
-  @media (max-width: 768px) {
-    margin: 200px 20px 20px 20px;
-    height: 530px;
-    width: 300px;
-    border-radius: 50px;
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.2);
-  }
-`;
-
-const Number = styled.div`
-  position: absolute;
-  top: -30%;
-  left: 36%;
-  color: rgb(0, 0, 255);
-  font-family: "Righteous", cursive;
-  font-size: 250px;
-
-  @media (max-width: 768px) {
-    font-size: 180px;
-    top: -20%;
-  }
-`;
-
-const Title = styled.h1`
-  font-family: system-ui;
-  font-size: 40px;
-  color: rgb(0, 0, 255);
-  font-weight: 500;
   align-self: center;
-  text-align: center;
-  margin: 100px 20px 20px 20px;
-  padding: 20px;
+  max-width: 1000px;
+`;
 
-  @media (max-width: 768px) {
-    font-size: 25px;
-    margin: 70px 5px 5px 5px;
+const WorkshopLine = styled.div`
+  position: absolute;
+  left: 17%;
+  top: 10px;
+  height: 100%;
+  width: 3.5px;
+  background-color: black;
+  z-index: 100;
+  /* @media (max-width: 900px) {
+    left: 15%;
+  } */
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 
-const Description = styled.ul`
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  margin: 10px 40px 40px 40px;
-  line-height: 30px;
+const WorkshopCircle = styled.div`
+  position: absolute;
+  top: 0px;
+  left: -15px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+`;
 
-  li {
-    padding: 5px;
+const TwoCubes = styled.img`
+  align-self: flex-end;
+  width: 380px;
+  @media (max-width: 550px) {
+    width: 260px;
+  }
+`;
+
+const BlueTriangle = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 25px 15px 0 15px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpen }) => (isOpen ? "rotate(0deg)" : "rotate(-90deg)")};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+`;
+
+const Item = styled.div`
+  position: relative;
+  max-width: 700px;
+  margin: 60px 10px 60px 200px;
+  font-size: 35px;
+  font-family: system-ui;
+  font-weight: 500;
+
+  ul {
+    list-style-type: none;
+    margin: 20px;
+    li {
+      font-size: 25px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+      margin-bottom: 10px;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: blue;
+      }
+    }
   }
 
-  li::marker {
-    color: blue;
-    font-size: 30px;
+  @media (max-width: 480px) {
+    margin: 60px 10px 60px 30px;
   }
+`;
 
-  @media (max-width: 786px) {
-    margin: 10px 10px 10px 10px;
-    hyphens: auto;
-    font-size: 18px;
+const Zahl = styled.div`
+  position: absolute;
+  left: -120px;
+  top: -30px;
+  font-size: 90px;
+  color: blue;
+  font-family: Righteous;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const Linie = styled.div`
+  width: 85%;
+  height: 2px;
+  background-color: grey;
+  margin: 0 35px 0 35px;
+  @media (min-width: 481px) {
+    display: none;
   }
 `;
