@@ -247,7 +247,7 @@ const ThreeCubes = styled.img`
     transform: rotate(180deg);
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 580px) {
     width: 260px;
     margin: 40px 40px 60px 40px;
   }
@@ -277,6 +277,8 @@ const StyledHeading = styled.h1`
 
 const InfoWrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const InfoText = styled.div`
@@ -285,11 +287,21 @@ const InfoText = styled.div`
   position: relative;
   align-self: center;
   max-width: 1000px;
+  margin: auto;
+
+  @media (max-width: 1024px) {
+    align-self: flex-end;
+    margin: 0 0 0 120px;
+  }
+
+  @media (max-width: 480px) {
+    margin: auto;
+  }
 `;
 
 const WorkshopLine = styled.div`
   position: absolute;
-  left: 17%;
+  left: -0%;
   top: 10px;
   height: 100%;
   width: 3.5px;
@@ -319,7 +331,7 @@ const TwoCubes = styled.img`
   align-self: flex-end;
   width: 380px;
   margin-right: 40px;
-  @media (max-width: 550px) {
+  @media (max-width: 580px) {
     width: 260px;
   }
 `;
@@ -424,8 +436,8 @@ const BlueTriangleEight = styled.span`
 const Item = styled.div`
   position: relative;
   max-width: 700px;
-  margin: 60px 10px 60px 200px;
-  font-size: 35px;
+  margin: 45px 10px 45px 20px;
+  font-size: 28px;
   font-family: system-ui;
   font-weight: 500;
 
@@ -433,7 +445,7 @@ const Item = styled.div`
     list-style-type: none;
     margin: 20px;
     li {
-      font-size: 25px;
+      font-size: 23px;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: normal;
       margin-bottom: 10px;
@@ -449,6 +461,8 @@ const Item = styled.div`
     }
   }
 
+  @media (max-width: 1024px) {
+  }
   @media (max-width: 480px) {
     margin: 40px 10px 40px 30px;
     font-size: 23px;
