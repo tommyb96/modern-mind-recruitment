@@ -43,7 +43,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>2</Zahl>
-            <BlueTriangle
+            <BlueTriangleTwo
               isOpenTwo={isOpenTwo}
               onClick={() => setIsOpenTwo(!isOpenTwo)}
             />
@@ -68,7 +68,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>3</Zahl>
-            <BlueTriangle
+            <BlueTriangleThree
               isOpenThree={isOpenThree}
               onClick={() => setIsOpenThree(!isOpenThree)}
             />
@@ -91,7 +91,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>4</Zahl>
-            <BlueTriangle
+            <BlueTriangleFour
               isOpenFour={isOpenFour}
               onClick={() => setIsOpenFour(!isOpenFour)}
             />
@@ -114,7 +114,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>5</Zahl>
-            <BlueTriangle
+            <BlueTriangleFive
               isOpenFive={isOpenFive}
               onClick={() => setIsOpenFive(!isOpenFive)}
             />
@@ -150,7 +150,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>7</Zahl>
-            <BlueTriangle
+            <BlueTriangleSeven
               isOpenSeven={isOpenSeven}
               onClick={() => setIsOpenSeven(!isOpenSeven)}
             />
@@ -176,7 +176,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>8</Zahl>
-            <BlueTriangle
+            <BlueTriangleEight
               isOpenEight={isOpenEight}
               onClick={() => setIsOpenEight(!isOpenEight)}
             />
@@ -318,6 +318,7 @@ const WorkshopCircle = styled.div`
 const TwoCubes = styled.img`
   align-self: flex-end;
   width: 380px;
+  margin-right: 40px;
   @media (max-width: 550px) {
     width: 260px;
   }
@@ -331,7 +332,91 @@ const BlueTriangle = styled.span`
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpen }) => (isOpen ? "rotate(0deg)" : "rotate(-90deg)")};
+  transform: rotate(-90deg);
+
+  cursor: pointer;
+`;
+
+const BlueTriangleTwo = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 25px 15px 0 15px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpenTwo }) =>
+    isOpenTwo ? "rotate(Threeg)" : "rotate(-90deg)"};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+`;
+
+const BlueTriangleThree = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 25px 15px 0 15px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpenThree }) =>
+    isOpenThree ? "rotate(0deg)" : "rotate(-90deg)"};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+`;
+
+const BlueTriangleFour = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 25px 15px 0 15px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpenFour }) =>
+    isOpenFour ? "rotate(0deg)" : "rotate(-90deg)"};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+`;
+
+const BlueTriangleFive = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 25px 15px 0 15px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpenFive }) =>
+    isOpenFive ? "rotate(0deg)" : "rotate(-90deg)"};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+`;
+
+const BlueTriangleSeven = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 25px 15px 0 15px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpenSeven }) =>
+    isOpenSeven ? "rotate(0deg)" : "rotate(-90deg)"};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+`;
+
+const BlueTriangleEight = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 25px 15px 0 15px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpenEight }) =>
+    isOpenEight ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 `;
@@ -365,10 +450,11 @@ const Item = styled.div`
   }
 
   @media (max-width: 480px) {
-    margin: 60px 10px 60px 30px;
+    margin: 40px 10px 40px 30px;
     font-size: 23px;
 
     ul {
+      margin: 20px 10px 0px -20px;
       li {
         font-size: 20px;
       }
