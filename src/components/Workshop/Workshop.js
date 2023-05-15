@@ -36,6 +36,7 @@ export default function Workshop() {
           <TwoCubes src={cubes2} alt="cubes"></TwoCubes>
           <Item>
             <Zahl>1</Zahl>
+            <CircleOne />
             <BlueTriangle />
             Allgemeine Bestimmungen für eine Beschäftigung ausländischer
             Fachkräfte
@@ -43,6 +44,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>2</Zahl>
+            <CircleTwo />
             <BlueTriangleTwo
               isOpenTwo={isOpenTwo}
               onClick={() => setIsOpenTwo(!isOpenTwo)}
@@ -68,6 +70,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>3</Zahl>
+            <CircleThree />
             <BlueTriangleThree
               isOpenThree={isOpenThree}
               onClick={() => setIsOpenThree(!isOpenThree)}
@@ -91,6 +94,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>4</Zahl>
+            <CircleFour />
             <BlueTriangleFour
               isOpenFour={isOpenFour}
               onClick={() => setIsOpenFour(!isOpenFour)}
@@ -114,6 +118,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>5</Zahl>
+            <CircleFive />
             <BlueTriangleFive
               isOpenFive={isOpenFive}
               onClick={() => setIsOpenFive(!isOpenFive)}
@@ -144,12 +149,14 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>6</Zahl>
+            <CircleSix />
             <BlueTriangle />
             Beantragung von Fördermitteln
           </Item>
           <Linie />
           <Item>
             <Zahl>7</Zahl>
+            <CircleSeven />
             <BlueTriangleSeven
               isOpenSeven={isOpenSeven}
               onClick={() => setIsOpenSeven(!isOpenSeven)}
@@ -176,6 +183,7 @@ export default function Workshop() {
           <Linie />
           <Item>
             <Zahl>8</Zahl>
+            <CircleEight />
             <BlueTriangleEight
               isOpenEight={isOpenEight}
               onClick={() => setIsOpenEight(!isOpenEight)}
@@ -221,7 +229,7 @@ const Line = styled.div`
     left: 15%;
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 620px) {
     height: 350px;
   }
 `;
@@ -247,7 +255,7 @@ const ThreeCubes = styled.img`
     transform: rotate(180deg);
   }
 
-  @media (max-width: 580px) {
+  @media (max-width: 620px) {
     width: 260px;
     margin: 40px 40px 60px 40px;
   }
@@ -291,7 +299,7 @@ const InfoText = styled.div`
 
   @media (max-width: 1024px) {
     align-self: flex-end;
-    margin: 0 30px 0 120px;
+    margin: 0 30px 0 140px;
   }
 
   @media (max-width: 480px) {
@@ -331,7 +339,7 @@ const TwoCubes = styled.img`
   align-self: flex-end;
   width: 380px;
   margin-right: 40px;
-  @media (max-width: 580px) {
+  @media (max-width: 620px) {
     width: 260px;
   }
 `;
@@ -436,7 +444,7 @@ const BlueTriangleEight = styled.span`
 const Item = styled.div`
   position: relative;
   max-width: 700px;
-  margin: 45px 10px 45px 20px;
+  margin: 45px 10px 45px 40px;
   font-size: 28px;
   font-family: system-ui;
   font-weight: 500;
@@ -483,6 +491,128 @@ const Zahl = styled.div`
   font-size: 90px;
   color: blue;
   font-family: Righteous;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const CircleOne = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const CircleTwo = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const CircleThree = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+const CircleFour = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+const CircleFive = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+const CircleSix = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+const CircleSeven = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+const CircleEight = styled.div`
+  position: absolute;
+  top: 5px;
+  left: -48.5px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
 
   @media (max-width: 480px) {
     display: none;
