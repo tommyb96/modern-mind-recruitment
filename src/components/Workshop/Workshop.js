@@ -28,174 +28,176 @@ export default function Workshop() {
         </StyledHeading>
       </HeadingWrapper>
       <InfoWrapper>
-        <WorkshopLine>
-          <WorkshopCircle />
-          <Circle />
-        </WorkshopLine>
-        <TwoCubes src={cubes2} alt="cubes"></TwoCubes>
-        <Item>
-          <Zahl>1</Zahl>
-          <BlueTriangle />
-          Allgemeine Bestimmungen für eine Beschäftigung ausländischer
-          Fachkräfte
-        </Item>
-        <Linie />
-        <Item>
-          <Zahl>2</Zahl>
-          <BlueTriangle
-            isOpenTwo={isOpenTwo}
-            onClick={() => setIsOpenTwo(!isOpenTwo)}
-          />
-          <span
-            isOpenTwo={isOpenTwo}
-            onClick={() => setIsOpenTwo(!isOpenTwo)}
-            style={{
-              cursor: "pointer",
-            }}
-            onMouseOver={(e) => (e.target.style.color = "blue")}
-            onMouseOut={(e) => (e.target.style.color = "")}
-          >
-            Regelungen für Visum und Aufenthalt
-          </span>
-          <ul style={{ display: isOpenTwo ? "block" : "none" }}>
-            <li>Einreisevisum und Aufenthaltstitel</li>
-            <li>Fachkräfte mit Berufsausbildung</li>
-            <li>Fachkräfte mit akademischer Ausbildung</li>
-            <li>Regelung für ausländische Auszubildende</li>
-          </ul>{" "}
-        </Item>
-        <Linie />
-        <Item>
-          <Zahl>3</Zahl>
-          <BlueTriangle
-            isOpenThree={isOpenThree}
-            onClick={() => setIsOpenThree(!isOpenThree)}
-          />
-          <span
-            isOpenThree={isOpenThree}
-            onClick={() => setIsOpenThree(!isOpenThree)}
-            style={{
-              cursor: "pointer",
-            }}
-            onMouseOver={(e) => (e.target.style.color = "blue")}
-            onMouseOut={(e) => (e.target.style.color = "")}
-          >
-            Beteiligung der Bundesagentur für Arbeit
-          </span>
-          <ul style={{ display: isOpenThree ? "block" : "none" }}>
-            <li>Zustimmung der Bundesagentur für Arbeit </li>
-            <li>Arbeitsmarktzulasssung</li>
-          </ul>
-        </Item>
-        <Linie />
-        <Item>
-          <Zahl>4</Zahl>
-          <BlueTriangle
-            isOpenFour={isOpenFour}
-            onClick={() => setIsOpenFour(!isOpenFour)}
-          />
-          <span
-            isOpenFour={isOpenFour}
-            onClick={() => setIsOpenFour(!isOpenFour)}
-            style={{
-              cursor: "pointer",
-            }}
-            onMouseOver={(e) => (e.target.style.color = "blue")}
-            onMouseOut={(e) => (e.target.style.color = "")}
-          >
-            Ausländerbehörde
-          </span>
-          <ul style={{ display: isOpenFour ? "block" : "none" }}>
-            <li>Das beschleunigte Fachkräfteverfahren</li>
-            <li>Aufenthaltstitelbeantragung und -verlängerung</li>
-          </ul>
-        </Item>
-        <Linie />
-        <Item>
-          <Zahl>5</Zahl>
-          <BlueTriangle
-            isOpenFive={isOpenFive}
-            onClick={() => setIsOpenFive(!isOpenFive)}
-          />
-          <span
-            isOpenFive={isOpenFive}
-            onClick={() => setIsOpenFive(!isOpenFive)}
-            style={{
-              cursor: "pointer",
-            }}
-            onMouseOver={(e) => (e.target.style.color = "blue")}
-            onMouseOut={(e) => (e.target.style.color = "")}
-          >
-            Anerkennung ausländischer Berufsqualifikationen
-          </span>
-          <ul style={{ display: isOpenFive ? "block" : "none" }}>
-            <li>Grundlagen der Anerkennung</li>
-            <li>Anerkennungsverfahren</li>
-            <li>
-              Anerkennungsbescheid / Defizitbescheid
-              <ul>
-                <li>Volle und teilweise anerkannte Gleichwertigkeit</li>
-                <li>Qualifizierungsmaßnahmen</li>
-              </ul>
-            </li>
-          </ul>{" "}
-        </Item>
-        <Linie />
-        <Item>
-          <Zahl>6</Zahl>
-          <BlueTriangle />
-          Beantragung von Fördermitteln
-        </Item>
-        <Linie />
-        <Item>
-          <Zahl>7</Zahl>
-          <BlueTriangle
-            isOpenSeven={isOpenSeven}
-            onClick={() => setIsOpenSeven(!isOpenSeven)}
-          />
-          <span
-            isOpenSeven={isOpenSeven}
-            onClick={() => setIsOpenSeven(!isOpenSeven)}
-            style={{
-              cursor: "pointer",
-            }}
-            onMouseOver={(e) => (e.target.style.color = "blue")}
-            onMouseOut={(e) => (e.target.style.color = "")}
-          >
-            Erfolgskriterien
-          </span>
-          <ul style={{ display: isOpenSeven ? "block" : "none" }}>
-            <li>
-              allgemeine Erfolgskriterien bei der Einstellung ausländischer
-              Fachkräfte Eight
-            </li>
-            <li>Erfahrungen und Best Practices</li>
-          </ul>{" "}
-        </Item>
-        <Linie />
-        <Item>
-          <Zahl>8</Zahl>
-          <BlueTriangle
-            isOpenEight={isOpenEight}
-            onClick={() => setIsOpenEight(!isOpenEight)}
-          />
-          <span
-            isOpenEight={isOpenEight}
-            onClick={() => setIsOpenEight(!isOpenEight)}
-            style={{
-              cursor: "pointer",
-            }}
-            onMouseOver={(e) => (e.target.style.color = "blue")}
-            onMouseOut={(e) => (e.target.style.color = "")}
-          >
-            Sozialer Aspekt
-          </span>
-          <ul style={{ display: isOpenEight ? "block" : "none" }}>
-            <li>Familiennachzug</li>
-            <li>Onboarding-Prozess</li>
-            <li>Integration der ausländischen Fachkräfte</li>
-          </ul>
-        </Item>
+        <InfoText>
+          <WorkshopLine>
+            <WorkshopCircle />
+            <Circle />
+          </WorkshopLine>
+          <TwoCubes src={cubes2} alt="cubes"></TwoCubes>
+          <Item>
+            <Zahl>1</Zahl>
+            <BlueTriangle />
+            Allgemeine Bestimmungen für eine Beschäftigung ausländischer
+            Fachkräfte
+          </Item>
+          <Linie />
+          <Item>
+            <Zahl>2</Zahl>
+            <BlueTriangle
+              isOpenTwo={isOpenTwo}
+              onClick={() => setIsOpenTwo(!isOpenTwo)}
+            />
+            <span
+              isOpenTwo={isOpenTwo}
+              onClick={() => setIsOpenTwo(!isOpenTwo)}
+              style={{
+                cursor: "pointer",
+              }}
+              onMouseOver={(e) => (e.target.style.color = "blue")}
+              onMouseOut={(e) => (e.target.style.color = "")}
+            >
+              Regelungen für Visum und Aufenthalt
+            </span>
+            <ul style={{ display: isOpenTwo ? "block" : "none" }}>
+              <li>Einreisevisum und Aufenthaltstitel</li>
+              <li>Fachkräfte mit Berufsausbildung</li>
+              <li>Fachkräfte mit akademischer Ausbildung</li>
+              <li>Regelung für ausländische Auszubildende</li>
+            </ul>{" "}
+          </Item>
+          <Linie />
+          <Item>
+            <Zahl>3</Zahl>
+            <BlueTriangle
+              isOpenThree={isOpenThree}
+              onClick={() => setIsOpenThree(!isOpenThree)}
+            />
+            <span
+              isOpenThree={isOpenThree}
+              onClick={() => setIsOpenThree(!isOpenThree)}
+              style={{
+                cursor: "pointer",
+              }}
+              onMouseOver={(e) => (e.target.style.color = "blue")}
+              onMouseOut={(e) => (e.target.style.color = "")}
+            >
+              Beteiligung der Bundesagentur für Arbeit
+            </span>
+            <ul style={{ display: isOpenThree ? "block" : "none" }}>
+              <li>Zustimmung der Bundesagentur für Arbeit </li>
+              <li>Arbeitsmarktzulasssung</li>
+            </ul>
+          </Item>
+          <Linie />
+          <Item>
+            <Zahl>4</Zahl>
+            <BlueTriangle
+              isOpenFour={isOpenFour}
+              onClick={() => setIsOpenFour(!isOpenFour)}
+            />
+            <span
+              isOpenFour={isOpenFour}
+              onClick={() => setIsOpenFour(!isOpenFour)}
+              style={{
+                cursor: "pointer",
+              }}
+              onMouseOver={(e) => (e.target.style.color = "blue")}
+              onMouseOut={(e) => (e.target.style.color = "")}
+            >
+              Ausländerbehörde
+            </span>
+            <ul style={{ display: isOpenFour ? "block" : "none" }}>
+              <li>Das beschleunigte Fachkräfteverfahren</li>
+              <li>Aufenthaltstitelbeantragung und -verlängerung</li>
+            </ul>
+          </Item>
+          <Linie />
+          <Item>
+            <Zahl>5</Zahl>
+            <BlueTriangle
+              isOpenFive={isOpenFive}
+              onClick={() => setIsOpenFive(!isOpenFive)}
+            />
+            <span
+              isOpenFive={isOpenFive}
+              onClick={() => setIsOpenFive(!isOpenFive)}
+              style={{
+                cursor: "pointer",
+              }}
+              onMouseOver={(e) => (e.target.style.color = "blue")}
+              onMouseOut={(e) => (e.target.style.color = "")}
+            >
+              Anerkennung ausländischer Berufsqualifikationen
+            </span>
+            <ul style={{ display: isOpenFive ? "block" : "none" }}>
+              <li>Grundlagen der Anerkennung</li>
+              <li>Anerkennungsverfahren</li>
+              <li>
+                Anerkennungsbescheid / Defizitbescheid
+                {/* <ul>
+                  <li>Volle und teilweise anerkannte Gleichwertigkeit</li>
+                  <li>Qualifizierungsmaßnahmen</li>
+                </ul> */}
+              </li>
+            </ul>{" "}
+          </Item>
+          <Linie />
+          <Item>
+            <Zahl>6</Zahl>
+            <BlueTriangle />
+            Beantragung von Fördermitteln
+          </Item>
+          <Linie />
+          <Item>
+            <Zahl>7</Zahl>
+            <BlueTriangle
+              isOpenSeven={isOpenSeven}
+              onClick={() => setIsOpenSeven(!isOpenSeven)}
+            />
+            <span
+              isOpenSeven={isOpenSeven}
+              onClick={() => setIsOpenSeven(!isOpenSeven)}
+              style={{
+                cursor: "pointer",
+              }}
+              onMouseOver={(e) => (e.target.style.color = "blue")}
+              onMouseOut={(e) => (e.target.style.color = "")}
+            >
+              Erfolgskriterien
+            </span>
+            <ul style={{ display: isOpenSeven ? "block" : "none" }}>
+              <li>
+                allgemeine Erfolgskriterien bei der Einstellung ausländischer
+                Fachkräfte Eight
+              </li>
+              <li>Erfahrungen und Best Practices</li>
+            </ul>{" "}
+          </Item>
+          <Linie />
+          <Item>
+            <Zahl>8</Zahl>
+            <BlueTriangle
+              isOpenEight={isOpenEight}
+              onClick={() => setIsOpenEight(!isOpenEight)}
+            />
+            <span
+              isOpenEight={isOpenEight}
+              onClick={() => setIsOpenEight(!isOpenEight)}
+              style={{
+                cursor: "pointer",
+              }}
+              onMouseOver={(e) => (e.target.style.color = "blue")}
+              onMouseOut={(e) => (e.target.style.color = "")}
+            >
+              Sozialer Aspekt
+            </span>
+            <ul style={{ display: isOpenEight ? "block" : "none" }}>
+              <li>Familiennachzug</li>
+              <li>Onboarding-Prozess</li>
+              <li>Integration der ausländischen Fachkräfte</li>
+            </ul>
+          </Item>
+        </InfoText>
       </InfoWrapper>
     </>
   );
@@ -274,6 +276,10 @@ const StyledHeading = styled.h1`
 `;
 
 const InfoWrapper = styled.div`
+  width: 100%;
+`;
+
+const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -360,6 +366,7 @@ const Item = styled.div`
 
   @media (max-width: 480px) {
     margin: 60px 10px 60px 30px;
+    font-size: 30px;
   }
 `;
 
