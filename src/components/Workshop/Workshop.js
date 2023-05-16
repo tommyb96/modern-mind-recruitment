@@ -447,6 +447,10 @@ const BlueTriangle = styled.span`
   transform: rotate(-90deg);
   cursor: pointer;
 
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
+
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
   }
@@ -465,6 +469,10 @@ const BlueTriangleTwo = styled.span`
     isOpenTwo ? "rotate(Threeg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
 
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
@@ -485,6 +493,10 @@ const BlueTriangleThree = styled.span`
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
+
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
   }
@@ -503,6 +515,10 @@ const BlueTriangleFour = styled.span`
     isOpenFour ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
 
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
@@ -523,6 +539,10 @@ const BlueTriangleFive = styled.span`
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
+
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
   }
@@ -542,6 +562,10 @@ const BlueTriangleSeven = styled.span`
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
+
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
   }
@@ -560,6 +584,10 @@ const BlueTriangleEight = styled.span`
     isOpenEight ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
 
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
@@ -603,11 +631,15 @@ const List = styled.div`
 const ListPoint = styled.div`
   height: 10px;
   width: 10px;
-  margin-top: 10px;
+  margin-top: 9px;
   border-radius: 50%;
   background-color: blue;
   margin-right: 13px;
   flex-shrink: 0;
+
+  @media (max-width: 1024px) {
+    margin-top: 6px;
+  }
 `;
 
 const ListParagraph = styled.div`
