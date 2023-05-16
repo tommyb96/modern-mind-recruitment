@@ -578,7 +578,12 @@ const ListParagraph = styled.div`
   font-size: 23px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
 `;
+
 const Zahl = styled.div`
   position: absolute;
   left: -120px;
