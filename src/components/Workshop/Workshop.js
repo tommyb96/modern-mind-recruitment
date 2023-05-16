@@ -401,9 +401,7 @@ const WorkshopLine = styled.div`
   width: 3.5px;
   background-color: black;
   z-index: 100;
-  /* @media (max-width: 900px) {
-    left: 15%;
-  } */
+
   @media (max-width: 480px) {
     display: none;
   }
@@ -552,6 +550,10 @@ const Header = styled.div`
 
   @media (max-width: 1024px) {
     font-size: 23px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 22px;
   }
 `;
 
@@ -720,10 +722,10 @@ const CircleEight = styled.div`
 `;
 
 const Linie = styled.div`
-  width: 85%;
-  height: 1.5px;
+  width: 93%;
+  height: 1px;
   background-color: rgb(102, 102, 102, 0.4);
-  margin: 0 35px 0 35px;
+  margin: auto;
   @media (min-width: 481px) {
     display: none;
   }

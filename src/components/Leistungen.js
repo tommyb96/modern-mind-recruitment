@@ -288,6 +288,10 @@ const InfoText = styled.div`
   @media (max-width: 900px) {
     max-width: 500px;
   }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 
 const Heading = styled.div`
@@ -367,6 +371,7 @@ const CVTwoRight = styled.img`
   @media (min-width: 901px) {
     display: none;
   }
+
   @media (max-width: 900px) {
     z-index: 200;
     align-self: flex-start;
@@ -374,6 +379,7 @@ const CVTwoRight = styled.img`
     width: 450px;
     transform: rotate(-25deg);
   }
+
   @media (max-width: 480px) {
     align-self: flex-start;
     margin: 50px 0 70px 100px;

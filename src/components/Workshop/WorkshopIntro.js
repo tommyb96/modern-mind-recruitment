@@ -226,6 +226,10 @@ const InfoText = styled.div`
   @media (max-width: 900px) {
     max-width: 500px;
   }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 
 const Heading = styled.div`
