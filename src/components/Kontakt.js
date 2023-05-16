@@ -65,8 +65,8 @@ const Kontakt = () => {
     <>
       <Waves src={waves} alt="waves"></Waves>
       <StyledContainer id="kontakt">
-        <Heading>
-          KONTAKT
+        <Wrapper>
+          <Heading>KONTAKT </Heading>
           <FormContainer ref={form} onSubmit={sendEmail}>
             <input
               onChange={(e) => setName(e.target.value)}
@@ -119,7 +119,7 @@ const Kontakt = () => {
               Nachricht senden
             </StyledButton>
           </FormContainer>
-        </Heading>
+        </Wrapper>
       </StyledContainer>
       {showSuccessMessage && (
         <SuccessMessageContainer>
@@ -143,17 +143,21 @@ const StyledContainer = styled.div`
   overflow: hidden;
 `;
 
-const Heading = styled.h1`
+const Wrapper = styled.div`
+  display: flex;
   position: relative;
-  font-family: Comfortaa;
-  font-size: 55px;
-  padding: 20px;
   margin-left: 200px;
 
   @media (max-width: 1000px) {
     align-self: center;
-    margin-left: 0;
+    margin: 0;
   }
+`;
+
+const Heading = styled.h1`
+  font-family: Comfortaa;
+  font-size: 55px;
+  z-index: 100;
 
   @media (max-width: 480px) {
     font-size: 39px;
@@ -162,21 +166,21 @@ const Heading = styled.h1`
 
 const FormContainer = styled.form`
   position: absolute;
-  top: 50px;
-  left: -90px;
+  top: 65px;
+  left: -115px;
   display: flex;
   flex-direction: column;
   width: 500px;
   margin: auto;
-  padding: 50px;
+  padding: 80px 40px 30px 40px;
   background-color: rgb(255, 255, 255, 0.1);
   border-radius: 60px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 
   input,
   textarea {
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
     border: none;
     border-radius: 30px;
     font-size: 16px;
@@ -184,31 +188,30 @@ const FormContainer = styled.form`
     align-self: center;
   }
 
-  input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-
-  @media (max-width: 1000px) {
+  @media (max-width: 550px) {
     width: 400px;
-    left: -50px;
+    left: -65px;
   }
   @media (max-width: 480px) {
     width: 335px;
-    left: -50px;
+    left: -70px;
     top: 40px;
+    padding: 50px 30px 20px 30px;
+
+    input,
+    textarea {
+      padding: 8px;
+    }
   }
 `;
 
 const StyledButton = styled.button`
-  padding: 15px;
+  padding: 10px;
   align-self: center;
   border: none;
   border-radius: 30px;
-  font-size: 20px;
-  width: 70%;
+  font-size: 18px;
+  width: 60%;
   background-color: rgb(0, 0, 255);
   color: white;
 
@@ -254,7 +257,7 @@ const SuccessMessage = styled.div`
 const ErrorMessage = styled.label`
   color: rgb(0, 0, 255);
   margin: 0 0 10px 10px;
-  font-size: 15px;
+  font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
 `;
