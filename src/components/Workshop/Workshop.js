@@ -738,6 +738,6 @@ const StyledDiv = styled.div`
   padding: 40px;
 
   @media (max-width: 480px) {
-    padding: 20px;
+    padding: 40px;
   }
 `;
