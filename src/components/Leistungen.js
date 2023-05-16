@@ -203,6 +203,10 @@ const Line = styled.div`
   @media (max-width: 900px) {
     left: 15%;
   }
+
+  @media (max-width: 900px) {
+    left: 7%;
+  }
 `;
 
 const Circle = styled.div`
@@ -300,6 +304,7 @@ const Heading = styled.div`
 
   @media (max-width: 480px) {
     font-size: 39px;
+    margin-left: 55px;
   }
 `;
 
@@ -338,6 +343,11 @@ const RightAligned = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;
 
@@ -420,6 +430,8 @@ const BoldText = styled.div`
   }
   @media (max-width: 480px) {
     font-size: 20px;
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;
 
@@ -450,6 +462,7 @@ const SuperBoldText = styled.div`
   }
   @media (max-width: 480px) {
     font-size: 23px;
+    margin-left: 55px;
   }
 `;
 
@@ -462,6 +475,10 @@ const SuperBoldTextLine = styled.div`
 
   @media (max-width: 900px) {
     left: 15%;
+  }
+
+  @media (max-width: 480px) {
+    left: 7%;
   }
 `;
 

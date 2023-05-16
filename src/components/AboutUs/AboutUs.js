@@ -254,6 +254,10 @@ const Line = styled.div`
   @media (max-width: 900px) {
     left: 15%;
   }
+
+  @media (max-width: 900px) {
+    left: 7%;
+  }
 `;
 
 const Circle = styled.div`
@@ -379,6 +383,7 @@ const Heading = styled.div`
 
   @media (max-width: 480px) {
     font-size: 39px;
+    margin-left: 55px;
   }
 `;
 
@@ -390,6 +395,11 @@ const LeftDiv = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;
 
@@ -416,6 +426,8 @@ const Statement = styled.div`
 
   @media (max-width: 480px) {
     font-size: 45px;
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;
 
@@ -436,6 +448,11 @@ const BoldText = styled.div`
     align-self: flex-start;
     margin-left: 70px;
   }
+
+  @media (max-width: 480px) {
+    margin-left: 55px;
+    margin-right: 10px;
+  }
 `;
 
 const RightAligned = styled.div`
@@ -446,5 +463,10 @@ const RightAligned = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;

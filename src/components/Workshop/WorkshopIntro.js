@@ -74,8 +74,13 @@ const Line = styled.div`
   width: 3.5px;
   background-color: black;
   z-index: 100;
+
   @media (max-width: 900px) {
     left: 15%;
+  }
+
+  @media (max-width: 480px) {
+    left: 7%;
   }
 `;
 
@@ -237,6 +242,8 @@ const Heading = styled.div`
 
   @media (max-width: 480px) {
     font-size: 39px;
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;
 
@@ -254,6 +261,11 @@ const LeftDiv = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;
 
@@ -281,5 +293,7 @@ const BoldText = styled.div`
 
   @media (max-width: 480px) {
     font-size: 20px;
+    margin-left: 55px;
+    margin-right: 10px;
   }
 `;

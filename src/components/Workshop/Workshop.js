@@ -314,6 +314,10 @@ const Line = styled.div`
   @media (max-width: 620px) {
     height: 350px;
   }
+
+  @media (max-width: 480px) {
+    left: 7%;
+  }
 `;
 
 const Circle = styled.div`
