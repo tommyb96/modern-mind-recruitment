@@ -46,10 +46,10 @@ const Root = () => {
           <AboutUs />
           <Leistungen />
           <Workshop />
-          {/* <Kontakt /> */}
+          <Kontakt />
           <RotatingCube />
         </Wrapper>
-        <Footer />
+        {/* <Footer /> */}
       </div>
       <div>
         <Outlet />

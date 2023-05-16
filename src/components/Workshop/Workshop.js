@@ -38,8 +38,10 @@ export default function Workshop() {
             <Zahl>1</Zahl>
             <CircleOne />
             <BlueTriangle />
-            Allgemeine Bestimmungen für eine Beschäftigung ausländischer
-            Fachkräfte
+            <Header>
+              Allgemeine Bestimmungen für eine Beschäftigung ausländischer
+              Fachkräfte
+            </Header>
           </Item>
           <Linie />
           <Item>
@@ -49,23 +51,43 @@ export default function Workshop() {
               isOpenTwo={isOpenTwo}
               onClick={() => setIsOpenTwo(!isOpenTwo)}
             />
-            <span
-              isOpenTwo={isOpenTwo}
-              onClick={() => setIsOpenTwo(!isOpenTwo)}
-              style={{
-                cursor: "pointer",
-              }}
-              onMouseOver={(e) => (e.target.style.color = "blue")}
-              onMouseOut={(e) => (e.target.style.color = "")}
-            >
-              Regelungen für Visum und Aufenthalt
-            </span>
-            <ul style={{ display: isOpenTwo ? "block" : "none" }}>
-              <li>Einreisevisum und Aufenthaltstitel</li>
-              <li>Fachkräfte mit Berufsausbildung</li>
-              <li>Fachkräfte mit akademischer Ausbildung</li>
-              <li>Regelung für ausländische Auszubildende</li>
-            </ul>{" "}
+            <Header>
+              <span
+                isOpenTwo={isOpenTwo}
+                onClick={() => setIsOpenTwo(!isOpenTwo)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Regelungen für Visum und Aufenthalt
+              </span>
+              <ListWrapper style={{ display: isOpenTwo ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Einreisevisum und Aufenthaltstitel
+                  </ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>Fachkräfte mit Berufsausbildung</ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Fachkräfte mit akademischer Ausbildung
+                  </ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Regelung für ausländische Auszubildende
+                  </ListParagraph>
+                </List>
+              </ListWrapper>{" "}
+            </Header>
           </Item>
           <Linie />
           <Item>
@@ -75,21 +97,31 @@ export default function Workshop() {
               isOpenThree={isOpenThree}
               onClick={() => setIsOpenThree(!isOpenThree)}
             />
-            <span
-              isOpenThree={isOpenThree}
-              onClick={() => setIsOpenThree(!isOpenThree)}
-              style={{
-                cursor: "pointer",
-              }}
-              onMouseOver={(e) => (e.target.style.color = "blue")}
-              onMouseOut={(e) => (e.target.style.color = "")}
-            >
-              Beteiligung der Bundesagentur für Arbeit
-            </span>
-            <ul style={{ display: isOpenThree ? "block" : "none" }}>
-              <li>Zustimmung der Bundesagentur für Arbeit </li>
-              <li>Arbeitsmarktzulasssung</li>
-            </ul>
+            <Header>
+              <span
+                isOpenThree={isOpenThree}
+                onClick={() => setIsOpenThree(!isOpenThree)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Beteiligung der Bundesagentur für Arbeit
+              </span>
+              <ListWrapper style={{ display: isOpenThree ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Zustimmung der Bundesagentur für Arbeit
+                  </ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>Arbeitsmarktzulasssung</ListParagraph>
+                </List>
+              </ListWrapper>
+            </Header>
           </Item>
           <Linie />
           <Item>
@@ -99,21 +131,33 @@ export default function Workshop() {
               isOpenFour={isOpenFour}
               onClick={() => setIsOpenFour(!isOpenFour)}
             />
-            <span
-              isOpenFour={isOpenFour}
-              onClick={() => setIsOpenFour(!isOpenFour)}
-              style={{
-                cursor: "pointer",
-              }}
-              onMouseOver={(e) => (e.target.style.color = "blue")}
-              onMouseOut={(e) => (e.target.style.color = "")}
-            >
-              Ausländerbehörde
-            </span>
-            <ul style={{ display: isOpenFour ? "block" : "none" }}>
-              <li>Das beschleunigte Fachkräfteverfahren</li>
-              <li>Aufenthaltstitelbeantragung und -verlängerung</li>
-            </ul>
+            <Header>
+              <span
+                isOpenFour={isOpenFour}
+                onClick={() => setIsOpenFour(!isOpenFour)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Ausländerbehörde
+              </span>
+              <ListWrapper style={{ display: isOpenFour ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Das beschleunigte Fachkräfteverfahren
+                  </ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Aufenthaltstitelbeantragung und -verlängerung
+                  </ListParagraph>
+                </List>
+              </ListWrapper>
+            </Header>
           </Item>
           <Linie />
           <Item>
@@ -123,35 +167,42 @@ export default function Workshop() {
               isOpenFive={isOpenFive}
               onClick={() => setIsOpenFive(!isOpenFive)}
             />
-            <span
-              isOpenFive={isOpenFive}
-              onClick={() => setIsOpenFive(!isOpenFive)}
-              style={{
-                cursor: "pointer",
-              }}
-              onMouseOver={(e) => (e.target.style.color = "blue")}
-              onMouseOut={(e) => (e.target.style.color = "")}
-            >
-              Anerkennung ausländischer Berufsqualifikationen
-            </span>
-            <ul style={{ display: isOpenFive ? "block" : "none" }}>
-              <li>Grundlagen der Anerkennung</li>
-              <li>Anerkennungsverfahren</li>
-              <li>
-                Anerkennungsbescheid / Defizitbescheid
-                {/* <ul>
-                  <li>Volle und teilweise anerkannte Gleichwertigkeit</li>
-                  <li>Qualifizierungsmaßnahmen</li>
-                </ul> */}
-              </li>
-            </ul>{" "}
+            <Header>
+              <span
+                isOpenFive={isOpenFive}
+                onClick={() => setIsOpenFive(!isOpenFive)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Anerkennung ausländischer Berufsqualifikationen
+              </span>
+              <ListWrapper style={{ display: isOpenFive ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>Grundlagen der Anerkennung</ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>Anerkennungsverfahren</ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Anerkennungsbescheid / Defizitbescheid
+                  </ListParagraph>
+                </List>
+              </ListWrapper>
+            </Header>
           </Item>
           <Linie />
           <Item>
             <Zahl>6</Zahl>
             <CircleSix />
             <BlueTriangle />
-            Beantragung von Fördermitteln
+            <Header>Beantragung von Fördermitteln</Header>
           </Item>
           <Linie />
           <Item>
@@ -161,24 +212,32 @@ export default function Workshop() {
               isOpenSeven={isOpenSeven}
               onClick={() => setIsOpenSeven(!isOpenSeven)}
             />
-            <span
-              isOpenSeven={isOpenSeven}
-              onClick={() => setIsOpenSeven(!isOpenSeven)}
-              style={{
-                cursor: "pointer",
-              }}
-              onMouseOver={(e) => (e.target.style.color = "blue")}
-              onMouseOut={(e) => (e.target.style.color = "")}
-            >
-              Erfolgskriterien
-            </span>
-            <ul style={{ display: isOpenSeven ? "block" : "none" }}>
-              <li>
-                allgemeine Erfolgskriterien bei der Einstellung ausländischer
-                Fachkräfte Eight
-              </li>
-              <li>Erfahrungen und Best Practices</li>
-            </ul>{" "}
+            <Header>
+              <span
+                isOpenSeven={isOpenSeven}
+                onClick={() => setIsOpenSeven(!isOpenSeven)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Erfolgskriterien
+              </span>
+              <ListWrapper style={{ display: isOpenSeven ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    allgemeine Erfolgskriterien bei der Einstellung
+                    ausländischer Fachkräfte
+                  </ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>Erfahrungen und Best Practices</ListParagraph>
+                </List>
+              </ListWrapper>
+            </Header>
           </Item>
           <Linie />
           <Item>
@@ -188,24 +247,47 @@ export default function Workshop() {
               isOpenEight={isOpenEight}
               onClick={() => setIsOpenEight(!isOpenEight)}
             />
-            <span
-              isOpenEight={isOpenEight}
-              onClick={() => setIsOpenEight(!isOpenEight)}
-              style={{
-                cursor: "pointer",
-              }}
-              onMouseOver={(e) => (e.target.style.color = "blue")}
-              onMouseOut={(e) => (e.target.style.color = "")}
-            >
-              Sozialer Aspekt
-            </span>
-            <ul style={{ display: isOpenEight ? "block" : "none" }}>
-              <li>Familiennachzug</li>
-              <li>Onboarding-Prozess</li>
-              <li>Integration der ausländischen Fachkräfte</li>
-            </ul>
+            <Header>
+              <span
+                isOpenEight={isOpenEight}
+                onClick={() => setIsOpenEight(!isOpenEight)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Sozialer Aspekt
+              </span>
+              <ListWrapper style={{ display: isOpenEight ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>Familiennachzug</ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>Onboarding-Prozess</ListParagraph>
+                </List>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>
+                    Integration der ausländischen Fachkräfte
+                  </ListParagraph>
+                </List>
+              </ListWrapper>
+            </Header>
           </Item>
         </InfoText>
+        <StyledDiv>
+          Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
+          behandelt und gründlich erläutert. Dabei werden nicht nur die
+          grundlegenden Informationen zu jedem Thema dargelegt, sondern auch die
+          praktischen Erkenntnisse und Erkenntnisse auf diesem Gebiet eingeholt
+          und vermittelt. So erhalten Sie nicht nur eine umfassende Übersicht
+          über die verschiedenen Aspekte, sondern auch wertvolle Einblicke in
+          die praktische Umsetzung und bewährte Strategien, um garantiert
+          erfolgreich zu sein.
+        </StyledDiv>
       </InfoWrapper>
     </>
   );
@@ -348,6 +430,7 @@ const BlueTriangle = styled.span`
   width: 0;
   height: 0;
   margin-right: 10px;
+  margin-top: 3px;
   border-style: solid;
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
@@ -361,6 +444,7 @@ const BlueTriangleTwo = styled.span`
   width: 0;
   height: 0;
   margin-right: 10px;
+  margin-top: 3px;
   border-style: solid;
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
@@ -375,6 +459,7 @@ const BlueTriangleThree = styled.span`
   width: 0;
   height: 0;
   margin-right: 10px;
+  margin-top: 3px;
   border-style: solid;
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
@@ -389,6 +474,7 @@ const BlueTriangleFour = styled.span`
   width: 0;
   height: 0;
   margin-right: 10px;
+  margin-top: 3px;
   border-style: solid;
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
@@ -403,6 +489,7 @@ const BlueTriangleFive = styled.span`
   width: 0;
   height: 0;
   margin-right: 10px;
+  margin-top: 3px;
   border-style: solid;
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
@@ -417,6 +504,7 @@ const BlueTriangleSeven = styled.span`
   width: 0;
   height: 0;
   margin-right: 10px;
+  margin-top: 3px;
   border-style: solid;
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
@@ -431,6 +519,7 @@ const BlueTriangleEight = styled.span`
   width: 0;
   height: 0;
   margin-right: 10px;
+  margin-top: 3px;
   border-style: solid;
   border-width: 25px 15px 0 15px;
   border-color: blue transparent transparent transparent;
@@ -443,47 +532,49 @@ const BlueTriangleEight = styled.span`
 
 const Item = styled.div`
   position: relative;
+  display: flex;
   max-width: 700px;
   margin: 45px 10px 45px 40px;
+
+  @media (max-width: 480px) {
+    margin: 40px 10px 40px 30px;
+  }
+`;
+
+const Header = styled.div`
   font-size: 28px;
   font-family: system-ui;
   font-weight: 500;
 
-  ul {
-    list-style-type: none;
-    margin: 20px;
-    li {
-      font-size: 23px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: normal;
-      margin-bottom: 10px;
-      &:before {
-        content: "";
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        margin-right: 10px;
-        border-radius: 50%;
-        background-color: blue;
-      }
-    }
-  }
-
   @media (max-width: 1024px) {
-  }
-  @media (max-width: 480px) {
-    margin: 40px 10px 40px 30px;
     font-size: 23px;
-
-    ul {
-      margin: 20px 10px 0px -20px;
-      li {
-        font-size: 20px;
-      }
-    }
   }
 `;
 
+const ListWrapper = styled.div`
+  margin-top: 20px;
+`;
+
+const List = styled.div`
+  display: flex;
+  margin: 10px;
+`;
+
+const ListPoint = styled.div`
+  height: 10px;
+  width: 10px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background-color: blue;
+  margin-right: 13px;
+  flex-shrink: 0;
+`;
+
+const ListParagraph = styled.div`
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+`;
 const Zahl = styled.div`
   position: absolute;
   left: -120px;
@@ -626,5 +717,18 @@ const Linie = styled.div`
   margin: 0 35px 0 35px;
   @media (min-width: 481px) {
     display: none;
+  }
+`;
+
+const StyledDiv = styled.div`
+  font-size: 20px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 800px;
+  padding: 40px;
+
+  @media (max-width: 480px) {
+    padding: 20px;
   }
 `;

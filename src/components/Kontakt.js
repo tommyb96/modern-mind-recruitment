@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
 import emailjs from "@emailjs/browser";
+import waves from "../assets/svg/Kontakt/kontakt_waves.png";
 
 const Kontakt = () => {
   const form = useRef();
@@ -62,10 +63,10 @@ const Kontakt = () => {
 
   return (
     <>
-      <StyledContainer>
-        <Wrapper id="kontakt">
-          <h1>Kontakt</h1>
-
+      <Waves src={waves} alt="waves"></Waves>
+      <StyledContainer id="kontakt">
+        <Heading>
+          KONTAKT
           <FormContainer ref={form} onSubmit={sendEmail}>
             <input
               onChange={(e) => setName(e.target.value)}
@@ -118,7 +119,7 @@ const Kontakt = () => {
               Nachricht senden
             </StyledButton>
           </FormContainer>
-        </Wrapper>
+        </Heading>
       </StyledContainer>
       {showSuccessMessage && (
         <SuccessMessageContainer>
@@ -131,38 +132,56 @@ const Kontakt = () => {
 
 export default Kontakt;
 
+const Waves = styled.img``;
+
 const StyledContainer = styled.div`
+  background-color: rgb(92, 92, 255);
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  height: 900px;
+  overflow: hidden;
 `;
 
-const Wrapper = styled.div`
-  position: absolute;
-  justify-content: center;
-  color: white;
-  padding: 4em;
-  max-width: 800px;
-  margin: auto;
+const Heading = styled.h1`
+  position: relative;
+  font-family: Comfortaa;
+  font-size: 55px;
+  padding: 20px;
+  margin-left: 200px;
+
+  @media (max-width: 1000px) {
+    align-self: center;
+    margin-left: 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 39px;
+  }
 `;
 
 const FormContainer = styled.form`
+  position: absolute;
+  top: 50px;
+  left: -90px;
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  width: 500px;
   margin: auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 60px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 
   input,
   textarea {
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 12px;
+    margin-bottom: 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     font-size: 16px;
-    font-family: inherit;
+    width: 100%;
+    align-self: center;
   }
 
   input[type="submit"] {
@@ -172,21 +191,29 @@ const FormContainer = styled.form`
     transition: all 0.3s ease-in-out;
   }
 
-  input[type="submit"]:hover {
-    background-color: #3e8e41;
+  @media (max-width: 1000px) {
+    width: 400px;
+    left: -50px;
+  }
+  @media (max-width: 480px) {
+    width: 335px;
+    left: -50px;
+    top: 40px;
   }
 `;
 
 const StyledButton = styled.button`
-  margin-bottom: 10px;
-  padding: 10px;
+  padding: 15px;
+  align-self: center;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: inherit;
+  border-radius: 30px;
+  font-size: 20px;
+  width: 70%;
+  background-color: rgb(0, 0, 255);
+  color: white;
 
   &:hover {
-    background-color: grey;
+    background-color: rgb(0, 0, 255, 0.3);
   }
 `;
 
@@ -225,5 +252,9 @@ const SuccessMessage = styled.div`
 `;
 
 const ErrorMessage = styled.label`
-  color: red;
+  color: rgb(0, 0, 255);
+  margin: 0 0 10px 40px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
 `;
