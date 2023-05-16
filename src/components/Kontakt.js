@@ -177,8 +177,7 @@ const FormContainer = styled.form`
   border-radius: 60px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 
-  input,
-  textarea {
+  input {
     padding: 10px;
     margin-bottom: 15px;
     border: none;
@@ -186,6 +185,17 @@ const FormContainer = styled.form`
     font-size: 16px;
     width: 100%;
     align-self: center;
+  }
+
+  textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    width: 100%;
+    align-self: center;
+    resize: none;
   }
 
   @media (max-width: 550px) {
@@ -198,15 +208,16 @@ const FormContainer = styled.form`
     top: 40px;
     padding: 50px 30px 20px 30px;
 
-    input,
-    textarea {
+    input {
       padding: 8px;
     }
   }
 `;
 
 const StyledButton = styled.button`
-  padding: 10px;
+  font-family: system-ui;
+  font-weight: normal;
+  padding: 10px 12px 10px 12px;
   align-self: center;
   border: none;
   border-radius: 30px;
