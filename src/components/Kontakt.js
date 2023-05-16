@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import emailjs from "@emailjs/browser";
 import waves from "../assets/svg/Kontakt/kontakt_waves.png";
+import cubes from "../assets/svg/Kontakt/kontakt_cubes.svg";
 
 const Kontakt = () => {
   const form = useRef();
@@ -65,6 +66,7 @@ const Kontakt = () => {
     <>
       <Waves src={waves} alt="waves"></Waves>
       <StyledContainer id="kontakt">
+        <Cubes src={cubes} alt="cubes" />
         <Wrapper>
           <Heading>KONTAKT </Heading>
           <FormContainer ref={form} onSubmit={sendEmail}>
@@ -141,6 +143,19 @@ const StyledContainer = styled.div`
   margin: 0;
   height: 900px;
   overflow: hidden;
+`;
+
+const Cubes = styled.img`
+  position: absolute;
+  width: 380px;
+  right: 0;
+  margin: 40px;
+  z-index: 0;
+
+  @media (max-width: 620px) {
+    width: 260px;
+    margin: 10px;
+  }
 `;
 
 const Wrapper = styled.div`
