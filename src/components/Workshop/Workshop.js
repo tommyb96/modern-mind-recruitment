@@ -570,10 +570,10 @@ const Item = styled.div`
   position: relative;
   display: flex;
   max-width: 700px;
-  margin: 45px 10px 45px 40px;
+  margin: 45px 30px 45px 40px;
 
   @media (max-width: 480px) {
-    margin: 30px 10px 30px 30px;
+    margin: 30px 30px 30px 30px;
   }
 `;
 
