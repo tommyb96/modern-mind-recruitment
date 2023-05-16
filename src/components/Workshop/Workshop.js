@@ -423,113 +423,147 @@ const TwoCubes = styled.img`
   align-self: flex-end;
   width: 380px;
   margin-right: 40px;
+
   @media (max-width: 620px) {
     width: 260px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 40px;
+    margin-bottom: 30px;
   }
 `;
 
 const BlueTriangle = styled.span`
   width: 0;
   height: 0;
-  margin-right: 10px;
-  margin-top: 3px;
+  margin-right: 20px;
+  margin-top: 7px;
   border-style: solid;
-  border-width: 25px 15px 0 15px;
+  border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
   transform: rotate(-90deg);
-
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
 `;
 
 const BlueTriangleTwo = styled.span`
   width: 0;
   height: 0;
-  margin-right: 10px;
-  margin-top: 3px;
+  margin-right: 20px;
+  margin-top: 7px;
   border-style: solid;
-  border-width: 25px 15px 0 15px;
+  border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
   transform: ${({ isOpenTwo }) =>
     isOpenTwo ? "rotate(Threeg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
 `;
 
 const BlueTriangleThree = styled.span`
   width: 0;
   height: 0;
-  margin-right: 10px;
-  margin-top: 3px;
+  margin-right: 20px;
+  margin-top: 7px;
   border-style: solid;
-  border-width: 25px 15px 0 15px;
+  border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
   transform: ${({ isOpenThree }) =>
     isOpenThree ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
 `;
 
 const BlueTriangleFour = styled.span`
   width: 0;
   height: 0;
-  margin-right: 10px;
-  margin-top: 3px;
+  margin-right: 20px;
+  margin-top: 7px;
   border-style: solid;
-  border-width: 25px 15px 0 15px;
+  border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
   transform: ${({ isOpenFour }) =>
     isOpenFour ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
 `;
 
 const BlueTriangleFive = styled.span`
   width: 0;
   height: 0;
-  margin-right: 10px;
-  margin-top: 3px;
+  margin-right: 20px;
+  margin-top: 7px;
   border-style: solid;
-  border-width: 25px 15px 0 15px;
+  border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
   transform: ${({ isOpenFive }) =>
     isOpenFive ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
 `;
 
 const BlueTriangleSeven = styled.span`
   width: 0;
   height: 0;
-  margin-right: 10px;
-  margin-top: 3px;
+  margin-right: 20px;
+  margin-top: 7px;
   border-style: solid;
-  border-width: 25px 15px 0 15px;
+  border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
   transform: ${({ isOpenSeven }) =>
     isOpenSeven ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
 `;
 
 const BlueTriangleEight = styled.span`
   width: 0;
   height: 0;
-  margin-right: 10px;
-  margin-top: 3px;
+  margin-right: 20px;
+  margin-top: 7px;
   border-style: solid;
-  border-width: 25px 15px 0 15px;
+  border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
   transform: ${({ isOpenEight }) =>
     isOpenEight ? "rotate(0deg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
 `;
 
 const Item = styled.div`
@@ -539,7 +573,7 @@ const Item = styled.div`
   margin: 45px 10px 45px 40px;
 
   @media (max-width: 480px) {
-    margin: 40px 10px 40px 30px;
+    margin: 30px 10px 30px 30px;
   }
 `;
 
@@ -553,7 +587,7 @@ const Header = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: 22px;
+    font-size: 20px;
   }
 `;
 
@@ -583,6 +617,10 @@ const ListParagraph = styled.div`
 
   @media (max-width: 1024px) {
     font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 `;
 
@@ -741,5 +779,6 @@ const StyledDiv = styled.div`
 
   @media (max-width: 480px) {
     padding: 40px;
+    font-size: 18px;
   }
 `;
