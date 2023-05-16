@@ -211,6 +211,10 @@ const FormContainer = styled.form`
     input {
       padding: 8px;
     }
+
+    textarea {
+      height: 180px;
+    }
   }
 `;
 
