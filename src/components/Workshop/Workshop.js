@@ -640,6 +640,11 @@ const ListPoint = styled.div`
   @media (max-width: 1024px) {
     margin-top: 6px;
   }
+
+  @media (max-width: 480px) {
+    height: 8px;
+    width: 8px;
+  }
 `;
 
 const ListParagraph = styled.div`
