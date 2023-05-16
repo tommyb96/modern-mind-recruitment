@@ -308,7 +308,7 @@ const Line = styled.div`
   background-color: black;
   z-index: 100;
   @media (max-width: 900px) {
-    left: 15%;
+    left: 10%;
   }
 
   @media (max-width: 620px) {

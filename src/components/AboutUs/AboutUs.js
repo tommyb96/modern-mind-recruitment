@@ -251,11 +251,12 @@ const Line = styled.div`
   width: 3.5px;
   background-color: black;
   z-index: 100;
-  @media (max-width: 900px) {
-    left: 15%;
-  }
 
   @media (max-width: 900px) {
+    left: 10%;
+  }
+
+  @media (max-width: 480px) {
     left: 7%;
   }
 `;
@@ -355,6 +356,10 @@ const InfoText = styled.div`
   //media query
   @media (max-width: 900px) {
     max-width: 500px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 `;
 

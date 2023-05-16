@@ -76,7 +76,7 @@ const Line = styled.div`
   z-index: 100;
 
   @media (max-width: 900px) {
-    left: 15%;
+    left: 10%;
   }
 
   @media (max-width: 480px) {

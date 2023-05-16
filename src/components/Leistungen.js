@@ -201,10 +201,10 @@ const Line = styled.div`
   background-color: black;
   z-index: 100;
   @media (max-width: 900px) {
-    left: 15%;
+    left: 10%;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 480px) {
     left: 7%;
   }
 `;
@@ -474,7 +474,7 @@ const SuperBoldTextLine = styled.div`
   left: 50%;
 
   @media (max-width: 900px) {
-    left: 15%;
+    left: 10%;
   }
 
   @media (max-width: 480px) {
