@@ -253,7 +253,7 @@ const SuccessMessage = styled.div`
 
 const ErrorMessage = styled.label`
   color: rgb(0, 0, 255);
-  margin: 0 0 10px 40px;
+  margin: 0 0 10px 10px;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
