@@ -508,7 +508,7 @@ const SuperBoldText = styled.div`
   }
   @media (max-width: 650px) {
     margin: 150px 40px 200px 40px;
-    font-size: 28px;
+    font-size: 30px;
   }
   @media (max-width: 480px) {
     font-size: 23px;

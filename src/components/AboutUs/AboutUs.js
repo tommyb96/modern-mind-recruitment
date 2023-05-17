@@ -81,10 +81,7 @@ const AboutUs = () => {
             modern mind <GreenSpan>recruitment</GreenSpan>
           </StyledSpan>{" "}
           und schön, dass sie hier sind, um einen Ausweg aus dem
-          Fachkräftemangel zu finden. Wir garantieren Ihnen Ihren{" "}
-          <CubeTwoRelative>
-            <CubesTwo src={cubes2} alt="cubes"></CubesTwo>Erfolg!
-          </CubeTwoRelative>
+          Fachkräftemangel zu finden. Wir garantieren Ihnen Ihren Erfolg!
         </WelcomeMessage>
       </StyledContainer>
       <Waves src={waves} alt="waves"></Waves>
@@ -155,12 +152,11 @@ const WelcomeMessage = styled.div`
   position: relative;
   color: black;
   align-self: center;
-  margin: 200px 50px 50px 100px;
-  max-width: 850px;
-
+  margin: 200px 50px 100px 150px;
+  max-width: 900px;
   font-family: system-ui;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 50px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -169,26 +165,34 @@ const WelcomeMessage = styled.div`
 
   //media query
   @media (max-width: 1024px) {
+    font-size: 40px;
     max-width: 600px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     font-size: 30px;
     max-width: 430px;
-    margin: 100px 20px 50px 50px;
+    margin: 170px 20px 150px 50px;
   }
   @media (max-width: 480px) {
-    font-size: 30px;
+    font-size: 23px;
   }
 `;
 
 const StyledSpan = styled.span`
   font-family: "Comfortaa", cursive;
   text-shadow: 1px 0 rgb(0, 0, 255);
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   color: rgb(0, 0, 255);
-  @media (max-width: 600px) {
+
+  @media (max-width: 1024px) {
+    font-size: 40px;
+  }
+  @media (max-width: 650px) {
     font-size: 30px;
+  }
+  @media (max-width: 480px) {
+    font-size: 23px;
   }
 `;
 
@@ -206,24 +210,17 @@ const CubesOne = styled.img`
   width: 170px;
   top: -220%;
   left: -50%;
-  @media (max-width: 600px) {
+
+  @media (max-width: 650px) {
     width: 100px;
     top: -170%;
     left: -35%;
   }
-`;
 
-const CubeTwoRelative = styled.span`
-  position: relative;
-`;
-
-const CubesTwo = styled.img`
-  position: absolute;
-  width: 170px;
-  bottom: -250%;
-  right: -110%;
-  @media (max-width: 850px) {
-    display: none;
+  @media (max-width: 480px) {
+    width: 100px;
+    top: -220%;
+    left: -45%;
   }
 `;
 
@@ -254,6 +251,7 @@ const Line = styled.div`
 
   @media (max-width: 900px) {
     left: 10%;
+    top: 110px;
   }
 
   @media (max-width: 480px) {
@@ -340,6 +338,7 @@ const InfoText = styled.div`
   //media query
   @media (max-width: 900px) {
     max-width: 500px;
+    margin-top: 100px;
   }
 
   @media (max-width: 480px) {
