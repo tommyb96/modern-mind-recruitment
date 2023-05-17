@@ -35,4 +35,5 @@ const Wrapper = styled.div`
 const Form = styled.img`
   position: absolute;
   bottom: 0;
+  width: 100%;
 `;
