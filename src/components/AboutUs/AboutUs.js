@@ -275,19 +275,7 @@ const Circle = styled.div`
 
 const CircleOne = styled.div`
   position: absolute;
-  top: 110px;
-  left: -9px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-`;
-
-const CircleTwo = styled.div`
-  position: absolute;
-  top: 270px;
+  top: 155px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -297,21 +285,33 @@ const CircleTwo = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 720px;
+    top: 130px;
+  }
+`;
+
+const CircleTwo = styled.div`
+  position: absolute;
+  top: 365px;
+  left: -9px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 900px) {
+    top: 790px;
   }
 
-  @media (max-width: 590px) {
-    top: 560px;
-  }
-
-  @media (max-width: 480px) {
-    top: 610px;
+  @media (max-width: 600px) {
+    display: none;
   }
 `;
 
 const CircleThree = styled.div`
   position: absolute;
-  top: 1020px;
+  top: 1265px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -321,14 +321,10 @@ const CircleThree = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 1480px;
+    top: 1630px;
   }
 
-  @media (max-width: 590px) {
-    top: 1320px;
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `;
@@ -400,10 +396,12 @@ const LeftDiv = styled.div`
   padding: 20px;
   max-width: 420px;
   position: relative;
+  margin-top: 50px;
 
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+    margin-top: 30px;
   }
 
   @media (max-width: 480px) {
@@ -417,6 +415,7 @@ const Statement = styled.div`
   font-size: 50px;
   color: white;
   padding: 20px;
+  margin-top: 50px;
   max-width: 420px;
   align-self: flex-end;
 
@@ -426,11 +425,11 @@ const Statement = styled.div`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
-    margin: 450px 0 0 70px;
+    margin: 500px 0 0 70px;
   }
 
   @media (max-width: 590px) {
-    margin-top: 70vw;
+    margin-top: 80vw;
   }
 
   @media (max-width: 480px) {
@@ -446,6 +445,7 @@ const BoldText = styled.div`
   color: black;
   align-self: flex-end;
   padding: 20px;
+  margin-top: 50px;
   max-width: 420px;
 
   //animation
@@ -456,6 +456,7 @@ const BoldText = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+    margin-top: 30px;
   }
 
   @media (max-width: 480px) {
@@ -468,10 +469,12 @@ const RightAligned = styled.div`
   align-self: flex-end;
   padding: 20px;
   max-width: 420px;
+  margin-top: 50px;
 
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+    margin-top: 30px;
   }
 
   @media (max-width: 480px) {

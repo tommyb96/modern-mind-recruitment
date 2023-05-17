@@ -40,11 +40,14 @@ export default Cubes;
 const Wrapper = styled.div`
   position: absolute;
   z-index: 0;
-  top: 165px;
+  top: 240px;
   left: 0px;
 
+  @media (max-width: 900px) {
+    top: 200px;
+  }
+
   @media (max-width: 590px) {
-    top: 105%;
     left: 15px;
   }
 `;

@@ -77,7 +77,7 @@ const Kontakt = () => {
               name="name"
             />
             {error && name.length <= 5 ? (
-              <ErrorMessage>Bitte Name eingeben</ErrorMessage>
+              <ErrorMessage>bitte Namen eingeben</ErrorMessage>
             ) : (
               ""
             )}
@@ -88,7 +88,7 @@ const Kontakt = () => {
               name="email"
             />
             {error && !validateEmail(email) ? (
-              <ErrorMessage>Bitte vollständige Email eingeben</ErrorMessage>
+              <ErrorMessage>bitte vollständige Email eingeben</ErrorMessage>
             ) : (
               ""
             )}
@@ -99,7 +99,7 @@ const Kontakt = () => {
               name="subject"
             />
             {error && subject.length <= 3 ? (
-              <ErrorMessage>Bitte Betreff eingeben</ErrorMessage>
+              <ErrorMessage>bitte Betreff eingeben</ErrorMessage>
             ) : (
               ""
             )}
@@ -110,7 +110,7 @@ const Kontakt = () => {
               rows="10"
             />
             {error && message.length <= 10 ? (
-              <ErrorMessage>Bitte Nachricht eingeben</ErrorMessage>
+              <ErrorMessage>bitte Nachricht eingeben</ErrorMessage>
             ) : (
               ""
             )}
@@ -291,7 +291,11 @@ const SuccessMessage = styled.div`
 const ErrorMessage = styled.label`
   color: rgb(0255 255, 255);
   margin: 0 0 10px 10px;
-  font-size: 14px;
+  font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
