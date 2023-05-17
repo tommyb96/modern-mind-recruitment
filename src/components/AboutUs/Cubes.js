@@ -50,6 +50,10 @@ const Wrapper = styled.div`
   @media (max-width: 590px) {
     left: 15px;
   }
+
+  @media (max-width: 480px) {
+    top: 200px;
+  }
 `;
 const CubeContainer = styled.div`
   display: flex;
