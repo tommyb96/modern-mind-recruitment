@@ -373,6 +373,10 @@ const Person = styled.img`
     right: -50%;
     height: 60%;
   }
+
+  @media (max-width: 480px) {
+    opacity: 0.4;
+  }
 `;
 
 const Heading = styled.div`
@@ -426,7 +430,7 @@ const Statement = styled.div`
   }
 
   @media (max-width: 590px) {
-    margin: 290px 0 0 70px;
+    margin-top: 70vw;
   }
 
   @media (max-width: 480px) {

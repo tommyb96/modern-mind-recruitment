@@ -49,7 +49,7 @@ const Root = () => {
           <Kontakt />
           <RotatingCube />
         </Wrapper>
-        {/* <Footer /> */}
+        <Footer />
       </div>
       <div>
         <Outlet />

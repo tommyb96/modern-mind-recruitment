@@ -118,7 +118,7 @@ const Kontakt = () => {
               type="submit"
               style={{ backgroundColor: error ? "" : "green" }}
             >
-              Nachricht senden
+              Senden
             </StyledButton>
           </FormContainer>
         </Wrapper>
@@ -152,9 +152,12 @@ const Cubes = styled.img`
   margin: 40px;
   z-index: 0;
 
-  @media (max-width: 620px) {
-    width: 260px;
-    margin: 10px;
+  @media (max-width: 1200px) {
+    width: 300px;
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
   }
 `;
 
@@ -236,11 +239,12 @@ const FormContainer = styled.form`
 const StyledButton = styled.button`
   font-family: system-ui;
   font-weight: normal;
-  padding: 10px 12px 10px 12px;
+  padding: 15px 12px 15px 12px;
+  margin-top: 15px;
   align-self: center;
   border: none;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 22px;
   width: 60%;
   background-color: rgb(0, 0, 255);
   color: white;
@@ -285,7 +289,7 @@ const SuccessMessage = styled.div`
 `;
 
 const ErrorMessage = styled.label`
-  color: rgb(0, 0, 255);
+  color: rgb(0255 255, 255);
   margin: 0 0 10px 10px;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;

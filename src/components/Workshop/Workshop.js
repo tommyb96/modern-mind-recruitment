@@ -33,7 +33,6 @@ export default function Workshop() {
             <WorkshopCircle />
             <Circle />
           </WorkshopLine>
-          <TwoCubes src={cubes2} alt="cubes"></TwoCubes>
           <Item>
             <Zahl>1</Zahl>
             <CircleOne />
@@ -303,7 +302,7 @@ const Line = styled.div`
   position: absolute;
   left: 50%;
   top: 0%;
-  height: 500px;
+  height: 480px;
   width: 3.5px;
   background-color: black;
   z-index: 100;
@@ -317,6 +316,7 @@ const Line = styled.div`
 
   @media (max-width: 480px) {
     left: 7%;
+    height: 280px;
   }
 `;
 
@@ -333,17 +333,22 @@ const Circle = styled.div`
 `;
 
 const ThreeCubes = styled.img`
-  width: 380px;
-  margin: 60px;
+  width: 360px;
+  margin: 50px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
     align-self: flex-end;
     transform: rotate(180deg);
+    width: 360px;
   }
 
   @media (max-width: 620px) {
     width: 260px;
     margin: 40px 40px 60px 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 200px;
   }
 `;
 
@@ -354,7 +359,7 @@ const StyledHeading = styled.h1`
   font-weight: 500;
   align-self: center;
   font-size: 40px;
-  margin: 0 80px 80px 80px;
+  margin: 40px 80px 80px 80px;
 
   span {
     color: rgb(0, 0, 255);
@@ -362,7 +367,7 @@ const StyledHeading = styled.h1`
     text-shadow: 0px 0 rgb(0, 0, 0);
   }
   @media (max-width: 1024px) {
-    margin: 0 40px 40px 40px;
+    margin: 40px;
   }
   @media (max-width: 480px) {
     font-size: 30px;
@@ -417,22 +422,6 @@ const WorkshopCircle = styled.div`
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
-`;
-
-const TwoCubes = styled.img`
-  align-self: flex-end;
-  width: 380px;
-  margin-right: 40px;
-
-  @media (max-width: 620px) {
-    width: 260px;
-    margin-right: 10px;
-  }
-
-  @media (max-width: 480px) {
-    margin-right: 40px;
-    margin-bottom: 30px;
-  }
 `;
 
 const BlueTriangle = styled.span`

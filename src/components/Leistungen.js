@@ -19,9 +19,7 @@ export default function Leistungen() {
             Lasst uns gemeinsam die <span>Zukunft</span> unserer Wirtschaft
             gestalten!{" "}
           </p>{" "}
-          <StyledForm>
-            <Line />
-          </StyledForm>
+          <StyledForm></StyledForm>
         </Filler>
         <InfoWrapper id="leistungen">
           <Würfel src={würfel} alt="würfel"></Würfel>
@@ -180,6 +178,7 @@ const Würfel = styled.img`
   position: absolute;
   width: 100%;
   top: 400px;
+  opacity: 0.5;
 
   @media (max-width: 1600px) {
     height: 1330px;
@@ -195,7 +194,7 @@ const Würfel = styled.img`
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 0%;
+  top: 20px;
   height: 100%;
   width: 3.5px;
   background-color: black;
@@ -211,7 +210,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 20px;
+  top: 0;
   left: -15px;
   background-color: white;
   width: 35px;

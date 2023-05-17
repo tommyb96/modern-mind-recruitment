@@ -53,7 +53,7 @@ const CubeContainer = styled.div`
 `;
 
 const StyledCube = styled.div`
-  background-color: rgba(102, 102, 102, 0.3);
+  background-color: rgba(102, 102, 102, 0.15);
   width: 100px;
   height: 100px;
   border-radius: 15px;
@@ -61,9 +61,14 @@ const StyledCube = styled.div`
   transition: transform 0.05s ease-in-out;
 
   @media (max-width: 590px) {
+    width: 16vw;
+    height: 16vw;
+  }
+
+  /* @media (max-width: 420px) {
     width: 65px;
     height: 65px;
-  }
+  } */
 `;
 
 const Persons = styled.img`
@@ -73,6 +78,6 @@ const Persons = styled.img`
   width: 370px;
 
   @media (max-width: 590px) {
-    width: 245px;
+    width: 60vw;
   }
 `;
