@@ -12,6 +12,9 @@ export default function Leistungen() {
     <>
       <Wrapper>
         <Filler>
+          <VideoLine>
+            <VideoCircle />
+          </VideoLine>
           <video autoPlay loop muted playsInline>
             <source src={video} type="video/mp4" />
           </video>
@@ -127,7 +130,7 @@ const Filler = styled.div`
   p {
     position: absolute;
     top: 0;
-    margin: 20px 35px 40px 20px;
+    margin: 70px 35px 40px 20px;
     z-index: 1;
     max-width: 600px;
     font-family: system-ui;
@@ -154,11 +157,47 @@ const Filler = styled.div`
       font-size: 37px;
     }
   }
+
+  @media (max-width: 480px) {
+    p {
+      font-size: 32px;
+    }
+  }
+`;
+
+const VideoLine = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  height: 55px;
+  width: 3.5px;
+  background-color: black;
+  z-index: 100;
+
+  @media (max-width: 900px) {
+    left: 10%;
+  }
+
+  @media (max-width: 480px) {
+    left: 7%;
+  }
+`;
+
+const VideoCircle = styled.div`
+  position: absolute;
+  bottom: 0%;
+  left: -15px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
 `;
 
 const StyledForm = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   background-color: rgb(138, 138, 255);
   clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
   height: 200px;
@@ -280,7 +319,7 @@ const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   max-width: 880px;
   font-size: 20px;
 
@@ -314,7 +353,7 @@ const Heading = styled.div`
 const CVOneLeft = styled.img`
   position: absolute;
   width: 330px;
-  top: 70px;
+  top: 150px;
   left: -410px;
 
   @media (max-width: 900px) {
@@ -327,13 +366,14 @@ const CVOneRight = styled.img`
     display: none;
   }
   @media (max-width: 900px) {
+    z-index: 200;
     align-self: flex-start;
     margin: 70px 0 70px 100px;
     width: 370px;
   }
   @media (max-width: 480px) {
     align-self: flex-start;
-    margin: 50px 0 50px 100px;
+    margin: 50px 0 30px 100px;
     width: 240px;
   }
 `;
@@ -342,10 +382,12 @@ const RightAligned = styled.div`
   align-self: flex-end;
   padding: 20px;
   max-width: 420px;
+  margin-top: 50px;
 
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+    margin-top: 30px;
   }
 
   @media (max-width: 480px) {
@@ -357,7 +399,7 @@ const RightAligned = styled.div`
 const CVTwoLeft = styled.img`
   position: absolute;
   width: 500px;
-  top: 700px;
+  top: 850px;
   left: 70px;
   transform: rotate(-25deg);
 
@@ -389,7 +431,7 @@ const CVTwoRight = styled.img`
 const CVThreeLeft = styled.img`
   position: absolute;
   width: 400px;
-  top: 1550px;
+  top: 1750px;
   left: -440px;
 
   @media (max-width: 900px) {
@@ -402,13 +444,14 @@ const CVThreeRight = styled.img`
     display: none;
   }
   @media (max-width: 900px) {
+    z-index: 200;
     align-self: flex-start;
     margin: 70px 0 70px 100px;
     width: 370px;
   }
   @media (max-width: 480px) {
     align-self: flex-start;
-    margin: 50px 0 50px 100px;
+    margin: 50px 0 30px 100px;
     width: 240px;
   }
 `;
@@ -419,8 +462,11 @@ const BoldText = styled.div`
   font-weight: 500;
   font-size: 32px;
   padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   max-width: 420px;
   z-index: 1;
+
   span {
     color: rgba(0, 167, 155);
     font-family: Righteous;
@@ -428,7 +474,7 @@ const BoldText = styled.div`
 
   @media (max-width: 900px) {
     align-self: flex-start;
-    margin-left: 70px;
+    margin: 30px 0 20px 70px;
   }
   @media (max-width: 768px) {
     font-size: 30px;
@@ -451,7 +497,6 @@ const SuperBoldText = styled.div`
   color: black;
   font-weight: 500;
   font-size: 50px;
-
   margin: 150px 80px 200px 60px;
   max-width: 1200px;
   span {

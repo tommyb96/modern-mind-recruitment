@@ -94,7 +94,6 @@ const AboutUs = () => {
           <CircleOne />
           <CircleTwo />
           <CircleThree />
-          <CircleFour />
         </Line>
         <InfoText>
           <Person src={person} alt="person icon" />
@@ -103,7 +102,8 @@ const AboutUs = () => {
             <div>
               Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
               mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen
-              Stellen mit qualifizierten Mitarbeitern zu besetzen. Aber was tun?
+              Stellen mit qualifizierten Mitarbeiter*innen zu besetzen. Aber was
+              tun?
             </div>
             <Cubes></Cubes>
           </LeftDiv>
@@ -125,12 +125,12 @@ const AboutUs = () => {
             alternde Bevölkerung nimmt in Deutschland jährlich zu.
           </LeftDiv>
           <RightAligned>
-            Unser Team ist eine Gruppe von Personalberatern, die jahrelang in
-            der Branche Fachkräfte aus den Drittstaaten tätig war und immer noch
-            ist, und dabei so ziemlich alles erlebt hat, was man sich vorstellen
-            kann. Von skurrilen Gesetzen bis hin zur Anerkennung ausländischer
-            Berufsqualifikationen - wir haben alle möglichen Situationen
-            gemeistert.
+            Unser Team ist eine Gruppe von Personalberater*innen, die jahrelang
+            in der Branche Fachkräfte aus den Drittstaaten tätig war und immer
+            noch ist, und dabei so ziemlich alles erlebt hat, was man sich
+            vorstellen kann. Von skurrilen Gesetzen bis hin zur Anerkennung
+            ausländischer Berufsqualifikationen - wir haben alle möglichen
+            Situationen gemeistert.
           </RightAligned>
           <RightAligned>
             Deshalb haben wir beschlossen, unser Wissen und unsere
@@ -247,7 +247,7 @@ const Line = styled.div`
   position: absolute;
   left: 50%;
   top: 1%;
-  height: 95%;
+  height: 100%;
   width: 3.5px;
   background-color: black;
   z-index: 100;
@@ -329,24 +329,12 @@ const CircleThree = styled.div`
   }
 `;
 
-const CircleFour = styled.div`
-  position: absolute;
-  bottom: 0%;
-  left: -15px;
-  background-color: white;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-`;
-
 const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
   max-width: 880px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   font-size: 20px;
 
   //media query
@@ -371,7 +359,7 @@ const Person = styled.img`
   }
 
   @media (max-width: 480px) {
-    opacity: 0.4;
+    opacity: 0.2;
   }
 `;
 
