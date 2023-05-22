@@ -455,6 +455,11 @@ const StyledHeading = styled.h1`
   font-size: 40px;
   margin: 40px 80px 80px 80px;
 
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+
   span {
     color: rgb(0, 0, 255);
     font-family: "Righteous", cursive;
@@ -711,14 +716,6 @@ const BlueTriangleEight = styled.span`
   }
 `;
 
-const ItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 481px) {
-    display: none;
-  }
-`;
-
 const Item = styled.div`
   position: relative;
   display: flex;
@@ -727,7 +724,7 @@ const Item = styled.div`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 480px) {
