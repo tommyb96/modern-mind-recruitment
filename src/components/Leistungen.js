@@ -10,6 +10,9 @@ import würfel from "../assets/svg/Leistungen/leistungen_würfel.svg";
 
 export default function Leistungen() {
   const refs = {
+    circle: useRef(null),
+    circleStart: useRef(null),
+    circleEnd: useRef(null),
     heading: useRef(null),
     rightdivone: useRef(null),
     rightdivtwo: useRef(null),
@@ -24,6 +27,9 @@ export default function Leistungen() {
   };
 
   const [isVisible, setIsVisible] = useState({
+    circle: false,
+    circleStart: false,
+    circleEnd: false,
     heading: false,
     rightdivone: false,
     rightdivtwo: false,
@@ -68,7 +74,7 @@ export default function Leistungen() {
       <Wrapper>
         <Filler>
           <VideoLine>
-            <VideoCircle />
+            <VideoCircle ref={refs.circle} isVisible={isVisible.circle} />
           </VideoLine>
           <video autoPlay loop muted playsInline>
             <source src={video} type="video/mp4" />
@@ -82,7 +88,7 @@ export default function Leistungen() {
         <InfoWrapper id="leistungen">
           <Würfel src={würfel} alt="würfel"></Würfel>
           <Line>
-            <Circle />
+            <Circle ref={refs.circleStart} isVisible={isVisible.circleStart} />
             <CircleOne />
             <CircleTwo />
             <CircleThree />
@@ -179,7 +185,10 @@ export default function Leistungen() {
       </Wrapper>
       <BoldTextWrapper>
         <SuperBoldTextLine>
-          <SuperBoldTextCircle />
+          <SuperBoldTextCircle
+            ref={refs.circleEnd}
+            isVisible={isVisible.circleEnd}
+          />
         </SuperBoldTextLine>
         <SuperBoldText ref={refs.superbold} isVisible={isVisible.superbold}>
           Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
@@ -256,7 +265,7 @@ const VideoLine = styled.div`
   position: absolute;
   left: 50%;
   top: 0%;
-  height: 55px;
+  height: 50px;
   width: 3.5px;
   background-color: black;
   z-index: 100;
@@ -280,6 +289,9 @@ const VideoCircle = styled.div`
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
+  transition: transform 1.5s ease-in-out;
 `;
 
 const StyledForm = styled.div`
@@ -336,14 +348,17 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 0;
-  left: -15px;
+  top: -10px;
+  left: -20px;
   background-color: white;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
+  transition: transform 1.5s ease-in-out;
 `;
 
 const CircleOne = styled.div`
@@ -664,4 +679,7 @@ const SuperBoldTextCircle = styled.div`
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
+  transition: transform 1.5s ease-in-out;
 `;

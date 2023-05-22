@@ -8,6 +8,7 @@ import foto3 from "../../assets/svg/Workshop/workshop_foto_3.png";
 
 export default function WorkshopIntro() {
   const refs = {
+    circle: useRef(null),
     heading: useRef(null),
     leftdivone: useRef(null),
     leftdivtwo: useRef(null),
@@ -18,6 +19,7 @@ export default function WorkshopIntro() {
   };
 
   const [isVisible, setIsVisible] = useState({
+    circle: false,
     heading: false,
     leftdivone: false,
     leftdivtwo: false,
@@ -57,7 +59,7 @@ export default function WorkshopIntro() {
     <>
       <IntroWrapper>
         <Line>
-          <Circle />
+          <Circle ref={refs.circle} isVisible={isVisible.circle} />
           <CircleOne />
           <CircleTwo />
           <LaptopLeft src={laptop} alt="laptop" />
@@ -149,14 +151,17 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 0;
-  left: -14px;
+  top: -10px;
+  left: -20px;
   background-color: white;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
+  transition: transform 1.5s ease-in-out;
 `;
 
 const CircleOne = styled.div`

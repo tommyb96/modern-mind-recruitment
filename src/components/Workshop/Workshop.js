@@ -28,6 +28,7 @@ export default function Workshop() {
     itemSix: useRef(null),
     itemSeven: useRef(null),
     itemEight: useRef(null),
+    div: useRef(null),
   };
 
   const [isVisible, setIsVisible] = useState({
@@ -43,6 +44,7 @@ export default function Workshop() {
     itemSix: false,
     itemSeven: false,
     itemEight: false,
+    div: false,
   });
 
   const handleIntersection = (entry, target) => {
@@ -380,7 +382,7 @@ export default function Workshop() {
           </Item>
           <PlaceHolder />
         </InfoText>
-        <StyledDiv>
+        <StyledDiv ref={refs.div} isVisible={isVisible.div}>
           Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
           behandelt und gründlich erläutert. Dabei werden nicht nur die
           grundlegenden Informationen zu jedem Thema dargelegt, sondern auch die
@@ -426,15 +428,15 @@ const Line = styled.div`
 const Circle = styled.div`
   position: absolute;
   bottom: -20px;
-  left: -15px;
+  left: -20px;
   background-color: white;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
 
-  transform: scale(${(props) => (props.isVisible ? 1.2 : 0.6)});
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
   transition: transform 1.5s ease-in-out;
 `;
 
@@ -535,15 +537,15 @@ const WorkshopLine = styled.div`
 const WorkshopCircle = styled.div`
   position: absolute;
   top: -15px;
-  left: -15px;
+  left: -20px;
   background-color: white;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
 
-  transform: scale(${(props) => (props.isVisible ? 1.2 : 0.6)});
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
   transition: transform 1.5s ease-in-out;
 `;
 
@@ -957,6 +959,11 @@ const StyledDiv = styled.div`
   margin-bottom: 50px;
   max-width: 800px;
   padding: 40px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 480px) {
     padding: 40px;

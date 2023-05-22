@@ -11,6 +11,7 @@ import person from "../../assets/svg/AboutUs/about_us_person.svg";
 const AboutUs = () => {
   const refs = {
     welcome: useRef(null),
+    circle: useRef(null),
     heading: useRef(null),
     leftdivone: useRef(null),
     leftdivtwo: useRef(null),
@@ -23,6 +24,7 @@ const AboutUs = () => {
   const [isVisible, setIsVisible] = useState({
     welcome: false,
     heading: false,
+    circle: false,
     leftdivone: false,
     leftdivtwo: false,
     statement: false,
@@ -76,7 +78,7 @@ const AboutUs = () => {
       <Waves src={waves} alt="waves"></Waves>
       <InfoWrapper id="über-uns">
         <Line>
-          <Circle />
+          <Circle ref={refs.circle} isVisible={isVisible.circle} />
           <CircleOne />
           <CircleTwo />
           <CircleThree />
@@ -258,14 +260,17 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 0%;
-  left: -15px;
+  top: -10px;
+  left: -20px;
   background-color: white;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
+  transition: transform 1.5s ease-in-out;
 `;
 
 const CircleOne = styled.div`
