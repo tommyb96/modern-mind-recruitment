@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useState, useEffect, useRef } from "react";
 
 import CV1 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
 import CV2 from "../assets/svg/Leistungen/leistungen_cv_2.svg";
@@ -8,6 +9,60 @@ import video from "../assets/video.mp4";
 import würfel from "../assets/svg/Leistungen/leistungen_würfel.svg";
 
 export default function Leistungen() {
+  const refs = {
+    heading: useRef(null),
+    rightdivone: useRef(null),
+    rightdivtwo: useRef(null),
+    cvone: useRef(null),
+    boldText: useRef(null),
+    cvtwo: useRef(null),
+    rightdivthree: useRef(null),
+    cvthree: useRef(null),
+    rightdivfour: useRef(null),
+    rightdivfive: useRef(null),
+    superbold: useRef(null),
+  };
+
+  const [isVisible, setIsVisible] = useState({
+    heading: false,
+    rightdivone: false,
+    rightdivtwo: false,
+    cvone: false,
+    boldText: false,
+    cvtwo: false,
+    rightdivthree: false,
+    cvthree: false,
+    rightdivfour: false,
+    rightdivfive: false,
+    superbold: false,
+  });
+
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => ({
+      ...prevState,
+      [target]: entry.isIntersecting,
+    }));
+  };
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observers = Object.keys(refs).map((key) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, key));
+      }, observerOptions);
+      observer.observe(refs[key].current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       <Wrapper>
@@ -36,8 +91,13 @@ export default function Leistungen() {
             <CVThreeLeft src={CV3} alt="background picture cv"></CVThreeLeft>
           </Line>
           <InfoText>
-            <Heading>LEISTUNGEN</Heading>
-            <RightAligned>
+            <Heading ref={refs.heading} isVisible={isVisible.heading}>
+              LEISTUNGEN
+            </Heading>
+            <RightAligned
+              ref={refs.rightdivone}
+              isVisible={isVisible.rightdivone}
+            >
               In Ihrem Unternehmen mangelt es an qualifizierten Mitarbeiter oder
               sie suchen nach Fachkräften, um neue Projekte und Aufträge
               erfolgreich umzusetzen? Jedoch stoßen Sie auf Schwierigkeiten bei
@@ -46,15 +106,23 @@ export default function Leistungen() {
               rekrutieren und den damit verbundenen rechtlichen und
               bürokratischen Prozess bewältigen können?
             </RightAligned>
-            <RightAligned>
+            <RightAligned
+              ref={refs.rightdivtwo}
+              isVisible={isVisible.rightdivtwo}
+            >
               Als Experten im Bereich der Personalvermittlung für ausländische
               Fachkräfte können wir Ihnen helfen. Wir verfügen über jahrelange
               Erfahrung in allen Bereichen des Einstellungsprozesses, von der
               rechtlichen Beratung bis hin zur Unterstützung bei sozialen
               Aspekten.
             </RightAligned>{" "}
-            <CVOneRight src={CV1} alt="background picture cv"></CVOneRight>
-            <BoldText>
+            <CVOneRight
+              ref={refs.cvone}
+              isVisible={isVisible.cvone}
+              src={CV1}
+              alt="background picture cv"
+            ></CVOneRight>
+            <BoldText ref={refs.boldText} isVisible={isVisible.boldText}>
               Wir haben <span>erfolgreich</span> zahlreiche Fachkräfte aus den
               Drittstaaten unterschiedlichster Branchen an namhafte Unternehmen
               in Deutschland vermittelt und uns mit Schwerpunkten wie
@@ -63,8 +131,16 @@ export default function Leistungen() {
               für Arbeit sowie das beschleunigte Fachkräfteverfahren
               beschäftigt.{" "}
             </BoldText>{" "}
-            <CVTwoRight src={CV2} alt="background picture cv"></CVTwoRight>
-            <RightAligned>
+            <CVTwoRight
+              ref={refs.cvtwo}
+              isVisible={isVisible.cvtwo}
+              src={CV2}
+              alt="background picture cv"
+            ></CVTwoRight>
+            <RightAligned
+              ref={refs.rightdivthree}
+              isVisible={isVisible.rightdivthree}
+            >
               Unser Team steht Ihnen kompetent und engagiert zur Seite und
               begleitet Sie Schritt für Schritt durch den gesamten
               Einstellungsprozess. Dabei analysieren wir jeden einzelnen Aspekt
@@ -74,15 +150,26 @@ export default function Leistungen() {
               vermitteln, die Ihnen sonst keiner verrät, um Ihre
               Erfolgsaussichten auf ein Maximum zu steigern.
             </RightAligned>
-            <CVThreeRight src={CV3} alt="background picture cv"></CVThreeRight>
-            <RightAligned>
+            <CVThreeRight
+              ref={refs.cvthree}
+              isVisible={isVisible.cvthree}
+              src={CV3}
+              alt="background picture cv"
+            ></CVThreeRight>
+            <RightAligned
+              ref={refs.rightdivfour}
+              isVisible={isVisible.rightdivfour}
+            >
               Für diejenigen, die mit Begriffen wie Zustimmung,
               Anerkennungsbescheid, Defizitbescheid, Qualifizierungsplan oder
               Vorabzustimmung vertraut sind, ist bekannt wie komplex und
               herausfordernd der gesamte Prozess des Einstellens von
               internationalen Fachkräften sein kann.
             </RightAligned>
-            <RightAligned>
+            <RightAligned
+              ref={refs.rightdivfive}
+              isVisible={isVisible.rightdivfive}
+            >
               Sie wurden mit großer Wahrscheinlichkeit mit einer Absage
               konfrontiert und haben sich gefragt - was haben wir falsch gemacht
               oder welchen Aspekt haben wir möglicherweise übersehen?
@@ -94,7 +181,7 @@ export default function Leistungen() {
         <SuperBoldTextLine>
           <SuperBoldTextCircle />
         </SuperBoldTextLine>
-        <SuperBoldText>
+        <SuperBoldText ref={refs.superbold} isVisible={isVisible.superbold}>
           Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
           Fragen und decken gemeinsam alle versteckten Fallstricke auf. Durch
           unsere professionelle Unterstützung und Coaching gewährleisten wir,
@@ -338,7 +425,12 @@ const Heading = styled.div`
   font-size: 55px;
   align-self: flex-end;
   padding: 20px;
-  /* margin-left: 300px; */
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
@@ -362,6 +454,11 @@ const CVOneLeft = styled.img`
 `;
 
 const CVOneRight = styled.img`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   @media (min-width: 901px) {
     display: none;
   }
@@ -383,6 +480,11 @@ const RightAligned = styled.div`
   padding: 20px;
   max-width: 420px;
   margin-top: 50px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
     align-self: flex-start;
@@ -409,6 +511,11 @@ const CVTwoLeft = styled.img`
 `;
 
 const CVTwoRight = styled.img`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   @media (min-width: 901px) {
     display: none;
   }
@@ -440,6 +547,11 @@ const CVThreeLeft = styled.img`
 `;
 
 const CVThreeRight = styled.img`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   @media (min-width: 901px) {
     display: none;
   }
@@ -466,6 +578,11 @@ const BoldText = styled.div`
   margin-bottom: 50px;
   max-width: 420px;
   z-index: 1;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   span {
     color: rgba(0, 0, 255);
@@ -502,6 +619,11 @@ const SuperBoldText = styled.div`
   span {
     color: rgb(0, 0, 255);
   }
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1024px) {
     font-size: 40px;
