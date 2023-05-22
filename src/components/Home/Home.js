@@ -42,6 +42,11 @@ const Home = () => {
           <Cubes />
           <Cubes />
           <Cubes />
+          <Cubes />
+          <Cubes />
+          <Cubes />
+          <Cubes />
+          <Cubes />
         </CubeWrapper>
         <SloganWrapper ref={sloganRef} isVisible={isVisible}>
           <h1>
@@ -64,6 +69,8 @@ const HomeContainer = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background: linear-gradient(
     to right,
@@ -84,12 +91,13 @@ const Logo = styled.img`
 `;
 
 const CubeWrapper = styled.div`
+  position: absolute;
+  top: -30px;
+  left: -30px;
   display: flex;
   flex-direction: column;
   align-items: end;
   padding: 1vw;
-  margin-top: 70px;
-  margin-bottom: 70px;
 
   @media (max-width: 768px) {
     margin-top: 0;

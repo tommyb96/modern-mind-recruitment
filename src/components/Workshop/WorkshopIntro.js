@@ -218,8 +218,8 @@ const InfoText = styled.div`
   flex-direction: column;
   margin: auto;
   max-width: 880px;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 150px;
+  margin-bottom: 150px;
   font-size: 20px;
 
   //media query

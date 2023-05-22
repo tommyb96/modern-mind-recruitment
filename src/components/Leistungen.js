@@ -185,11 +185,11 @@ const VideoLine = styled.div`
 
 const VideoCircle = styled.div`
   position: absolute;
-  bottom: 0%;
-  left: -15px;
+  top: 10px;
+  left: -23px;
   background-color: white;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;

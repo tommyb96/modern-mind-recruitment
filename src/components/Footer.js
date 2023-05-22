@@ -30,10 +30,23 @@ const Wrapper = styled.div`
   position: relative;
   background-color: rgb(92, 92, 255);
   height: 300px;
+  overflow: hidden;
 `;
 
 const Form = styled.img`
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 120%;
+
+  @media (max-width: 1024px) {
+    width: 170%;
+  }
+
+  @media (max-width: 600px) {
+    width: 200%;
+  }
+
+  @media (max-width: 480px) {
+    width: 280%;
+  }
 `;

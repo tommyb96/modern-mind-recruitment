@@ -84,6 +84,7 @@ const AboutUs = () => {
           Fachkräftemangel zu finden. Wir garantieren Ihnen Ihren Erfolg!
         </WelcomeMessage>
       </StyledContainer>
+
       <Waves src={waves} alt="waves"></Waves>
       <InfoWrapper id="über-uns">
         <Line>
@@ -171,7 +172,7 @@ const WelcomeMessage = styled.div`
   @media (max-width: 650px) {
     font-size: 30px;
     max-width: 430px;
-    margin: 170px 20px 150px 50px;
+    margin: 150px 20px 100px 60px;
   }
   @media (max-width: 480px) {
     font-size: 23px;

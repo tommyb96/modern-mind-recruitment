@@ -33,6 +33,7 @@ export default function Workshop() {
             <WorkshopCircle />
             <Circle />
           </WorkshopLine>
+          <PlaceHolder />
           <Item>
             <Zahl>1</Zahl>
             <CircleOne />
@@ -276,6 +277,7 @@ export default function Workshop() {
               </ListWrapper>
             </Header>
           </Item>
+          <PlaceHolder />
         </InfoText>
         <StyledDiv>
           Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
@@ -395,6 +397,14 @@ const InfoText = styled.div`
 
   @media (max-width: 480px) {
     margin: auto;
+  }
+`;
+
+const PlaceHolder = styled.div`
+  height: 100px;
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 

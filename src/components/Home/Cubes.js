@@ -9,22 +9,19 @@ const Cubes = () => {
     const handleResize = () => {
       const width = window.innerWidth;
       if (width < 480) {
-        setNumCubes(7);
+        setNumCubes(10);
         setCubeSize({ height: "13.3vw", width: "13.3vw" });
       } else if (width < 769) {
-        setNumCubes(9);
+        setNumCubes(12);
         setCubeSize({ height: "10.3vw", width: "10.3vw" });
-      } else if (width < 992) {
-        setNumCubes(11);
-        setCubeSize({ height: "8.5vw", width: "8.5vw" });
       } else if (width < 1025) {
-        setNumCubes(11);
+        setNumCubes(14);
         setCubeSize({ height: "8.5vw", width: "8.5vw" });
       } else if (width < 1280) {
-        setNumCubes(15);
+        setNumCubes(16);
         setCubeSize({ height: "6.2vw", width: "6.2vw" });
       } else {
-        setNumCubes(20);
+        setNumCubes(30);
         setCubeSize({ height: "4.65vw", width: "4.65vw" });
       }
     };
