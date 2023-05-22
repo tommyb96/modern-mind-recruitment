@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState, useEffect, useRef } from "react";
 
 import laptop from "../../assets/svg/Workshop/workshop_laptop.png";
 import foto1 from "../../assets/svg/Workshop/workshop_foto_1.png";
@@ -6,6 +7,52 @@ import foto2 from "../../assets/svg/Workshop/workshop_foto_2.png";
 import foto3 from "../../assets/svg/Workshop/workshop_foto_3.png";
 
 export default function WorkshopIntro() {
+  const refs = {
+    heading: useRef(null),
+    leftdivone: useRef(null),
+    leftdivtwo: useRef(null),
+    laptop: useRef(null),
+    boldText: useRef(null),
+    fotosRight: useRef(null),
+    foto: useRef(null),
+  };
+
+  const [isVisible, setIsVisible] = useState({
+    heading: false,
+    leftdivone: false,
+    leftdivtwo: false,
+    laptop: false,
+    boldText: false,
+    fotosRight: false,
+    foto: false,
+  });
+
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => ({
+      ...prevState,
+      [target]: entry.isIntersecting,
+    }));
+  };
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observers = Object.keys(refs).map((key) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, key));
+      }, observerOptions);
+      observer.observe(refs[key].current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       <IntroWrapper>
@@ -22,23 +69,34 @@ export default function WorkshopIntro() {
         </Line>
 
         <InfoText>
-          <Heading id="workshop">WORKSHOP</Heading>
-          <LeftDiv>
+          <Heading
+            ref={refs.heading}
+            isVisible={isVisible.heading}
+            id="workshop"
+          >
+            WORKSHOP
+          </Heading>
+          <LeftDiv ref={refs.leftdivone} isVisible={isVisible.leftdivone}>
             {" "}
             Sie haben festgestellt, dass die Verfügbarkeit geeigneter
             Bewerber*innen in Ihrer Region abnimmt und Sie deshalb
             beabsichtigen, auch international nach qualifizierten Fachkräften zu
             suchen. Somit ist unser Workshop genau der richtige Ansatz für Sie.
           </LeftDiv>
-          <LeftDiv>
+          <LeftDiv ref={refs.leftdivtwo} isVisible={isVisible.leftdivtwo}>
             Um die Erwerbsmigration für ausländische Fachkräfte zu erleichtern,
             hat zum 01.03.2020 die Bundesregierung mit dem
             Fachkräfteeinwanderungs<span>- </span>gesetz neue Vorraussetzungen
             geschaffen. Auf diese Bedingungen wollen wir aufbauen und unseren
             Kunden näher bringen, wie sie von diesen profitieren können.
           </LeftDiv>{" "}
-          <LaptopRight src={laptop} alt="laptop" />
-          <BoldText>
+          <LaptopRight
+            ref={refs.laptop}
+            isVisible={isVisible.laptop}
+            src={laptop}
+            alt="laptop"
+          />
+          <BoldText ref={refs.boldText} isVisible={isVisible.boldText}>
             {" "}
             Gemeinsam werden wir in unserem umfangreichen <span>
               Workshop
@@ -46,12 +104,17 @@ export default function WorkshopIntro() {
             mit Schwerpunkt auf die Fachkräfteeinwanderung auf alle wichtigen
             und ergebnisführenden Aspekte detailliert eingehen.
           </BoldText>
-          <FotosRight>
+          <FotosRight ref={refs.fotosRight} isVisible={isVisible.fotosRight}>
             <FotoOne src={foto1} alt="people at work" />
             <FotoTwo src={foto2} alt="people at work" />
             <FotoThree src={foto3} alt="people at work" />
           </FotosRight>
-          <Foto src={foto3} alt="people at work" />
+          <Foto
+            ref={refs.foto}
+            isVisible={isVisible.foto}
+            src={foto3}
+            alt="people at work"
+          />
         </InfoText>
       </IntroWrapper>
     </>
@@ -141,6 +204,11 @@ const LaptopLeft = styled.img`
 `;
 
 const LaptopRight = styled.img`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   @media (min-width: 901px) {
     display: none;
   }
@@ -172,6 +240,11 @@ const FotosLeft = styled.div`
 `;
 
 const FotosRight = styled.div`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   @media (min-width: 901px) {
     display: none;
   }
@@ -202,6 +275,11 @@ const FotoThree = styled.img`
 `;
 
 const Foto = styled.img`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   @media (min-width: 501px) {
     display: none;
   }
@@ -239,6 +317,11 @@ const Heading = styled.div`
   padding: 20px;
   max-width: 420px;
 
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
@@ -256,6 +339,11 @@ const LeftDiv = styled.div`
   margin-top: 50px;
   max-width: 420px;
   position: relative;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (min-width: 410px) {
     span {
@@ -284,6 +372,12 @@ const BoldText = styled.div`
   margin-top: 50px;
   max-width: 420px;
   align-self: flex-end;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   span {
     color: rgb(0, 0, 255);
     font-family: Righteous;
