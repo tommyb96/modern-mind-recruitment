@@ -41,7 +41,7 @@ const AboutUs = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      threshold: 1,
+      threshold: 0.5,
     };
 
     const observers = Object.keys(refs).map((key) => {
