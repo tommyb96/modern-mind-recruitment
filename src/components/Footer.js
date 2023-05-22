@@ -10,14 +10,14 @@ const Footer = () => {
     <>
       <Wrapper>
         <Form src={form} alt="form background"></Form>
-        <nav>
+        <Nav>
           <Link to="/Impressum" element={<Impressum />}>
             Impressum
           </Link>
           <Link to="/Datenschutzerklärung" element={<Datenschutzerklärung />}>
             Datenschutzerklärung
           </Link>
-        </nav>
+        </Nav>
       </Wrapper>
     </>
   );
@@ -29,24 +29,20 @@ const Wrapper = styled.div`
   display: flex;
   position: relative;
   background-color: rgb(92, 92, 255);
-  height: 300px;
+  height: 250px;
   overflow: hidden;
+`;
+
+const Nav = styled.div`
+  align-self: center;
+  padding-top: 50px;
+  margin: auto;
+  z-index: 1;
 `;
 
 const Form = styled.img`
   position: absolute;
   bottom: 0;
-  width: 120%;
-
-  @media (max-width: 1024px) {
-    width: 170%;
-  }
-
-  @media (max-width: 600px) {
-    width: 200%;
-  }
-
-  @media (max-width: 480px) {
-    width: 280%;
-  }
+  height: 100%;
+  width: 100%;
 `;

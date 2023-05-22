@@ -6,10 +6,12 @@ import cubes3 from "../../assets/svg/Workshop/workshop_three_cubes.svg";
 import cubes2 from "../../assets/svg/Workshop/workshop_two_cubes.svg";
 
 export default function Workshop() {
+  const [isOpenOne, setIsOpenOne] = useState(false);
   const [isOpenTwo, setIsOpenTwo] = useState(false);
   const [isOpenThree, setIsOpenThree] = useState(false);
   const [isOpenFour, setIsOpenFour] = useState(false);
   const [isOpenFive, setIsOpenFive] = useState(false);
+  const [isOpenSix, setIsOpenSix] = useState(false);
   const [isOpenSeven, setIsOpenSeven] = useState(false);
   const [isOpenEight, setIsOpenEight] = useState(false);
 
@@ -37,10 +39,29 @@ export default function Workshop() {
           <Item>
             <Zahl>1</Zahl>
             <CircleOne />
-            <BlueTriangle />
+            <BlueTriangleOne
+              isOpenOne={isOpenOne}
+              onClick={() => setIsOpenOne(!isOpenOne)}
+            />
             <Header>
-              Allgemeine Bestimmungen für eine Beschäftigung ausländischer
-              Fachkräfte
+              <span
+                isOpenOne={isOpenOne}
+                onClick={() => setIsOpenOne(!isOpenOne)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Allgemeine Bestimmungen für eine Beschäftigung ausländischer
+                Fachkräfte
+              </span>
+              <ListWrapper style={{ display: isOpenOne ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>lorem impsum</ListParagraph>
+                </List>
+              </ListWrapper>
             </Header>
           </Item>
           <Linie />
@@ -201,8 +222,29 @@ export default function Workshop() {
           <Item>
             <Zahl>6</Zahl>
             <CircleSix />
-            <BlueTriangle />
-            <Header>Beantragung von Fördermitteln</Header>
+            <BlueTriangleSix
+              isOpenSix={isOpenSix}
+              onClick={() => setIsOpenSix(!isOpenSix)}
+            />
+            <Header>
+              <span
+                isOpenSix={isOpenSix}
+                onClick={() => setIsOpenSix(!isOpenSix)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onMouseOver={(e) => (e.target.style.color = "blue")}
+                onMouseOut={(e) => (e.target.style.color = "")}
+              >
+                Beantragung von Fördermitteln
+              </span>
+              <ListWrapper style={{ display: isOpenSix ? "block" : "none" }}>
+                <List>
+                  <ListPoint />
+                  <ListParagraph>lorem impsum</ListParagraph>
+                </List>
+              </ListWrapper>
+            </Header>
           </Item>
           <Linie />
           <Item>
@@ -397,6 +439,7 @@ const InfoText = styled.div`
 
   @media (max-width: 480px) {
     margin: auto;
+    margin-top: 50px;
   }
 `;
 
@@ -434,7 +477,7 @@ const WorkshopCircle = styled.div`
   z-index: 200;
 `;
 
-const BlueTriangle = styled.span`
+const BlueTriangleOne = styled.span`
   width: 0;
   height: 0;
   margin-right: 20px;
@@ -443,7 +486,9 @@ const BlueTriangle = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: rotate(-90deg);
+  transform: ${({ isOpenOne }) =>
+    isOpenOne ? "rotate(Threeg)" : "rotate(-90deg)"};
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
   @media (max-width: 1024px) {
@@ -535,6 +580,29 @@ const BlueTriangleFive = styled.span`
   display: inline-block;
   transform: ${({ isOpenFive }) =>
     isOpenFive ? "rotate(0deg)" : "rotate(-90deg)"};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  @media (max-width: 1024px) {
+    margin-top: 3px;
+  }
+
+  @media (max-width: 480px) {
+    border-width: 17px 10px 0 10px;
+  }
+`;
+
+const BlueTriangleSix = styled.span`
+  width: 0;
+  height: 0;
+  margin-right: 20px;
+  margin-top: 7px;
+  border-style: solid;
+  border-width: 22px 12px 0 12px;
+  border-color: blue transparent transparent transparent;
+  display: inline-block;
+  transform: ${({ isOpenSix }) =>
+    isOpenSix ? "rotate(Threeg)" : "rotate(-90deg)"};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
@@ -816,5 +884,6 @@ const StyledDiv = styled.div`
   @media (max-width: 480px) {
     padding: 40px;
     font-size: 18px;
+    margin-bottom: 70px;
   }
 `;

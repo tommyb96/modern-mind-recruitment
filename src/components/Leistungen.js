@@ -468,7 +468,7 @@ const BoldText = styled.div`
   z-index: 1;
 
   span {
-    color: rgba(0, 167, 155);
+    color: rgba(0, 0, 255);
     font-family: Righteous;
   }
 

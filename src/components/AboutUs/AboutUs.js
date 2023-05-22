@@ -9,70 +9,58 @@ import waves from "../../assets/svg/AboutUs/about_us_waves.png";
 import person from "../../assets/svg/AboutUs/about_us_person.svg";
 
 const AboutUs = () => {
-  const welcomeRef = useRef(null);
+  const refs = {
+    welcome: useRef(null),
+    heading: useRef(null),
+    leftdivone: useRef(null),
+    leftdivtwo: useRef(null),
+    statement: useRef(null),
+    boldText: useRef(null),
+    rightdivone: useRef(null),
+    rightdivtwo: useRef(null),
+  };
 
-  const statementRef = useRef(null);
-  const rightAlignedRef = useRef(null);
-  const boldTextRef = useRef(null);
+  const [isVisible, setIsVisible] = useState({
+    welcome: false,
+    heading: false,
+    leftdivone: false,
+    leftdivtwo: false,
+    statement: false,
+    boldText: false,
+    rightdivone: false,
+    rightdivtwo: false,
+  });
 
-  const [welcomeVisible, setWelcomeVisible] = useState(false);
-
-  const [statementVisible, setStatementVisible] = useState(false);
-  const [rightAlignedVisible, setRightAlignedVisible] = useState(false);
-  const [boldTextVisible, setBoldTextVisible] = useState(false);
-
-  const handleIntersection = (entry, observer) => {
-    if (entry.target === welcomeRef.current) {
-      setWelcomeVisible(entry.isIntersecting);
-    } else if (entry.target === statementRef.current) {
-      setStatementVisible(entry.isIntersecting);
-    } else if (entry.target === rightAlignedRef.current) {
-      setRightAlignedVisible(entry.isIntersecting);
-    } else if (entry.target === boldTextRef.current) {
-      setBoldTextVisible(entry.isIntersecting);
-    }
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => ({
+      ...prevState,
+      [target]: entry.isIntersecting,
+    }));
   };
 
   useEffect(() => {
-    const options = {
+    const observerOptions = {
       root: null,
-      threshold: 0.5,
+      threshold: 1,
     };
 
-    const observer1 = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => handleIntersection(entry, observer));
-    }, options);
-
-    const observer2 = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => handleIntersection(entry, observer));
-    }, options);
-
-    const observer3 = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => handleIntersection(entry, observer));
-    }, options);
-
-    const observer4 = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => handleIntersection(entry, observer));
-    }, options);
-
-    observer1.observe(welcomeRef.current);
-
-    observer2.observe(statementRef.current);
-    observer3.observe(rightAlignedRef.current);
-    observer4.observe(boldTextRef.current);
+    const observers = Object.keys(refs).map((key) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, key));
+      }, observerOptions);
+      observer.observe(refs[key].current);
+      return observer;
+    });
 
     return () => {
-      observer1.disconnect();
-      observer2.disconnect();
-      observer3.disconnect();
-      observer4.disconnect();
+      observers.forEach((observer) => observer.disconnect());
     };
   }, []);
 
   return (
     <>
       <StyledContainer>
-        <WelcomeMessage ref={welcomeRef} isVisible={welcomeVisible}>
+        <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
           <CubeOneRelative>
             <CubesOne src={cubes1} alt="cubes"></CubesOne>Herzlich
           </CubeOneRelative>{" "}
@@ -95,8 +83,10 @@ const AboutUs = () => {
         </Line>
         <InfoText>
           <Person src={person} alt="person icon" />
-          <Heading>ÜBER UNS</Heading>
-          <LeftDiv>
+          <Heading ref={refs.heading} isVisible={isVisible.heading}>
+            ÜBER UNS
+          </Heading>
+          <LeftDiv ref={refs.leftdivone} isVisible={isVisible.leftdivone}>
             <div>
               Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
               mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen
@@ -105,15 +95,15 @@ const AboutUs = () => {
             </div>
             <Cubes></Cubes>
           </LeftDiv>
-          <Statement ref={statementRef} isVisible={statementVisible}>
+          <Statement ref={refs.statement} isVisible={isVisible.statement}>
             Die Lösung liegt in Fachkräften aus dem Ausland!
           </Statement>
-          <BoldText ref={boldTextRef} isVisible={boldTextVisible}>
+          <BoldText ref={refs.boldText} isVisible={isVisible.boldText}>
             Aus eigener Erfahrung wissen wir, dass das Einstellen von
             internationalen Fachkräften eine Herausforderung sein kann. Aber
             keine Sorge, wir stehen Ihnen mit Rat und Tat zur Seite.
           </BoldText>{" "}
-          <LeftDiv ref={rightAlignedRef} isVisible={rightAlignedVisible}>
+          <LeftDiv ref={refs.leftdivtwo} isVisible={isVisible.leftdivtwo}>
             Ganz genau, warum nicht die internationalen Talente für eure offenen
             Stellen gewinnen? Es gibt unzählige qualifizierte Fachkräfte auf der
             ganzen Welt die nicht wie Deutschland vom demografischen Wandel
@@ -122,7 +112,10 @@ const AboutUs = () => {
             und einer Chance sind, ihr Können unter Beweis zu stellen. Denn die
             alternde Bevölkerung nimmt in Deutschland jährlich zu.
           </LeftDiv>
-          <RightAligned>
+          <RightAligned
+            ref={refs.rightdivone}
+            isVisible={isVisible.rightdivone}
+          >
             Unser Team ist eine Gruppe von Personalberater*innen, die jahrelang
             in der Branche Fachkräfte aus den Drittstaaten tätig war und immer
             noch ist, und dabei so ziemlich alles erlebt hat, was man sich
@@ -130,7 +123,10 @@ const AboutUs = () => {
             ausländischer Berufsqualifikationen - wir haben alle möglichen
             Situationen gemeistert.
           </RightAligned>
-          <RightAligned>
+          <RightAligned
+            ref={refs.rightdivtwo}
+            isVisible={isVisible.rightdivtwo}
+          >
             Deshalb haben wir beschlossen, unser Wissen und unsere
             Pro-Kenntnisse dazu zu nutzen, anderen Unternehmen dabei zu helfen,
             diesen Prozess zu rationalisieren und zu vereinfachen.
@@ -369,6 +365,12 @@ const Heading = styled.div`
   text-shadow: 1px 0 rgb(0, 0, 0);
   padding: 20px;
   max-width: 420px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
@@ -385,6 +387,11 @@ const LeftDiv = styled.div`
   max-width: 420px;
   position: relative;
   margin-top: 50px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
     align-self: flex-start;
@@ -409,7 +416,7 @@ const Statement = styled.div`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
@@ -438,7 +445,7 @@ const BoldText = styled.div`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
@@ -458,6 +465,11 @@ const RightAligned = styled.div`
   padding: 20px;
   max-width: 420px;
   margin-top: 50px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
     align-self: flex-start;

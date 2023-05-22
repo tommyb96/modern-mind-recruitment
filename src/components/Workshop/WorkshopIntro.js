@@ -69,7 +69,7 @@ const IntroWrapper = styled.div`
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 0%;
+  top: 170px;
   height: 100%;
   width: 3.5px;
   background-color: black;
@@ -86,7 +86,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 220px;
+  top: 0;
   left: -14px;
   background-color: white;
   width: 30px;
@@ -131,7 +131,7 @@ const CircleTwo = styled.div`
 const LaptopLeft = styled.img`
   position: absolute;
   width: 500px;
-  top: 300px;
+  top: 200px;
   left: -40px;
   z-index: 100;
 
@@ -147,7 +147,7 @@ const LaptopRight = styled.img`
 
   @media (max-width: 900px) {
     align-self: flex-start;
-    margin: 30px 0 30px 20px;
+    margin: 50px 0 30px 20px;
     width: 450px;
     z-index: 100;
   }
@@ -159,7 +159,7 @@ const LaptopRight = styled.img`
 
 const FotosLeft = styled.div`
   position: absolute;
-  top: 750px;
+  top: 670px;
   left: -450px;
   display: flex;
   max-width: 400px;
@@ -178,7 +178,7 @@ const FotosRight = styled.div`
 
   @media (max-width: 900px) {
     align-self: flex-start;
-    margin: 40px 0 70px 100px;
+    margin: 40px 0 70px 85px;
   }
 
   @media (max-width: 500px) {
@@ -208,8 +208,8 @@ const Foto = styled.img`
 
   @media (max-width: 500px) {
     width: 250px;
-    align-self: flex-start;
-    margin: 40px 0 70px 100px;
+    align-self: center;
+    margin: 40px 0 40px 0;
   }
 `;
 
@@ -253,6 +253,7 @@ const Heading = styled.div`
 
 const LeftDiv = styled.div`
   padding: 20px;
+  margin-top: 50px;
   max-width: 420px;
   position: relative;
 
@@ -265,6 +266,7 @@ const LeftDiv = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+    margin-top: 30px;
   }
 
   @media (max-width: 480px) {
@@ -279,6 +281,7 @@ const BoldText = styled.div`
   font-weight: 500;
   font-size: 32px;
   padding: 20px;
+  margin-top: 50px;
   max-width: 420px;
   align-self: flex-end;
   span {
@@ -289,6 +292,7 @@ const BoldText = styled.div`
   @media (max-width: 900px) {
     align-self: flex-start;
     margin-left: 70px;
+    margin-top: 30px;
   }
 
   @media (max-width: 768px) {

@@ -141,8 +141,12 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0;
-  height: 900px;
+  height: 90vh;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    height: 900px;
+  }
 `;
 
 const Cubes = styled.img`
@@ -179,6 +183,7 @@ const Heading = styled.h1`
 
   @media (max-width: 480px) {
     font-size: 39px;
+    margin-top: 100px;
   }
 `;
 
@@ -223,7 +228,7 @@ const FormContainer = styled.form`
   @media (max-width: 480px) {
     width: 335px;
     left: -70px;
-    top: 40px;
+    top: 120px;
     padding: 50px 30px 20px 30px;
 
     input {
