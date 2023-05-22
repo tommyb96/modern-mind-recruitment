@@ -297,7 +297,7 @@ const VideoCircle = styled.div`
 const StyledForm = styled.div`
   position: absolute;
   bottom: -10px;
-  background-color: rgb(138, 138, 255);
+  background-color: rgb(92, 92, 255);
   clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
   height: 200px;
   width: 100%;
@@ -306,7 +306,7 @@ const StyledForm = styled.div`
 
 const InfoWrapper = styled.div`
   position: relative;
-  background-color: rgb(138, 138, 255);
+  background-color: rgb(92, 92, 255);
   width: 100%;
   height: 100%;
   overflow: hidden;
