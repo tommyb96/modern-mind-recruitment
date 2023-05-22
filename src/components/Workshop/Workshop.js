@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import React, { useState, useEffect, useRef } from "react";
 
 import WorkshopIntro from "./WorkshopIntro";
@@ -16,6 +16,9 @@ export default function Workshop() {
   const [isOpenEight, setIsOpenEight] = useState(false);
 
   const refs = {
+    circle: useRef(null),
+    circleStart: useRef(null),
+    circleEnd: useRef(null),
     heading: useRef(null),
     itemOne: useRef(null),
     itemTwo: useRef(null),
@@ -28,6 +31,9 @@ export default function Workshop() {
   };
 
   const [isVisible, setIsVisible] = useState({
+    circle: false,
+    circleStart: false,
+    circleEnd: false,
     heading: false,
     itemOne: false,
     itemTwo: false,
@@ -71,7 +77,7 @@ export default function Workshop() {
       <HeadingWrapper>
         <Line>
           {" "}
-          <Circle />
+          <Circle ref={refs.circle} isVisible={isVisible.circle} />
         </Line>
         <ThreeCubes src={cubes3} alt="cubes"></ThreeCubes>
         <StyledHeading ref={refs.heading} isVisible={isVisible.heading}>
@@ -82,8 +88,11 @@ export default function Workshop() {
       <InfoWrapper>
         <InfoText>
           <WorkshopLine>
-            <WorkshopCircle />
-            <Circle />
+            <WorkshopCircle
+              ref={refs.circleStart}
+              isVisible={isVisible.circleStart}
+            />
+            <Circle ref={refs.circleEnd} isVisible={isVisible.circleEnd} />
           </WorkshopLine>
           <PlaceHolder />
           <Item ref={refs.itemOne} isVisible={isVisible.itemOne}>
@@ -396,7 +405,7 @@ const Line = styled.div`
   position: absolute;
   left: 50%;
   top: 0%;
-  height: 480px;
+  height: 460px;
   width: 3.5px;
   background-color: black;
   z-index: 100;
@@ -416,7 +425,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  bottom: 0px;
+  bottom: -20px;
   left: -15px;
   background-color: white;
   width: 35px;
@@ -424,6 +433,9 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1.2 : 0.6)});
+  transition: transform 1.5s ease-in-out;
 `;
 
 const ThreeCubes = styled.img`
@@ -522,7 +534,7 @@ const WorkshopLine = styled.div`
 
 const WorkshopCircle = styled.div`
   position: absolute;
-  top: 0px;
+  top: -15px;
   left: -15px;
   background-color: white;
   width: 35px;
@@ -530,6 +542,9 @@ const WorkshopCircle = styled.div`
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1.2 : 0.6)});
+  transition: transform 1.5s ease-in-out;
 `;
 
 const BlueTriangleOne = styled.span`
