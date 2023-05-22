@@ -15,10 +15,6 @@ const Home = () => {
     }, {});
 
     observer.observe(sloganRef.current);
-
-    return () => {
-      observer.unobserve(sloganRef.current);
-    };
   }, []);
 
   return (

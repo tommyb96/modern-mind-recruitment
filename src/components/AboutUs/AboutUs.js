@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import Cubes from "./Cubes";
 import cubes1 from "../../assets/svg/AboutUs/about_us_cubes_1.svg";
-import cubes2 from "../../assets/svg/AboutUs/about_us_cubes_2.svg";
 import waves from "../../assets/svg/AboutUs/about_us_waves.png";
 import person from "../../assets/svg/AboutUs/about_us_person.svg";
 
@@ -270,7 +269,7 @@ const Circle = styled.div`
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 `;
 
 const CircleOne = styled.div`

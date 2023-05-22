@@ -1,9 +1,8 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import React, { useState, useEffect, useRef } from "react";
 
 import WorkshopIntro from "./WorkshopIntro";
 import cubes3 from "../../assets/svg/Workshop/workshop_three_cubes.svg";
-import cubes2 from "../../assets/svg/Workshop/workshop_two_cubes.svg";
 
 export default function Workshop() {
   const [isOpenOne, setIsOpenOne] = useState(false);
@@ -437,7 +436,7 @@ const Circle = styled.div`
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 `;
 
 const ThreeCubes = styled.img`
@@ -546,7 +545,7 @@ const WorkshopCircle = styled.div`
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 `;
 
 const BlueTriangleOne = styled.span`

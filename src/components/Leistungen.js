@@ -291,7 +291,7 @@ const VideoCircle = styled.div`
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 `;
 
 const StyledForm = styled.div`
@@ -358,7 +358,7 @@ const Circle = styled.div`
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 `;
 
 const CircleOne = styled.div`
@@ -681,5 +681,5 @@ const SuperBoldTextCircle = styled.div`
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 `;
