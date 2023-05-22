@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import WorkshopIntro from "./WorkshopIntro";
 import cubes3 from "../../assets/svg/Workshop/workshop_three_cubes.svg";
@@ -15,6 +15,56 @@ export default function Workshop() {
   const [isOpenSeven, setIsOpenSeven] = useState(false);
   const [isOpenEight, setIsOpenEight] = useState(false);
 
+  const refs = {
+    heading: useRef(null),
+    itemOne: useRef(null),
+    itemTwo: useRef(null),
+    itemThree: useRef(null),
+    itemFour: useRef(null),
+    itemFive: useRef(null),
+    itemSix: useRef(null),
+    itemSeven: useRef(null),
+    itemEight: useRef(null),
+  };
+
+  const [isVisible, setIsVisible] = useState({
+    heading: false,
+    itemOne: false,
+    itemTwo: false,
+    itemThree: false,
+    itemFour: false,
+    itemFive: false,
+    itemSix: false,
+    itemSeven: false,
+    itemEight: false,
+  });
+
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => ({
+      ...prevState,
+      [target]: entry.isIntersecting,
+    }));
+  };
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observers = Object.keys(refs).map((key) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, key));
+      }, observerOptions);
+      observer.observe(refs[key].current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       <WorkshopIntro />
@@ -24,7 +74,7 @@ export default function Workshop() {
           <Circle />
         </Line>
         <ThreeCubes src={cubes3} alt="cubes"></ThreeCubes>
-        <StyledHeading>
+        <StyledHeading ref={refs.heading} isVisible={isVisible.heading}>
           <span>Inhalt</span> des Workshops: Beschäftigung ausländischer
           Fachkräfte in Deutschland
         </StyledHeading>
@@ -36,7 +86,7 @@ export default function Workshop() {
             <Circle />
           </WorkshopLine>
           <PlaceHolder />
-          <Item>
+          <Item ref={refs.itemOne} isVisible={isVisible.itemOne}>
             <Zahl>1</Zahl>
             <CircleOne />
             <BlueTriangleOne
@@ -65,7 +115,7 @@ export default function Workshop() {
             </Header>
           </Item>
           <Linie />
-          <Item>
+          <Item ref={refs.itemTwo} isVisible={isVisible.itemTwo}>
             <Zahl>2</Zahl>
             <CircleTwo />
             <BlueTriangleTwo
@@ -111,7 +161,7 @@ export default function Workshop() {
             </Header>
           </Item>
           <Linie />
-          <Item>
+          <Item ref={refs.itemThree} isVisible={isVisible.itemThree}>
             <Zahl>3</Zahl>
             <CircleThree />
             <BlueTriangleThree
@@ -145,7 +195,7 @@ export default function Workshop() {
             </Header>
           </Item>
           <Linie />
-          <Item>
+          <Item ref={refs.itemFour} isVisible={isVisible.itemFour}>
             <Zahl>4</Zahl>
             <CircleFour />
             <BlueTriangleFour
@@ -181,7 +231,7 @@ export default function Workshop() {
             </Header>
           </Item>
           <Linie />
-          <Item>
+          <Item ref={refs.itemFive} isVisible={isVisible.itemFive}>
             <Zahl>5</Zahl>
             <CircleFive />
             <BlueTriangleFive
@@ -219,7 +269,7 @@ export default function Workshop() {
             </Header>
           </Item>
           <Linie />
-          <Item>
+          <Item ref={refs.itemSix} isVisible={isVisible.itemSix}>
             <Zahl>6</Zahl>
             <CircleSix />
             <BlueTriangleSix
@@ -247,7 +297,7 @@ export default function Workshop() {
             </Header>
           </Item>
           <Linie />
-          <Item>
+          <Item ref={refs.itemSeven} isVisible={isVisible.itemSeven}>
             <Zahl>7</Zahl>
             <CircleSeven />
             <BlueTriangleSeven
@@ -282,7 +332,7 @@ export default function Workshop() {
             </Header>
           </Item>
           <Linie />
-          <Item>
+          <Item ref={refs.itemEight} isVisible={isVisible.itemEight}>
             <Zahl>8</Zahl>
             <CircleEight />
             <BlueTriangleEight
@@ -661,11 +711,24 @@ const BlueTriangleEight = styled.span`
   }
 `;
 
+const ItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 481px) {
+    display: none;
+  }
+`;
+
 const Item = styled.div`
   position: relative;
   display: flex;
   max-width: 700px;
   margin: 45px 30px 45px 40px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 480px) {
     margin: 30px 30px 30px 30px;
@@ -832,6 +895,7 @@ const CircleSix = styled.div`
     display: none;
   }
 `;
+
 const CircleSeven = styled.div`
   position: absolute;
   top: 5px;
@@ -847,6 +911,7 @@ const CircleSeven = styled.div`
     display: none;
   }
 `;
+
 const CircleEight = styled.div`
   position: absolute;
   top: 5px;
