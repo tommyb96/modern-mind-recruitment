@@ -12,7 +12,6 @@ const navLinks = [
 
 export default function RightNavBar({ open, setOpen }) {
   const [scrollBackground, setScrollBackground] = useState(false);
-  const [hoveredLink, setHoveredLink] = useState(null);
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   useEffect(() => {
@@ -28,22 +27,13 @@ export default function RightNavBar({ open, setOpen }) {
     };
   }, []);
 
-  const handleLinkHover = (id) => {
-    setHoveredLink(id);
-  };
-
   const NavLinks = () => {
     return (
       <ul>
         {navLinks.map((link) => (
-          <li
-            key={link.id}
-            onMouseEnter={!isMobile ? () => handleLinkHover(link.id) : null}
-            onMouseLeave={!isMobile ? () => handleLinkHover(null) : null}
-          >
+          <li key={link.id}>
             <Link smooth to={link.to}>
               {link.label}
-              {!isMobile && hoveredLink === link.id && <HoverDot />}
             </Link>
           </li>
         ))}
@@ -123,15 +113,4 @@ const NavContainer = styled.nav`
       transition: transform 0.7s ease-in-out;
     }
   }
-`;
-
-const HoverDot = styled.span`
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 7px;
-  height: 7px;
-  background-color: black;
-  border-radius: 50%;
 `;
