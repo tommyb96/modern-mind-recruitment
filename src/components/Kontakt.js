@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import emailjs from "@emailjs/browser";
 import waves from "../assets/svg/Kontakt/kontakt_waves.png";
@@ -51,7 +51,10 @@ const Kontakt = () => {
           (result) => {
             console.log(result.text);
             setShowSuccessMessage(true);
-            setTimeout(() => setShowSuccessMessage(false), 2000);
+            setTimeout(() => {
+              setShowSuccessMessage(false);
+              window.location.reload(); // Reload the page
+            }, 3500); // Set timeout to hide the success message after 3.5 seconds and then reload the page
           },
           (error) => {
             console.log(error.text);
@@ -116,7 +119,7 @@ const Kontakt = () => {
             )}
             <StyledButton
               type="submit"
-              style={{ backgroundColor: error ? "" : "green" }}
+              style={{ backgroundColor: error ? "" : "rgb(148,201,115)" }}
             >
               Senden
             </StyledButton>
@@ -125,7 +128,23 @@ const Kontakt = () => {
       </StyledContainer>
       {showSuccessMessage && (
         <SuccessMessageContainer>
-          <SuccessMessage>Vielen Dank für Ihre Nachricht!</SuccessMessage>
+          <SuccessMessage>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 54 54">
+              <circle
+                className="checkmark-circle"
+                cx="26"
+                cy="26"
+                r="25"
+                fill="none"
+              />
+              <path
+                className="checkmark-check"
+                fill="none"
+                d="M14.1 27.2l7.1 7.2 16.7-16.8"
+              />
+            </svg>
+            <h2>Vielen Dank!</h2>
+          </SuccessMessage>
         </SuccessMessageContainer>
       )}
     </>
@@ -259,6 +278,21 @@ const StyledButton = styled.button`
   }
 `;
 
+const checkmarkAnimation = keyframes`
+  0% {
+    stroke-dashoffset: 48;
+    transform: rotate(0deg);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    transform: rotate(360deg);
+  }
+`;
+
 const SuccessMessageContainer = styled.div`
   position: fixed;
   top: 0;
@@ -276,7 +310,7 @@ const SuccessMessage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 40px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
@@ -284,12 +318,19 @@ const SuccessMessage = styled.div`
   h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
-  p {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 20px;
+  svg {
+    width: 110px;
+    height: 100px;
+    stroke: rgb(148, 201, 115);
+    stroke-width: 4;
+    stroke-dasharray: 45;
+    stroke-dashoffset: 45;
+    animation: ${checkmarkAnimation} 1.5s ease-in-out forwards;
+    animation-fill-mode: forwards;
   }
 `;
 
