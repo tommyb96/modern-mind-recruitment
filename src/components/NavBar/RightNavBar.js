@@ -10,9 +10,10 @@ const navLinks = [
   { id: 5, to: "#kontakt", label: "Kontakt" },
 ];
 
-export default function RightNavBar({ open }) {
+export default function RightNavBar({ open, setOpen }) {
   const [scrollBackground, setScrollBackground] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,12 +38,12 @@ export default function RightNavBar({ open }) {
         {navLinks.map((link) => (
           <li
             key={link.id}
-            onMouseEnter={() => handleLinkHover(link.id)}
-            onMouseLeave={() => handleLinkHover(null)}
+            onMouseEnter={!isMobile ? () => handleLinkHover(link.id) : null}
+            onMouseLeave={!isMobile ? () => handleLinkHover(null) : null}
           >
             <Link smooth to={link.to}>
               {link.label}
-              {hoveredLink === link.id && <HoverDot />}
+              {!isMobile && hoveredLink === link.id && <HoverDot />}
             </Link>
           </li>
         ))}
@@ -50,8 +51,18 @@ export default function RightNavBar({ open }) {
     );
   };
 
+  const handleCloseMenu = () => {
+    if (isMobile) {
+      setOpen(false);
+    }
+  };
+
   return (
-    <NavContainer open={open} scrollBackground={scrollBackground}>
+    <NavContainer
+      open={open}
+      scrollBackground={scrollBackground}
+      onClick={handleCloseMenu}
+    >
       <NavLinks />
     </NavContainer>
   );
