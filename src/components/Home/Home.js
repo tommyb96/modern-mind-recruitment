@@ -118,7 +118,7 @@ const Logo = styled.img`
   position: absolute;
   width: 150px;
   margin: 25px;
-  z-index: 100;
+  z-index: 50;
 
   @media (max-width: 1280px) {
     width: 120px;

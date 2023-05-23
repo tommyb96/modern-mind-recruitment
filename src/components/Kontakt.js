@@ -198,7 +198,7 @@ const Wrapper = styled.div`
 const Heading = styled.h1`
   font-family: Comfortaa;
   font-size: 55px;
-  z-index: 100;
+  z-index: 10;
 
   @media (max-width: 480px) {
     font-size: 39px;
