@@ -63,14 +63,16 @@ const NavContainer = styled.nav`
   position: fixed;
   width: 100%;
   z-index: 9000;
+  background-color: rgb(255, 255, 255, 0.8);
 
+  /* 
   background-color: ${({ scrollBackground }) =>
     scrollBackground ? "rgb(255,255,255,0.8)" : "transparent"};
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out; */
 
-  &:hover {
+  /* &:hover {
     background-color: rgb(255, 255, 255, 0.8);
-  }
+  } */
 
   ul {
     display: flex;
