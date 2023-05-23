@@ -10,6 +10,7 @@ import würfel from "../assets/svg/Leistungen/leistungen_würfel.svg";
 
 export default function Leistungen() {
   const refs = {
+    videoHeading: useRef(null),
     circle: useRef(null),
     circleStart: useRef(null),
     circleEnd: useRef(null),
@@ -18,6 +19,7 @@ export default function Leistungen() {
     rightdivtwo: useRef(null),
     cvone: useRef(null),
     boldText: useRef(null),
+    leftDiv: useRef(null),
     cvtwo: useRef(null),
     rightdivthree: useRef(null),
     cvthree: useRef(null),
@@ -27,6 +29,7 @@ export default function Leistungen() {
   };
 
   const [isVisible, setIsVisible] = useState({
+    videoHeading: false,
     circle: false,
     circleStart: false,
     circleEnd: false,
@@ -35,6 +38,7 @@ export default function Leistungen() {
     rightdivtwo: false,
     cvone: false,
     boldText: false,
+    leftDiv: false,
     cvtwo: false,
     rightdivthree: false,
     cvthree: false,
@@ -79,13 +83,13 @@ export default function Leistungen() {
           <video autoPlay loop muted playsInline>
             <source src={video} type="video/mp4" />
           </video>
-          <p>
+          <Statement ref={refs.videoHeading} isVisible={isVisible.videoHeading}>
             Lasst uns gemeinsam die <span>Zukunft</span> unserer Wirtschaft
             gestalten!{" "}
-          </p>{" "}
-          <StyledForm></StyledForm>
+          </Statement>{" "}
+          <StyledForm id="leistungen"></StyledForm>
         </Filler>
-        <InfoWrapper id="leistungen">
+        <InfoWrapper>
           <Würfel src={würfel} alt="würfel"></Würfel>
           <Line>
             <Circle ref={refs.circleStart} isVisible={isVisible.circleStart} />
@@ -131,12 +135,15 @@ export default function Leistungen() {
             <BoldText ref={refs.boldText} isVisible={isVisible.boldText}>
               Wir haben <span>erfolgreich</span> zahlreiche Fachkräfte aus den
               Drittstaaten unterschiedlichster Branchen an namhafte Unternehmen
-              in Deutschland vermittelt und uns mit Schwerpunkten wie
-              Anerkennung ausländischer Berufsabschlüsse,
-              Familienzusammenführung, Arbeitsmarktzulassung der Bundesagentur
-              für Arbeit sowie das beschleunigte Fachkräfteverfahren
-              beschäftigt.{" "}
+              in Deutschland vermittelt.
             </BoldText>{" "}
+            <LeftDiv ref={refs.leftDiv} isVisible={isVisible.leftDiv}>
+              {" "}
+              Mit Schwerpunkten wie Anerkennung ausländischer Berufsabschlüsse,
+              Familienzusammenführung, Arbeitsmarktzulassung der Bundesagentur
+              für Arbeit sowie das beschleunigte Fachkräfteverfahren habe wir
+              uns eingehend beschäftigt.{" "}
+            </LeftDiv>
             <CVTwoRight
               ref={refs.cvtwo}
               isVisible={isVisible.cvtwo}
@@ -223,41 +230,39 @@ const Filler = styled.div`
     display: none !important;
   }
 
-  p {
-    position: absolute;
-    top: 0;
-    margin: 70px 35px 40px 20px;
-    z-index: 1;
-    max-width: 600px;
-    font-family: system-ui;
-    font-weight: 500;
-    font-size: 50px;
-    text-transform: uppercase;
-    span {
-      color: rgb(0, 0, 255);
-    }
-  }
-
   @media (max-width: 1024px) {
     video {
       height: 450px;
     }
   }
-  @media (max-width: 620px) {
-    p {
-      font-size: 45px;
-    }
+`;
+
+const Statement = styled.div`
+  position: absolute;
+  top: 0;
+  margin: 70px 35px 40px 20px;
+  z-index: 1;
+  max-width: 600px;
+  font-family: system-ui;
+  font-weight: 500;
+  font-size: 50px;
+  text-transform: uppercase;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+
+  span {
+    color: rgb(0, 0, 255);
   }
+
   @media (max-width: 620px) {
-    p {
-      font-size: 37px;
-    }
+    font-size: 37px;
   }
 
   @media (max-width: 480px) {
-    p {
-      font-size: 32px;
-    }
+    font-size: 32px;
   }
 `;
 
@@ -515,8 +520,8 @@ const RightAligned = styled.div`
 
 const CVTwoLeft = styled.img`
   position: absolute;
-  width: 500px;
-  top: 850px;
+  width: 450px;
+  top: 810px;
   left: 70px;
   transform: rotate(-25deg);
 
@@ -538,14 +543,14 @@ const CVTwoRight = styled.img`
   @media (max-width: 900px) {
     z-index: 200;
     align-self: flex-start;
-    margin: 70px 0 120px 100px;
+    margin: 100px 0 120px 100px;
     width: 450px;
     transform: rotate(-25deg);
   }
 
   @media (max-width: 480px) {
     align-self: flex-start;
-    margin: 50px 0 70px 100px;
+    margin: 100px 0 90px 100px;
     width: 340px;
   }
 `;
@@ -590,7 +595,7 @@ const BoldText = styled.div`
   font-size: 32px;
   padding: 20px;
   margin-top: 100px;
-  margin-bottom: 50px;
+
   max-width: 420px;
   z-index: 1;
 
@@ -613,6 +618,30 @@ const BoldText = styled.div`
   }
   @media (max-width: 480px) {
     font-size: 20px;
+    margin-left: 55px;
+    margin-right: 10px;
+  }
+`;
+
+const LeftDiv = styled.div`
+  padding: 20px;
+  max-width: 420px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin-left: 70px;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 480px) {
     margin-left: 55px;
     margin-right: 10px;
   }

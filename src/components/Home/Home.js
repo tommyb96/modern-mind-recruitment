@@ -1,61 +1,100 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Cubes from "./Cubes";
+import cubes1 from "../../assets/svg/AboutUs/about_us_cubes_1.svg";
 import logo from "../../assets/svg/Home/logo.svg";
 
 const Home = () => {
-  const sloganRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const refs = {
+    slogan: useRef(null),
+    welcome: useRef(null),
+  };
+
+  const [isVisible, setIsVisible] = useState({
+    slogan: false,
+    welcome: false,
+  });
+
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => ({
+      ...prevState,
+      [target]: entry.isIntersecting,
+    }));
+  };
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        setIsVisible(entry.isIntersecting);
-      });
-    }, {});
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+    };
 
-    observer.observe(sloganRef.current);
+    const observers = Object.keys(refs).map((key) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, key));
+      }, observerOptions);
+      observer.observe(refs[key].current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
   }, []);
 
   return (
     <>
-      <HomeContainer id="home">
-        <Logo src={logo} alt="Logo" />
+      <div id="home">
+        <HomeContainer>
+          <Logo src={logo} alt="Logo" />
+          <CubeWrapper>
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+            <Cubes />
+          </CubeWrapper>
+          <SloganWrapper ref={refs.slogan} isVisible={isVisible.slogan}>
+            <h1>
+              your <span>future</span>
+              <br />
+              &nbsp; &nbsp;is our focus
+            </h1>
+            <div>
+              Ihr Berater für internationale <br />
+              Fachkräfte
+            </div>
+          </SloganWrapper>
+        </HomeContainer>
 
-        <CubeWrapper>
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-          <Cubes />
-        </CubeWrapper>
-        <SloganWrapper ref={sloganRef} isVisible={isVisible}>
-          <h1>
-            your <span>future</span>
-            <br />
-            &nbsp; &nbsp;is our focus
-          </h1>
-          <div>
-            Ihr Berater für internationale <br />
-            Fachkräfte
-          </div>
-        </SloganWrapper>
-      </HomeContainer>
+        <StyledContainer>
+          <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
+            <CubeOneRelative>
+              <CubesOne src={cubes1} alt="cubes"></CubesOne>Herzlich
+            </CubeOneRelative>{" "}
+            Willkommen bei <br />
+            <StyledSpan>
+              modern mind <GreenSpan>recruitment</GreenSpan>
+            </StyledSpan>{" "}
+            und schön, dass sie hier sind, um einen Ausweg aus dem
+            Fachkräftemangel zu finden. Wir garantieren Ihnen Ihren Erfolg!
+          </WelcomeMessage>
+        </StyledContainer>
+      </div>
     </>
   );
 };
@@ -79,7 +118,7 @@ const Logo = styled.img`
   position: absolute;
   width: 150px;
   margin: 25px;
-  z-index: 2;
+  z-index: 100;
 
   @media (max-width: 1280px) {
     width: 120px;
@@ -107,6 +146,8 @@ const SloganWrapper = styled.div`
   flex-direction: column;
   right: 200px;
   top: 320px;
+
+  //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -184,3 +225,87 @@ const SloganWrapper = styled.div`
     }
   }
 `;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
+
+const WelcomeMessage = styled.div`
+  position: relative;
+  color: black;
+  align-self: center;
+  margin: 200px 50px 100px 150px;
+  max-width: 900px;
+  font-family: system-ui;
+  font-weight: 500;
+  font-size: 50px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  //media query
+  @media (max-width: 1024px) {
+    font-size: 40px;
+    max-width: 600px;
+  }
+  @media (max-width: 650px) {
+    font-size: 30px;
+    max-width: 430px;
+    margin: 150px 20px 100px 60px;
+  }
+  @media (max-width: 480px) {
+    font-size: 23px;
+  }
+`;
+
+const StyledSpan = styled.span`
+  font-family: "Comfortaa", cursive;
+  text-shadow: 1px 0 rgb(0, 0, 255);
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(0, 0, 255);
+
+  @media (max-width: 1024px) {
+    font-size: 40px;
+  }
+  @media (max-width: 650px) {
+    font-size: 30px;
+  }
+  @media (max-width: 480px) {
+    font-size: 23px;
+  }
+`;
+
+const GreenSpan = styled.span`
+  color: rgba(0, 167, 155);
+  text-shadow: 1px 0 rgba(0, 167, 155);
+`;
+
+const CubeOneRelative = styled.span`
+  position: relative;
+`;
+
+const CubesOne = styled.img`
+  position: absolute;
+  width: 170px;
+  top: -220%;
+  left: -50%;
+
+  @media (max-width: 650px) {
+    width: 100px;
+    top: -170%;
+    left: -35%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100px;
+    top: -220%;
+    left: -45%;
+  }
+`;
+
+// ref={refs.welcome} isVisible={isVisible.welcome}

@@ -3,13 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import Cubes from "./Cubes";
-import cubes1 from "../../assets/svg/AboutUs/about_us_cubes_1.svg";
 import waves from "../../assets/svg/AboutUs/about_us_waves.png";
 import person from "../../assets/svg/AboutUs/about_us_person.svg";
 
 const AboutUs = () => {
   const refs = {
-    welcome: useRef(null),
     circle: useRef(null),
     heading: useRef(null),
     leftdivone: useRef(null),
@@ -21,7 +19,6 @@ const AboutUs = () => {
   };
 
   const [isVisible, setIsVisible] = useState({
-    welcome: false,
     heading: false,
     circle: false,
     leftdivone: false,
@@ -60,174 +57,80 @@ const AboutUs = () => {
 
   return (
     <>
-      <StyledContainer>
-        <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
-          <CubeOneRelative>
-            <CubesOne src={cubes1} alt="cubes"></CubesOne>Herzlich
-          </CubeOneRelative>{" "}
-          Willkommen bei <br />
-          <StyledSpan>
-            modern mind <GreenSpan>recruitment</GreenSpan>
-          </StyledSpan>{" "}
-          und schön, dass sie hier sind, um einen Ausweg aus dem
-          Fachkräftemangel zu finden. Wir garantieren Ihnen Ihren Erfolg!
-        </WelcomeMessage>
-      </StyledContainer>
-
-      <Waves src={waves} alt="waves"></Waves>
-      <InfoWrapper id="über-uns">
-        <Line>
-          <Circle ref={refs.circle} isVisible={isVisible.circle} />
-          <CircleOne />
-          <CircleTwo />
-          <CircleThree />
-        </Line>
-        <InfoText>
-          <Person src={person} alt="person icon" />
-          <Heading ref={refs.heading} isVisible={isVisible.heading}>
-            ÜBER UNS
-          </Heading>
-          <LeftDiv ref={refs.leftdivone} isVisible={isVisible.leftdivone}>
-            <div>
-              Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
-              mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen
-              Stellen mit qualifizierten Mitarbeiter*innen zu besetzen. Aber was
-              tun?
-            </div>
-            <Cubes></Cubes>
-          </LeftDiv>
-          <Statement ref={refs.statement} isVisible={isVisible.statement}>
-            Die Lösung liegt in Fachkräften aus dem Ausland!
-          </Statement>
-          <BoldText ref={refs.boldText} isVisible={isVisible.boldText}>
-            Aus eigener Erfahrung wissen wir, dass das Einstellen von
-            internationalen Fachkräften eine Herausforderung sein kann. Aber
-            keine Sorge, wir stehen Ihnen mit Rat und Tat zur Seite.
-          </BoldText>{" "}
-          <LeftDiv ref={refs.leftdivtwo} isVisible={isVisible.leftdivtwo}>
-            Ganz genau, warum nicht die internationalen Talente für eure offenen
-            Stellen gewinnen? Es gibt unzählige qualifizierte Fachkräfte auf der
-            ganzen Welt die nicht wie Deutschland vom demografischen Wandel
-            betroffen sind mehr Fachkräfte als zu besetzende Stellen zu
-            Verfügung haben, die auf der Suche nach einer neuen Herausforderung
-            und einer Chance sind, ihr Können unter Beweis zu stellen. Denn die
-            alternde Bevölkerung nimmt in Deutschland jährlich zu.
-          </LeftDiv>
-          <RightAligned
-            ref={refs.rightdivone}
-            isVisible={isVisible.rightdivone}
-          >
-            Unser Team ist eine Gruppe von Personalberater*innen, die jahrelang
-            in der Branche Fachkräfte aus den Drittstaaten tätig war und immer
-            noch ist, und dabei so ziemlich alles erlebt hat, was man sich
-            vorstellen kann. Von skurrilen Gesetzen bis hin zur Anerkennung
-            ausländischer Berufsqualifikationen - wir haben alle möglichen
-            Situationen gemeistert.
-          </RightAligned>
-          <RightAligned
-            ref={refs.rightdivtwo}
-            isVisible={isVisible.rightdivtwo}
-          >
-            Deshalb haben wir beschlossen, unser Wissen und unsere
-            Pro-Kenntnisse dazu zu nutzen, anderen Unternehmen dabei zu helfen,
-            diesen Prozess zu rationalisieren und zu vereinfachen.
-          </RightAligned>
-        </InfoText>
-      </InfoWrapper>
+      <Waves id="über-uns" src={waves} alt="waves"></Waves>
+      <div>
+        <InfoWrapper>
+          <Line>
+            <Circle ref={refs.circle} isVisible={isVisible.circle} />
+            <CircleOne />
+            <CircleTwo />
+            <CircleThree />
+          </Line>
+          <InfoText>
+            <Person src={person} alt="person icon" />
+            <Heading ref={refs.heading} isVisible={isVisible.heading}>
+              ÜBER UNS
+            </Heading>
+            <LeftDiv ref={refs.leftdivone} isVisible={isVisible.leftdivone}>
+              <div>
+                Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
+                mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen
+                Stellen mit qualifizierten Mitarbeiter*innen zu besetzen. Aber
+                was tun?
+              </div>
+              <Cubes></Cubes>
+            </LeftDiv>
+            <Statement ref={refs.statement} isVisible={isVisible.statement}>
+              Die Lösung liegt in Fachkräften aus dem Ausland!
+            </Statement>
+            <BoldText ref={refs.boldText} isVisible={isVisible.boldText}>
+              Aus eigener Erfahrung wissen wir, dass das Einstellen von
+              internationalen Fachkräften eine Herausforderung sein kann. Aber
+              keine Sorge, wir stehen Ihnen mit Rat und Tat zur Seite.
+            </BoldText>{" "}
+            <LeftDiv ref={refs.leftdivtwo} isVisible={isVisible.leftdivtwo}>
+              Ganz genau, warum nicht die internationalen Talente für eure
+              offenen Stellen gewinnen? Es gibt unzählige qualifizierte
+              Fachkräfte auf der ganzen Welt die nicht wie Deutschland vom
+              demografischen Wandel betroffen sind mehr Fachkräfte als zu
+              besetzende Stellen zu Verfügung haben, die auf der Suche nach
+              einer neuen Herausforderung und einer Chance sind, ihr Können
+              unter Beweis zu stellen. Denn die alternde Bevölkerung nimmt in
+              Deutschland jährlich zu.
+            </LeftDiv>
+            <RightAligned
+              ref={refs.rightdivone}
+              isVisible={isVisible.rightdivone}
+            >
+              Unser Team ist eine Gruppe von Personalberater*innen, die
+              jahrelang in der Branche Fachkräfte aus den Drittstaaten tätig war
+              und immer noch ist, und dabei so ziemlich alles erlebt hat, was
+              man sich vorstellen kann. Von skurrilen Gesetzen bis hin zur
+              Anerkennung ausländischer Berufsqualifikationen - wir haben alle
+              möglichen Situationen gemeistert.
+            </RightAligned>
+            <RightAligned
+              ref={refs.rightdivtwo}
+              isVisible={isVisible.rightdivtwo}
+            >
+              Deshalb haben wir beschlossen, unser Wissen und unsere
+              Pro-Kenntnisse dazu zu nutzen, anderen Unternehmen dabei zu
+              helfen, diesen Prozess zu rationalisieren und zu vereinfachen.
+            </RightAligned>
+          </InfoText>
+        </InfoWrapper>
+      </div>
     </>
   );
 };
 
 export default AboutUs;
 
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-`;
-
-const WelcomeMessage = styled.div`
-  position: relative;
-  color: black;
-  align-self: center;
-  margin: 200px 50px 100px 150px;
-  max-width: 900px;
-  font-family: system-ui;
-  font-weight: 500;
-  font-size: 50px;
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  //media query
-  @media (max-width: 1024px) {
-    font-size: 40px;
-    max-width: 600px;
-  }
-  @media (max-width: 650px) {
-    font-size: 30px;
-    max-width: 430px;
-    margin: 150px 20px 100px 60px;
-  }
-  @media (max-width: 480px) {
-    font-size: 23px;
-  }
-`;
-
-const StyledSpan = styled.span`
-  font-family: "Comfortaa", cursive;
-  text-shadow: 1px 0 rgb(0, 0, 255);
-  font-size: 50px;
-  font-weight: bold;
-  color: rgb(0, 0, 255);
-
-  @media (max-width: 1024px) {
-    font-size: 40px;
-  }
-  @media (max-width: 650px) {
-    font-size: 30px;
-  }
-  @media (max-width: 480px) {
-    font-size: 23px;
-  }
-`;
-
-const GreenSpan = styled.span`
-  color: rgba(0, 167, 155);
-  text-shadow: 1px 0 rgba(0, 167, 155);
-`;
-
-const CubeOneRelative = styled.span`
-  position: relative;
-`;
-
-const CubesOne = styled.img`
-  position: absolute;
-  width: 170px;
-  top: -220%;
-  left: -50%;
-
-  @media (max-width: 650px) {
-    width: 100px;
-    top: -170%;
-    left: -35%;
-  }
-
-  @media (max-width: 480px) {
-    width: 100px;
-    top: -220%;
-    left: -45%;
-  }
-`;
-
 const Waves = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  margin: 0;
 `;
 
 const InfoWrapper = styled.div`

@@ -71,11 +71,7 @@ export default function WorkshopIntro() {
         </Line>
 
         <InfoText>
-          <Heading
-            ref={refs.heading}
-            isVisible={isVisible.heading}
-            id="workshop"
-          >
+          <Heading ref={refs.heading} isVisible={isVisible.heading}>
             WORKSHOP
           </Heading>
           <LeftDiv ref={refs.leftdivone} isVisible={isVisible.leftdivone}>
