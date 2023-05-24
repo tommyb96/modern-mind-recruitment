@@ -67,8 +67,8 @@ const Kontakt = () => {
 
   return (
     <>
-      <Waves src={waves} alt="waves"></Waves>
-      <StyledContainer id="kontakt">
+      <Waves src={waves} alt="waves" id="kontakt"></Waves>
+      <StyledContainer>
         <Cubes src={cubes} alt="cubes" />
         <Wrapper>
           <Heading>KONTAKT </Heading>
