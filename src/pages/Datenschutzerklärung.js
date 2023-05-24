@@ -1,9 +1,18 @@
 import styled from "styled-components";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import logo from "../assets/svg/Home/logo.svg";
 import wave from "../assets/svg/Kontakt/kontakt_waves.png";
 import GlobalStyle from "../Styles";
 
 export default function Datenschutzerklärung() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrollen zur Oberseite der Seite
+  }, [location.pathname]);
+
   return (
     <>
       <div>

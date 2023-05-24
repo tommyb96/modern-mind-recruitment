@@ -48,11 +48,11 @@ const Root = () => {
           <Workshop />
           <Kontakt />
           <RotatingCube />
+          <Footer />
         </Wrapper>
-        <Footer />
-        <div>
-          <Outlet />
-        </div>
+      </div>
+      <div>
+        <Outlet />
       </div>
     </>
   );

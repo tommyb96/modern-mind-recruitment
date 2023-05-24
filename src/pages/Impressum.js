@@ -1,9 +1,17 @@
 import styled from "styled-components";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import logo from "../assets/svg/Home/logo.svg";
 import wave from "../assets/svg/AboutUs/about_us_waves.png";
 import GlobalStyle from "../Styles";
 
 export default function Impressum() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrollen zur Oberseite der Seite
+  }, [location.pathname]);
   return (
     <>
       <div>
@@ -48,7 +56,7 @@ export default function Impressum() {
                 Devrientstraße 5, 01067 Dresden
               </p>
               <p>
-                <span>Berufsbezeichnung:</span> <br />
+                <span>Berufsbezeichnung</span> <br />
                 Unternehmensberater
               </p>
               <p>

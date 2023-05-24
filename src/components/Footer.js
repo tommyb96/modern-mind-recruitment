@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 import Impressum from "../pages/Impressum";
 import Datenschutzerklärung from "../pages/Datenschutzerklärung";
 
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   position: relative;
   background-color: rgb(92, 92, 255);
-  height: 250px;
+
   overflow: hidden;
 `;
 
