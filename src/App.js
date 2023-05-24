@@ -50,9 +50,9 @@ const Root = () => {
           <RotatingCube />
         </Wrapper>
         <Footer />
-      </div>
-      <div>
-        <Outlet />
+        <div>
+          <Outlet />
+        </div>
       </div>
     </>
   );

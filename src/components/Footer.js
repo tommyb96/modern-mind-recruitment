@@ -64,8 +64,11 @@ const Nav = styled.div`
 `;
 
 const CopyRight = styled.div`
-  align-self: center;
+  text-align: center;
   margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+
   z-index: 1;
   color: rgb(0, 0, 255, 0.5);
 `;
