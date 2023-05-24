@@ -11,21 +11,21 @@ const navLinks = [
 ];
 
 export default function RightNavBar({ open, setOpen }) {
-  const [scrollBackground, setScrollBackground] = useState(false);
+  // const [scrollBackground, setScrollBackground] = useState(false);
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
-      setScrollBackground(isScrolled);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const isScrolled = window.scrollY > 0;
+  //     setScrollBackground(isScrolled);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const NavLinks = () => {
     return (
@@ -50,7 +50,7 @@ export default function RightNavBar({ open, setOpen }) {
   return (
     <NavContainer
       open={open}
-      scrollBackground={scrollBackground}
+      // scrollBackground={scrollBackground}
       onClick={handleCloseMenu}
     >
       <NavLinks />
@@ -65,14 +65,15 @@ const NavContainer = styled.nav`
   z-index: 9000;
   top: 0;
   left: 0;
+  background-color: rgb(255, 255, 255, 0.8);
 
-  background-color: ${({ scrollBackground }) =>
+  /* background-color: ${({ scrollBackground }) =>
     scrollBackground ? "rgb(255,255,255,0.8)" : "transparent"};
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
     background-color: rgb(255, 255, 255, 0.8);
-  }
+  } */
 
   ul {
     display: flex;
