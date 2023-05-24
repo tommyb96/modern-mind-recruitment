@@ -86,7 +86,6 @@ const NavContainer = styled.nav`
       white-space: nowrap;
 
       a {
-        position: relative;
         color: black;
         text-decoration: none;
         font-size: 18px;
