@@ -65,7 +65,7 @@ const NavContainer = styled.nav`
   z-index: 9000;
   top: 0;
   left: 0;
-  background-color: rgb(255, 255, 255, 0.8);
+  /* background-color: rgb(255, 255, 255, 0.8); */
 
   /* background-color: ${({ scrollBackground }) =>
     scrollBackground ? "rgb(255,255,255,0.8)" : "transparent"};

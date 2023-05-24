@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import logo from "../assets/svg/Home/logo.svg";
+import wave from "../assets/svg/Kontakt/kontakt_waves.png";
 
 export default function Datenschutzerklärung() {
   return (
     <>
-      <Wrapper>
+      <Heading>
+        <Logo src={logo} alt="logo"></Logo>
         <h1>Datenschutzerklärung</h1>
+      </Heading>{" "}
+      <TextWrapper>
         <h1>1. Datenschutz auf einen Blick</h1>
         <h2>Allgemeine Hinweise</h2>
         <p>
@@ -369,16 +374,112 @@ export default function Datenschutzerklärung() {
           Quelle:{" "}
           <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
         </p>
-      </Wrapper>
+      </TextWrapper>
+      <Wave src={wave} alt="wave"></Wave>
     </>
   );
 }
 
-const Wrapper = styled.div`
-  background-color: rgba(0, 167, 155, 0.25);
-  font-family: "futura-pt", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  padding: 40px 20px 20px 40px;
+const Heading = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 1500px;
+  margin: auto;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    align-self: center;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 23px;
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 19px;
+    }
+  }
+`;
+
+const Logo = styled.img`
+  width: 100px;
+  padding: 30px;
+
+  @media (max-width: 700px) {
+    width: 50px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px;
+    width: 40px;
+  }
+`;
+
+const TextWrapper = styled.div`
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 23px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+
+    h1 {
+      font-size: 19px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 17px;
+    }
+  }
+`;
+
+const Wave = styled.img`
+  width: 100%;
   margin: 0;
+  padding: 0;
 `;

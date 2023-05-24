@@ -18,6 +18,9 @@ const Footer = () => {
             Datenschutzerklärung
           </Link>
         </Nav>
+        <CopyRight>
+          © 2023 modern mind recruitment. Alle Rechte vorbehalten.
+        </CopyRight>
       </Wrapper>
     </>
   );
@@ -27,17 +30,11 @@ export default Footer;
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   position: relative;
   background-color: rgb(92, 92, 255);
   height: 250px;
   overflow: hidden;
-`;
-
-const Nav = styled.div`
-  align-self: center;
-  padding-top: 50px;
-  margin: auto;
-  z-index: 1;
 `;
 
 const Form = styled.img`
@@ -45,4 +42,30 @@ const Form = styled.img`
   bottom: 0;
   height: 100%;
   width: 100%;
+`;
+
+const Nav = styled.div`
+  display: flex;
+  align-self: center;
+  padding-top: 170px;
+  margin: auto;
+  z-index: 1;
+
+  a {
+    text-decoration: none;
+    color: rgb(0, 0, 255);
+    padding: 10px;
+    font-weight: bold;
+
+    &:hover {
+      color: rgb(0, 0, 255, 0.5);
+    }
+  }
+`;
+
+const CopyRight = styled.div`
+  align-self: center;
+  margin-bottom: 15px;
+  z-index: 1;
+  color: rgb(0, 0, 255, 0.5);
 `;

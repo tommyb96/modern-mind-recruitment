@@ -17,6 +17,7 @@ const CubeContainer = styled.div`
   right: 50px;
   width: 70px;
   height: 70px;
+  z-index: 9999;
   transform-style: preserve-3d;
   animation: ${CubeSpin} 4s linear infinite;
   transition: all 0.3s ease-out;
