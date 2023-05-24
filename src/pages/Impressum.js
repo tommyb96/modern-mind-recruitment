@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import logo from "../assets/svg/Home/logo.svg";
-import wave from "../assets/svg/Kontakt/kontakt_waves.png";
+import wave from "../assets/svg/AboutUs/about_us_waves.png";
 import GlobalStyle from "../Styles";
 
 export default function Impressum() {
