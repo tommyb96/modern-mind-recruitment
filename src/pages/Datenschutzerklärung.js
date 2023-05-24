@@ -502,7 +502,7 @@ const TextWrapper = styled.div`
 
   ul {
     li {
-      margin: 0 0 10px 0;
+      margin: 0 0 20px 0;
     }
   }
 
@@ -543,6 +543,10 @@ const TextWrapper = styled.div`
 
     h3 {
       font-size: 15px;
+    }
+
+    ul {
+      padding-left: 10px;
     }
   }
 `;

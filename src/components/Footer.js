@@ -47,7 +47,7 @@ const Form = styled.img`
 const Nav = styled.div`
   display: flex;
   align-self: center;
-  padding-top: 170px;
+  padding-top: 140px;
   margin: auto;
   z-index: 1;
 
@@ -65,7 +65,7 @@ const Nav = styled.div`
 
 const CopyRight = styled.div`
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   padding-left: 20px;
   padding-right: 20px;
 
