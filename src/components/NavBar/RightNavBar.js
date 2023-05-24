@@ -63,16 +63,16 @@ const NavContainer = styled.nav`
   position: fixed;
   width: 100%;
   z-index: 9000;
-  background-color: rgb(255, 255, 255, 0.8);
+  top: 0;
+  left: 0;
 
-  /* 
   background-color: ${({ scrollBackground }) =>
     scrollBackground ? "rgb(255,255,255,0.8)" : "transparent"};
-  transition: background-color 0.3s ease-in-out; */
+  transition: background-color 0.3s ease-in-out;
 
-  /* &:hover {
+  &:hover {
     background-color: rgb(255, 255, 255, 0.8);
-  } */
+  }
 
   ul {
     display: flex;
@@ -103,7 +103,7 @@ const NavContainer = styled.nav`
   @media (max-width: 768px) {
     ul {
       flex-flow: column nowrap;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.8);
       position: fixed;
       margin: 0;
       top: 0;
