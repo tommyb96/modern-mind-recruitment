@@ -153,7 +153,9 @@ const Kontakt = () => {
 
 export default Kontakt;
 
-const Waves = styled.img``;
+const Waves = styled.img`
+  width: 100vw;
+`;
 
 const StyledContainer = styled.div`
   background-color: rgb(92, 92, 255);

@@ -30,7 +30,8 @@ export default function Impressum() {
               <p>
                 <span>Tel.:</span> 015202112164
                 <br />
-                <span>E-Mail:</span> info@modernmindrecruitment.com
+                <span>E-Mail: </span>
+                info@modernmindrecruitment.com
               </p>
               <p>
                 <span>Aufsichtsbehörde</span>
@@ -47,7 +48,8 @@ export default function Impressum() {
                 Devrientstraße 5, 01067 Dresden
               </p>
               <p>
-                <span>Berufsbezeichnung:</span> Unternehmensberater
+                <span>Berufsbezeichnung:</span> <br />
+                Unternehmensberater
               </p>
               <p>
                 <span>Vertreten durch die Gesellschafter</span>
@@ -62,10 +64,8 @@ export default function Impressum() {
                 Verbraucherangelegenheiten (ODR-Verordnung) möchten wir Sie über
                 die Online-Streitbeilegungsplattform (OS-Plattform) informieren.
                 Verbraucher haben die Möglichkeit, Beschwerden an die Online
-                Streitbeilegungsplattform der Europäischen Kommission unter
-                https:/ec.europa.eu/consumers/odr/main/index.cfm?event=-
-                main.home2.show&lIng=DE zu richten. Die dafür notwendigen
-                Kontaktdaten finden Sie oberhalb in unserem Impressum.
+                Streitbeilegungsplattform der Europäischen Kommission zu
+                richten.
               </p>
               <p>
                 Wir möchten Sie jedoch darauf hinweisen, dass wir nicht bereit
@@ -153,6 +153,7 @@ export default function Impressum() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100vw;
 `;
 
 const Heading = styled.div`
@@ -254,7 +255,7 @@ const TextContainer = styled.div`
 `;
 
 const Wave = styled.img`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0;
   padding: 0;
