@@ -19,9 +19,9 @@ export default function RightNavBar({ open, setOpen }) {
       <ul>
         {navLinks.map((link) => (
           <li key={link.id}>
-            <a href={link.to} onClick={handleNavLinkClick}>
+            <NavLink href={link.to} onClick={handleNavLinkClick}>
               {link.label}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -42,7 +42,7 @@ const NavContainer = styled.nav`
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255, 0.7);
   transition: 0.5s ease;
   opacity: 0;
 
@@ -58,18 +58,6 @@ const NavContainer = styled.nav`
     li {
       padding: 2.5vw;
       white-space: nowrap;
-
-      a {
-        color: black;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: 500;
-        text-transform: uppercase;
-
-        @media (max-width: 1024px) {
-          font-size: 16px;
-        }
-      }
     }
   }
 
@@ -87,6 +75,35 @@ const NavContainer = styled.nav`
       padding-top: 3.5rem;
       transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
       transition: transform 0.7s ease-in-out;
+    }
+  }
+`;
+
+const NavLink = styled.a`
+  position: relative;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 45%;
+        right: 0;
+        bottom: -13px;
+        height: 8px;
+        width: 8px;
+        border-radius: 2px;
+        background-color: black;
+      }
     }
   }
 `;
