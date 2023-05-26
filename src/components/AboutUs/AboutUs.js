@@ -8,6 +8,7 @@ import person from "../../assets/svg/AboutUs/about_us_person.svg";
 
 const AboutUs = () => {
   const refs = {
+    wavescircle: useRef(null),
     circle: useRef(null),
     heading: useRef(null),
     leftdivone: useRef(null),
@@ -19,6 +20,7 @@ const AboutUs = () => {
   };
 
   const [isVisible, setIsVisible] = useState({
+    wavescircle: false,
     heading: false,
     circle: false,
     leftdivone: false,
@@ -73,7 +75,16 @@ const AboutUs = () => {
 
   return (
     <>
-      <Waves id="über-uns" src={waves} alt="waves"></Waves>
+      <WavesWrapper>
+        {" "}
+        <WavesLine>
+          <WavesCircle
+            ref={refs.wavescircle}
+            isVisible={isVisible.wavescircle}
+          />
+        </WavesLine>
+        <Waves id="über-uns" src={waves} alt="waves"></Waves>
+      </WavesWrapper>
       <div>
         <InfoWrapper>
           <Line>
@@ -142,6 +153,43 @@ const AboutUs = () => {
 
 export default AboutUs;
 
+const WavesWrapper = styled.div`
+  display: flex;
+  position: relative;
+`;
+
+const WavesLine = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 80%;
+  width: 3.5px;
+  background-color: black;
+
+  @media (max-width: 900px) {
+    left: 10%;
+    height: 140%;
+  }
+
+  @media (max-width: 480px) {
+    left: 9%;
+    height: 175%;
+  }
+`;
+
+const WavesCircle = styled.div`
+  position: absolute;
+  top: -11px;
+  left: -26px;
+  background-color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
+  transition: transform 1s ease-in-out;
+`;
+
 const Waves = styled.img`
   width: 100%;
   height: 100%;
@@ -160,37 +208,42 @@ const InfoWrapper = styled.div`
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 1%;
+  top: 0%;
   height: 100%;
   width: 3.5px;
   background-color: black;
 
   @media (max-width: 900px) {
     left: 10%;
-    top: 110px;
   }
 
   @media (max-width: 480px) {
-    left: 7%;
+    left: 9%;
   }
 `;
 
 const Circle = styled.div`
   position: absolute;
-  top: -10px;
+  top: 15px;
   left: -20px;
   background-color: white;
   width: 45px;
   height: 45px;
   border-radius: 50%;
   border: 3.5px solid black;
+  z-index: 200;
+
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
   transition: transform 1s ease-in-out;
+
+  @media (max-width: 900px) {
+    top: 105px;
+  }
 `;
 
 const CircleOne = styled.div`
   position: absolute;
-  top: 155px;
+  top: 170px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -200,13 +253,16 @@ const CircleOne = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 140px;
+    top: 255px;
+  }
+  @media (max-width: 600px) {
+    display: none;
   }
 `;
 
 const CircleTwo = styled.div`
   position: absolute;
-  top: 390px;
+  top: 405px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -216,7 +272,7 @@ const CircleTwo = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 830px;
+    top: 940px;
   }
 
   @media (max-width: 600px) {
@@ -226,7 +282,7 @@ const CircleTwo = styled.div`
 
 const CircleThree = styled.div`
   position: absolute;
-  top: 1300px;
+  top: 1315px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -236,7 +292,7 @@ const CircleThree = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 1680px;
+    top: 1790px;
   }
 
   @media (max-width: 600px) {

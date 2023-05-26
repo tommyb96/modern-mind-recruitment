@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Cubes from "./Cubes";
-import cubes1 from "../../assets/svg/AboutUs/about_us_cubes_1.svg";
 import logo from "../../assets/svg/Home/logo.svg";
 
 const Home = () => {
@@ -80,7 +79,6 @@ const Home = () => {
             </div>
           </SloganWrapper>
         </HomeContainer>
-
         <StyledContainer>
           <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
             Herzlich Willkommen bei <br />
@@ -106,8 +104,8 @@ const HomeContainer = styled.div`
   overflow: hidden;
   background: linear-gradient(
     to right,
-    rgb(0, 167, 155, 0.6),
-    rgb(92, 92, 255)
+    rgb(92, 92, 255, 0.8),
+    rgb(0, 167, 155, 0.6)
   );
 `;
 
@@ -115,8 +113,8 @@ const Logo = styled.img`
   position: absolute;
   width: 150px;
   margin: 25px;
-  z-index: 50;
-  top: 0;
+  z-index: 1100;
+  top: 70px;
   left: 0;
 
   @media (max-width: 1280px) {
@@ -235,11 +233,12 @@ const WelcomeMessage = styled.div`
   position: relative;
   color: black;
   align-self: center;
-  margin: 150px 80px 100px 60px;
+  margin: 150px 80px 120px 60px;
   max-width: 900px;
   font-family: system-ui;
   font-weight: 500;
   font-size: 50px;
+  max-width: 1200px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -249,15 +248,15 @@ const WelcomeMessage = styled.div`
   //media query
   @media (max-width: 1024px) {
     font-size: 40px;
-    max-width: 600px;
   }
   @media (max-width: 650px) {
+    margin: 150px 40px 120px 40px;
     font-size: 30px;
-    max-width: 430px;
-    margin: 150px 20px 100px 60px;
   }
   @media (max-width: 480px) {
     font-size: 23px;
+    margin-left: 55px;
+    margin-bottom: 120px;
   }
 `;
 
@@ -283,27 +282,4 @@ const GreenSpan = styled.span`
   color: rgba(0, 167, 155);
   text-shadow: 1px 0 rgba(0, 167, 155);
   font-family: Comfortaa;
-`;
-
-const CubeOneRelative = styled.span`
-  position: relative;
-`;
-
-const CubesOne = styled.img`
-  position: absolute;
-  width: 170px;
-  top: -220%;
-  left: -50%;
-
-  @media (max-width: 650px) {
-    width: 100px;
-    top: -170%;
-    left: -35%;
-  }
-
-  @media (max-width: 480px) {
-    width: 100px;
-    top: -220%;
-    left: -45%;
-  }
 `;

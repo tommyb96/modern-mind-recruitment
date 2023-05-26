@@ -11,6 +11,21 @@ const navLinks = [
 ];
 
 export default function RightNavBar({ open, setOpen }) {
+  const [scrollBackground, setScrollBackground] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrollBackground(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleNavLinkClick = () => {
     setOpen(false);
   };
@@ -29,7 +44,11 @@ export default function RightNavBar({ open, setOpen }) {
   };
 
   return (
-    <NavContainer open={open} onClick={handleNavLinkClick}>
+    <NavContainer
+      open={open}
+      onClick={handleNavLinkClick}
+      scrollBackground={scrollBackground}
+    >
       <NavLinks />
     </NavContainer>
   );
@@ -42,9 +61,10 @@ const NavContainer = styled.nav`
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: rgb(255, 255, 255, 0.7);
-  transition: 0.5s ease;
-  opacity: 0;
+  opacity: ${({ scrollBackground }) => (scrollBackground ? 0 : 1)};
+  background-color: ${({ scrollBackground }) =>
+    scrollBackground ? "rgb(255, 255, 255, 0.7)" : "rgb(255, 255, 255, 0.7)"};
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
     opacity: 1;
@@ -53,10 +73,10 @@ const NavContainer = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin: 5px 10px 5px 150px;
+    margin: 0px 10px 5px 150px;
 
     li {
-      padding: 2.5vw;
+      padding: 1.2vw 2.5vw 1.2vw 2.5vw;
       white-space: nowrap;
     }
   }

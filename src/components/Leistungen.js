@@ -281,7 +281,7 @@ const VideoLine = styled.div`
   }
 
   @media (max-width: 480px) {
-    left: 7%;
+    left: 9%;
   }
 `;
 
@@ -348,7 +348,7 @@ const Line = styled.div`
   }
 
   @media (max-width: 480px) {
-    left: 7%;
+    left: 9%;
   }
 `;
 
@@ -699,7 +699,7 @@ const SuperBoldTextLine = styled.div`
   }
 
   @media (max-width: 480px) {
-    left: 7%;
+    left: 9%;
   }
 `;
 

@@ -96,7 +96,10 @@ export default function Workshop() {
                 ref={refs.circleStart}
                 isVisible={isVisible.circleStart}
               />
-              <Circle ref={refs.circleEnd} isVisible={isVisible.circleEnd} />
+              <LastCircle
+                ref={refs.circleEnd}
+                isVisible={isVisible.circleEnd}
+              />
             </WorkshopLine>
             <PlaceHolder />
             <Item ref={refs.itemOne} isVisible={isVisible.itemOne}>
@@ -960,4 +963,19 @@ const StyledDiv = styled.div`
     font-size: 18px;
     margin-bottom: 70px;
   }
+`;
+
+const LastCircle = styled.div`
+  position: absolute;
+  bottom: -20px;
+  left: -25px;
+  background-color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
+  transition: transform 1s ease-in-out;
 `;

@@ -47,7 +47,7 @@ const Root = () => {
           <Leistungen />
           <Workshop />
           <Kontakt />
-          <RotatingCube />
+          {/* <RotatingCube /> */}
           <Footer />
         </Wrapper>
       </div>
