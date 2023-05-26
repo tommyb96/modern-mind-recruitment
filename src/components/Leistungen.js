@@ -664,6 +664,7 @@ const SuperBoldText = styled.div`
   font-size: 50px;
   margin: 150px 80px 200px 60px;
   max-width: 1200px;
+
   span {
     color: rgb(0, 0, 255);
   }

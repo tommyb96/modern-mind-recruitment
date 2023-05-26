@@ -83,10 +83,7 @@ const Home = () => {
 
         <StyledContainer>
           <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
-            <CubeOneRelative>
-              <CubesOne src={cubes1} alt="cubes"></CubesOne>Herzlich
-            </CubeOneRelative>{" "}
-            Willkommen bei <br />
+            Herzlich Willkommen bei <br />
             <StyledSpan>
               modern mind <GreenSpan>recruitment</GreenSpan>
             </StyledSpan>{" "}
@@ -231,8 +228,6 @@ const SloganWrapper = styled.div`
 `;
 
 const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   position: relative;
 `;
 
@@ -240,7 +235,7 @@ const WelcomeMessage = styled.div`
   position: relative;
   color: black;
   align-self: center;
-  margin: 200px 50px 100px 150px;
+  margin: 150px 80px 100px 60px;
   max-width: 900px;
   font-family: system-ui;
   font-weight: 500;

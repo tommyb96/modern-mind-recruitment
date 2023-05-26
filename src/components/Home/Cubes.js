@@ -8,21 +8,22 @@ const Cubes = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 480) {
-        setNumCubes(10);
-        setCubeSize({ height: "13.3vw", width: "13.3vw" });
-      } else if (width < 769) {
-        setNumCubes(12);
-        setCubeSize({ height: "10.3vw", width: "10.3vw" });
-      } else if (width < 1025) {
-        setNumCubes(14);
-        setCubeSize({ height: "8.5vw", width: "8.5vw" });
-      } else if (width < 1280) {
+      // if (width < 480) {
+      //   setNumCubes(10);
+      //   setCubeSize({ height: "13.3vw", width: "13.3vw" });
+      // } else if (width < 769) {
+      //   setNumCubes(12);
+      //   setCubeSize({ height: "10.3vw", width: "10.3vw" });
+      // } else if (width < 1025) {
+      //   setNumCubes(14);
+      //   setCubeSize({ height: "8.5vw", width: "8.5vw" });
+      // }
+      if (width < 590) {
         setNumCubes(16);
-        setCubeSize({ height: "6.2vw", width: "6.2vw" });
+        setCubeSize({ height: "13vw", width: "13vw" });
       } else {
         setNumCubes(30);
-        setCubeSize({ height: "4.65vw", width: "4.65vw" });
+        setCubeSize({ height: "80px", width: "80px" });
       }
     };
 
@@ -50,8 +51,8 @@ const CubeContainer = styled.div`
 
 const StyledCube = styled.div`
   background-color: rgba(0, 167, 155, 0.3);
-  border-radius: 0.8vw;
-  margin: 1.3px;
+  border-radius: 15%;
+  margin: 0.08rem;
   transition: transform 0.05s ease-in-out;
 
   &:hover {
@@ -59,16 +60,12 @@ const StyledCube = styled.div`
     opacity: 0.9;
   }
 
-  @media (min-width: 0px) {
-    margin: 1.4px;
-    border-radius: 7px;
-  }
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     margin: 1.8px;
     border-radius: 10px;
   }
   @media (min-width: 1024px) {
     margin: 1.3px;
     border-radius: 0.8vw;
-  }
+  } */
 `;

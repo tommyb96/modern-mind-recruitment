@@ -10,11 +10,6 @@ const Cubes = () => {
           <StyledCube />
           <StyledCube />
           <StyledCube />
-        </CubeContainer>
-        <CubeContainer>
-          <StyledCube />
-          <StyledCube />
-          <StyledCube />
           <StyledCube />
         </CubeContainer>
         <CubeContainer>
@@ -22,8 +17,24 @@ const Cubes = () => {
           <StyledCube />
           <StyledCube />
           <StyledCube />
+          <StyledCube />
         </CubeContainer>
         <CubeContainer>
+          <StyledCube />
+          <StyledCube />
+          <StyledCube />
+          <StyledCube />
+          <StyledCube />
+        </CubeContainer>
+        <CubeContainer>
+          <StyledCube />
+          <StyledCube />
+          <StyledCube />
+          <StyledCube />
+          <StyledCube />
+        </CubeContainer>
+        <CubeContainer>
+          <StyledCube />
           <StyledCube />
           <StyledCube />
           <StyledCube />
@@ -61,15 +72,15 @@ const CubeContainer = styled.div`
 
 const StyledCube = styled.div`
   background-color: rgba(102, 102, 102, 0.15);
-  width: 100px;
-  height: 100px;
-  border-radius: 15px;
-  margin: 1.3px;
+  width: 80px;
+  height: 80px;
+  border-radius: 15%;
+  margin: 0.08rem;
   transition: transform 0.05s ease-in-out;
 
   @media (max-width: 590px) {
-    width: 16vw;
-    height: 16vw;
+    width: 13vw;
+    height: 13vw;
   }
 
   /* @media (max-width: 420px) {
