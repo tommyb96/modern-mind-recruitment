@@ -119,11 +119,12 @@ const AboutUs = () => {
               Ganz genau, warum nicht die internationalen Talente für eure
               offenen Stellen gewinnen? Es gibt unzählige qualifizierte
               Fachkräfte auf der ganzen Welt die nicht wie Deutschland vom
-              demografischen Wandel betroffen sind mehr Fachkräfte als zu
-              besetzende Stellen zu Verfügung haben, die auf der Suche nach
+              demografischen Wandel betroffen sind und mehr Fachkräfte als zu
+              besetzende Stellen zur Verfügung haben, die auf der Suche nach
               einer neuen Herausforderung und einer Chance sind, ihr Können
-              unter Beweis zu stellen. Denn die alternde Bevölkerung nimmt in
-              Deutschland jährlich zu.
+              unter Beweis zu stellen. In den nächsten 20 Jahren wird der
+              demografische Wandel zu einem Rückgang von etwa 25% der Menschen
+              im erwerbsfähigen Alter führen.
             </LeftDiv>
             <RightAligned
               ref={refs.rightdivone}
@@ -282,7 +283,7 @@ const CircleTwo = styled.div`
 
 const CircleThree = styled.div`
   position: absolute;
-  top: 1315px;
+  top: 1340px;
   left: -9px;
   background-color: black;
   width: 20px;

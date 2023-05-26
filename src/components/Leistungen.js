@@ -109,23 +109,24 @@ export default function Leistungen() {
               ref={refs.rightdivone}
               isVisible={isVisible.rightdivone}
             >
-              In Ihrem Unternehmen mangelt es an qualifizierten Mitarbeiter oder
-              sie suchen nach Fachkräften, um neue Projekte und Aufträge
-              erfolgreich umzusetzen? Jedoch stoßen Sie auf Schwierigkeiten bei
-              der Besetzung dieser Stellen mit einheimischen Fachkräften und
-              wissen nicht, wie Sie Fachkräfte aus dem Ausland oder Drittstaaten
-              rekrutieren und den damit verbundenen rechtlichen und
-              bürokratischen Prozess bewältigen können?
+              In Ihrem Unternehmen mangelt es an qualifizierten
+              Mitarbeiter*innen oder sie suchen nach Fachkräften, um neue
+              Projekte und Aufträge erfolgreich umzusetzen? Jedoch stoßen Sie
+              auf Schwierigkeiten bei der Besetzung dieser Stellen mit
+              einheimischen Fachkräften und wissen nicht, wie Sie Fachkräfte aus
+              dem Ausland oder Drittstaaten rekrutieren und den damit
+              verbundenen rechtlichen und bürokratischen Prozess bewältigen
+              können?
             </RightAligned>
             <RightAligned
               ref={refs.rightdivtwo}
               isVisible={isVisible.rightdivtwo}
             >
-              Als Experten im Bereich der Personalvermittlung für ausländische
-              Fachkräfte können wir Ihnen helfen. Wir verfügen über jahrelange
-              Erfahrung in allen Bereichen des Einstellungsprozesses, von der
-              rechtlichen Beratung bis hin zur Unterstützung bei sozialen
-              Aspekten.
+              Als Experten und Expertinnen im Bereich der Personalvermittlung
+              für ausländische Fachkräfte können wir Ihnen helfen. Wir verfügen
+              über jahrelange Erfahrung in allen Bereichen des
+              Einstellungsprozesses, von der rechtlichen Beratung bis hin zur
+              Unterstützung bei sozialen Aspekten.
             </RightAligned>{" "}
             <CVOneRight
               ref={refs.cvone}
@@ -142,7 +143,7 @@ export default function Leistungen() {
               {" "}
               Mit Schwerpunkten wie Anerkennung ausländischer Berufsabschlüsse,
               Familienzusammenführung, Arbeitsmarktzulassung der Bundesagentur
-              für Arbeit sowie das beschleunigte Fachkräfteverfahren habe wir
+              für Arbeit sowie das beschleunigte Fachkräfteverfahren haben wir
               uns eingehend beschäftigt.{" "}
             </LeftDiv>
             <CVTwoRight
@@ -158,10 +159,10 @@ export default function Leistungen() {
               Unser Team steht Ihnen kompetent und engagiert zur Seite und
               begleitet Sie Schritt für Schritt durch den gesamten
               Einstellungsprozess. Dabei analysieren wir jeden einzelnen Aspekt
-              eingehend und diskutieren diese mit Ihnen ausführlich. Mit unseren
-              jahrelang erworbenen Erfahrungen und Kenntnissen werden wir Ihnen
-              gezielt und individuell unsere bewährten Tricks und Kniffe
-              vermitteln, die Ihnen sonst keiner verrät, um Ihre
+              eingehend und diskutieren diesen mit Ihnen ausführlich. Mit
+              unseren jahrelang erworbenen Erfahrungen und Kenntnissen werden
+              wir Ihnen gezielt und individuell unsere bewährten Tricks und
+              Kniffe vermitteln, die Ihnen sonst keiner verrät, um Ihre
               Erfolgsaussichten auf ein Maximum zu steigern.
             </RightAligned>
             <CVThreeRight
