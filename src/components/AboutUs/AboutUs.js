@@ -162,7 +162,7 @@ const WavesLine = styled.div`
   position: absolute;
   bottom: 0;
   left: 50%;
-  height: 80%;
+  height: 100%;
   width: 3.5px;
   background-color: black;
 
