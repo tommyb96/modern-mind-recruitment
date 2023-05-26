@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import styled from "styled-components";
 
@@ -10,9 +10,7 @@ const navLinks = [
   { id: 5, to: "#kontakt", label: "Kontakt" },
 ];
 
-export default function RightNavBar({ open, setOpen }) {
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
+export default function RightNavBar() {
   const NavLinks = () => {
     return (
       <ul>
@@ -27,18 +25,8 @@ export default function RightNavBar({ open, setOpen }) {
     );
   };
 
-  const handleCloseMenu = () => {
-    if (isMobile) {
-      setOpen(false);
-    }
-  };
-
   return (
-    <NavContainer
-      open={open}
-      // scrollBackground={scrollBackground}
-      onClick={handleCloseMenu}
-    >
+    <NavContainer>
       <NavLinks />
     </NavContainer>
   );
@@ -82,20 +70,7 @@ const NavContainer = styled.nav`
     }
   }
 
-  @media (max-width: 768px), (hover: none), (pointer: coarse) {
-    opacity: 1;
-    ul {
-      flex-flow: column nowrap;
-      background-color: rgba(255, 255, 255, 0.8);
-      position: fixed;
-      margin: 0;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 250px;
-      padding-top: 3.5rem;
-      transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-      transition: transform 0.7s ease-in-out;
-    }
+  @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+    display: none;
   }
 `;
