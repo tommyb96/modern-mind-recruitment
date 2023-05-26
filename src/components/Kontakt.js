@@ -162,11 +162,11 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0;
-  height: 90vh;
+  height: 900px;
   overflow: hidden;
 
   @media (max-width: 480px) {
-    height: 900px;
+    height: 800px;
   }
 `;
 
