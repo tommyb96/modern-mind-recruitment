@@ -82,7 +82,7 @@ const NavContainer = styled.nav`
     }
   }
 
-  @media (max-width: 768px), (hover: none), (pointer: coarse) {
+  @media (max-width: 768px), (pointer: coarse) {
     opacity: 1;
     ul {
       flex-flow: column nowrap;
