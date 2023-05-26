@@ -11,34 +11,25 @@ const navLinks = [
 ];
 
 export default function RightNavBar({ open, setOpen }) {
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
+  const handleNavLinkClick = () => {
+    setOpen(false);
+  };
   const NavLinks = () => {
     return (
       <ul>
         {navLinks.map((link) => (
           <li key={link.id}>
-            <Link smooth to={link.to}>
+            <a href={link.to} onClick={handleNavLinkClick}>
               {link.label}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
     );
   };
 
-  const handleCloseMenu = () => {
-    if (isMobile) {
-      setOpen(false);
-    }
-  };
-
   return (
-    <NavContainer
-      open={open}
-      // scrollBackground={scrollBackground}
-      onClick={handleCloseMenu}
-    >
+    <NavContainer open={open} onClick={handleNavLinkClick}>
       <NavLinks />
     </NavContainer>
   );
@@ -55,9 +46,9 @@ const NavContainer = styled.nav`
   transition: 0.5s ease;
   opacity: 1;
 
-  /* &:hover {
+  &:hover {
     opacity: 1;
-  } */
+  }
 
   ul {
     display: flex;
