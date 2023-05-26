@@ -82,24 +82,7 @@ const NavContainer = styled.nav`
     }
   }
 
-  @media (max-width: 768px) {
-    opacity: 1;
-    ul {
-      flex-flow: column nowrap;
-      background-color: rgba(255, 255, 255, 0.8);
-      position: fixed;
-      margin: 0;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 250px;
-      padding-top: 3.5rem;
-      transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-      transition: transform 0.7s ease-in-out;
-    }
-  }
-
-  @media (pointer: coarse) {
+  @media (max-width: 768px), (hover: none), (pointer: coarse) {
     opacity: 1;
     ul {
       flex-flow: column nowrap;
