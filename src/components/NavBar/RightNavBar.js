@@ -73,7 +73,7 @@ const NavContainer = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin: 0px 10px 5px 150px;
+    margin: 5px 10px 5px 150px;
 
     li {
       padding: 1.2vw 2.5vw 1.2vw 2.5vw;

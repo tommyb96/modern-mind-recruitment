@@ -104,7 +104,7 @@ const HomeContainer = styled.div`
   overflow: hidden;
   background: linear-gradient(
     to right,
-    rgb(92, 92, 255, 0.8),
+    rgb(0, 0, 255, 0.8),
     rgb(0, 167, 155, 0.6)
   );
 `;
