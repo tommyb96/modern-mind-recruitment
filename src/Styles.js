@@ -9,9 +9,6 @@ export default createGlobalStyle`
     padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   }
-  *:hover {
-    touch-action: none;
-  }
   
   body {
     margin: 0;
