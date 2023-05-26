@@ -53,11 +53,11 @@ const NavContainer = styled.nav`
   left: 0;
   background-color: rgb(255, 255, 255, 0.8);
   transition: 0.5s ease;
-  opacity: 0;
+  opacity: 1;
 
-  &:hover {
+  /* &:hover {
     opacity: 1;
-  }
+  } */
 
   ul {
     display: flex;
