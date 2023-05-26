@@ -30,16 +30,32 @@ const AboutUs = () => {
   });
 
   const handleIntersection = (entry, target) => {
-    setIsVisible((prevState) => ({
-      ...prevState,
-      [target]: entry.isIntersecting,
-    }));
+    setIsVisible((prevState) => {
+      if (entry.isIntersecting) {
+        if (!prevState[target]) {
+          console.log(`${target} is now visible.`);
+        }
+        return {
+          ...prevState,
+          [target]: true,
+        };
+      } else {
+        if (prevState[target]) {
+          console.log(`${target} is no longer visible.`);
+        }
+        return {
+          ...prevState,
+          [target]: false,
+        };
+      }
+    });
   };
 
   useEffect(() => {
     const observerOptions = {
       root: null,
       threshold: 0.5,
+      rootMargin: "-100px 0px -100px 0px",
     };
 
     const observers = Object.keys(refs).map((key) => {
@@ -148,7 +164,6 @@ const Line = styled.div`
   height: 100%;
   width: 3.5px;
   background-color: black;
-  z-index: 100;
 
   @media (max-width: 900px) {
     left: 10%;
@@ -169,8 +184,6 @@ const Circle = styled.div`
   height: 45px;
   border-radius: 50%;
   border: 3.5px solid black;
-  z-index: 200;
-
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
   transition: transform 1s ease-in-out;
 `;

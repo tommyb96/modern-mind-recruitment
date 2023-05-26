@@ -11,21 +11,7 @@ const navLinks = [
 ];
 
 export default function RightNavBar({ open, setOpen }) {
-  // const [scrollBackground, setScrollBackground] = useState(false);
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const isScrolled = window.scrollY > 0;
-  //     setScrollBackground(isScrolled);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   const NavLinks = () => {
     return (
@@ -62,25 +48,21 @@ const NavContainer = styled.nav`
   display: flex;
   position: fixed;
   width: 100%;
-  z-index: 9000;
+  z-index: 1000;
   top: 0;
   left: 0;
-  /* background-color: rgb(255, 255, 255, 0.8); */
-
-  /* background-color: ${({ scrollBackground }) =>
-    scrollBackground ? "rgb(255,255,255,0.8)" : "transparent"};
-  transition: background-color 0.3s ease-in-out;
+  background-color: rgb(255, 255, 255, 0.8);
+  transition: 0.5s ease;
+  opacity: 0;
 
   &:hover {
-    background-color: rgb(255, 255, 255, 0.8);
-  } */
+    opacity: 1;
+  }
 
   ul {
     display: flex;
     list-style: none;
-    margin: 10px;
-    padding: 0;
-    margin-left: 150px;
+    margin: 5px 10px 5px 150px;
 
     li {
       padding: 2.5vw;
@@ -101,6 +83,24 @@ const NavContainer = styled.nav`
   }
 
   @media (max-width: 768px) {
+    opacity: 1;
+    ul {
+      flex-flow: column nowrap;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: fixed;
+      margin: 0;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 250px;
+      padding-top: 3.5rem;
+      transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+      transition: transform 0.7s ease-in-out;
+    }
+  }
+
+  @media (pointer: coarse) {
+    opacity: 1;
     ul {
       flex-flow: column nowrap;
       background-color: rgba(255, 255, 255, 0.8);

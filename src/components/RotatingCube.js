@@ -17,7 +17,7 @@ const CubeContainer = styled.div`
   right: 50px;
   width: 70px;
   height: 70px;
-  z-index: 9999;
+  z-index: 1000;
   transform-style: preserve-3d;
   animation: ${CubeSpin} 4s linear infinite;
   transition: all 0.3s ease-out;
@@ -31,7 +31,7 @@ const CubeSide = styled.div`
   position: absolute;
   width: 70px;
   height: 70px;
-  background-color: rgba(102, 102, 102, 0.1);
+  background-color: rgba(102, 102, 102, 0.2);
 `;
 
 const CubeFront = styled(CubeSide)`

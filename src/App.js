@@ -40,8 +40,8 @@ const Root = () => {
     <>
       <div>
         <GlobalStyle />
+        <NavBar />
         <Wrapper>
-          <NavBar />
           <Home />
           <AboutUs />
           <Leistungen />

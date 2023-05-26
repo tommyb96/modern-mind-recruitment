@@ -544,7 +544,7 @@ const CVTwoRight = styled.img`
     align-self: flex-start;
     margin: 100px 0 120px 100px;
     width: 450px;
-    transform: rotate(-25deg);
+    /* transform: rotate(-25deg); */
   }
 
   @media (max-width: 480px) {
