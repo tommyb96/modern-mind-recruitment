@@ -54,12 +54,11 @@ const StyledCube = styled.div`
   margin: 1.3px;
   transition: transform 0.05s ease-in-out;
 
-  @media (hover: hover) {
-    &:hover {
-      transform: scale(1.6);
-      opacity: 0.9;
-    }
+  &:hover {
+    transform: scale(1.6);
+    opacity: 0.9;
   }
+
   @media (min-width: 0px) {
     margin: 1.4px;
     border-radius: 7px;

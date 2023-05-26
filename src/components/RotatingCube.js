@@ -22,8 +22,13 @@ const CubeContainer = styled.div`
   animation: ${CubeSpin} 4s linear infinite;
   transition: all 0.3s ease-out;
 
-  &:hover {
-    animation-duration: 1.7s;
+  @media (hover: hover) {
+    &:hover {
+      animation-duration: 1.7s;
+    }
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 

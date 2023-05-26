@@ -40,6 +40,7 @@ export default function WorkshopIntro() {
     const observerOptions = {
       root: null,
       threshold: 0.5,
+      rootMargin: "-100px 0px -100px 0px",
     };
 
     const observers = Object.keys(refs).map((key) => {
@@ -162,19 +163,7 @@ const Circle = styled.div`
 
 const CircleOne = styled.div`
   position: absolute;
-  top: 320px;
-  left: -9px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-`;
-
-const CircleTwo = styled.div`
-  position: absolute;
-  top: 740px;
+  top: 155px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -184,7 +173,27 @@ const CircleTwo = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 1250px;
+    top: 135px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const CircleTwo = styled.div`
+  position: absolute;
+  top: 685px;
+  left: -9px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 900px) {
+    top: 1000px;
   }
 
   @media (max-width: 480px) {

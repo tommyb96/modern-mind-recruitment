@@ -57,6 +57,7 @@ export default function Workshop() {
     const observerOptions = {
       root: null,
       threshold: 0.5,
+      rootMargin: "-100px 0px -100px 0px",
     };
 
     const observers = Object.keys(refs).map((key) => {
@@ -109,11 +110,6 @@ export default function Workshop() {
                 <span
                   isOpenOne={isOpenOne}
                   onClick={() => setIsOpenOne(!isOpenOne)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Allgemeine Bestimmungen für eine Beschäftigung ausländischer
                   Fachkräfte
@@ -121,7 +117,11 @@ export default function Workshop() {
                 <ListWrapper style={{ display: isOpenOne ? "block" : "none" }}>
                   <List>
                     <ListPoint />
-                    <ListParagraph>lorem impsum</ListParagraph>
+                    <ListParagraph>
+                      {" "}
+                      Allgemeine Richtlinien für die Einstellung ausländischer
+                      Fachkräfte
+                    </ListParagraph>
                   </List>
                 </ListWrapper>
               </Header>
@@ -138,11 +138,6 @@ export default function Workshop() {
                 <span
                   isOpenTwo={isOpenTwo}
                   onClick={() => setIsOpenTwo(!isOpenTwo)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Regelungen für Visum und Aufenthalt
                 </span>
@@ -186,11 +181,6 @@ export default function Workshop() {
                 <span
                   isOpenThree={isOpenThree}
                   onClick={() => setIsOpenThree(!isOpenThree)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Beteiligung der Bundesagentur für Arbeit
                 </span>
@@ -222,11 +212,6 @@ export default function Workshop() {
                 <span
                   isOpenFour={isOpenFour}
                   onClick={() => setIsOpenFour(!isOpenFour)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Ausländerbehörde
                 </span>
@@ -258,11 +243,6 @@ export default function Workshop() {
                 <span
                   isOpenFive={isOpenFive}
                   onClick={() => setIsOpenFive(!isOpenFive)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Anerkennung ausländischer Berufsqualifikationen
                 </span>
@@ -296,18 +276,16 @@ export default function Workshop() {
                 <span
                   isOpenSix={isOpenSix}
                   onClick={() => setIsOpenSix(!isOpenSix)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Beantragung von Fördermitteln
                 </span>
                 <ListWrapper style={{ display: isOpenSix ? "block" : "none" }}>
                   <List>
                     <ListPoint />
-                    <ListParagraph>lorem impsum</ListParagraph>
+                    <ListParagraph>
+                      Anforderungen und Optionen zur Antragstellung von
+                      Fördermitteln
+                    </ListParagraph>
                   </List>
                 </ListWrapper>
               </Header>
@@ -324,11 +302,6 @@ export default function Workshop() {
                 <span
                   isOpenSeven={isOpenSeven}
                   onClick={() => setIsOpenSeven(!isOpenSeven)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Erfolgskriterien
                 </span>
@@ -363,11 +336,6 @@ export default function Workshop() {
                 <span
                   isOpenEight={isOpenEight}
                   onClick={() => setIsOpenEight(!isOpenEight)}
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onMouseOver={(e) => (e.target.style.color = "blue")}
-                  onMouseOut={(e) => (e.target.style.color = "")}
                 >
                   Sozialer Aspekt
                 </span>
@@ -766,6 +734,14 @@ const Header = styled.div`
   font-family: system-ui;
   font-weight: 500;
 
+  span {
+    @media (hover: hover) {
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+
   @media (max-width: 1024px) {
     font-size: 23px;
   }
@@ -840,6 +816,7 @@ const CircleOne = styled.div`
   border-radius: 50%;
   border: 3.5px solid black;
   z-index: 200;
+
   @media (max-width: 480px) {
     display: none;
   }
@@ -959,6 +936,7 @@ const Linie = styled.div`
   height: 1px;
   background-color: rgb(102, 102, 102, 0.4);
   margin: auto;
+
   @media (min-width: 481px) {
     display: none;
   }

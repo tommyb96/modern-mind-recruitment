@@ -200,13 +200,13 @@ const CircleOne = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 130px;
+    top: 140px;
   }
 `;
 
 const CircleTwo = styled.div`
   position: absolute;
-  top: 365px;
+  top: 390px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -216,7 +216,7 @@ const CircleTwo = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 790px;
+    top: 830px;
   }
 
   @media (max-width: 600px) {
@@ -226,7 +226,7 @@ const CircleTwo = styled.div`
 
 const CircleThree = styled.div`
   position: absolute;
-  top: 1265px;
+  top: 1300px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -236,7 +236,7 @@ const CircleThree = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 1630px;
+    top: 1680px;
   }
 
   @media (max-width: 600px) {

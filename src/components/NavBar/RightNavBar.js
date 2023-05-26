@@ -44,7 +44,7 @@ const NavContainer = styled.nav`
   left: 0;
   background-color: rgb(255, 255, 255, 0.8);
   transition: 0.5s ease;
-  opacity: 1;
+  opacity: 0;
 
   &:hover {
     opacity: 1;

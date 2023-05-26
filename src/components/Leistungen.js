@@ -58,6 +58,7 @@ export default function Leistungen() {
     const observerOptions = {
       root: null,
       threshold: 0.5,
+      rootMargin: "-100px 0px -100px 0px",
     };
 
     const observers = Object.keys(refs).map((key) => {
@@ -368,19 +369,7 @@ const Circle = styled.div`
 
 const CircleOne = styled.div`
   position: absolute;
-  top: 130px;
-  left: -9px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-`;
-
-const CircleTwo = styled.div`
-  position: absolute;
-  top: 670px;
+  top: 155px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -390,7 +379,27 @@ const CircleTwo = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 1400px;
+    top: 135px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const CircleTwo = styled.div`
+  position: absolute;
+  top: 855px;
+  left: -9px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3.5px solid black;
+  z-index: 200;
+
+  @media (max-width: 900px) {
+    top: 1475px;
   }
 
   @media (max-width: 480px) {
@@ -400,7 +409,7 @@ const CircleTwo = styled.div`
 
 const CircleThree = styled.div`
   position: absolute;
-  top: 1420px;
+  top: 1505px;
   left: -9px;
   background-color: black;
   width: 20px;
@@ -410,11 +419,7 @@ const CircleThree = styled.div`
   z-index: 200;
 
   @media (max-width: 900px) {
-    top: 2880px;
-  }
-
-  @media (max-width: 768px) {
-    top: 2730px;
+    top: 2790px;
   }
 
   @media (max-width: 480px) {
@@ -544,7 +549,7 @@ const CVTwoRight = styled.img`
     align-self: flex-start;
     margin: 100px 0 120px 100px;
     width: 450px;
-    /* transform: rotate(-25deg); */
+    transform: rotate(-25deg);
   }
 
   @media (max-width: 480px) {

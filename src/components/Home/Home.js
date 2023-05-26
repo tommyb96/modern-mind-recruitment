@@ -169,9 +169,11 @@ const SloganWrapper = styled.div`
     font-size: 100px;
     transition: all 0.1s ease-in-out;
 
-    &:hover {
-      color: rgba(0, 167, 155);
-      cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        color: rgba(0, 167, 155);
+        cursor: pointer;
+      }
     }
   }
 
@@ -285,6 +287,7 @@ const StyledSpan = styled.span`
 const GreenSpan = styled.span`
   color: rgba(0, 167, 155);
   text-shadow: 1px 0 rgba(0, 167, 155);
+  font-family: Comfortaa;
 `;
 
 const CubeOneRelative = styled.span`
@@ -309,5 +312,3 @@ const CubesOne = styled.img`
     left: -45%;
   }
 `;
-
-// ref={refs.welcome} isVisible={isVisible.welcome}

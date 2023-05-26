@@ -275,8 +275,10 @@ const StyledButton = styled.button`
   background-color: rgb(0, 0, 255);
   color: white;
 
-  &:hover {
-    background-color: rgb(0, 0, 255, 0.3);
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgb(0, 0, 255, 0.3);
+    }
   }
 `;
 
