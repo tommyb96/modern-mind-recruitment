@@ -106,14 +106,11 @@ export default function Workshop() {
               <Zahl>1</Zahl>
               <CircleOne />
               <BlueTriangleOne
-                isOpenOne={isOpenOne}
+                open={isOpenOne}
                 onClick={() => setIsOpenOne(!isOpenOne)}
               />
               <Header>
-                <span
-                  isOpenOne={isOpenOne}
-                  onClick={() => setIsOpenOne(!isOpenOne)}
-                >
+                <span open={isOpenOne} onClick={() => setIsOpenOne(!isOpenOne)}>
                   Allgemeine Bestimmungen für eine Beschäftigung ausländischer
                   Fachkräfte
                 </span>
@@ -541,8 +538,7 @@ const BlueTriangleOne = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenOne }) =>
-    isOpenOne ? "rotate(Threeg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(Threeg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 

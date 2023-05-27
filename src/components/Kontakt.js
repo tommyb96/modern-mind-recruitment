@@ -70,61 +70,72 @@ const Kontakt = () => {
       <Waves src={waves} alt="waves" id="kontakt"></Waves>
       <StyledContainer>
         <Cubes src={cubes} alt="cubes" />
+
         <Wrapper>
-          <Heading>KONTAKT </Heading>
-          <FormContainer ref={form} onSubmit={sendEmail}>
-            <input
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              placeholder="Name"
-              name="name"
-            />
-            {error && name.length <= 5 ? (
-              <ErrorMessage>bitte Namen eingeben</ErrorMessage>
-            ) : (
-              ""
-            )}
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="E-Mail"
-              name="email"
-            />
-            {error && !validateEmail(email) ? (
-              <ErrorMessage>bitte vollständige Email eingeben</ErrorMessage>
-            ) : (
-              ""
-            )}
-            <input
-              onChange={(e) => setSubject(e.target.value)}
-              type="text"
-              placeholder="Betreff"
-              name="subject"
-            />
-            {error && subject.length <= 3 ? (
-              <ErrorMessage>bitte Betreff eingeben</ErrorMessage>
-            ) : (
-              ""
-            )}
-            <textarea
-              onChange={(e) => setMessage(e.target.value)}
-              name="message"
-              cols="30"
-              rows="10"
-            />
-            {error && message.length <= 10 ? (
-              <ErrorMessage>bitte Nachricht eingeben</ErrorMessage>
-            ) : (
-              ""
-            )}
-            <StyledButton
-              type="submit"
-              style={{ backgroundColor: error ? "" : "rgb(148,201,115)" }}
-            >
-              Senden
-            </StyledButton>
-          </FormContainer>
+          <StyledDivMobile>
+            Kontaktieren Sie uns und sichern Sie sich jetzt Ihr{" "}
+            <span>kostenloses</span> Erstgespräch.
+          </StyledDivMobile>
+          <Heading>
+            KONTAKT
+            <FormContainer ref={form} onSubmit={sendEmail}>
+              <input
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="Name"
+                name="name"
+              />
+              {error && name.length <= 5 ? (
+                <ErrorMessage>bitte Namen eingeben</ErrorMessage>
+              ) : (
+                ""
+              )}
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="E-Mail"
+                name="email"
+              />
+              {error && !validateEmail(email) ? (
+                <ErrorMessage>bitte vollständige Email eingeben</ErrorMessage>
+              ) : (
+                ""
+              )}
+              <input
+                onChange={(e) => setSubject(e.target.value)}
+                type="text"
+                placeholder="Betreff"
+                name="subject"
+              />
+              {error && subject.length <= 3 ? (
+                <ErrorMessage>bitte Betreff eingeben</ErrorMessage>
+              ) : (
+                ""
+              )}
+              <textarea
+                onChange={(e) => setMessage(e.target.value)}
+                name="message"
+                cols="30"
+                rows="10"
+              />
+              {error && message.length <= 10 ? (
+                <ErrorMessage>bitte Nachricht eingeben</ErrorMessage>
+              ) : (
+                ""
+              )}
+              <StyledButton
+                type="submit"
+                style={{ backgroundColor: error ? "" : "rgb(148,201,115)" }}
+              >
+                Senden
+              </StyledButton>
+            </FormContainer>
+          </Heading>
         </Wrapper>
+        <StyledDiv>
+          Kontaktieren Sie uns und sichern Sie sich jetzt Ihr{" "}
+          <span>kostenloses</span> Erstgespräch.
+        </StyledDiv>
       </StyledContainer>
       {showSuccessMessage && (
         <SuccessMessageContainer>
@@ -160,13 +171,13 @@ const Waves = styled.img`
 const StyledContainer = styled.div`
   background-color: rgb(92, 92, 255);
   display: flex;
-  flex-direction: column;
   margin: 0;
   height: 900px;
+  height: 1000px;
   overflow: hidden;
 
-  @media (max-width: 480px) {
-    height: 800px;
+  @media (max-width: 1000px) {
+    flex-direction: column;
   }
 `;
 
@@ -188,6 +199,7 @@ const Cubes = styled.img`
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   position: relative;
   margin-left: 200px;
 
@@ -198,24 +210,27 @@ const Wrapper = styled.div`
 `;
 
 const Heading = styled.h1`
+  position: relative;
   font-family: Comfortaa;
   font-size: 55px;
   z-index: 10;
+  align-self: center;
+  margin-top: 50px;
 
   @media (max-width: 480px) {
     font-size: 39px;
-    margin-top: 100px;
+    margin-top: 30px;
   }
 `;
 
 const FormContainer = styled.form`
   position: absolute;
-  top: 65px;
-  left: -115px;
+  top: 0px;
+  left: -113px;
   display: flex;
   flex-direction: column;
   width: 500px;
-  margin: auto;
+  margin-top: 30px;
   padding: 80px 40px 30px 40px;
   background-color: rgb(255, 255, 255, 0.1);
   border-radius: 60px;
@@ -242,15 +257,19 @@ const FormContainer = styled.form`
     resize: none;
   }
 
+  @media (max-width: 1000px) {
+    align-self: center;
+  }
+
   @media (max-width: 550px) {
     width: 400px;
     left: -65px;
   }
+
   @media (max-width: 480px) {
     width: 335px;
+    top: -10px;
     left: -70px;
-    top: 120px;
-    padding: 50px 30px 20px 30px;
 
     input {
       padding: 8px;
@@ -347,5 +366,51 @@ const ErrorMessage = styled.label`
 
   @media (max-width: 480px) {
     font-size: 12px;
+  }
+`;
+
+const StyledDiv = styled.div`
+  font-family: system-ui;
+  color: white;
+  font-weight: 500;
+  font-size: 45px;
+  max-width: 550px;
+  margin: 350px 30px 10px 250px;
+  span {
+    font-family: Righteous;
+    color: rgb(0, 167, 155);
+  }
+
+  @media (max-width: 1300px) {
+    margin: 350px 30px 10px 200px;
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+const StyledDivMobile = styled.div`
+  font-family: system-ui;
+  color: white;
+  font-weight: 500;
+  font-size: 34px;
+  max-width: 600px;
+  margin: 20px;
+  margin-top: 80px;
+  text-align: center;
+
+  span {
+    font-family: Righteous;
+    color: rgb(0, 167, 155);
+  }
+
+  @media (min-width: 1001px) {
+    display: none;
+  }
+  @media (max-width: 650px) {
+    font-size: 23px;
+  }
+  @media (max-width: 480px) {
   }
 `;

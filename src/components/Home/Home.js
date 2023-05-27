@@ -118,8 +118,21 @@ const Logo = styled.img`
   left: 0;
 
   @media (max-width: 1280px) {
-    width: 120px;
+    width: 150px;
     margin: 30px;
+  }
+
+  @media (max-width: 900px) {
+    top: 40px;
+  }
+
+  @media (max-width: 650px) {
+    top: 30px;
+    width: 100px;
+  }
+
+  @media (max-width: 480px) {
+    top: 20px;
   }
 `;
 
