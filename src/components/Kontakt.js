@@ -398,7 +398,8 @@ const StyledDivMobile = styled.div`
   font-size: 34px;
   max-width: 600px;
   margin: 20px;
-  margin-top: 80px;
+  margin-top: 120px;
+  margin-bottom: 90px;
   text-align: center;
 
   span {
