@@ -169,6 +169,12 @@ export default function Workshop() {
                       Regelung für ausländische Auszubildende
                     </ListParagraph>
                   </List>
+                  <List>
+                    <ListPoint />
+                    <ListParagraph>
+                      Regelung für ausländische Studierende
+                    </ListParagraph>
+                  </List>
                 </ListWrapper>{" "}
               </Header>
             </Item>
@@ -368,11 +374,11 @@ export default function Workshop() {
             Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
             behandelt und gründlich erläutert. Dabei werden nicht nur die
             grundlegenden Informationen zu jedem Thema dargelegt, sondern auch
-            die praktischen Erkenntnisse und Erkenntnisse auf diesem Gebiet
-            eingeholt und vermittelt. So erhalten Sie nicht nur eine umfassende
+            praktische Erkenntnisse jahrelanger Berufserfahrung auf diesem Gebiet
+            vermittelt. So erhalten Sie nicht nur eine umfassende
             Übersicht über die verschiedenen Aspekte, sondern auch wertvolle
             Einblicke in die praktische Umsetzung und bewährte Strategien, um
-            garantiert erfolgreich zu sein.
+            Ihren Erfolg zu maximieren.
           </StyledDiv>
         </InfoWrapper>
       </div>
