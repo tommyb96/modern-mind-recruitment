@@ -41,6 +41,70 @@ export default function CubeContainer() {
         <Cubes />
         <Cubes />
         <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
+        <Cubes />
       </CubeWrapperMobile>
     </>
   );
@@ -57,9 +121,8 @@ const CubeWrapper = styled.div`
   @media (max-width: 900px) {
     top: 720px;
   }
-
   @media (max-width: 480px) {
-    top: 750px;
+    display: none;
   }
 `;
 
@@ -73,5 +136,8 @@ const CubeWrapperMobile = styled.div`
 
   @media (min-width: 479px) {
     display: none;
+  }
+  @media (max-width: 480px) {
+    top: 100px;
   }
 `;

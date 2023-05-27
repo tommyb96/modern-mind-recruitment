@@ -442,8 +442,8 @@ const ThreeCubes = styled.img`
 
 const StyledHeading = styled.h1`
   position: relative;
-  font-family: Comfortaa;
-  text-shadow: 1px 0 rgb(0, 0, 0);
+  font-family: system-ui;
+  color: black;
   font-weight: 500;
   align-self: center;
   font-size: 40px;

@@ -665,6 +665,8 @@ const SuperBoldText = styled.div`
 
   span {
     color: rgb(0, 0, 255);
+    font-family: comfortaa;
+    text-shadow: 1px 0 rgb(0, 0, 255);
   }
 
   //animation

@@ -187,6 +187,7 @@ const Cubes = styled.img`
   right: 0;
   margin: 40px;
   z-index: 0;
+  opacity: 0.5;
 
   @media (max-width: 1200px) {
     width: 300px;
@@ -375,7 +376,7 @@ const StyledDiv = styled.div`
   font-weight: 500;
   font-size: 45px;
   max-width: 550px;
-  margin: 350px 30px 10px 250px;
+  margin: 350px 30px 20px 250px;
   span {
     font-family: Righteous;
     color: rgb(0, 167, 155);
@@ -409,8 +410,6 @@ const StyledDivMobile = styled.div`
     display: none;
   }
   @media (max-width: 650px) {
-    font-size: 23px;
-  }
-  @media (max-width: 480px) {
+    font-size: 30px;
   }
 `;
