@@ -26,6 +26,7 @@ export default function Leistungen() {
     rightdivfour: useRef(null),
     rightdivfive: useRef(null),
     superbold: useRef(null),
+    leftdivtwo: useRef(null),
   };
 
   const [isVisible, setIsVisible] = useState({
@@ -45,6 +46,7 @@ export default function Leistungen() {
     rightdivfour: false,
     rightdivfive: false,
     superbold: false,
+    leftdivtwo: false,
   });
 
   const handleIntersection = (entry, target) => {
@@ -159,10 +161,10 @@ export default function Leistungen() {
               Unser Team steht Ihnen kompetent und engagiert zur Seite und
               begleitet Sie Schritt für Schritt durch den gesamten
               Einstellungsprozess. Dabei analysieren wir jeden einzelnen Aspekt
-              eingehend und diskutieren diesen mit Ihnen ausführlich. Mit
-              unseren jahrelang erworbenen Erfahrungen und Kenntnissen werden
-              wir Ihnen gezielt und individuell unsere bewährten Tricks und
-              Kniffe vermitteln, die Ihnen sonst keiner verrät, um Ihre
+              eingehend und diskutieren diesen mit Ihnen ausführlich. unseren
+              über Jahre hinweg erworbenen Erfahrungen und Kenntnissen werden
+              wir Ihnen gezielt und individuell bewährte Tricks und Kniffe
+              vermitteln, die Ihnen sonst niemand verrät, um Ihre
               Erfolgsaussichten auf ein Maximum zu steigern.
             </RightAligned>
             <CVThreeRight
@@ -185,10 +187,21 @@ export default function Leistungen() {
               ref={refs.rightdivfive}
               isVisible={isVisible.rightdivfive}
             >
-              Sie wurden mit großer Wahrscheinlichkeit mit einer Absage
-              konfrontiert und haben sich gefragt - was haben wir falsch gemacht
-              oder welchen Aspekt haben wir möglicherweise übersehen?
+              Mit großer Wahrscheinlichkeit wurden auch Sie schon mit einer
+              Absage konfrontiert und haben sich gefragt - was haben wir falsch
+              gemacht oder welchen Aspekt haben wir möglicherweise übersehen?
             </RightAligned>
+            <LeftDiv ref={refs.leftdivtwo} isVisible={isVisible.leftdivtwo}>
+              {" "}
+              Um die Sinnhaftigkeit unseres Workshops für Ihr Unternehmen zu
+              untersuchen, bieten wir Ihnen ein kostenloses Erstgespräch an. In
+              diesem Gespräch können wir auf Ihre individuellen Bedürfnisse,
+              Ziele und Erwartungen eingehen und herausfinden, wie unser
+              Workshop Ihnen helfen kann. Wir legen Wert auf maßgeschneiderte
+              Lösungen und möchten Ihre Situation genau verstehen, um Ihnen
+              einen fundierten Einblick in den Nutzen und die Relevanz unseres
+              Workshops zu geben.{" "}
+            </LeftDiv>
           </InfoText>
         </InfoWrapper>
       </Wrapper>
@@ -202,8 +215,9 @@ export default function Leistungen() {
         <SuperBoldText ref={refs.superbold} isVisible={isVisible.superbold}>
           Wir bei <span>modern mind</span> geben Ihnen die Antwort auf all diese
           Fragen und decken gemeinsam alle versteckten Fallstricke auf. Durch
-          unsere professionelle Unterstützung und Coaching gewährleisten wir,
-          dass die Behörden Ihnen garantiert grünes Licht geben.
+          unsere professionelle Unterstützung und ein individuelles Coaching
+          gewährleisten wir, dass die Behörden Ihnen mit hoher
+          Wahrscheinlichkeit grünes Licht geben werden.
         </SuperBoldText>
       </BoldTextWrapper>
     </>

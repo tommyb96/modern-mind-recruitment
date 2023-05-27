@@ -131,14 +131,11 @@ export default function Workshop() {
               <Zahl>2</Zahl>
               <CircleTwo />
               <BlueTriangleTwo
-                isOpenTwo={isOpenTwo}
+                open={isOpenTwo}
                 onClick={() => setIsOpenTwo(!isOpenTwo)}
               />
               <Header>
-                <span
-                  isOpenTwo={isOpenTwo}
-                  onClick={() => setIsOpenTwo(!isOpenTwo)}
-                >
+                <span open={isOpenTwo} onClick={() => setIsOpenTwo(!isOpenTwo)}>
                   Regelungen für Visum und Aufenthalt
                 </span>
                 <ListWrapper style={{ display: isOpenTwo ? "block" : "none" }}>
@@ -166,6 +163,12 @@ export default function Workshop() {
                       Regelung für ausländische Auszubildende
                     </ListParagraph>
                   </List>
+                  <List>
+                    <ListPoint />
+                    <ListParagraph>
+                      Regelung für ausländische Studierende
+                    </ListParagraph>
+                  </List>
                 </ListWrapper>{" "}
               </Header>
             </Item>
@@ -174,12 +177,12 @@ export default function Workshop() {
               <Zahl>3</Zahl>
               <CircleThree />
               <BlueTriangleThree
-                isOpenThree={isOpenThree}
+                open={isOpenThree}
                 onClick={() => setIsOpenThree(!isOpenThree)}
               />
               <Header>
                 <span
-                  isOpenThree={isOpenThree}
+                  open={isOpenThree}
                   onClick={() => setIsOpenThree(!isOpenThree)}
                 >
                   Beteiligung der Bundesagentur für Arbeit
@@ -205,12 +208,12 @@ export default function Workshop() {
               <Zahl>4</Zahl>
               <CircleFour />
               <BlueTriangleFour
-                isOpenFour={isOpenFour}
+                open={isOpenFour}
                 onClick={() => setIsOpenFour(!isOpenFour)}
               />
               <Header>
                 <span
-                  isOpenFour={isOpenFour}
+                  open={isOpenFour}
                   onClick={() => setIsOpenFour(!isOpenFour)}
                 >
                   Ausländerbehörde
@@ -236,12 +239,12 @@ export default function Workshop() {
               <Zahl>5</Zahl>
               <CircleFive />
               <BlueTriangleFive
-                isOpenFive={isOpenFive}
+                open={isOpenFive}
                 onClick={() => setIsOpenFive(!isOpenFive)}
               />
               <Header>
                 <span
-                  isOpenFive={isOpenFive}
+                  open={isOpenFive}
                   onClick={() => setIsOpenFive(!isOpenFive)}
                 >
                   Anerkennung ausländischer Berufsqualifikationen
@@ -269,14 +272,11 @@ export default function Workshop() {
               <Zahl>6</Zahl>
               <CircleSix />
               <BlueTriangleSix
-                isOpenSix={isOpenSix}
+                open={isOpenSix}
                 onClick={() => setIsOpenSix(!isOpenSix)}
               />
               <Header>
-                <span
-                  isOpenSix={isOpenSix}
-                  onClick={() => setIsOpenSix(!isOpenSix)}
-                >
+                <span open={isOpenSix} onClick={() => setIsOpenSix(!isOpenSix)}>
                   Beantragung von Fördermitteln
                 </span>
                 <ListWrapper style={{ display: isOpenSix ? "block" : "none" }}>
@@ -295,12 +295,12 @@ export default function Workshop() {
               <Zahl>7</Zahl>
               <CircleSeven />
               <BlueTriangleSeven
-                isOpenSeven={isOpenSeven}
+                open={isOpenSeven}
                 onClick={() => setIsOpenSeven(!isOpenSeven)}
               />
               <Header>
                 <span
-                  isOpenSeven={isOpenSeven}
+                  open={isOpenSeven}
                   onClick={() => setIsOpenSeven(!isOpenSeven)}
                 >
                   Erfolgskriterien
@@ -329,12 +329,12 @@ export default function Workshop() {
               <Zahl>8</Zahl>
               <CircleEight />
               <BlueTriangleEight
-                isOpenEight={isOpenEight}
+                open={isOpenEight}
                 onClick={() => setIsOpenEight(!isOpenEight)}
               />
               <Header>
                 <span
-                  isOpenEight={isOpenEight}
+                  open={isOpenEight}
                   onClick={() => setIsOpenEight(!isOpenEight)}
                 >
                   Sozialer Aspekt
@@ -365,11 +365,11 @@ export default function Workshop() {
             Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
             behandelt und gründlich erläutert. Dabei werden nicht nur die
             grundlegenden Informationen zu jedem Thema dargelegt, sondern auch
-            die praktischen Erkenntnisse und Erkenntnisse auf diesem Gebiet
-            eingeholt und vermittelt. So erhalten Sie nicht nur eine umfassende
+            praktische Erkenntnisse jahrelanger Berufserfahrung auf diesem
+            Gebiet vermittelt. So erhalten Sie nicht nur eine umfassende
             Übersicht über die verschiedenen Aspekte, sondern auch wertvolle
             Einblicke in die praktische Umsetzung und bewährte Strategien, um
-            garantiert erfolgreich zu sein.
+            Ihren Erfolg zu maximieren.
           </StyledDiv>
         </InfoWrapper>
       </div>
@@ -560,8 +560,7 @@ const BlueTriangleTwo = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenTwo }) =>
-    isOpenTwo ? "rotate(Threeg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(Threeg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
@@ -583,8 +582,7 @@ const BlueTriangleThree = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenThree }) =>
-    isOpenThree ? "rotate(0deg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(0deg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
@@ -606,8 +604,7 @@ const BlueTriangleFour = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenFour }) =>
-    isOpenFour ? "rotate(0deg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(0deg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
@@ -629,8 +626,7 @@ const BlueTriangleFive = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenFive }) =>
-    isOpenFive ? "rotate(0deg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(0deg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
@@ -652,8 +648,7 @@ const BlueTriangleSix = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenSix }) =>
-    isOpenSix ? "rotate(Threeg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(Threeg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
@@ -675,8 +670,7 @@ const BlueTriangleSeven = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenSeven }) =>
-    isOpenSeven ? "rotate(0deg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(0deg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 
@@ -698,8 +692,7 @@ const BlueTriangleEight = styled.span`
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
   display: inline-block;
-  transform: ${({ isOpenEight }) =>
-    isOpenEight ? "rotate(0deg)" : "rotate(-90deg)"};
+  transform: ${({ open }) => (open ? "rotate(0deg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 

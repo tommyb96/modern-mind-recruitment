@@ -80,14 +80,15 @@ export default function WorkshopIntro() {
             Sie haben festgestellt, dass die Verfügbarkeit geeigneter
             Bewerber*innen in Ihrer Region abnimmt und Sie deshalb
             beabsichtigen, auch international nach qualifizierten Fachkräften zu
-            suchen. Somit ist unser Workshop genau der richtige Ansatz für Sie.
+            suchen. Unser Workshop ist genau der richtige Ansatz für Sie.
           </LeftDiv>
           <LeftDiv ref={refs.leftdivtwo} isVisible={isVisible.leftdivtwo}>
             Um die Erwerbsmigration für ausländische Fachkräfte zu erleichtern,
             hat zum 01.03.2020 die Bundesregierung mit dem
             Fachkräfteeinwanderungs<span>- </span>gesetz neue Vorraussetzungen
             geschaffen. Auf diese Bedingungen wollen wir aufbauen und unseren
-            Kunden näher bringen, wie sie von diesen profitieren können.
+            Kunden und Kundinnen näher bringen, wie sie von diesen profitieren
+            können.
           </LeftDiv>{" "}
           <LaptopRight
             ref={refs.laptop}
