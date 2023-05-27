@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 501.42 531.19">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495.09 521.66">
   <defs>
     <style>
       .cls-1 {
@@ -12,8 +12,8 @@
     </style>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
-    <rect class="cls-1" x="-6.05" y="286.5" width="249.57" height="234.09" rx="9.45" ry="9.45" transform="translate(-284.81 522.29) rotate(-90)"/>
-    <rect class="cls-1" x="-6.24" y="9.24" width="249.57" height="234.09" rx="9.45" ry="9.45" transform="translate(-7.74 244.83) rotate(-90)"/>
-    <rect class="cls-1" x="258.08" y="287.86" width="249.57" height="234.09" rx="9.45" ry="9.45" transform="translate(-22.03 787.78) rotate(-90)"/>
+    <rect class="cls-1" x="-5.66" y="9.24" width="249.57" height="234.09" rx="41.99" ry="41.99" transform="translate(-7.16 245.41) rotate(-90)"/>
+    <rect class="cls-1" x="-6.24" y="278.33" width="249.57" height="234.09" rx="41.99" ry="41.99" transform="translate(-276.83 513.92) rotate(-90)"/>
+    <rect class="cls-1" x="251.76" y="278.33" width="249.57" height="234.09" rx="41.99" ry="41.99" transform="translate(-18.83 771.92) rotate(-90)"/>
   </g>
 </svg>

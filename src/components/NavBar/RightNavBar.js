@@ -95,6 +95,11 @@ const NavContainer = styled.nav`
       padding-top: 3.5rem;
       transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
       transition: transform 0.7s ease-in-out;
+
+      li {
+        margin-top: 20px;
+        margin-left: 20px;
+      }
     }
   }
 `;
@@ -109,6 +114,9 @@ const NavLink = styled.a`
 
   @media (max-width: 1024px) {
     font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 
   @media (hover: hover) {

@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { useState, useEffect, useRef } from "react";
 
-import CV1 from "../assets/svg/Leistungen/leistungen_cv_1.svg";
-import CV2 from "../assets/svg/Leistungen/leistungen_cv_2.svg";
-import CV3 from "../assets/svg/Leistungen/leistungen_cv_3.svg";
-import video from "../assets/video.mp4";
-import würfel from "../assets/svg/Leistungen/leistungen_würfel.svg";
+import CV1 from "../../assets/svg/Leistungen/leistungen_cv_1.svg";
+import CV2 from "../../assets/svg/Leistungen/leistungen_cv_2.svg";
+import CV3 from "../../assets/svg/Leistungen/leistungen_cv_3.svg";
+import video from "../../assets/video.mp4";
+import CubeContainer from "./CubeContainer";
 
 export default function Leistungen() {
   const refs = {
@@ -91,7 +91,6 @@ export default function Leistungen() {
           <StyledForm id="leistungen"></StyledForm>
         </Filler>
         <InfoWrapper>
-          <Würfel src={würfel} alt="würfel"></Würfel>
           <Line>
             <Circle ref={refs.circleStart} isVisible={isVisible.circleStart} />
             <CircleOne />
@@ -102,6 +101,7 @@ export default function Leistungen() {
             <CVThreeLeft src={CV3} alt="background picture cv"></CVThreeLeft>
           </Line>
           <InfoText>
+            <CubeContainer />
             <Heading ref={refs.heading} isVisible={isVisible.heading}>
               LEISTUNGEN
             </Heading>
@@ -317,23 +317,6 @@ const InfoWrapper = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-`;
-
-const Würfel = styled.img`
-  position: absolute;
-  width: 100%;
-  top: 400px;
-  opacity: 0.5;
-
-  @media (max-width: 1600px) {
-    height: 1330px;
-    width: auto;
-  }
-
-  @media (max-width: 900px) {
-    height: 2000px;
-    width: auto;
-  }
 `;
 
 const Line = styled.div`
