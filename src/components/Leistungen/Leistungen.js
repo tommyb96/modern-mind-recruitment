@@ -255,13 +255,13 @@ const Filler = styled.div`
 
 const Statement = styled.div`
   position: absolute;
-  top: 0;
+  top: 20px;
   margin: 70px 35px 40px 20px;
   z-index: 1;
   max-width: 600px;
   font-family: system-ui;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 48px;
   text-transform: uppercase;
 
   //animation
@@ -302,7 +302,7 @@ const VideoLine = styled.div`
 
 const VideoCircle = styled.div`
   position: absolute;
-  top: 10px;
+  top: 30px;
   left: -23px;
   background-color: white;
   width: 50px;
