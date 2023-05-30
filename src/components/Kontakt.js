@@ -178,6 +178,7 @@ const StyledContainer = styled.div`
 
   @media (max-width: 1000px) {
     flex-direction: column;
+    height: 1200px;
   }
 `;
 
@@ -214,7 +215,7 @@ const Heading = styled.h1`
   position: relative;
   font-family: Comfortaa;
   font-size: 55px;
-  z-index: 10;
+  z-index: 20;
   align-self: center;
   margin-top: 50px;
 
@@ -231,6 +232,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 500px;
+  z-index: -1;
   margin-top: 30px;
   padding: 80px 40px 30px 40px;
   background-color: rgb(255, 255, 255, 0.1);
