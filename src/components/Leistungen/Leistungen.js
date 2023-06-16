@@ -256,7 +256,7 @@ const Filler = styled.div`
 const Statement = styled.div`
   position: absolute;
   top: 20px;
-  margin: 70px 35px 40px 20px;
+  margin: 70px 35px 40px 50px;
   z-index: 1;
   max-width: 600px;
   font-family: system-ui;
@@ -273,11 +273,11 @@ const Statement = styled.div`
     color: rgb(0, 0, 255);
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 750px) {
     font-size: 37px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 500px) {
     font-size: 32px;
   }
 `;
@@ -498,6 +498,7 @@ const CVOneRight = styled.img`
 `;
 
 const RightAligned = styled.div`
+  font-family: "HelveticaNeue-Light";
   align-self: flex-end;
   padding: 20px;
   max-width: 420px;
@@ -626,6 +627,7 @@ const BoldText = styled.div`
 `;
 
 const LeftDiv = styled.div`
+  font-family: "HelveticaNeue-Light";
   padding: 20px;
   max-width: 420px;
   margin-top: 50px;

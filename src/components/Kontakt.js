@@ -40,11 +40,23 @@ const Kontakt = () => {
     }
 
     if (name && subject && message) {
+      const emailParams = {
+        name,
+        email,
+        message,
+      };
+
+      // Betreff separat übertragen
+      const emailOptions = {
+        ...emailParams,
+        subject: subject,
+      };
+
       emailjs
-        .sendForm(
+        .send(
           "service_9ie47qv",
           "template_n0uzten",
-          form.current,
+          emailOptions,
           "xGIeKddPHpBg0KSt6"
         )
         .then(
@@ -53,14 +65,15 @@ const Kontakt = () => {
             setShowSuccessMessage(true);
             setTimeout(() => {
               setShowSuccessMessage(false);
-              window.location.reload(); // Reload the page
-            }, 3500); // Set timeout to hide the success message after 3.5 seconds and then reload the page
+              window.location.reload(); // Seite neu laden
+            }, 3500); // Timeout, um die Erfolgsmeldung nach 3,5 Sekunden auszublenden und dann die Seite neu zu laden
           },
           (error) => {
             console.log(error.text);
           }
         );
       e.target.reset();
+      setSubject(""); // Betreff-Feld leeren
       setError(false);
     }
   };
@@ -101,12 +114,12 @@ const Kontakt = () => {
               ) : (
                 ""
               )}
-              <input
+              {/* <input
                 onChange={(e) => setSubject(e.target.value)}
                 type="text"
                 placeholder="Betreff"
                 name="subject"
-              />
+              /> */}
               {error && subject.length <= 3 ? (
                 <ErrorMessage>bitte Betreff eingeben</ErrorMessage>
               ) : (
@@ -336,16 +349,17 @@ const SuccessMessage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 50px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 30px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 
   h2 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-top: 30px;
     font-weight: normal;
     font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.8;
   }
 
   svg {
@@ -361,11 +375,11 @@ const SuccessMessage = styled.div`
 `;
 
 const ErrorMessage = styled.label`
-  color: rgb(0255 255, 255);
+  color: rgb(255 255, 255, 0.7);
   margin: 0 0 10px 10px;
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
+  font-weight: lighter;
 
   @media (max-width: 480px) {
     font-size: 12px;

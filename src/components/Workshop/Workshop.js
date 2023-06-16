@@ -773,8 +773,7 @@ const ListPoint = styled.div`
 
 const ListParagraph = styled.div`
   font-size: 23px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
+  font-family: "HelveticaNeue-Light";
 
   @media (max-width: 1024px) {
     font-size: 20px;
@@ -935,6 +934,7 @@ const Linie = styled.div`
 `;
 
 const StyledDiv = styled.div`
+  font-family: "HelveticaNeue-Light";
   font-size: 20px;
   margin: auto;
   margin-top: 50px;

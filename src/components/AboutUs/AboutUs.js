@@ -308,6 +308,7 @@ const InfoText = styled.div`
   max-width: 880px;
   margin-bottom: 150px;
   font-size: 20px;
+  font-family: "HelveticaNeue-Light";
 
   //media query
   @media (max-width: 900px) {
@@ -360,6 +361,7 @@ const Heading = styled.div`
 `;
 
 const LeftDiv = styled.div`
+  font-family: "HelveticaNeue-Light";
   padding: 20px;
   max-width: 420px;
   position: relative;
@@ -438,6 +440,7 @@ const BoldText = styled.div`
 `;
 
 const RightAligned = styled.div`
+  font-family: "HelveticaNeue-Light";
   align-self: flex-end;
   padding: 20px;
   max-width: 420px;

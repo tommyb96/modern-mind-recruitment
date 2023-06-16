@@ -155,7 +155,7 @@ const SloganWrapper = styled.div`
   display: flex;
   flex-direction: column;
   right: 200px;
-  top: 320px;
+  top: 300px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -165,7 +165,7 @@ const SloganWrapper = styled.div`
   h1 {
     font-family: "Comfortaa", cursive;
     text-shadow: 1px 0 rgb(0, 0, 0);
-    font-size: 100px;
+    font-size: 90px;
     margin: 0;
     line-height: 95px;
   }
@@ -174,7 +174,7 @@ const SloganWrapper = styled.div`
     font-family: "Righteous", cursive;
     text-shadow: 0px 0 rgb(0, 0, 255);
     color: rgb(0, 0, 255);
-    font-size: 100px;
+    font-size: 90px;
     transition: all 0.1s ease-in-out;
 
     @media (hover: hover) {
@@ -196,6 +196,7 @@ const SloganWrapper = styled.div`
 
   @media (max-width: 1280px) {
     right: 100px;
+    top: 309px;
     h1 {
       font-size: 80px;
       line-height: 85px;
