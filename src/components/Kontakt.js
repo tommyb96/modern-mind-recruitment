@@ -10,7 +10,7 @@ const Kontakt = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
+
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
 
@@ -20,43 +20,23 @@ const Kontakt = () => {
 
   useEffect(() => {
     const hasErrors =
-      name.length <= 5 ||
-      !validateEmail(email) ||
-      subject.length <= 3 ||
-      message.length <= 10;
+      name.length <= 5 || !validateEmail(email) || message.length <= 10;
 
     setError(hasErrors);
-  }, [name, email, subject, message]);
+  }, [name, email, message]);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    if (
-      name.length === 5 ||
-      subject.length === 3 ||
-      message.length === 10 ||
-      !validateEmail(email)
-    ) {
+    if (name.length === 5 || message.length === 10 || !validateEmail(email)) {
       setError(true);
     }
 
-    if (name && subject && message) {
-      const emailParams = {
-        name,
-        email,
-        message,
-      };
-
-      // Betreff separat übertragen
-      const emailOptions = {
-        ...emailParams,
-        subject: subject,
-      };
-
+    if (name && message) {
       emailjs
-        .send(
+        .sendForm(
           "service_9ie47qv",
           "template_n0uzten",
-          emailOptions,
+          form.current,
           "xGIeKddPHpBg0KSt6"
         )
         .then(
@@ -65,15 +45,14 @@ const Kontakt = () => {
             setShowSuccessMessage(true);
             setTimeout(() => {
               setShowSuccessMessage(false);
-              window.location.reload(); // Seite neu laden
-            }, 3500); // Timeout, um die Erfolgsmeldung nach 3,5 Sekunden auszublenden und dann die Seite neu zu laden
+              window.location.reload(); // Reload the page
+            }, 3500); // Set timeout to hide the success message after 3.5 seconds and then reload the page
           },
           (error) => {
             console.log(error.text);
           }
         );
       e.target.reset();
-      setSubject(""); // Betreff-Feld leeren
       setError(false);
     }
   };
@@ -111,17 +90,6 @@ const Kontakt = () => {
               />
               {error && !validateEmail(email) ? (
                 <ErrorMessage>bitte vollständige Email eingeben</ErrorMessage>
-              ) : (
-                ""
-              )}
-              {/* <input
-                onChange={(e) => setSubject(e.target.value)}
-                type="text"
-                placeholder="Betreff"
-                name="subject"
-              /> */}
-              {error && subject.length <= 3 ? (
-                <ErrorMessage>bitte Betreff eingeben</ErrorMessage>
               ) : (
                 ""
               )}
@@ -375,7 +343,7 @@ const SuccessMessage = styled.div`
 `;
 
 const ErrorMessage = styled.label`
-  color: rgb(255 255, 255, 0.7);
+  color: rgb(255, 255, 255, 0.7);
   margin: 0 0 10px 10px;
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;

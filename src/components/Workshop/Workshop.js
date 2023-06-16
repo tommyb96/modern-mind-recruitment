@@ -723,8 +723,7 @@ const Item = styled.div`
 
 const Header = styled.div`
   font-size: 28px;
-  font-family: system-ui;
-  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
 
   span {
     @media (hover: hover) {

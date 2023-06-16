@@ -444,6 +444,7 @@ const InfoText = styled.div`
 
 const Heading = styled.div`
   font-family: Comfortaa;
+  text-shadow: 1px 0 rgb(0, 0, 0);
   font-size: 55px;
   align-self: flex-end;
   padding: 20px;
