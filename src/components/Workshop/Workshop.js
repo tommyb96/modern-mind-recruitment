@@ -723,9 +723,9 @@ const Item = styled.div`
 
 const Header = styled.div`
   font-size: 28px;
-  font-family: Arial, Helvetica, sans-serif;
 
   span {
+    font-family: Arial, Helvetica, sans-serif;
     @media (hover: hover) {
       &:hover {
         color: blue;
