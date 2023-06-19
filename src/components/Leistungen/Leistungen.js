@@ -271,6 +271,8 @@ const Statement = styled.div`
 
   span {
     color: rgb(0, 0, 255);
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   @media (max-width: 750px) {
