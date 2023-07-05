@@ -155,7 +155,7 @@ const SloganWrapper = styled.div`
   display: flex;
   flex-direction: column;
   right: 200px;
-  top: 300px;
+  top: 227px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -196,7 +196,7 @@ const SloganWrapper = styled.div`
 
   @media (max-width: 1280px) {
     right: 100px;
-    top: 309px;
+    top: 230px;
     h1 {
       font-size: 80px;
       line-height: 85px;
@@ -208,7 +208,7 @@ const SloganWrapper = styled.div`
       font-size: 30px;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     top: 250px;
     right: 50px;
     h1 {
