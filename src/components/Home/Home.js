@@ -249,7 +249,8 @@ const WelcomeMessage = styled.div`
   align-self: center;
   margin: 150px 80px 120px 60px;
   max-width: 900px;
-  font-family: system-ui;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
   font-size: 50px;
   max-width: 1200px;

@@ -376,7 +376,8 @@ const LeftDiv = styled.div`
 `;
 
 const BoldText = styled.div`
-  font-family: system-ui;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: black;
   font-weight: 500;
   font-size: 32px;

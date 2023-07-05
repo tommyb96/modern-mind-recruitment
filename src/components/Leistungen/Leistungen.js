@@ -259,7 +259,8 @@ const Statement = styled.div`
   margin: 70px 35px 40px 50px;
   z-index: 1;
   max-width: 600px;
-  font-family: system-ui;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
   font-size: 48px;
   text-transform: uppercase;
@@ -595,7 +596,8 @@ const CVThreeRight = styled.img`
 `;
 
 const BoldText = styled.div`
-  font-family: system-ui;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: black;
   font-weight: 500;
   font-size: 32px;
@@ -661,7 +663,8 @@ const BoldTextWrapper = styled.div`
 const SuperBoldText = styled.div`
   position: relative;
   align-self: center;
-  font-family: system-ui;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: black;
   font-weight: 500;
   font-size: 50px;

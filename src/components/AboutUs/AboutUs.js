@@ -386,7 +386,8 @@ const LeftDiv = styled.div`
 
 const Statement = styled.div`
   font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 50px;
   color: white;
   padding: 20px;
