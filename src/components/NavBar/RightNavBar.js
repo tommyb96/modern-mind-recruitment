@@ -109,7 +109,6 @@ const NavLink = styled.a`
   color: black;
   text-decoration: none;
   font-size: 18px;
-  font-weight: 500;
   text-transform: uppercase;
 
   @media (max-width: 1024px) {

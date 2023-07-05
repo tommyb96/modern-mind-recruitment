@@ -502,7 +502,6 @@ const CVOneRight = styled.img`
 `;
 
 const RightAligned = styled.div`
-  font-family: "HelveticaNeue-Light";
   align-self: flex-end;
   padding: 20px;
   max-width: 420px;
@@ -632,7 +631,6 @@ const BoldText = styled.div`
 `;
 
 const LeftDiv = styled.div`
-  font-family: "HelveticaNeue-Light";
   padding: 20px;
   max-width: 420px;
   margin-top: 50px;

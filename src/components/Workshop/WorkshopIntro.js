@@ -346,7 +346,6 @@ const Heading = styled.div`
 `;
 
 const LeftDiv = styled.div`
-  font-family: "HelveticaNeue-Light";
   padding: 20px;
   margin-top: 50px;
   max-width: 420px;
