@@ -357,10 +357,12 @@ const InfoText = styled.div`
   @media (max-width: 900px) {
     max-width: 500px;
     padding-bottom: 0px;
+    padding-top: 50px;
   }
 
   @media (max-width: 480px) {
     font-size: 18px;
+    padding-top: 70px;
   }
 `;
 

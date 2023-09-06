@@ -244,14 +244,13 @@ const ContactButton = styled.a`
 
   @media (max-width: 700px) {
     margin-left: 0;
-    margin-top: 70px;
+    margin-top: 90px;
   }
 
   @media (max-width: 480px) {
     width: 70vw;
     height: 70vw;
     border: 1.5vw solid black;
-    margin-top: 55px;
   }
 `;
 
