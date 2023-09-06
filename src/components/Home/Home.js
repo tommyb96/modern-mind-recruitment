@@ -2,15 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Cubes from "./Cubes";
 import logo from "../../assets/svg/Home/logo.svg";
+import people from "../../assets/svg/Home/home-people.svg";
 
 const Home = () => {
   const refs = {
-    slogan: useRef(null),
     welcome: useRef(null),
   };
 
   const [isVisible, setIsVisible] = useState({
-    slogan: false,
     welcome: false,
   });
 
@@ -67,26 +66,13 @@ const Home = () => {
             <Cubes />
             <Cubes />
           </CubeWrapper>
-          <SloganWrapper ref={refs.slogan} isVisible={isVisible.slogan}>
-            <h1>
-              your <span>future</span>
-              <br />
-              &nbsp; &nbsp;is our focus
-            </h1>
-            <div>
-              Ihr Berater für internationale <br />
-              Fachkräfte
-            </div>
-          </SloganWrapper>
         </HomeContainer>
         <StyledContainer>
+          {" "}
+          <People src={people} alt="people" />
           <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
-            Herzlich Willkommen bei <br />
-            <StyledSpan>
-              modern mind <GreenSpan>recruitment</GreenSpan>
-            </StyledSpan>{" "}
-            und schön, dass sie hier sind, um einen Ausweg aus dem
-            Fachkräftemangel zu finden. Wir garantieren Ihnen Ihren Erfolg!
+            <p>HALLO!</p>
+            WIR SIND MODERN MIND RECRUITMENT
           </WelcomeMessage>
         </StyledContainer>
       </div>
@@ -150,151 +136,61 @@ const CubeWrapper = styled.div`
   }
 `;
 
-const SloganWrapper = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  right: 200px;
-  top: 227px;
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  h1 {
-    font-family: "Comfortaa", cursive;
-    text-shadow: 1px 0 rgb(0, 0, 0);
-    font-size: 90px;
-    margin: 0;
-    line-height: 95px;
-  }
-
-  span {
-    font-family: "Righteous", cursive;
-    text-shadow: 0px 0 rgb(0, 0, 255);
-    color: rgb(0, 0, 255);
-    font-size: 90px;
-    transition: all 0.1s ease-in-out;
-
-    @media (hover: hover) {
-      &:hover {
-        color: rgba(0, 167, 155);
-        cursor: pointer;
-      }
-    }
-  }
-
-  div {
-    color: rgb(0, 0, 255, 0.5);
-    display: inline-block;
-    font-family: system-ui;
-    font-weight: 300;
-    font-size: 38px;
-    margin-left: 100px;
-  }
-
-  @media (max-width: 1280px) {
-    right: 100px;
-    top: 230px;
-    h1 {
-      font-size: 80px;
-      line-height: 85px;
-    }
-    span {
-      font-size: 80px;
-    }
-    div {
-      font-size: 30px;
-    }
-  }
-  @media (max-width: 850px) {
-    top: 250px;
-    right: 50px;
-    h1 {
-      font-size: 55px;
-      line-height: 60px;
-    }
-    span {
-      font-size: 55px;
-    }
-    div {
-      margin-left: 70px;
-      font-size: 25px;
-    }
-  }
-  @media (max-width: 480px) {
-    right: 30px;
-    h1 {
-      font-size: 45px;
-      line-height: 50px;
-    }
-    span {
-      font-size: 45px;
-    }
-    div {
-      margin-left: 60px;
-      font-size: 20px;
-    }
-  }
-`;
-
 const StyledContainer = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 900px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const WelcomeMessage = styled.div`
   position: relative;
   color: black;
-  align-self: center;
-  margin: 150px 80px 120px 60px;
-  max-width: 900px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 500;
-  font-size: 50px;
-  max-width: 1200px;
+  max-width: 45%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 6vw;
+  margin: 10% 0 5% 5%;
+
+  p {
+    font-weight: bold;
+    color: rgba(0, 167, 155);
+  }
+
+  @media (max-width: 900px) {
+    max-width: 90%;
+    font-size: 10vw;
+    margin: 5% 5% 5% 15%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 45px;
+    margin: 20px;
+  }
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  //media query
-  @media (max-width: 1024px) {
-    font-size: 40px;
-  }
-  @media (max-width: 650px) {
-    margin: 150px 40px 120px 40px;
-    font-size: 30px;
-  }
-  @media (max-width: 480px) {
-    font-size: 23px;
-    margin-left: 55px;
-    margin-bottom: 120px;
-  }
 `;
 
-const StyledSpan = styled.span`
-  font-family: "Comfortaa", cursive;
-  text-shadow: 1px 0 rgb(0, 0, 255);
-  font-size: 50px;
-  font-weight: bold;
-  color: rgb(0, 0, 255);
+const People = styled.img`
+  width: 40%;
+  margin: 5%;
 
-  @media (max-width: 1024px) {
-    font-size: 40px;
+  @media (max-width: 900px) {
+    width: 70%;
   }
-  @media (max-width: 650px) {
-    font-size: 30px;
-  }
+
   @media (max-width: 480px) {
-    font-size: 23px;
+    width: 90%;
   }
-`;
-
-const GreenSpan = styled.span`
-  color: rgba(0, 167, 155);
-  text-shadow: 1px 0 rgba(0, 167, 155);
-  font-family: Comfortaa;
 `;

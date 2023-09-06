@@ -2,34 +2,21 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
-import Cubes from "./Cubes";
 import waves from "../../assets/svg/AboutUs/about_us_waves.png";
-import person from "../../assets/svg/AboutUs/about_us_person.svg";
+import woman from "../../assets/svg/AboutUs/about-us-woman.svg";
+import halfwoman from "../../assets/svg/AboutUs/about-us-woman-half.svg";
+import hand from "../../assets/svg/AboutUs/about-us-hand.png";
 
 const AboutUs = () => {
-  const refs = {
-    wavescircle: useRef(null),
-    circle: useRef(null),
-    heading: useRef(null),
-    leftdivone: useRef(null),
-    leftdivtwo: useRef(null),
-    statement: useRef(null),
-    boldText: useRef(null),
-    rightdivone: useRef(null),
-    rightdivtwo: useRef(null),
-  };
+  const contactButtonRef = useRef(); // Ref für den ContactButton
 
-  const [isVisible, setIsVisible] = useState({
-    wavescircle: false,
-    heading: false,
-    circle: false,
-    leftdivone: false,
-    leftdivtwo: false,
-    statement: false,
-    boldText: false,
-    rightdivone: false,
-    rightdivtwo: false,
-  });
+  // Funktion, um zur gewünschten Abschnitt zu scrollen
+  const scrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const handleIntersection = (entry, target) => {
     setIsVisible((prevState) => {
@@ -53,18 +40,53 @@ const AboutUs = () => {
     });
   };
 
+  const sections = [
+    {
+      id: "über-uns",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "boldText",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "leftdivone",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "statement",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState({});
+
   useEffect(() => {
     const observerOptions = {
       root: null,
       threshold: 0.5,
-      rootMargin: "-100px 0px -100px 0px",
+      rootMargin: "-30px 0px -30px 0px",
     };
 
-    const observers = Object.keys(refs).map((key) => {
+    const observers = sections.map((section) => {
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => handleIntersection(entry, key));
+        entries.forEach((entry) => handleIntersection(entry, section.id));
       }, observerOptions);
-      observer.observe(refs[key].current);
+      observer.observe(section.ref.current);
       return observer;
     });
 
@@ -79,74 +101,81 @@ const AboutUs = () => {
         {" "}
         <WavesLine>
           <WavesCircle
-            ref={refs.wavescircle}
-            isVisible={isVisible.wavescircle}
+            ref={sections[0].ref}
+            isVisible={isVisible[sections[0].id]}
           />
         </WavesLine>
-        <Waves id="über-uns" src={waves} alt="waves"></Waves>
+        <Waves id={sections[0].id} src={waves} alt="waves"></Waves>
       </WavesWrapper>
       <div>
-        <InfoWrapper>
+        <Wrapper>
           <Line>
-            <Circle ref={refs.circle} isVisible={isVisible.circle} />
-            <CircleOne />
-            <CircleTwo />
-            <CircleThree />
+            <Circle
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
+            />
+            <Statement
+              ref={sections[5].ref}
+              isVisible={isVisible[sections[5].id]}
+            >
+              lasst uns gemeinsam ihre zukunft gestalten!
+            </Statement>
+            <Woman src={woman} alt="woman pointing at something"></Woman>
+            <ContactButton
+              onClick={() => scrollToSection("kontakt")}
+              ref={contactButtonRef}
+            >
+              <CallToAction>
+                jetzt
+                <br />
+                offene stellen besetzen
+              </CallToAction>
+              <Hand src={hand} alt={hand}></Hand>
+            </ContactButton>
           </Line>
           <InfoText>
-            <Person src={person} alt="person icon" />
-            <Heading ref={refs.heading} isVisible={isVisible.heading}>
+            <Heading
+              ref={sections[2].ref}
+              isVisible={isVisible[sections[2].id]}
+            >
               ÜBER UNS
             </Heading>
-            <LeftDiv ref={refs.leftdivone} isVisible={isVisible.leftdivone}>
-              <div>
-                Es ist kein Geheimnis, dass es in Deutschland an Fachkräften
-                mangelt. Immer mehr Unternehmen kämpfen damit, ihre offenen
-                Stellen mit qualifizierten Mitarbeiter*innen zu besetzen. Aber
-                was tun?
-              </div>
-              <Cubes></Cubes>
-            </LeftDiv>
-            <Statement ref={refs.statement} isVisible={isVisible.statement}>
-              Die Lösung liegt in Fachkräften aus dem Ausland!
-            </Statement>
-            <BoldText ref={refs.boldText} isVisible={isVisible.boldText}>
-              Aus eigener Erfahrung wissen wir, dass das Einstellen von
-              internationalen Fachkräften eine Herausforderung sein kann. Aber
-              keine Sorge, wir stehen Ihnen mit Rat und Tat zur Seite.
+            <BoldText
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
+            >
+              Unsere Vision geht über das Hier und Jetzt hinaus – als Ihr
+              Partner in Personalfragen setzen wir auf moderne und nachhaltige
+              Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
+              sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
+              vermitteln die Talente von Morgen.
             </BoldText>{" "}
-            <LeftDiv ref={refs.leftdivtwo} isVisible={isVisible.leftdivtwo}>
-              Ganz genau, warum nicht die internationalen Talente für eure
-              offenen Stellen gewinnen? Es gibt unzählige qualifizierte
-              Fachkräfte auf der ganzen Welt die nicht wie Deutschland vom
-              demografischen Wandel betroffen sind und mehr Fachkräfte als zu
-              besetzende Stellen zur Verfügung haben, die auf der Suche nach
-              einer neuen Herausforderung und einer Chance sind, ihr Können
-              unter Beweis zu stellen. In den nächsten 20 Jahren wird der
-              demografische Wandel zu einem Rückgang von etwa 25% der Menschen
-              im erwerbsfähigen Alter führen.
+            <LeftDiv
+              ref={sections[4].ref}
+              isVisible={isVisible[sections[4].id]}
+            >
+              <div>
+                Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
+                Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
+                unterstützen, sie entlasten und gleichzeitig aktiv dem
+                Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
+                und den allgemeinen Wohlstand zu sichern.
+              </div>
             </LeftDiv>
-            <RightAligned
-              ref={refs.rightdivone}
-              isVisible={isVisible.rightdivone}
-            >
-              Unser Team ist eine Gruppe von Personalberater*innen, die
-              jahrelang in der Branche Fachkräfte aus den Drittstaaten tätig war
-              und immer noch ist, und dabei so ziemlich alles erlebt hat, was
-              man sich vorstellen kann. Von skurrilen Gesetzen bis hin zur
-              Anerkennung ausländischer Berufsqualifikationen - wir haben alle
-              möglichen Situationen gemeistert.
-            </RightAligned>
-            <RightAligned
-              ref={refs.rightdivtwo}
-              isVisible={isVisible.rightdivtwo}
-            >
-              Deshalb haben wir beschlossen, unser Wissen und unsere
-              Pro-Kenntnisse dazu zu nutzen, anderen Unternehmen dabei zu
-              helfen, diesen Prozess zu rationalisieren und zu vereinfachen.
-            </RightAligned>
+            <HalfWoman
+              src={halfwoman}
+              alt="woman pointing at something"
+            ></HalfWoman>
+            <HiddenStatement>
+              {" "}
+              lasst uns gemeinsam ihre zukunft gestalten!
+            </HiddenStatement>
+            <HiddenWoman
+              src={woman}
+              alt="woman pointing at something"
+            ></HiddenWoman>
           </InfoText>
-        </InfoWrapper>
+        </Wrapper>
       </div>
     </>
   );
@@ -157,6 +186,10 @@ export default AboutUs;
 const WavesWrapper = styled.div`
   display: flex;
   position: relative;
+
+  @media (max-width: 900px) {
+    margin-top: 100px;
+  }
 `;
 
 const WavesLine = styled.div`
@@ -165,16 +198,19 @@ const WavesLine = styled.div`
   left: 50%;
   height: 100%;
   width: 3.5px;
-  background-color: black;
+  background-color: grey;
 
   @media (max-width: 900px) {
     left: 10%;
     height: 140%;
   }
 
+  @media (max-width: 700px) {
+    left: 5%;
+  }
+
   @media (max-width: 480px) {
-    left: 9%;
-    height: 175%;
+    display: none;
   }
 `;
 
@@ -189,6 +225,12 @@ const WavesCircle = styled.div`
   border: 3.5px solid black;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
   transition: transform 1s ease-in-out;
+
+  @media (max-width: 700px) {
+    width: 40px;
+    height: 40px;
+    left: -18px;
+  }
 `;
 
 const Waves = styled.img`
@@ -198,10 +240,9 @@ const Waves = styled.img`
   object-position: center;
 `;
 
-const InfoWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: rgba(0, 167, 155);
   position: relative;
-  overflow: hidden;
   width: 100%;
   height: 100%;
 `;
@@ -212,14 +253,18 @@ const Line = styled.div`
   top: 0%;
   height: 100%;
   width: 3.5px;
-  background-color: black;
+  background-color: gray;
 
   @media (max-width: 900px) {
     left: 10%;
   }
 
+  @media (max-width: 700px) {
+    left: 5%;
+  }
+
   @media (max-width: 480px) {
-    left: 9%;
+    display: none;
   }
 `;
 
@@ -240,79 +285,78 @@ const Circle = styled.div`
   @media (max-width: 900px) {
     top: 105px;
   }
+
+  @media (max-width: 700px) {
+    width: 30px;
+    height: 30px;
+    left: -13px;
+  }
 `;
 
-const CircleOne = styled.div`
+const ContactButton = styled.a`
+  display: flex;
   position: absolute;
-  top: 170px;
-  left: -9px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
+  bottom: -200px;
+  left: -200px;
+  background-color: white;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
+  border: 6px solid black;
+
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:hover img {
+    transform: translateY(-70px) translateX(100px);
+  }
 
   @media (max-width: 900px) {
-    top: 255px;
-  }
-  @media (max-width: 600px) {
     display: none;
   }
 `;
 
-const CircleTwo = styled.div`
-  position: absolute;
-  top: 405px;
-  left: -9px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 900px) {
-    top: 940px;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
+const CallToAction = styled.div`
+  text-transform: uppercase;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 38px;
+  text-align: center;
+  align-self: center;
 `;
 
-const CircleThree = styled.div`
+const Hand = styled.img`
   position: absolute;
-  top: 1340px;
-  left: -9px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
+  bottom: -120px;
+  left: -150px;
+  width: 300px;
 
-  @media (max-width: 900px) {
-    top: 1790px;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
+  transition: transform 0.4s ease; /* Hinzugefügte Transition */
 `;
 
 const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 880px;
-  margin-bottom: 150px;
+  max-width: 1300px;
+  padding-bottom: 400px;
   font-size: 20px;
 
   //media query
+  @media (max-width: 1350px) {
+    padding-bottom: 320px;
+  }
+
+  @media (max-width: 1024px) {
+    padding-bottom: 0px;
+  }
+
   @media (max-width: 900px) {
     max-width: 500px;
-    margin-top: 100px;
+    padding-bottom: 0px;
   }
 
   @media (max-width: 480px) {
@@ -320,48 +364,72 @@ const InfoText = styled.div`
   }
 `;
 
-const Person = styled.img`
-  position: absolute;
-  height: 80%;
-  top: 10%;
-  right: -15%;
-
-  @media (max-width: 900px) {
-    right: -50%;
-    height: 60%;
-  }
-
-  @media (max-width: 480px) {
-    opacity: 0.2;
-  }
-`;
-
 const Heading = styled.div`
   font-family: Comfortaa;
   font-size: 55px;
   text-shadow: 1px 0 rgb(0, 0, 0);
-  padding: 20px;
-  max-width: 420px;
+  max-width: 500px;
+  margin-top: 10px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 
+  @media (max-width: 1350px) {
+    margin-left: 20px;
+  }
+
   @media (max-width: 900px) {
-    align-self: flex-start;
-    margin-left: 70px;
+    max-width: 500px;
+  }
+
+  @media (max-width: 600px) {
+    margin-left: 50px;
+    margin-right: 10px;
   }
 
   @media (max-width: 480px) {
     font-size: 39px;
-    margin-left: 55px;
+    margin: 0 20px 15px 20px;
+  }
+`;
+
+const BoldText = styled.div`
+  font-family: system-ui;
+  font-weight: 500;
+  color: black;
+  margin-top: 50px;
+  max-width: 500px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  @media (max-width: 1350px) {
+    margin-left: 20px;
+  }
+  @media (max-width: 1080px) {
+    max-width: 420px;
+  }
+
+  @media (max-width: 900px) {
+    max-width: 500px;
+  }
+
+  @media (max-width: 600px) {
+    margin-left: 50px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 480px) {
+    margin: 20px;
   }
 `;
 
 const LeftDiv = styled.div`
-  padding: 20px;
-  max-width: 420px;
+  max-width: 500px;
   position: relative;
   margin-top: 50px;
 
@@ -370,94 +438,120 @@ const LeftDiv = styled.div`
   transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
+  @media (max-width: 1350px) {
+    margin-left: 20px;
+  }
+
+  @media (max-width: 1080px) {
+    max-width: 420px;
+  }
+
   @media (max-width: 900px) {
-    align-self: flex-start;
-    margin-left: 70px;
-    margin-top: 30px;
+    max-width: 500px;
+  }
+
+  @media (max-width: 600px) {
+    margin-left: 50px;
+    margin-right: 10px;
   }
 
   @media (max-width: 480px) {
-    margin-left: 55px;
-    margin-right: 10px;
+    margin: 20px;
   }
 `;
 
 const Statement = styled.div`
-  font-weight: 500;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 50px;
+  position: absolute;
+  left: 80px;
+  top: 140px;
+  width: 420px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 56px;
   color: white;
-  padding: 20px;
-  margin-top: 50px;
-  max-width: 420px;
-  align-self: flex-end;
+
+  @media (max-width: 1000px) {
+    left: 50px;
+    top: 170px;
+    font-size: 50px;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+`;
 
-  @media (max-width: 900px) {
-    margin: 500px 0 0 70px;
+const HiddenStatement = styled.div`
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 56px;
+  color: white;
+  max-width: 500px;
+  margin-top: 50px;
+  margin-left: 20px;
+
+  @media (min-width: 901px) {
+    display: none;
   }
 
-  @media (max-width: 590px) {
-    margin-top: 80vw;
+  @media (max-width: 600px) {
+    margin-left: 50px;
+    margin-right: 10px;
   }
 
   @media (max-width: 480px) {
-    font-size: 45px;
-    margin-left: 55px;
-    margin-right: 10px;
+    font-size: 40px;
+    margin: 20px;
   }
 `;
 
-const BoldText = styled.div`
-  font-family: system-ui;
-  font-weight: 500;
-  color: black;
-  align-self: flex-end;
-  padding: 20px;
-  margin-top: 50px;
-  max-width: 420px;
+const Woman = styled.img`
+  position: absolute;
+  width: 350px;
+  bottom: -40px;
+  left: 300px;
 
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  @media (max-width: 900px) {
-    align-self: flex-start;
-    margin-left: 70px;
-    margin-top: 30px;
+  @media (max-width: 1350px) {
+    left: 200px;
+    width: 300px;
   }
 
-  @media (max-width: 480px) {
-    margin-left: 55px;
-    margin-right: 10px;
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
-const RightAligned = styled.div`
+const HalfWoman = styled.img`
+  width: 220px;
   align-self: flex-end;
-  padding: 20px;
-  max-width: 420px;
-  margin-top: 50px;
+  margin-top: -80px;
 
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  @media (max-width: 900px) {
-    align-self: flex-start;
-    margin-left: 70px;
-    margin-top: 30px;
+  @media (min-width: 1025px) {
+    display: none;
   }
 
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const HiddenWoman = styled.img`
+  width: 350px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: -30px;
+  align-self: flex-end;
+  @media (min-width: 901px) {
+    display: none;
+  }
   @media (max-width: 480px) {
-    margin-left: 55px;
-    margin-right: 10px;
+    width: 250px;
   }
 `;
