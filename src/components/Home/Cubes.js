@@ -20,10 +20,13 @@ const Cubes = () => {
       // }
       if (width < 590) {
         setNumCubes(16);
-        setCubeSize({ height: "13vw", width: "13vw" });
+        setCubeSize({ height: "60px", width: "60px" });
+      } else if (width < 1300) {
+        setNumCubes(20);
+        setCubeSize({ height: "80px", width: "80px" });
       } else {
         setNumCubes(30);
-        setCubeSize({ height: "80px", width: "80px" });
+        setCubeSize({ height: "90px", width: "90px" });
       }
     };
 
@@ -52,7 +55,7 @@ const CubeContainer = styled.div`
 const StyledCube = styled.div`
   background-color: rgba(0, 167, 155, 0.3);
   border-radius: 15%;
-  margin: 0.08rem;
+  margin: 0.3rem;
   transition: transform 0.05s ease-in-out;
 
   &:hover {

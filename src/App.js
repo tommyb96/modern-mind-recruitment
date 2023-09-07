@@ -40,7 +40,7 @@ const Root = () => {
     <>
       <div>
         <GlobalStyle />
-        <NavBar />
+        {/* <NavBar /> */}
         <Wrapper>
           <Home />
           <AboutUs />

@@ -43,7 +43,6 @@ const Home = () => {
     <>
       <div id="home">
         <HomeContainer>
-          <Logo src={logo} alt="Logo" />
           <CubeWrapper>
             <Cubes />
             <Cubes />
@@ -66,6 +65,12 @@ const Home = () => {
             <Cubes />
             <Cubes />
           </CubeWrapper>
+          <Logo src={logo} alt="Logo" />
+          <Message>
+            your <br /> future <br />
+            is our <br />
+            focus
+          </Message>
         </HomeContainer>
         <StyledContainer>
           {" "}
@@ -84,41 +89,63 @@ export default Home;
 const HomeContainer = styled.div`
   display: flex;
   position: relative;
-  flex-direction: column;
+  flex-direction: row;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(
-    to right,
-    rgb(0, 0, 255, 0.8),
-    rgb(0, 167, 155, 0.6)
-  );
+  background-color: rgb(92, 92, 255);
 `;
 
 const Logo = styled.img`
-  position: absolute;
-  width: 150px;
-  margin: 25px;
+  height: 80%;
   z-index: 1100;
-  top: 70px;
-  left: 0;
+  align-self: center;
+  margin: 100px;
+  opacity: 0.8;
 
-  @media (max-width: 1280px) {
-    width: 150px;
-    margin: 30px;
+  @media (max-width: 1500px) {
+    height: 80%;
   }
 
   @media (max-width: 900px) {
-    top: 40px;
+    align-self: start;
+    margin: 40px;
+    height: 60%;
   }
 
   @media (max-width: 650px) {
-    top: 30px;
-    width: 100px;
+    height: 50%;
   }
 
   @media (max-width: 480px) {
-    top: 20px;
+    margin: 30px;
+  }
+`;
+
+const Message = styled.div`
+  position: absolute;
+  right: 7%;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  font-size: 14vh;
+  text-align: end;
+  line-height: 84%;
+
+  align-self: center;
+  z-index: 1100;
+
+  @media (max-width: 1500px) {
+    font-size: 12vh;
+  }
+
+  @media (max-width: 900px) {
+    bottom: 100px;
+    font-size: 9vh;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 8vh;
   }
 `;
 
@@ -139,6 +166,7 @@ const CubeWrapper = styled.div`
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: row-reverse;
+  margin-top: 80px;
 
   @media (max-width: 900px) {
     flex-direction: column;
@@ -146,8 +174,9 @@ const StyledContainer = styled.div`
     margin-bottom: 80px;
   }
 
-  @media (max-width: 900px) {
-    margin-bottom: 20px;
+  @media (max-width: 480px) {
+    margin-top: 70px;
+    margin-bottom: 0;
   }
 `;
 

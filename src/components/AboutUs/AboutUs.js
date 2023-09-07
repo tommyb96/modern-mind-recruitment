@@ -198,7 +198,7 @@ const WavesLine = styled.div`
   left: 50%;
   height: 100%;
   width: 3.5px;
-  background-color: grey;
+  background-color: darkgray;
 
   @media (max-width: 900px) {
     left: 10%;
@@ -222,7 +222,7 @@ const WavesCircle = styled.div`
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  border: 3.5px solid black;
+  border: 3.5px solid darkgray;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
   transition: transform 1s ease-in-out;
 
@@ -253,7 +253,7 @@ const Line = styled.div`
   top: 0%;
   height: 100%;
   width: 3.5px;
-  background-color: gray;
+  background-color: darkgray;
 
   @media (max-width: 900px) {
     left: 10%;
@@ -276,7 +276,7 @@ const Circle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid black;
+  border: 3.5px solid darkgray;
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
