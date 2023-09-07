@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 import waves from "../../assets/svg/AboutUs/about_us_waves.png";
 import woman from "../../assets/svg/AboutUs/about-us-woman.svg";
-import halfwoman from "../../assets/svg/AboutUs/about-us-woman-half.svg";
 import hand from "../../assets/svg/AboutUs/about-us-hand.png";
+import checkmark from "../../assets/svg/AboutUs/about-us-checkmark.svg";
 
 const AboutUs = () => {
   const contactButtonRef = useRef(); // Ref für den ContactButton
@@ -107,39 +107,31 @@ const AboutUs = () => {
         </WavesLine>
         <Waves id={sections[0].id} src={waves} alt="waves"></Waves>
       </WavesWrapper>
-      <div>
-        <Wrapper>
-          <Line>
-            <Circle
-              ref={sections[1].ref}
-              isVisible={isVisible[sections[1].id]}
-            />
-            <Statement
-              ref={sections[5].ref}
-              isVisible={isVisible[sections[5].id]}
-            >
-              lasst uns gemeinsam ihre zukunft gestalten!
-            </Statement>
-            <Woman src={woman} alt="woman pointing at something"></Woman>
-            <ContactButton
-              onClick={() => scrollToSection("kontakt")}
-              ref={contactButtonRef}
-            >
-              <CallToAction>
-                jetzt
-                <br />
-                offene stellen besetzen
-              </CallToAction>
-              <Hand src={hand} alt={hand}></Hand>
-            </ContactButton>
-          </Line>
-          <InfoText>
+      <GreenWrapper>
+        <GreenLine>
+          <Circle ref={sections[1].ref} isVisible={isVisible[sections[1].id]} />
+          <ContactButton
+            onClick={() => scrollToSection("kontakt")}
+            ref={contactButtonRef}
+          >
+            <CallToAction>
+              jetzt
+              <br />
+              offene stellen besetzen
+            </CallToAction>
+            <Hand src={hand} alt={hand}></Hand>
+          </ContactButton>
+        </GreenLine>
+        <FirstTable>
+          <tr>
             <Heading
               ref={sections[2].ref}
               isVisible={isVisible[sections[2].id]}
             >
-              ÜBER UNS
+              über uns
             </Heading>
+          </tr>
+          <tr>
             <BoldText
               ref={sections[3].ref}
               isVisible={isVisible[sections[3].id]}
@@ -149,34 +141,193 @@ const AboutUs = () => {
               Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
               sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
               vermitteln die Talente von Morgen.
-            </BoldText>{" "}
+            </BoldText>
+            <Statement
+              rowSpan="2"
+              ref={sections[5].ref}
+              isVisible={isVisible[sections[5].id]}
+            >
+              {" "}
+              lasst uns gemeinsam ihre zukunft gestalten!
+            </Statement>
+          </tr>
+          <tr>
             <LeftDiv
               ref={sections[4].ref}
               isVisible={isVisible[sections[4].id]}
             >
-              <div>
-                Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
-                Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
-                unterstützen, sie entlasten und gleichzeitig aktiv dem
-                Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
-                und den allgemeinen Wohlstand zu sichern.
-              </div>
+              Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
+              Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
+              unterstützen, sie entlasten und gleichzeitig aktiv dem
+              Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
+              und den allgemeinen Wohlstand zu sichern.
             </LeftDiv>
-            <HalfWoman
-              src={halfwoman}
-              alt="woman pointing at something"
-            ></HalfWoman>
-            <HiddenStatement>
+          </tr>
+        </FirstTable>
+        <HiddenFirstTable>
+          <tr>
+            <Heading>über uns</Heading>
+          </tr>
+          <tr>
+            <BoldText>
+              Unsere Vision geht über das Hier und Jetzt hinaus – als Ihr
+              Partner in Personalfragen setzen wir auf moderne und nachhaltige
+              Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
+              sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
+              vermitteln die Talente von Morgen.
+            </BoldText>
+          </tr>
+          <tr>
+            <LeftDiv>
               {" "}
-              lasst uns gemeinsam ihre zukunft gestalten!
-            </HiddenStatement>
-            <HiddenWoman
-              src={woman}
-              alt="woman pointing at something"
-            ></HiddenWoman>
-          </InfoText>
-        </Wrapper>
-      </div>
+              Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
+              Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
+              unterstützen, sie entlasten und gleichzeitig aktiv dem
+              Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
+              und den allgemeinen Wohlstand zu sichern.
+            </LeftDiv>
+          </tr>
+        </HiddenFirstTable>
+        <Woman src={woman} alt="woman pointing at something"></Woman>
+      </GreenWrapper>
+      <WhiteWrapper>
+        <WhiteLine />
+        <HiddenContactButton
+          onClick={() => scrollToSection("kontakt")}
+          ref={contactButtonRef}
+        >
+          <HiddenCallToAction>
+            jetzt
+            <br />
+            offene stellen besetzen
+          </HiddenCallToAction>
+          <HiddenHand src={hand} alt={hand}></HiddenHand>
+        </HiddenContactButton>
+        <SecondTable>
+          <tr>
+            <HeaderCell>Wofür wir stehen:</HeaderCell>
+          </tr>
+          <tr>
+            <LeftCell rowSpan="7">
+              Unser junges Team hat sich als Partner in Personalfragen auf die
+              Organisation und Durchführung der Erwerbsmigration von
+              qualifizierten Fachkräften aus Nicht-EU-Ländern spezialisiert. Als
+              innovatives sächsisches Unternehmen mit einer zukunftsorientierten
+              Strategie bei der Gewinnung von passendem Personal unterstützen
+              wir lokal als auch bundesweit ansässige Unternehmen dabei, das zu
+              großen Teilen unerschlossene Potenzial qualifizierter Fachkräfte
+              aus Nicht-EU-Ländern zu nutzen und mit Blick in die Zukunft offene
+              Stellen langfristig zu besetzen. Um die Zufriedenheit unserer
+              Kunden und die Eignung unserer Kandidaten zu garantieren, arbeiten
+              wir mit ausgewählten Partnern aus Ländern der ehemaligen
+              GUS-Region sowie Mittel- und Südamerika zusammen, in denen das
+              Bildungssystem dem deutschen ähnlich ist. Ihre Bedürfnisse stehen
+              im Mittelpunkt unserer Bemühungen.
+            </LeftCell>
+          </tr>
+          <tr>
+            <th>
+              <Checkmark src={checkmark} alt="checkmark" />
+            </th>
+            <RightCell>Transparenz</RightCell>
+          </tr>
+          <tr>
+            <th>
+              <Checkmark src={checkmark} alt="checkmark" />
+            </th>
+            <RightCell>Ehrlichkeit</RightCell>
+          </tr>
+          <tr>
+            <th>
+              <Checkmark src={checkmark} alt="checkmark" />
+            </th>
+            <RightCell>Verlässlichkeit</RightCell>
+          </tr>
+          <tr>
+            <th>
+              <Checkmark src={checkmark} alt="checkmark" />
+            </th>
+            <RightCell>Persönlichkeit</RightCell>
+          </tr>
+          <tr>
+            <th>
+              <Checkmark src={checkmark} alt="checkmark" />
+            </th>
+            <RightCell>Herzlichkeit</RightCell>
+          </tr>
+          <tr>
+            <th>
+              <Checkmark src={checkmark} alt="checkmark" />
+            </th>
+            <RightCell>Zukunft</RightCell>
+          </tr>
+        </SecondTable>
+        <HiddenSecondTable>
+          <tr>
+            <HeaderCell>Wofür wir stehen:</HeaderCell>
+          </tr>
+          <tr>
+            <LeftCell>
+              Unser junges Team hat sich als Partner in Personalfragen auf die
+              Organisation und Durchführung der Erwerbsmigration von
+              qualifizierten Fachkräften aus Nicht-EU-Ländern spezialisiert. Als
+              innovatives sächsisches Unternehmen mit einer zukunftsorientierten
+              Strategie bei der Gewinnung von passendem Personal unterstützen
+              wir lokal als auch bundesweit ansässige Unternehmen dabei, das zu
+              großen Teilen unerschlossene Potenzial qualifizierter Fachkräfte
+              aus Nicht-EU-Ländern zu nutzen und mit Blick in die Zukunft offene
+              Stellen langfristig zu besetzen. Um die Zufriedenheit unserer
+              Kunden und die Eignung unserer Kandidaten zu garantieren, arbeiten
+              wir mit ausgewählten Partnern aus Ländern der ehemaligen
+              GUS-Region sowie Mittel- und Südamerika zusammen, in denen das
+              Bildungssystem dem deutschen ähnlich ist. Ihre Bedürfnisse stehen
+              im Mittelpunkt unserer Bemühungen.
+            </LeftCell>
+          </tr>
+          <tr>
+            <RightCell>
+              {" "}
+              <Checkmark src={checkmark} alt="checkmark" />
+              Transparenz
+            </RightCell>
+          </tr>
+          <tr>
+            <RightCell>
+              {" "}
+              <Checkmark src={checkmark} alt="checkmark" />
+              Ehrlichkeit
+            </RightCell>
+          </tr>
+          <tr>
+            <RightCell>
+              {" "}
+              <Checkmark src={checkmark} alt="checkmark" />
+              Verlässlichkeit
+            </RightCell>
+          </tr>
+          <tr>
+            <RightCell>
+              {" "}
+              <Checkmark src={checkmark} alt="checkmark" />
+              Persönlichkeit
+            </RightCell>
+          </tr>
+          <tr>
+            <RightCell>
+              {" "}
+              <Checkmark src={checkmark} alt="checkmark" />
+              Herzlichkeit
+            </RightCell>
+          </tr>
+          <tr>
+            <RightCell>
+              {" "}
+              <Checkmark src={checkmark} alt="checkmark" />
+              Zukunft
+            </RightCell>
+          </tr>
+        </HiddenSecondTable>
+      </WhiteWrapper>
     </>
   );
 };
@@ -240,14 +391,16 @@ const Waves = styled.img`
   object-position: center;
 `;
 
-const Wrapper = styled.div`
+const GreenWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 167, 155);
   position: relative;
   width: 100%;
   height: 100%;
 `;
 
-const Line = styled.div`
+const GreenLine = styled.div`
   position: absolute;
   left: 50%;
   top: 0%;
@@ -303,6 +456,7 @@ const ContactButton = styled.a`
   height: 400px;
   border-radius: 50%;
   border: 6px solid black;
+  z-index: 100;
 
   transition: transform 0.3s ease;
 
@@ -337,146 +491,137 @@ const Hand = styled.img`
   transition: transform 0.4s ease; /* Hinzugefügte Transition */
 `;
 
-const InfoText = styled.div`
-  display: flex;
-  flex-direction: column;
+const FirstTable = styled.table`
+  border-collapse: collapse;
+  width: 1350px;
   margin: auto;
-  max-width: 1300px;
-  padding-bottom: 400px;
-  font-size: 20px;
+  border: 1px solid #ccc;
 
-  //media query
-  @media (max-width: 1350px) {
-    padding-bottom: 320px;
-  }
-
-  @media (max-width: 1024px) {
-    padding-bottom: 0px;
+  @media (max-width: 1300px) {
+    width: 100%;
   }
 
   @media (max-width: 900px) {
-    max-width: 500px;
-    padding-bottom: 0px;
-    padding-top: 50px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 18px;
-    padding-top: 70px;
+    display: none;
   }
 `;
 
-const Heading = styled.div`
+const Heading = styled.th`
   font-family: Comfortaa;
   font-size: 55px;
+  text-transform: uppercase;
   text-shadow: 1px 0 rgb(0, 0, 0);
-  max-width: 500px;
-  margin-top: 10px;
+  text-align: start;
+  padding-bottom: 40px;
+  color: black;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+  }
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-
-  @media (max-width: 1350px) {
-    margin-left: 20px;
-  }
-
-  @media (max-width: 900px) {
-    max-width: 500px;
-  }
-
-  @media (max-width: 600px) {
-    margin-left: 50px;
-    margin-right: 10px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 39px;
-    margin: 0 20px 15px 20px;
-  }
 `;
 
-const BoldText = styled.div`
+const BoldText = styled.th`
   font-family: system-ui;
   font-weight: 500;
   color: black;
-  margin-top: 50px;
-  max-width: 500px;
+  width: 50%;
+  border: 1px solid #ccc;
+  padding-right: 100px;
+  font-size: 20px;
+  text-align: start;
+  padding-bottom: 30px;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-bottom: 50px;
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+    font-size: 18px;
+  }
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+`;
 
-  @media (max-width: 1350px) {
-    margin-left: 20px;
-  }
-  @media (max-width: 1080px) {
-    max-width: 420px;
+const LeftDiv = styled.th`
+  color: black;
+  width: 50%;
+  border: 1px solid #ccc;
+  padding-right: 100px;
+  font-size: 20px;
+  text-align: start;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+    padding-right: 50px;
   }
 
   @media (max-width: 900px) {
-    max-width: 500px;
+    padding-bottom: 50px;
+    padding-left: 120px;
   }
 
-  @media (max-width: 600px) {
-    margin-left: 50px;
-    margin-right: 10px;
+  @media (max-width: 700px) {
+    padding-left: 70px;
   }
 
   @media (max-width: 480px) {
-    margin: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    font-size: 18px;
   }
-`;
-
-const LeftDiv = styled.div`
-  max-width: 500px;
-  position: relative;
-  margin-top: 50px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  @media (max-width: 1350px) {
-    margin-left: 20px;
-  }
-
-  @media (max-width: 1080px) {
-    max-width: 420px;
-  }
-
-  @media (max-width: 900px) {
-    max-width: 500px;
-  }
-
-  @media (max-width: 600px) {
-    margin-left: 50px;
-    margin-right: 10px;
-  }
-
-  @media (max-width: 480px) {
-    margin: 20px;
-  }
 `;
 
-const Statement = styled.div`
-  position: absolute;
-  left: 80px;
-  top: 140px;
-  width: 420px;
+const Statement = styled.th`
+  border: 1px solid #ccc;
   text-transform: uppercase;
+  text-align: start;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 56px;
+  font-size: 60px;
   color: white;
+  padding-left: 100px;
+  padding-right: 50px;
 
-  @media (max-width: 1000px) {
-    left: 50px;
-    top: 170px;
-    font-size: 50px;
+  @media (max-width: 1400px) {
+    padding-right: 20px;
+    padding-left: 50px;
   }
 
   @media (max-width: 900px) {
@@ -489,54 +634,137 @@ const Statement = styled.div`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 `;
 
-const HiddenStatement = styled.div`
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 56px;
-  color: white;
-  max-width: 500px;
-  margin-top: 50px;
-  margin-left: 20px;
+const HiddenFirstTable = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+  margin-top: 120px;
+  border: 1px solid #ccc;
 
   @media (min-width: 901px) {
     display: none;
-  }
-
-  @media (max-width: 600px) {
-    margin-left: 50px;
-    margin-right: 10px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 40px;
-    margin: 20px;
   }
 `;
 
 const Woman = styled.img`
-  position: absolute;
   width: 350px;
-  bottom: -40px;
-  left: 300px;
+  align-self: center;
+  margin-left: 1000px;
 
-  @media (max-width: 1350px) {
-    left: 200px;
-    width: 300px;
+  @media (max-width: 1400px) {
+    align-self: flex-end;
+    margin: 0 20px -50px 0;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 900px) {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: -30px;
+  }
+  @media (max-width: 480px) {
+    width: 250px;
+  }
+`;
+
+const WhiteWrapper = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+`;
+
+const WhiteLine = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  height: 100%;
+  width: 3.5px;
+  background-color: darkgray;
+
+  @media (max-width: 900px) {
+    left: 10%;
+  }
+
+  @media (max-width: 700px) {
+    left: 5%;
+  }
+
+  @media (max-width: 480px) {
     display: none;
   }
 `;
 
-const HalfWoman = styled.img`
-  width: 220px;
-  align-self: flex-end;
-  margin-top: -80px;
+const HiddenContactButton = styled.a`
+  display: flex;
+  position: relative;
+  background-color: white;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  border: 1vw solid black;
+  margin: auto;
+  margin-top: 100px;
+  transition: transform 0.3s ease;
 
-  @media (min-width: 1025px) {
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:hover img {
+    transform: translateY(-70px) translateX(100px);
+  }
+
+  @media (min-width: 901px) {
     display: none;
+  }
+
+  @media (max-width: 700px) {
+    margin-top: 90px;
+  }
+
+  @media (max-width: 480px) {
+    width: 70vw;
+    height: 70vw;
+    border: 1.5vw solid black;
+  }
+`;
+
+const HiddenCallToAction = styled.div`
+  text-transform: uppercase;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 4.5vw;
+  text-align: center;
+  align-self: center;
+  color: black;
+
+  @media (max-width: 480px) {
+    font-size: 5.5vw;
+  }
+`;
+
+const HiddenHand = styled.img`
+  position: absolute;
+  bottom: -15vw;
+  left: -15vw;
+  width: 38vw;
+  transition: transform 0.4s ease; /* Hinzugefügte Transition */
+
+  @media (max-width: 480px) {
+    width: 47vw;
+  }
+`;
+
+const SecondTable = styled.table`
+  border-collapse: collapse;
+  width: 1350px;
+  margin: auto;
+  margin-top: 350px;
+  margin-bottom: 200px;
+
+  @media (max-width: 1300px) {
+    width: 100%;
   }
 
   @media (max-width: 900px) {
@@ -544,16 +772,83 @@ const HalfWoman = styled.img`
   }
 `;
 
-const HiddenWoman = styled.img`
-  width: 350px;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: -30px;
-  align-self: flex-end;
+const HeaderCell = styled.th`
+  text-align: start;
+  font-size: 39px;
+  padding-bottom: 30px;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+  }
+`;
+
+const LeftCell = styled.th`
+  text-align: start;
+  font-size: 20px;
+  width: 50%;
+  padding-right: 100px;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-bottom: 50px;
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+    font-size: 18px;
+  }
+`;
+
+const Checkmark = styled.img`
+  width: 40px;
+  margin-left: 30px;
+`;
+
+const RightCell = styled.th`
+  font-size: 34px;
+  text-align: start;
+  padding-right: 20px;
+
+  @media (max-width: 900px) {
+    padding-left: 25%;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 5%;
+  }
+`;
+
+const HiddenSecondTable = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+  margin-top: 120px;
+  margin-bottom: 150px;
+
   @media (min-width: 901px) {
     display: none;
-  }
-  @media (max-width: 480px) {
-    width: 250px;
   }
 `;
