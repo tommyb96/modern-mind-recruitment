@@ -71,6 +71,26 @@ const AboutUs = () => {
       ref: useRef(null),
       isVisible: false,
     },
+    {
+      id: "hidden-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-bold-text",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-left-div",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-statement",
+      ref: useRef(null),
+      isVisible: false,
+    },
   ];
 
   const [isVisible, setIsVisible] = useState({});
@@ -166,10 +186,18 @@ const AboutUs = () => {
         </FirstTable>
         <HiddenFirstTable>
           <tr>
-            <Heading>über uns</Heading>
+            <Heading
+              ref={sections[6].ref}
+              isVisible={isVisible[sections[6].id]}
+            >
+              über uns
+            </Heading>
           </tr>
           <tr>
-            <BoldText>
+            <BoldText
+              ref={sections[7].ref}
+              isVisible={isVisible[sections[7].id]}
+            >
               Unsere Vision geht über das Hier und Jetzt hinaus – als Ihr
               Partner in Personalfragen setzen wir auf moderne und nachhaltige
               Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
@@ -178,7 +206,10 @@ const AboutUs = () => {
             </BoldText>
           </tr>
           <tr>
-            <LeftDiv>
+            <LeftDiv
+              ref={sections[8].ref}
+              isVisible={isVisible[sections[8].id]}
+            >
               {" "}
               Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
               Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
@@ -186,6 +217,15 @@ const AboutUs = () => {
               Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
               und den allgemeinen Wohlstand zu sichern.
             </LeftDiv>
+          </tr>
+          <tr>
+            <Statement
+              ref={sections[9].ref}
+              isVisible={isVisible[sections[9].id]}
+            >
+              {" "}
+              lasst uns gemeinsam ihre zukunft gestalten!
+            </Statement>
           </tr>
         </HiddenFirstTable>
         <Woman src={woman} alt="woman pointing at something"></Woman>
@@ -495,7 +535,6 @@ const FirstTable = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
-  border: 1px solid #ccc;
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -529,6 +568,7 @@ const Heading = styled.th`
 
   @media (max-width: 480px) {
     padding-left: 30px;
+    font-size: 33px;
   }
 
   //animation
@@ -542,7 +582,6 @@ const BoldText = styled.th`
   font-weight: 500;
   color: black;
   width: 50%;
-  border: 1px solid #ccc;
   padding-right: 100px;
   font-size: 20px;
   text-align: start;
@@ -577,7 +616,6 @@ const BoldText = styled.th`
 const LeftDiv = styled.th`
   color: black;
   width: 50%;
-  border: 1px solid #ccc;
   padding-right: 100px;
   font-size: 20px;
   text-align: start;
@@ -609,7 +647,6 @@ const LeftDiv = styled.th`
 `;
 
 const Statement = styled.th`
-  border: 1px solid #ccc;
   text-transform: uppercase;
   text-align: start;
   font-weight: bold;
@@ -625,7 +662,20 @@ const Statement = styled.th`
   }
 
   @media (max-width: 900px) {
-    display: none;
+    padding-bottom: 50px;
+    padding-left: 200px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+    font-size: 55px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+    font-size: 43px;
   }
 
   //animation
@@ -639,8 +689,6 @@ const HiddenFirstTable = styled.table`
   width: 100%;
   margin: auto;
   margin-top: 120px;
-  border: 1px solid #ccc;
-
   @media (min-width: 901px) {
     display: none;
   }
@@ -791,6 +839,7 @@ const HeaderCell = styled.th`
 
   @media (max-width: 480px) {
     padding-left: 30px;
+    font-size: 33px;
   }
 `;
 
@@ -827,7 +876,7 @@ const Checkmark = styled.img`
 `;
 
 const RightCell = styled.th`
-  font-size: 34px;
+  font-size: 33px;
   text-align: start;
   padding-right: 20px;
 
@@ -838,6 +887,7 @@ const RightCell = styled.th`
 
   @media (max-width: 480px) {
     padding-left: 5%;
+    font-size: 26px;
   }
 `;
 

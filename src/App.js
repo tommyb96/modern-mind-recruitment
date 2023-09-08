@@ -5,8 +5,8 @@ import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Leistungen from "./components/Leistungen/Leistungen";
+import Vermittlung from "./components/Vermittlung/Vermittlung";
 import Kontakt from "./components/Kontakt";
-// import RotatingCube from "./components/RotatingCube";
 import Workshop from "./components/Workshop/Workshop";
 import Footer from "./components/Footer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -45,9 +45,9 @@ const Root = () => {
           <Home />
           <AboutUs />
           <Leistungen />
+          <Vermittlung />
           <Workshop />
           <Kontakt />
-          {/* <RotatingCube /> */}
           <Footer />
         </Wrapper>
       </div>

@@ -201,7 +201,7 @@ const WelcomeMessage = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: 45px;
+    font-size: 43px;
     margin: 20px;
   }
 
