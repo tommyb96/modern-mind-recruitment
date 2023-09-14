@@ -478,7 +478,7 @@ const WavesWrapper = styled.div`
   position: relative;
 
   @media (max-width: 900px) {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 `;
 
@@ -773,7 +773,7 @@ const HiddenFirstTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 30px;
   @media (min-width: 901px) {
     display: none;
   }
@@ -800,12 +800,13 @@ const Woman = styled.img`
 
   @media (max-width: 900px) {
     transform: translateX(${(props) => (props.isVisible ? 0 : "30px")});
-    margin-right: 10px;
+    margin-right: 40px;
     margin-bottom: -30px;
   }
   @media (max-width: 480px) {
     width: 250px;
     margin-right: 40px;
+    margin-top: 40px;
   }
 `;
 
@@ -985,7 +986,7 @@ const RightCell = styled.th`
   padding-right: 20px;
 
   @media (max-width: 900px) {
-    padding-left: 25%;
+    padding-left: 15%;
     padding-bottom: 20px;
     transform: translateX(${(props) => (props.isVisible ? 0 : "10px")});
   }
@@ -993,6 +994,7 @@ const RightCell = styled.th`
   @media (max-width: 480px) {
     padding-left: 5%;
     font-size: 26px;
+    padding-bottom: 5px;
   }
 
   //animation
@@ -1005,8 +1007,8 @@ const HiddenSecondTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 120px;
-  margin-bottom: 150px;
+  margin-top: 80px;
+  margin-bottom: 100px;
 
   @media (min-width: 901px) {
     display: none;
