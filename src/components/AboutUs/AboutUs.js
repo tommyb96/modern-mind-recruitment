@@ -22,7 +22,6 @@ const AboutUs = () => {
     setIsVisible((prevState) => {
       if (entry.isIntersecting) {
         if (!prevState[target]) {
-          console.log(`${target} is now visible.`);
         }
         return {
           ...prevState,
@@ -30,7 +29,6 @@ const AboutUs = () => {
         };
       } else {
         if (prevState[target]) {
-          console.log(`${target} is no longer visible.`);
         }
         return {
           ...prevState,
@@ -627,7 +625,6 @@ const FirstTable = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
-  opacity: 0.8;
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -674,6 +671,7 @@ const BoldText = styled.th`
   text-align: start;
   padding-bottom: 30px;
   color: white;
+  opacity: 0.8;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -708,6 +706,7 @@ const LeftDiv = styled.th`
   font-size: 20px;
   text-align: start;
   color: white;
+  opacity: 0.8;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -742,6 +741,7 @@ const Statement = styled.th`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 60px;
   color: white;
+  opacity: 0.8;
   padding-left: 100px;
   padding-right: 50px;
 
@@ -786,7 +786,7 @@ const Woman = styled.img`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "40px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});
   transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
 
   &:hover {
@@ -987,8 +987,7 @@ const RightCell = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 15%;
-    padding-bottom: 20px;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "10px")});
+    padding-bottom: 15px;
   }
 
   @media (max-width: 480px) {
