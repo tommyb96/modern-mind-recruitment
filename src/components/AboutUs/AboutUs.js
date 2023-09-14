@@ -786,7 +786,7 @@ const Woman = styled.img`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "30px")});
   transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
 
   &:hover {
@@ -799,7 +799,6 @@ const Woman = styled.img`
   }
 
   @media (max-width: 900px) {
-    transform: translateX(${(props) => (props.isVisible ? 0 : "30px")});
     margin-right: 40px;
     margin-bottom: -30px;
   }
@@ -998,7 +997,7 @@ const RightCell = styled.th`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});
+  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
   transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 

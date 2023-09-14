@@ -451,7 +451,7 @@ const Aufzählung = styled.th`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});
+  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
   transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
