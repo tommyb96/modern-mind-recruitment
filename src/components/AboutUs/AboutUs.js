@@ -47,32 +47,12 @@ const AboutUs = () => {
       isVisible: false,
     },
     {
-      id: "circle",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "heading",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
       id: "boldText",
       ref: useRef(null),
       isVisible: false,
     },
     {
       id: "leftdivone",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "statement",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "hidden-heading",
       ref: useRef(null),
       isVisible: false,
     },
@@ -87,7 +67,82 @@ const AboutUs = () => {
       isVisible: false,
     },
     {
-      id: "hidden-statement",
+      id: "woman",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "heading-circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "left-cell",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "right-cell-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "right-cell-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "right-cell-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "right-cell-four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "right-cell-five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "right-cell-six",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-left-cell",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-right-cell-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-right-cell-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-right-cell-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-right-cell-four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-right-cell-five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-right-cell-six",
       ref: useRef(null),
       isVisible: false,
     },
@@ -99,7 +154,7 @@ const AboutUs = () => {
     const observerOptions = {
       root: null,
       threshold: 0.5,
-      rootMargin: "-30px 0px -30px 0px",
+      rootMargin: "0px 0px -20px 0px",
     };
 
     const observers = sections.map((section) => {
@@ -129,7 +184,7 @@ const AboutUs = () => {
       </WavesWrapper>
       <GreenWrapper>
         <GreenLine>
-          <Circle ref={sections[1].ref} isVisible={isVisible[sections[1].id]} />
+          <Circle ref={sections[6].ref} isVisible={isVisible[sections[6].id]} />
           <ContactButton
             onClick={() => scrollToSection("kontakt")}
             ref={contactButtonRef}
@@ -144,12 +199,40 @@ const AboutUs = () => {
         </GreenLine>
         <FirstTable>
           <tr>
-            <Heading
+            <Heading>über uns</Heading>
+          </tr>
+          <tr>
+            <BoldText
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
+            >
+              Unsere Vision geht über das Hier und Jetzt hinaus – als Ihr
+              Partner in Personalfragen setzen wir auf moderne und nachhaltige
+              Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
+              sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
+              vermitteln die Talente von Morgen.
+            </BoldText>
+            <Statement rowSpan="2">
+              lasst uns gemeinsam <br />
+              ihre zukunft gestalten!
+            </Statement>
+          </tr>
+          <tr>
+            <LeftDiv
               ref={sections[2].ref}
               isVisible={isVisible[sections[2].id]}
             >
-              über uns
-            </Heading>
+              Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
+              Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
+              unterstützen, sie entlasten und gleichzeitig aktiv dem
+              Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
+              und den allgemeinen Wohlstand zu sichern.
+            </LeftDiv>
+          </tr>
+        </FirstTable>
+        <HiddenFirstTable>
+          <tr>
+            <Heading>über uns</Heading>
           </tr>
           <tr>
             <BoldText
@@ -162,54 +245,12 @@ const AboutUs = () => {
               sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
               vermitteln die Talente von Morgen.
             </BoldText>
-            <Statement
-              rowSpan="2"
-              ref={sections[5].ref}
-              isVisible={isVisible[sections[5].id]}
-            >
-              {" "}
-              lasst uns gemeinsam ihre zukunft gestalten!
-            </Statement>
           </tr>
           <tr>
             <LeftDiv
               ref={sections[4].ref}
               isVisible={isVisible[sections[4].id]}
             >
-              Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
-              Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
-              unterstützen, sie entlasten und gleichzeitig aktiv dem
-              Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
-              und den allgemeinen Wohlstand zu sichern.
-            </LeftDiv>
-          </tr>
-        </FirstTable>
-        <HiddenFirstTable>
-          <tr>
-            <Heading
-              ref={sections[6].ref}
-              isVisible={isVisible[sections[6].id]}
-            >
-              über uns
-            </Heading>
-          </tr>
-          <tr>
-            <BoldText
-              ref={sections[7].ref}
-              isVisible={isVisible[sections[7].id]}
-            >
-              Unsere Vision geht über das Hier und Jetzt hinaus – als Ihr
-              Partner in Personalfragen setzen wir auf moderne und nachhaltige
-              Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
-              sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
-              vermitteln die Talente von Morgen.
-            </BoldText>
-          </tr>
-          <tr>
-            <LeftDiv
-              ref={sections[8].ref}
-              isVisible={isVisible[sections[8].id]}
-            >
               {" "}
               Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
               Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
@@ -219,16 +260,19 @@ const AboutUs = () => {
             </LeftDiv>
           </tr>
           <tr>
-            <Statement
-              ref={sections[9].ref}
-              isVisible={isVisible[sections[9].id]}
-            >
+            <Statement>
               {" "}
-              lasst uns gemeinsam ihre zukunft gestalten!
+              lasst uns gemeinsam <br />
+              ihre zukunft gestalten!
             </Statement>
           </tr>
         </HiddenFirstTable>
-        <Woman src={woman} alt="woman pointing at something"></Woman>
+        <Woman
+          src={woman}
+          alt="woman pointing at something"
+          ref={sections[5].ref}
+          isVisible={isVisible[sections[5].id]}
+        ></Woman>
       </GreenWrapper>
       <WhiteWrapper>
         <WhiteLine />
@@ -248,7 +292,11 @@ const AboutUs = () => {
             <HeaderCell>Wofür wir stehen:</HeaderCell>
           </tr>
           <tr>
-            <LeftCell rowSpan="7">
+            <LeftCell
+              rowSpan="7"
+              ref={sections[7].ref}
+              isVisible={isVisible[sections[7].id]}
+            >
               Unser junges Team hat sich als Partner in Personalfragen auf die
               Organisation und Durchführung der Erwerbsmigration von
               qualifizierten Fachkräften aus Nicht-EU-Ländern spezialisiert. Als
@@ -269,37 +317,67 @@ const AboutUs = () => {
             <th>
               <Checkmark src={checkmark} alt="checkmark" />
             </th>
-            <RightCell>Transparenz</RightCell>
+            <RightCell
+              ref={sections[8].ref}
+              isVisible={isVisible[sections[8].id]}
+            >
+              Transparenz
+            </RightCell>
           </tr>
           <tr>
             <th>
               <Checkmark src={checkmark} alt="checkmark" />
             </th>
-            <RightCell>Ehrlichkeit</RightCell>
+            <RightCell
+              ref={sections[9].ref}
+              isVisible={isVisible[sections[9].id]}
+            >
+              Ehrlichkeit
+            </RightCell>
           </tr>
           <tr>
             <th>
               <Checkmark src={checkmark} alt="checkmark" />
             </th>
-            <RightCell>Verlässlichkeit</RightCell>
+            <RightCell
+              ref={sections[10].ref}
+              isVisible={isVisible[sections[10].id]}
+            >
+              Verlässlichkeit
+            </RightCell>
           </tr>
           <tr>
             <th>
               <Checkmark src={checkmark} alt="checkmark" />
             </th>
-            <RightCell>Persönlichkeit</RightCell>
+            <RightCell
+              ref={sections[11].ref}
+              isVisible={isVisible[sections[11].id]}
+            >
+              Persönlichkeit
+            </RightCell>
           </tr>
           <tr>
             <th>
               <Checkmark src={checkmark} alt="checkmark" />
             </th>
-            <RightCell>Herzlichkeit</RightCell>
+            <RightCell
+              ref={sections[12].ref}
+              isVisible={isVisible[sections[12].id]}
+            >
+              Herzlichkeit
+            </RightCell>
           </tr>
           <tr>
             <th>
               <Checkmark src={checkmark} alt="checkmark" />
             </th>
-            <RightCell>Zukunft</RightCell>
+            <RightCell
+              ref={sections[13].ref}
+              isVisible={isVisible[sections[13].id]}
+            >
+              Zukunft
+            </RightCell>
           </tr>
         </SecondTable>
         <HiddenSecondTable>
@@ -307,7 +385,10 @@ const AboutUs = () => {
             <HeaderCell>Wofür wir stehen:</HeaderCell>
           </tr>
           <tr>
-            <LeftCell>
+            <LeftCell
+              ref={sections[14].ref}
+              isVisible={isVisible[sections[14].id]}
+            >
               Unser junges Team hat sich als Partner in Personalfragen auf die
               Organisation und Durchführung der Erwerbsmigration von
               qualifizierten Fachkräften aus Nicht-EU-Ländern spezialisiert. Als
@@ -325,42 +406,60 @@ const AboutUs = () => {
             </LeftCell>
           </tr>
           <tr>
-            <RightCell>
+            <RightCell
+              ref={sections[15].ref}
+              isVisible={isVisible[sections[15].id]}
+            >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
               Transparenz
             </RightCell>
           </tr>
           <tr>
-            <RightCell>
+            <RightCell
+              ref={sections[16].ref}
+              isVisible={isVisible[sections[16].id]}
+            >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
               Ehrlichkeit
             </RightCell>
           </tr>
           <tr>
-            <RightCell>
+            <RightCell
+              ref={sections[17].ref}
+              isVisible={isVisible[sections[17].id]}
+            >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
               Verlässlichkeit
             </RightCell>
           </tr>
           <tr>
-            <RightCell>
+            <RightCell
+              ref={sections[18].ref}
+              isVisible={isVisible[sections[18].id]}
+            >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
               Persönlichkeit
             </RightCell>
           </tr>
           <tr>
-            <RightCell>
+            <RightCell
+              ref={sections[19].ref}
+              isVisible={isVisible[sections[19].id]}
+            >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
               Herzlichkeit
             </RightCell>
           </tr>
           <tr>
-            <RightCell>
+            <RightCell
+              ref={sections[20].ref}
+              isVisible={isVisible[sections[20].id]}
+            >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
               Zukunft
@@ -407,15 +506,15 @@ const WavesLine = styled.div`
 
 const WavesCircle = styled.div`
   position: absolute;
-  top: -11px;
+  top: -40px;
   left: -26px;
   background-color: white;
   width: 55px;
   height: 55px;
   border-radius: 50%;
   border: 3.5px solid darkgray;
-  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1s ease-in-out;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 
   @media (max-width: 700px) {
     width: 40px;
@@ -463,7 +562,7 @@ const GreenLine = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 15px;
+  top: 0;
   left: -20px;
   background-color: white;
   width: 45px;
@@ -471,18 +570,11 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 3.5px solid darkgray;
   z-index: 200;
-
-  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1s ease-in-out;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 
   @media (max-width: 900px) {
-    top: 105px;
-  }
-
-  @media (max-width: 700px) {
-    width: 30px;
-    height: 30px;
-    left: -13px;
+    top: 115px;
   }
 `;
 
@@ -501,7 +593,7 @@ const ContactButton = styled.a`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: scale(1.07);
   }
 
   &:hover img {
@@ -535,6 +627,7 @@ const FirstTable = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
+  opacity: 0.8;
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -547,12 +640,11 @@ const FirstTable = styled.table`
 
 const Heading = styled.th`
   font-family: Comfortaa;
-  font-size: 55px;
+  font-size: 53px;
   text-transform: uppercase;
   text-shadow: 1px 0 rgb(0, 0, 0);
   text-align: start;
   padding-bottom: 40px;
-  color: black;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -570,11 +662,6 @@ const Heading = styled.th`
     padding-left: 30px;
     font-size: 33px;
   }
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 `;
 
 const BoldText = styled.th`
@@ -586,6 +673,7 @@ const BoldText = styled.th`
   font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
+  color: white;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -609,8 +697,8 @@ const BoldText = styled.th`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 `;
 
 const LeftDiv = styled.th`
@@ -619,6 +707,7 @@ const LeftDiv = styled.th`
   padding-right: 100px;
   font-size: 20px;
   text-align: start;
+  color: white;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -642,8 +731,8 @@ const LeftDiv = styled.th`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 `;
 
 const Statement = styled.th`
@@ -662,7 +751,7 @@ const Statement = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     padding-left: 200px;
     padding-right: 50px;
   }
@@ -675,13 +764,9 @@ const Statement = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 43px;
+    padding-bottom: 0px;
+    font-size: 40px;
   }
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 `;
 
 const HiddenFirstTable = styled.table`
@@ -699,18 +784,28 @@ const Woman = styled.img`
   align-self: center;
   margin-left: 1000px;
 
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "40px")});
+  transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
   @media (max-width: 1400px) {
     align-self: flex-end;
-    margin: 0 20px -50px 0;
+    margin: 0 40px -50px 0;
   }
 
   @media (max-width: 900px) {
-    margin-top: 10px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "30px")});
     margin-right: 10px;
     margin-bottom: -30px;
   }
   @media (max-width: 480px) {
     width: 250px;
+    margin-right: 40px;
   }
 `;
 
@@ -809,7 +904,7 @@ const SecondTable = styled.table`
   width: 1350px;
   margin: auto;
   margin-top: 350px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -868,11 +963,20 @@ const LeftCell = styled.th`
     padding-right: 20px;
     font-size: 18px;
   }
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 `;
 
 const Checkmark = styled.img`
   width: 40px;
   margin-left: 30px;
+
+  @media (max-width: 900px) {
+    margin-right: 10px;
+  }
 `;
 
 const RightCell = styled.th`
@@ -883,12 +987,18 @@ const RightCell = styled.th`
   @media (max-width: 900px) {
     padding-left: 25%;
     padding-bottom: 20px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "10px")});
   }
 
   @media (max-width: 480px) {
     padding-left: 5%;
     font-size: 26px;
   }
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
 const HiddenSecondTable = styled.table`

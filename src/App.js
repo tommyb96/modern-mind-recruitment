@@ -6,8 +6,9 @@ import Home from "./components/Home/Home";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Leistungen from "./components/Leistungen/Leistungen";
 import Vermittlung from "./components/Vermittlung/Vermittlung";
-import Kontakt from "./components/Kontakt";
 import Workshop from "./components/Workshop/Workshop";
+import Beratung from "./components/Beratung/Beratung";
+import Kontakt from "./components/Kontakt";
 import Footer from "./components/Footer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Impressum from "./pages/Impressum";
@@ -47,6 +48,7 @@ const Root = () => {
           <Leistungen />
           <Vermittlung />
           <Workshop />
+          <Beratung />
           <Kontakt />
           <Footer />
         </Wrapper>

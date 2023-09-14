@@ -59,7 +59,7 @@ const Kontakt = () => {
 
   return (
     <>
-      <Waves src={waves} alt="waves" id="kontakt"></Waves>
+      {/* <Waves src={waves} alt="waves" id="kontakt"></Waves> */}
       <StyledContainer>
         <Cubes src={cubes} alt="cubes" />
 

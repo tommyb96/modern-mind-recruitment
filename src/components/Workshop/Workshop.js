@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, { useState, useEffect, useRef } from "react";
 
 import WorkshopIntro from "./WorkshopIntro";
-import cubes3 from "../../assets/svg/Workshop/workshop_three_cubes.svg";
+import woman from "../../assets/svg/Workshop/wokshop-woman.svg";
 
 export default function Workshop() {
   const [isOpenOne, setIsOpenOne] = useState(false);
@@ -12,539 +12,613 @@ export default function Workshop() {
   const [isOpenFive, setIsOpenFive] = useState(false);
   const [isOpenSix, setIsOpenSix] = useState(false);
   const [isOpenSeven, setIsOpenSeven] = useState(false);
-  const [isOpenEight, setIsOpenEight] = useState(false);
 
-  const refs = {
-    circle: useRef(null),
-    circleStart: useRef(null),
-    circleEnd: useRef(null),
-    heading: useRef(null),
-    itemOne: useRef(null),
-    itemTwo: useRef(null),
-    itemThree: useRef(null),
-    itemFour: useRef(null),
-    itemFive: useRef(null),
-    itemSix: useRef(null),
-    itemSeven: useRef(null),
-    itemEight: useRef(null),
-    div: useRef(null),
+  const toggleOpenOne = () => {
+    setIsOpenOne(!isOpenOne);
   };
 
-  const [isVisible, setIsVisible] = useState({
-    circle: false,
-    circleStart: false,
-    circleEnd: false,
-    heading: false,
-    itemOne: false,
-    itemTwo: false,
-    itemThree: false,
-    itemFour: false,
-    itemFive: false,
-    itemSix: false,
-    itemSeven: false,
-    itemEight: false,
-    div: false,
-  });
-
-  const handleIntersection = (entry, target) => {
-    setIsVisible((prevState) => ({
-      ...prevState,
-      [target]: entry.isIntersecting,
-    }));
+  const toggleOpenTwo = () => {
+    setIsOpenTwo(!isOpenTwo);
   };
 
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      threshold: 0.5,
-      rootMargin: "-100px 0px -100px 0px",
-    };
+  const toggleOpenThree = () => {
+    setIsOpenThree(!isOpenThree);
+  };
 
-    const observers = Object.keys(refs).map((key) => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => handleIntersection(entry, key));
-      }, observerOptions);
-      observer.observe(refs[key].current);
-      return observer;
-    });
+  const toggleOpenFour = () => {
+    setIsOpenFour(!isOpenFour);
+  };
 
-    return () => {
-      observers.forEach((observer) => observer.disconnect());
-    };
-  }, []);
+  const toggleOpenFive = () => {
+    setIsOpenFive(!isOpenFive);
+  };
+
+  const toggleOpenSix = () => {
+    setIsOpenSix(!isOpenSix);
+  };
+
+  const toggleOpenSeven = () => {
+    setIsOpenSeven(!isOpenSeven);
+  };
 
   return (
     <>
       {" "}
       <div id="workshop">
         <WorkshopIntro />
-        <HeadingWrapper>
+        <Wrapper>
+          {" "}
           <Line>
-            {" "}
-            <Circle ref={refs.circle} isVisible={isVisible.circle} />
+            <WorkshopCircle />
+            <LastCircle />
           </Line>
-          <ThreeCubes src={cubes3} alt="cubes"></ThreeCubes>
-          <StyledHeading ref={refs.heading} isVisible={isVisible.heading}>
-            <span>Inhalt</span> des Workshops: Beschäftigung ausländischer
-            Fachkräfte in Deutschland
-          </StyledHeading>
-        </HeadingWrapper>
-        <InfoWrapper>
-          <InfoText>
-            <WorkshopLine>
-              <WorkshopCircle
-                ref={refs.circleStart}
-                isVisible={isVisible.circleStart}
-              />
-              <LastCircle
-                ref={refs.circleEnd}
-                isVisible={isVisible.circleEnd}
-              />
-            </WorkshopLine>
-            <PlaceHolder />
-            <Item ref={refs.itemOne} isVisible={isVisible.itemOne}>
+          <Table>
+            <TableRow>
+              <WomanCell rowSpan={26}>
+                <Woman src={woman} alt="woman" />
+              </WomanCell>
+            </TableRow>
+            <TableRow>
+              <Heading colSpan={3}>
+                Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
+                in Deutschland:
+              </Heading>
+            </TableRow>
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
+              </BlueTriangle>
+
               <Zahl>1</Zahl>
-              <CircleOne />
-              <BlueTriangleOne
-                open={isOpenOne}
-                onClick={() => setIsOpenOne(!isOpenOne)}
-              />
-              <Header>
-                <span open={isOpenOne} onClick={() => setIsOpenOne(!isOpenOne)}>
-                  Allgemeine Bestimmungen für eine Beschäftigung ausländischer
+
+              <Überschrift colSpan={2}>Allgemeine Voraussetzungen</Überschrift>
+            </TableRow>
+            {isOpenOne && (
+              <TableRow>
+                <ListParagraph open={isOpenOne} colSpan={3}>
+                  Allgemeine Richtlinien für die Einstellung ausländischer
                   Fachkräfte
-                </span>
-                <ListWrapper style={{ display: isOpenOne ? "block" : "none" }}>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      {" "}
-                      Allgemeine Richtlinien für die Einstellung ausländischer
-                      Fachkräfte
-                    </ListParagraph>
-                  </List>
-                </ListWrapper>
-              </Header>
-            </Item>
-            <Linie />
-            <Item ref={refs.itemTwo} isVisible={isVisible.itemTwo}>
+                </ListParagraph>
+              </TableRow>
+            )}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
+              </BlueTriangle>
+
               <Zahl>2</Zahl>
-              <CircleTwo />
-              <BlueTriangleTwo
-                open={isOpenTwo}
-                onClick={() => setIsOpenTwo(!isOpenTwo)}
-              />
-              <Header>
-                <span open={isOpenTwo} onClick={() => setIsOpenTwo(!isOpenTwo)}>
-                  Regelungen für Visum und Aufenthalt
-                </span>
-                <ListWrapper style={{ display: isOpenTwo ? "block" : "none" }}>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Einreisevisum und Aufenthaltstitel
-                    </ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Fachkräfte mit Berufsausbildung
-                    </ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Fachkräfte mit akademischer Ausbildung
-                    </ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Regelung für ausländische Auszubildende
-                    </ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Regelung für ausländische Studierende
-                    </ListParagraph>
-                  </List>
-                </ListWrapper>{" "}
-              </Header>
-            </Item>
-            <Linie />
-            <Item ref={refs.itemThree} isVisible={isVisible.itemThree}>
+
+              <Überschrift colSpan={2}>
+                Regelungen für Visum und Aufenthaltstitel
+              </Überschrift>
+            </TableRow>
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Einreisevisum und Aufenthaltstitel
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Fachkräfte mit Berufsausbildung
+                </ListParagraph>
+              </TableRow>
+            )}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Fachkräfte mit akademischer Ausbildung
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Regelung für ausländische Auszubildende
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Regelung für ausländische Studierende
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
+              </BlueTriangle>
+
               <Zahl>3</Zahl>
-              <CircleThree />
-              <BlueTriangleThree
-                open={isOpenThree}
-                onClick={() => setIsOpenThree(!isOpenThree)}
-              />
-              <Header>
-                <span
-                  open={isOpenThree}
-                  onClick={() => setIsOpenThree(!isOpenThree)}
-                >
-                  Beteiligung der Bundesagentur für Arbeit
-                </span>
-                <ListWrapper
-                  style={{ display: isOpenThree ? "block" : "none" }}
-                >
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Zustimmung der Bundesagentur für Arbeit
-                    </ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>Arbeitsmarktzulasssung</ListParagraph>
-                  </List>
-                </ListWrapper>
-              </Header>
-            </Item>
-            <Linie />
-            <Item ref={refs.itemFour} isVisible={isVisible.itemFour}>
+
+              <Überschrift colSpan={2}>
+                Beteiligung der Bundesagentur für Arbeit
+              </Überschrift>
+            </TableRow>
+            {isOpenThree && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Zustimmung der Bundesagentur
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenThree && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Arbeitsmarktzulassung</ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
+              </BlueTriangle>
+
               <Zahl>4</Zahl>
-              <CircleFour />
-              <BlueTriangleFour
-                open={isOpenFour}
-                onClick={() => setIsOpenFour(!isOpenFour)}
-              />
-              <Header>
-                <span
-                  open={isOpenFour}
-                  onClick={() => setIsOpenFour(!isOpenFour)}
-                >
-                  Ausländerbehörde
-                </span>
-                <ListWrapper style={{ display: isOpenFour ? "block" : "none" }}>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Das beschleunigte Fachkräfteverfahren
-                    </ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Aufenthaltstitelbeantragung und -verlängerung
-                    </ListParagraph>
-                  </List>
-                </ListWrapper>
-              </Header>
-            </Item>
-            <Linie />
-            <Item ref={refs.itemFive} isVisible={isVisible.itemFive}>
+
+              <Überschrift colSpan={2}>
+                Beteiligung der Ausländerbehörde
+              </Überschrift>
+            </TableRow>
+            {isOpenFour && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Das beschleunigte Fachkräfteverfahren nach §81a
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenFour && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Aufenthaltstitelbentragung und -verlängerung
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
+              </BlueTriangle>
+
               <Zahl>5</Zahl>
-              <CircleFive />
-              <BlueTriangleFive
-                open={isOpenFive}
-                onClick={() => setIsOpenFive(!isOpenFive)}
-              />
-              <Header>
-                <span
-                  open={isOpenFive}
-                  onClick={() => setIsOpenFive(!isOpenFive)}
-                >
-                  Anerkennung ausländischer Berufsqualifikationen
-                </span>
-                <ListWrapper style={{ display: isOpenFive ? "block" : "none" }}>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>Grundlagen der Anerkennung</ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>Anerkennungsverfahren</ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Anerkennungsbescheid / Defizitbescheid
-                    </ListParagraph>
-                  </List>
-                </ListWrapper>
-              </Header>
-            </Item>
-            <Linie />
-            <Item ref={refs.itemSix} isVisible={isVisible.itemSix}>
+
+              <Überschrift colSpan={2}>
+                Anerkennung ausländischer Berufsabschlüsse
+              </Überschrift>
+            </TableRow>
+            {isOpenFive && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Grundlagen der Anerkennung
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenFive && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Anerkennungsverfahren</ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenFive && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Anerkennungsbescheid / Defizitbescheid
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
+              </BlueTriangle>
+
               <Zahl>6</Zahl>
-              <CircleSix />
-              <BlueTriangleSix
-                open={isOpenSix}
-                onClick={() => setIsOpenSix(!isOpenSix)}
-              />
-              <Header>
-                <span open={isOpenSix} onClick={() => setIsOpenSix(!isOpenSix)}>
-                  Beantragung von Fördermitteln
-                </span>
-                <ListWrapper style={{ display: isOpenSix ? "block" : "none" }}>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Anforderungen und Optionen zur Antragstellung von
-                      Fördermitteln
-                    </ListParagraph>
-                  </List>
-                </ListWrapper>
-              </Header>
-            </Item>
-            <Linie />
-            <Item ref={refs.itemSeven} isVisible={isVisible.itemSeven}>
+
+              <Überschrift colSpan={2}>Möglichkeiten der Förderung</Überschrift>
+            </TableRow>
+            {isOpenSix && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Anforderungen und Optionen zur Antragstellung von
+                  Fördermitteln
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
+              </BlueTriangle>
+
               <Zahl>7</Zahl>
-              <CircleSeven />
-              <BlueTriangleSeven
-                open={isOpenSeven}
-                onClick={() => setIsOpenSeven(!isOpenSeven)}
-              />
-              <Header>
-                <span
-                  open={isOpenSeven}
-                  onClick={() => setIsOpenSeven(!isOpenSeven)}
-                >
-                  Erfolgskriterien
-                </span>
-                <ListWrapper
-                  style={{ display: isOpenSeven ? "block" : "none" }}
-                >
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      allgemeine Erfolgskriterien bei der Einstellung
-                      ausländischer Fachkräfte
-                    </ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Erfahrungen und Best Practices
-                    </ListParagraph>
-                  </List>
-                </ListWrapper>
-              </Header>
-            </Item>
-            <Linie />
-            <Item ref={refs.itemEight} isVisible={isVisible.itemEight}>
-              <Zahl>8</Zahl>
-              <CircleEight />
-              <BlueTriangleEight
-                open={isOpenEight}
-                onClick={() => setIsOpenEight(!isOpenEight)}
-              />
-              <Header>
-                <span
-                  open={isOpenEight}
-                  onClick={() => setIsOpenEight(!isOpenEight)}
-                >
-                  Sozialer Aspekt
-                </span>
-                <ListWrapper
-                  style={{ display: isOpenEight ? "block" : "none" }}
-                >
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>Familiennachzug</ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>Onboarding-Prozess</ListParagraph>
-                  </List>
-                  <List>
-                    <ListPoint />
-                    <ListParagraph>
-                      Integration der ausländischen Fachkräfte
-                    </ListParagraph>
-                  </List>
-                </ListWrapper>
-              </Header>
-            </Item>
-            <PlaceHolder />
-          </InfoText>
-          <StyledDiv ref={refs.div} isVisible={isVisible.div}>
-            Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
-            behandelt und gründlich erläutert. Dabei werden nicht nur die
-            grundlegenden Informationen zu jedem Thema dargelegt, sondern auch
-            praktische Erkenntnisse jahrelanger Berufserfahrung auf diesem
-            Gebiet vermittelt. So erhalten Sie nicht nur eine umfassende
-            Übersicht über die verschiedenen Aspekte, sondern auch wertvolle
-            Einblicke in die praktische Umsetzung und bewährte Strategien, um
-            Ihren Erfolg zu maximieren.
-          </StyledDiv>
-        </InfoWrapper>
+
+              <Überschrift colSpan={2}>Sozialer Aspekt</Überschrift>
+            </TableRow>
+            {isOpenSeven && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Familiennachzug</ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenSeven && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Onboarding-Prozess</ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenSeven && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Integration von ausländischen Fachkräften
+                </ListParagraph>
+              </TableRow>
+            )}
+          </Table>
+          <HiddenTable>
+            <TableRow>
+              {" "}
+              <Heading colSpan={3}>
+                Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
+                in Deutschland:
+              </Heading>
+            </TableRow>
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
+              </BlueTriangle>
+
+              <Zahl>1</Zahl>
+
+              <Überschrift colSpan={2}>Allgemeine Voraussetzungen</Überschrift>
+            </TableRow>
+            {isOpenOne && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Allgemeine Richtlinien für die Einstellung ausländischer
+                  Fachkräfte
+                </ListParagraph>
+              </TableRow>
+            )}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
+              </BlueTriangle>
+
+              <Zahl>2</Zahl>
+
+              <Überschrift colSpan={2}>
+                Regelungen für Visum und Aufenthaltstitel
+              </Überschrift>
+            </TableRow>
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Einreisevisum und Aufenthaltstitel
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Fachkräfte mit Berufsausbildung
+                </ListParagraph>
+              </TableRow>
+            )}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Fachkräfte mit akademischer Ausbildung
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Regelung für ausländische Auszubildende
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenTwo && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Regelung für ausländische Studierende
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
+              </BlueTriangle>
+
+              <Zahl>3</Zahl>
+
+              <Überschrift colSpan={2}>
+                Beteiligung der Bundesagentur für Arbeit
+              </Überschrift>
+            </TableRow>
+            {isOpenThree && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Zustimmung der Bundesagentur
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenThree && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Arbeitsmarktzulassung</ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
+              </BlueTriangle>
+
+              <Zahl>4</Zahl>
+
+              <Überschrift colSpan={2}>
+                Beteiligung der Ausländerbehörde
+              </Überschrift>
+            </TableRow>
+            {isOpenFour && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Das beschleunigte Fachkräfteverfahren nach §81a
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenFour && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Aufenthaltstitelbentragung und -verlängerung
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
+              </BlueTriangle>
+
+              <Zahl>5</Zahl>
+
+              <Überschrift colSpan={2}>
+                Anerkennung ausländischer Berufsabschlüsse
+              </Überschrift>
+            </TableRow>
+            {isOpenFive && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Grundlagen der Anerkennung
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenFive && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Anerkennungsverfahren</ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenFive && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Anerkennungsbescheid / Defizitbescheid
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
+              </BlueTriangle>
+
+              <Zahl>6</Zahl>
+
+              <Überschrift colSpan={2}>Möglichkeiten der Förderung</Überschrift>
+            </TableRow>
+            {isOpenSix && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Anforderungen und Optionen zur Antragstellung von
+                  Fördermitteln
+                </ListParagraph>
+              </TableRow>
+            )}{" "}
+            <TableRow>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
+              </BlueTriangle>
+
+              <Zahl>7</Zahl>
+
+              <Überschrift colSpan={2}>Sozialer Aspekt</Überschrift>
+            </TableRow>
+            {isOpenSeven && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Familiennachzug</ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenSeven && (
+              <TableRow>
+                <ListParagraph colSpan={3}>Onboarding-Prozess</ListParagraph>
+              </TableRow>
+            )}{" "}
+            {isOpenSeven && (
+              <TableRow>
+                <ListParagraph colSpan={3}>
+                  Integration von ausländischen Fachkräften
+                </ListParagraph>
+              </TableRow>
+            )}
+          </HiddenTable>
+          <HiddenWoman src={woman} alt="woman"></HiddenWoman>
+        </Wrapper>
+        <Header>Wir zeigen Ihnen wie:</Header>
+        <StyledDiv>
+          Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
+          behandelt und gründlich erläutert. Dabei werden nicht nur die
+          grundlegenden Informationen zu jedem Thema dargelegt, sondern auch
+          praktische Erkenntnisse jahrelanger Berufserfahrung auf diesem Gebiet
+          vermittelt. So erhalten Sie nicht nur eine umfassende Übersicht über
+          die verschiedenen Aspekte, sondern auch wertvolle Einblicke in die
+          praktische Umsetzung und bewährte Strategien, um Ihren Erfolg zu
+          maximieren.
+        </StyledDiv>
       </div>
     </>
   );
 }
 
-const HeadingWrapper = styled.div`
-  position: relative;
+const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const Line = styled.div`
   position: absolute;
   left: 50%;
   top: 0%;
-  height: 460px;
+  height: 97%;
   width: 3.5px;
-  background-color: black;
-  z-index: 100;
+  background-color: darkgray;
+
   @media (max-width: 900px) {
     left: 10%;
+    height: 100%;
   }
 
-  @media (max-width: 620px) {
-    height: 350px;
-  }
-
-  @media (max-width: 480px) {
-    left: 7%;
-    height: 280px;
-  }
-`;
-
-const Circle = styled.div`
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background-color: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1s ease-in-out;
-`;
-
-const ThreeCubes = styled.img`
-  width: 360px;
-  margin: 50px;
-
-  @media (max-width: 950px) {
-    align-self: flex-end;
-    transform: rotate(180deg);
-    width: 360px;
-  }
-
-  @media (max-width: 620px) {
-    width: 260px;
-    margin: 40px 40px 60px 40px;
+  @media (max-width: 700px) {
+    left: 5%;
   }
 
   @media (max-width: 480px) {
-    width: 200px;
+    display: none;
   }
 `;
 
-const StyledHeading = styled.h1`
+const Table = styled.table`
   position: relative;
-  font-family: system-ui;
-  color: black;
-  font-weight: 500;
-  align-self: center;
-  font-size: 40px;
-  margin: 40px 80px 80px 80px;
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-
-  span {
-    color: rgb(0, 0, 255);
-    font-family: "Righteous", cursive;
-    text-shadow: 0px 0 rgb(0, 0, 0);
-  }
-  @media (max-width: 1024px) {
-    margin: 40px;
-  }
-  @media (max-width: 480px) {
-    font-size: 30px;
-  }
-`;
-
-const InfoWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
-const InfoText = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-self: center;
-  max-width: 1000px;
+  border-collapse: collapse;
+  width: 1350px;
   margin: auto;
+  margin-top: 300px;
+  margin-bottom: 150px;
+  font-size: 20px;
+  width: 50%;
+  width: 1350px;
 
-  @media (max-width: 1024px) {
-    align-self: flex-end;
-    margin: 0 30px 0 140px;
+  @media (max-width: 1300px) {
+    width: 100%;
   }
 
-  @media (max-width: 480px) {
-    margin: auto;
-    margin-top: 50px;
-  }
-`;
-
-const PlaceHolder = styled.div`
-  height: 100px;
-
-  @media (max-width: 480px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
 
-const WorkshopLine = styled.div`
-  position: absolute;
-  left: -0%;
-  top: 10px;
-  height: 100%;
-  width: 3.5px;
-  background-color: black;
-  z-index: 100;
+const WomanCell = styled.th`
+  width: 50%;
+`;
+
+const Heading = styled.th`
+  font-weight: bold;
+  text-align: start;
+  font-size: 33px;
+  padding-left: 70px;
+  padding-bottom: 40px;
+  width: 50%;
+
+  @media (max-width: 1400px) {
+    padding-right: 20px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
 
   @media (max-width: 480px) {
-    display: none;
+    padding-left: 30px;
+    font-size: 26px;
+  }
+`;
+
+const BlueTriangle = styled.th`
+  padding-left: 60px;
+  padding-top: 10px;
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+    width: 0%;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+  }
+`;
+
+const Zahl = styled.th`
+  font-size: 90px;
+  color: blue;
+  font-family: Righteous;
+  padding-top: 10px;
+  width: 5%;
+
+  @media (max-width: 480px) {
+    font-size: 70px;
+  }
+`;
+
+const TableRow = styled.tr``;
+
+const Woman = styled.img`
+  width: 300px;
+`;
+
+const Überschrift = styled.th`
+  font-size: 33px;
+  text-align: start;
+  padding-right: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 26px;
+    padding-left: 5px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: blue;
+    }
   }
 `;
 
 const WorkshopCircle = styled.div`
   position: absolute;
-  top: -15px;
+  top: 300px;
   left: -20px;
   background-color: white;
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid black;
+  border: 3.5px solid darkgray;
   z-index: 200;
 
-  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1s ease-in-out;
+  @media (max-width: 700px) {
+    top: 245px;
+  }
 `;
 
-const BlueTriangleOne = styled.span`
-  width: 0;
-  height: 0;
-  margin-right: 20px;
-  margin-top: 7px;
+const BlueTriangleOne = styled.div`
+  width: 20px;
+  height: 20px;
   border-style: solid;
   border-width: 22px 12px 0 12px;
   border-color: blue transparent transparent transparent;
-  display: inline-block;
   transform: ${({ open }) => (open ? "rotate(Threeg)" : "rotate(-90deg)")};
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-
-  @media (max-width: 1024px) {
-    margin-top: 3px;
-  }
 
   @media (max-width: 480px) {
     border-width: 17px 10px 0 10px;
@@ -705,263 +779,134 @@ const BlueTriangleEight = styled.span`
   }
 `;
 
-const Item = styled.div`
-  position: relative;
-  display: flex;
-  max-width: 700px;
-  margin: 45px 30px 45px 40px;
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  @media (max-width: 480px) {
-    margin: 30px 30px 30px 30px;
-  }
-`;
-
-const Header = styled.div`
-  font-size: 28px;
-
-  span {
-    font-family: Arial, Helvetica, sans-serif;
-    @media (hover: hover) {
-      &:hover {
-        color: blue;
-      }
-    }
-  }
-
-  @media (max-width: 1024px) {
-    font-size: 23px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 20px;
-  }
-`;
-
-const ListWrapper = styled.div`
-  margin-top: 20px;
-`;
-
-const List = styled.div`
-  display: flex;
-  margin: 10px;
-`;
-
-const ListPoint = styled.div`
-  height: 10px;
-  width: 10px;
-  margin-top: 9px;
-  border-radius: 50%;
-  background-color: blue;
-  margin-right: 13px;
-  flex-shrink: 0;
-
-  @media (max-width: 1024px) {
-    margin-top: 6px;
-  }
-
-  @media (max-width: 480px) {
-    height: 8px;
-    width: 8px;
-  }
-`;
-
-const ListParagraph = styled.div`
+const ListParagraph = styled.th`
   font-size: 23px;
+  text-align: start;
+  padding-left: 160px;
+  padding-top: 10px;
+  max-height: ${({ open }) => (open ? "1000px" : "0")};
+  overflow: hidden;
+  transition: max-height 0.5 ease-in-out;
 
-  @media (max-width: 1024px) {
-    font-size: 20px;
+  @media (max-width: 1400px) {
+    padding-right: 20px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 230px;
+    padding-top: 8px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 180px;
   }
 
   @media (max-width: 480px) {
     font-size: 18px;
-  }
-`;
-
-const Zahl = styled.div`
-  position: absolute;
-  left: -120px;
-  top: -30px;
-  font-size: 90px;
-  color: blue;
-  font-family: Righteous;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-
-const CircleOne = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-
-const CircleTwo = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-
-const CircleThree = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-const CircleFour = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-const CircleFive = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-const CircleSix = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-
-const CircleSeven = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-
-const CircleEight = styled.div`
-  position: absolute;
-  top: 5px;
-  left: -48.5px;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3.5px solid black;
-  z-index: 200;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-
-const Linie = styled.div`
-  width: 93%;
-  height: 1px;
-  background-color: rgb(102, 102, 102, 0.4);
-  margin: auto;
-
-  @media (min-width: 481px) {
-    display: none;
-  }
-`;
-
-const StyledDiv = styled.div`
-  font-size: 20px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  max-width: 800px;
-  padding: 40px;
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  @media (max-width: 480px) {
-    padding: 40px;
-    font-size: 18px;
-    margin-bottom: 70px;
+    padding-left: 110px;
+    padding-top: 5px;
   }
 `;
 
 const LastCircle = styled.div`
   position: absolute;
   bottom: -20px;
-  left: -25px;
+  left: -20px;
   background-color: white;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  border: 3.5px solid black;
+  border: 3.5px solid darkgray;
   z-index: 200;
+`;
 
-  transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
-  transition: transform 1s ease-in-out;
+const HiddenTable = styled.table`
+  position: relative;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 300px;
+  margin-bottom: 70px;
+  font-size: 20px;
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    margin-top: 250px;
+  }
+  @media (max-width: 480px) {
+    margin-top: 200px;
+  }
+`;
+
+const HiddenWoman = styled.img`
+  width: 250px;
+  margin: auto;
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+`;
+
+const Header = styled.div`
+  width: 1350px;
+  margin: auto;
+  font-size: 55px;
+  font-weight: bold;
+  text-align: start;
+  padding-bottom: 40px;
+  color: black;
+  font-size: 33px;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+  }
+
+  @media (max-width: 1350px) {
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    padding-top: 70px;
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    font-size: 26px;
+  }
+`;
+
+const StyledDiv = styled.div`
+  font-size: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  max-width: 1350px;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 1350px) {
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    font-size: 18px;
+  }
 `;

@@ -6,37 +6,80 @@ import papa from "../../assets/svg/Leistungen/leistungen-papa.svg";
 import pinnnadel from "../../assets/svg/Leistungen/leistungen-pinnnadel.svg";
 
 export default function Leistungen() {
-  const refs = {
-    // circleEnd: useRef(null),
-    // heading: useRef(null),
-    // rightdivone: useRef(null),
-  };
-
-  const [isVisible, setIsVisible] = useState({
-    // circleEnd: false,
-    // heading: false,
-    // rightdivone: false,
-  });
-
   const handleIntersection = (entry, target) => {
-    setIsVisible((prevState) => ({
-      ...prevState,
-      [target]: entry.isIntersecting,
-    }));
+    setIsVisible((prevState) => {
+      if (entry.isIntersecting) {
+        if (!prevState[target]) {
+          console.log(`${target} is now visible.`);
+        }
+        return {
+          ...prevState,
+          [target]: true,
+        };
+      } else {
+        if (prevState[target]) {
+          console.log(`${target} is no longer visible.`);
+        }
+        return {
+          ...prevState,
+          [target]: false,
+        };
+      }
+    });
   };
+
+  const sections = [
+    {
+      id: "circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "first-text",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "second-text",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState({});
 
   useEffect(() => {
     const observerOptions = {
       root: null,
       threshold: 0.5,
-      rootMargin: "-30px 0px -30px 0px",
+      rootMargin: "0px 0px -20px 0px",
     };
 
-    const observers = Object.keys(refs).map((key) => {
+    const observers = sections.map((section) => {
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => handleIntersection(entry, key));
+        entries.forEach((entry) => handleIntersection(entry, section.id));
       }, observerOptions);
-      observer.observe(refs[key].current);
+      observer.observe(section.ref.current);
       return observer;
     });
 
@@ -48,18 +91,28 @@ export default function Leistungen() {
   return (
     <>
       <PurpleWrapper>
-        <Line />
+        <Line>
+          <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
+        </Line>
 
         <FirstTable>
           <tr>
             <th></th>
-            <Heading>leistungen</Heading>
+            <Heading
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
+            >
+              leistungen
+            </Heading>
           </tr>
           <tr>
             <th rowSpan="6">
               <Papa src={papa} alt="dad holding his son" />
             </th>
-            <FirstText>
+            <FirstText
+              ref={sections[2].ref}
+              isVisible={isVisible[sections[2].id]}
+            >
               Unser Fachgebiet erstreckt sich über eine breite Palette von
               Dienstleistungen, die darauf abzielen, sowohl Unternehmen als auch
               ausländischen Fachkräften zu helfen, ihr volles Potenzial
@@ -70,25 +123,37 @@ export default function Leistungen() {
             </FirstText>
           </tr>
           <tr>
-            <Aufzählung>
+            <Aufzählung
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
+            >
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Vermittlung
             </Aufzählung>
           </tr>
           <tr>
-            <Aufzählung>
+            <Aufzählung
+              ref={sections[4].ref}
+              isVisible={isVisible[sections[4].id]}
+            >
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Schulung
             </Aufzählung>
           </tr>
           <tr>
-            <Aufzählung>
+            <Aufzählung
+              ref={sections[5].ref}
+              isVisible={isVisible[sections[5].id]}
+            >
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Beratung
             </Aufzählung>
           </tr>
           <tr>
-            <SecondText>
+            <SecondText
+              ref={sections[6].ref}
+              isVisible={isVisible[sections[6].id]}
+            >
               Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
               Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
               kulturellen Austausch und die Freude an Herausforderungen
@@ -184,6 +249,18 @@ const Line = styled.div`
   }
 `;
 
+const Circle = styled.div`
+  position: absolute;
+  top: ${(props) => (props.isVisible ? "-51px" : "-11px")};
+  left: -20px;
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3.5px solid darkgray;
+  z-index: 200;
+`;
+
 const Papa = styled.img`
   width: 280px;
 
@@ -221,7 +298,7 @@ const PinnNadel = styled.img`
 const Heading = styled.th`
   width: 50%;
   font-family: Comfortaa;
-  font-size: 55px;
+  font-size: 53px;
   text-transform: uppercase;
   text-shadow: 1px 0 rgb(0, 0, 0);
   text-align: start;
@@ -245,6 +322,11 @@ const Heading = styled.th`
     padding-left: 30px;
     font-size: 33px;
   }
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 `;
 
 const FirstText = styled.th`
@@ -252,6 +334,8 @@ const FirstText = styled.th`
   text-align: start;
   padding-bottom: 50px;
   padding-left: 70px;
+  color: white;
+  opacity: 0.8;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -271,6 +355,11 @@ const FirstText = styled.th`
     padding-right: 20px;
     font-size: 18px;
   }
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 `;
 
 const Aufzählung = styled.th`
@@ -278,6 +367,7 @@ const Aufzählung = styled.th`
   text-align: start;
   padding-left: 70px;
   color: white;
+  opacity: 0.8;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -296,6 +386,11 @@ const Aufzählung = styled.th`
     padding-right: 20px;
     font-size: 26px;
   }
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 `;
 
 const SecondText = styled.th`
@@ -303,6 +398,8 @@ const SecondText = styled.th`
   text-align: start;
   padding-top: 50px;
   padding-left: 70px;
+  color: white;
+  opacity: 0.8;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -322,6 +419,11 @@ const SecondText = styled.th`
     padding-right: 20px;
     font-size: 18px;
   }
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 `;
 
 const SpaceCell = styled.th`
@@ -332,7 +434,7 @@ const HiddenTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 150px;
   margin-bottom: -80px;
 
   @media (min-width: 901px) {
