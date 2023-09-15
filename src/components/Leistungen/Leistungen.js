@@ -33,7 +33,7 @@ export default function Leistungen() {
       isVisible: false,
     },
     {
-      id: "first-text",
+      id: "heading",
       ref: useRef(null),
       isVisible: false,
     },
@@ -53,12 +53,7 @@ export default function Leistungen() {
       isVisible: false,
     },
     {
-      id: "second-text",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "hidden-first-text",
+      id: "hidden-heading",
       ref: useRef(null),
       isVisible: false,
     },
@@ -77,12 +72,6 @@ export default function Leistungen() {
       ref: useRef(null),
       isVisible: false,
     },
-    {
-      id: "hidden-second-text",
-      ref: useRef(null),
-      isVisible: false,
-    },
-
     {
       id: "papa-image",
       ref: useRef(null),
@@ -127,22 +116,24 @@ export default function Leistungen() {
         <FirstTable>
           <tr>
             <th></th>
-            <Heading colSpan={2}>leistungen</Heading>
+            <Heading
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
+              colSpan={2}
+            >
+              leistungen
+            </Heading>
           </tr>
           <tr>
             <PapaCell rowSpan="6">
               <Papa
                 src={papa}
                 alt="dad holding his son"
-                ref={sections[11].ref}
-                isVisible={isVisible[sections[11].id]}
+                ref={sections[10].ref}
+                isVisible={isVisible[sections[10].id]}
               />
             </PapaCell>
-            <FirstText
-              colSpan={2}
-              ref={sections[1].ref}
-              isVisible={isVisible[sections[1].id]}
-            >
+            <FirstText colSpan={2}>
               Unser Fachgebiet erstreckt sich über eine breite Palette von
               Dienstleistungen, die darauf abzielen, sowohl Unternehmen als auch
               ausländischen Fachkräften zu helfen, ihr volles Potenzial
@@ -190,11 +181,7 @@ export default function Leistungen() {
             </Aufzählung>
           </tr>
           <tr>
-            <SecondText
-              colSpan={2}
-              ref={sections[5].ref}
-              isVisible={isVisible[sections[5].id]}
-            >
+            <SecondText colSpan={2}>
               Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
               Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
               kulturellen Austausch und die Freude an Herausforderungen
@@ -208,13 +195,15 @@ export default function Leistungen() {
         </FirstTable>
         <HiddenTable>
           <tr>
-            <Heading>leistungen</Heading>
+            <Heading
+              ref={sections[5].ref}
+              isVisible={isVisible[sections[5].id]}
+            >
+              leistungen
+            </Heading>
           </tr>
           <tr>
-            <FirstText
-              ref={sections[6].ref}
-              isVisible={isVisible[sections[6].id]}
-            >
+            <FirstText>
               {" "}
               Unser Fachgebiet erstreckt sich über eine breite Palette von
               Dienstleistungen, die darauf abzielen, sowohl Unternehmen als auch
@@ -227,11 +216,20 @@ export default function Leistungen() {
           </tr>{" "}
           <tr>
             <Aufzählung
+              ref={sections[6].ref}
+              isVisible={isVisible[sections[6].id]}
+            >
+              <PinnNadel src={pinnnadel} alt="pinnnadel" />
+              Vermittlung
+            </Aufzählung>
+          </tr>
+          <tr>
+            <Aufzählung
               ref={sections[7].ref}
               isVisible={isVisible[sections[7].id]}
             >
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
-              Vermittlung
+              Schulung
             </Aufzählung>
           </tr>
           <tr>
@@ -240,23 +238,11 @@ export default function Leistungen() {
               isVisible={isVisible[sections[8].id]}
             >
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
-              Schulung
-            </Aufzählung>
-          </tr>
-          <tr>
-            <Aufzählung
-              ref={sections[9].ref}
-              isVisible={isVisible[sections[9].id]}
-            >
-              <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Beratung
             </Aufzählung>
           </tr>
           <tr>
-            <SecondText
-              ref={sections[10].ref}
-              isVisible={isVisible[sections[10].id]}
-            >
+            <SecondText>
               Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
               Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
               kulturellen Austausch und die Freude an Herausforderungen
@@ -269,8 +255,8 @@ export default function Leistungen() {
               <Papa
                 src={papa}
                 alt="dad holding his son"
-                ref={sections[12].ref}
-                isVisible={isVisible[sections[12].id]}
+                ref={sections[9].ref}
+                isVisible={isVisible[sections[9].id]}
               />
             </th>
           </tr>
@@ -312,7 +298,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: ${(props) => (props.isVisible ? "-51px" : "-11px")};
+  top: 100px;
   left: -20px;
   background-color: white;
   width: 45px;
@@ -320,6 +306,8 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 3.5px solid darkgray;
   z-index: 200;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 `;
 
 const PapaCell = styled.th`
@@ -337,6 +325,12 @@ const Papa = styled.img`
   @media (max-width: 900px) {
     width: 200px;
     margin-top: 60px;
+  }
+
+  @media (max-width: 700px) {
+    opacity: 1;
+    transform: translateX(0);
+    transition: none;
   }
 `;
 
@@ -378,6 +372,11 @@ const Heading = styled.th`
   text-align: start;
   padding-bottom: 40px;
   padding-left: 70px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -424,11 +423,6 @@ const FirstText = styled.th`
     padding-right: 20px;
     font-size: 18px;
   }
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
-  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 `;
 
 const Aufzählung = styled.th`
@@ -451,7 +445,7 @@ const Aufzählung = styled.th`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
+  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
   transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
@@ -481,11 +475,6 @@ const SecondText = styled.th`
     padding-right: 20px;
     font-size: 18px;
   }
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "20px")});
-  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 `;
 
 const SpaceCell = styled.th`

@@ -8,18 +8,114 @@ import visa from "../../assets/svg/Vermittlung/vermittlung-visa.svg";
 import people from "../../assets/svg/Vermittlung/vermittlung-people.svg";
 
 export default function Vermittlung() {
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => {
+      if (entry.isIntersecting) {
+        if (!prevState[target]) {
+        }
+        return {
+          ...prevState,
+          [target]: true,
+        };
+      } else {
+        if (prevState[target]) {
+        }
+        return {
+          ...prevState,
+          [target]: false,
+        };
+      }
+    });
+  };
+
+  const sections = [
+    {
+      id: "circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "house",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "bold-text",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "bold-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "bold-header-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "bold-header-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "last-circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState({});
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+      rootMargin: "0px 0px -20px 0px",
+    };
+
+    const observers = sections.map((section) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, section.id));
+      }, observerOptions);
+      observer.observe(section.ref.current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       <Wrapper>
         <FirstWrapper>
           ;{" "}
           <Line>
-            <Circle />
-            <LastCircle />
+            <Circle
+              ref={sections[0].ref}
+              isVisible={isVisible[sections[0].id]}
+            />
+            <LastCircle
+              ref={sections[7].ref}
+              isVisible={isVisible[sections[7].id]}
+            />
           </Line>
           <FirstTable>
             <tr>
-              <Heading>Vermittlung</Heading>
+              <Heading
+                ref={sections[1].ref}
+                isVisible={isVisible[sections[1].id]}
+              >
+                Vermittlung
+              </Heading>
             </tr>
             <tr>
               <LeftDiv>
@@ -32,7 +128,12 @@ export default function Vermittlung() {
                 Pro-Seite an erster Stelle steht.
               </LeftDiv>
               <th rowSpan={3}>
-                <Haus src={haus} alt="haus" />
+                <Haus
+                  src={haus}
+                  alt="haus"
+                  ref={sections[2].ref}
+                  isVisible={isVisible[sections[2].id]}
+                />
               </th>
             </tr>
             <tr>
@@ -45,7 +146,10 @@ export default function Vermittlung() {
               </LeftDiv>
             </tr>
             <tr>
-              <BoldText>
+              <BoldText
+                ref={sections[3].ref}
+                isVisible={isVisible[sections[3].id]}
+              >
                 Wenn Ihr Unternehmen ein Teil dieser Entwicklung sein möchte,
                 dann sind Sie bei uns genau an der richtigen Stelle!
               </BoldText>
@@ -54,7 +158,12 @@ export default function Vermittlung() {
               <th rowSpan={4}>
                 <Globus src={globus} alt="globus"></Globus>
               </th>
-              <BoldHeader>Woher kommen unsere Fachkräfte?</BoldHeader>
+              <BoldHeader
+                ref={sections[4].ref}
+                isVisible={isVisible[sections[4].id]}
+              >
+                Woher kommen unsere Fachkräfte?
+              </BoldHeader>
             </tr>
             <tr>
               <RightDiv>
@@ -70,7 +179,12 @@ export default function Vermittlung() {
               </RightDiv>
             </tr>
             <tr>
-              <BoldHeader>Wer sind unsere „Fachkräfte von morgen“?</BoldHeader>
+              <BoldHeader
+                ref={sections[5].ref}
+                isVisible={isVisible[sections[5].id]}
+              >
+                Wer sind unsere „Fachkräfte von morgen“?
+              </BoldHeader>
             </tr>
             <tr>
               <RightDiv>
@@ -84,7 +198,12 @@ export default function Vermittlung() {
               </RightDiv>
             </tr>
             <tr>
-              <BoldHeader>Auf welche Branchen verstehen wir uns?</BoldHeader>
+              <BoldHeader
+                ref={sections[6].ref}
+                isVisible={isVisible[sections[6].id]}
+              >
+                Auf welche Branchen verstehen wir uns?
+              </BoldHeader>
               <th></th>
             </tr>
           </FirstTable>
@@ -507,6 +626,8 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 3.5px solid darkgray;
   z-index: 200;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 `;
 
 const LastCircle = styled.div`
@@ -519,6 +640,8 @@ const LastCircle = styled.div`
   border-radius: 50%;
   border: 3.5px solid darkgray;
   z-index: 200;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 `;
 
 const FirstCircle = styled.div`
@@ -561,6 +684,10 @@ const Heading = styled.th`
   text-align: start;
   padding-bottom: 40px;
   color: black;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -626,6 +753,10 @@ const BoldText = styled.th`
   font-size: 20px;
   text-align: start;
   padding-bottom: 80px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -656,6 +787,10 @@ const BoldHeader = styled.th`
   padding-left: 70px;
   padding-top: 50px;
   width: 50%;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
