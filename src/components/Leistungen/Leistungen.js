@@ -307,6 +307,10 @@ const Circle = styled.div`
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
+
+  @media (max-width: 900px) {
+    top: 70px;
+  }
 `;
 
 const PapaCell = styled.th`
@@ -362,7 +366,7 @@ const PinnNadel = styled.img`
   margin-left: 30px;
 
   @media (max-width: 900px) {
-    margin-right: 10px;
+    margin-right: 15px;
   }
 `;
 
@@ -404,7 +408,6 @@ const Heading = styled.th`
 const FirstText = styled.th`
   width: 50%;
   text-align: start;
-  padding-bottom: 50px;
   padding-left: 70px;
   color: white;
   opacity: 0.8;
@@ -412,10 +415,12 @@ const FirstText = styled.th`
   @media (max-width: 1400px) {
     padding-left: 50px;
     padding-right: 40px;
+    padding-bottom: 30px;
   }
 
   @media (max-width: 900px) {
     padding-left: 120px;
+    padding-bottom: 30px;
   }
 
   @media (max-width: 700px) {
@@ -439,13 +444,12 @@ const Aufzählung = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 15%;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
   }
 
   @media (max-width: 480px) {
     padding-left: 5%;
     font-size: 26px;
-    padding-bottom: 5px;
   }
 
   //animation
@@ -457,7 +461,7 @@ const Aufzählung = styled.th`
 const SecondText = styled.th`
   width: 50%;
   text-align: start;
-  padding-top: 50px;
+  padding-top: 10px;
   padding-left: 70px;
   color: white;
   opacity: 0.8;
@@ -465,10 +469,12 @@ const SecondText = styled.th`
   @media (max-width: 1400px) {
     padding-right: 40px;
     padding-left: 50px;
+    padding-top: 30px;
   }
 
   @media (max-width: 900px) {
     padding-left: 120px;
+    padding-top: 30px;
   }
 
   @media (max-width: 700px) {

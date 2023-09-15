@@ -622,7 +622,6 @@ const BoldText = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
     padding-left: 120px;
   }
 
@@ -853,7 +852,7 @@ const SecondTable = styled.table`
 const HeaderCell = styled.th`
   text-align: start;
   font-size: 39px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -890,7 +889,7 @@ const LeftCell = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     padding-left: 120px;
   }
 
@@ -921,7 +920,7 @@ const RightCell = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 15%;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
   }
 
   @media (max-width: 480px) {

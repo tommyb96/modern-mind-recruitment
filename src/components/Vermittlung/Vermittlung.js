@@ -656,7 +656,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 150px;
+  top: 120px;
   left: -20px;
   background-color: white;
   width: 45px;
@@ -699,7 +699,7 @@ const FirstTable = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-bottom: 150px;
   font-size: 20px;
   width: 50%;
@@ -728,7 +728,7 @@ const Heading = styled.th`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
   }
 
   @media (max-width: 900px) {
@@ -741,6 +741,7 @@ const Heading = styled.th`
 
   @media (max-width: 480px) {
     padding-left: 30px;
+    padding-bottom: 30px;
     font-size: 33px;
   }
 `;
@@ -754,12 +755,12 @@ const LeftDiv = styled.th`
   padding-bottom: 30px;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     padding-left: 120px;
   }
 
@@ -771,11 +772,13 @@ const LeftDiv = styled.th`
     padding-left: 30px;
     padding-right: 20px;
     font-size: 18px;
+    padding-bottom: 20px;
   }
 `;
 
 const Haus = styled.img`
   width: 400px;
+  margin: 20px;
 
   @media (max-width: 480px) {
     width: 250px;
@@ -790,19 +793,19 @@ const BoldText = styled.th`
   padding-right: 100px;
   font-size: 20px;
   text-align: start;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
+
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
     padding-left: 120px;
   }
 
@@ -813,6 +816,7 @@ const BoldText = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
+    padding-bottom: 20px;
     font-size: 18px;
   }
 `;
@@ -821,9 +825,9 @@ const BoldHeader = styled.th`
   font-weight: bold;
   font-size: 33px;
   text-align: start;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   padding-left: 70px;
-  padding-top: 50px;
+  padding-top: 30px;
   width: 50%;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -831,7 +835,7 @@ const BoldHeader = styled.th`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
+    padding-right: 40px;
     padding-left: 50px;
   }
 
@@ -846,6 +850,7 @@ const BoldHeader = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     font-size: 26px;
+    padding-top: 30px;
   }
 `;
 
@@ -856,7 +861,7 @@ const RightDiv = styled.th`
   padding-left: 70px;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
+    padding-right: 40px;
     padding-left: 50px;
   }
 
@@ -877,6 +882,7 @@ const RightDiv = styled.th`
 
 const Globus = styled.img`
   width: 350px;
+  margin: 20px;
 
   @media (max-width: 480px) {
     width: 250px;
@@ -887,7 +893,7 @@ const HiddenFirstTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-bottom: 150px;
 
   @media (min-width: 901px) {
@@ -976,14 +982,14 @@ const SecondTable = styled.table`
 const LeftBoldHeader = styled.th`
   color: black;
   width: 50%;
-  padding-right: 100px;
+  padding-right: 50px;
   font-weight: bold;
   font-size: 33px;
   text-align: start;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
@@ -1034,7 +1040,7 @@ const Aufzählung = styled.th`
   padding-left: 20px;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
+    padding-right: 40px;
   }
 
   @media (max-width: 900px) {
@@ -1053,7 +1059,7 @@ const Info = styled.th`
   opacity: 0.7;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
+    padding-right: 40px;
   }
 
   @media (max-width: 480px) {
