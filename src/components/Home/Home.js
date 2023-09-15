@@ -207,7 +207,7 @@ const WelcomeMessage = styled.div`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 `;
 

@@ -35,12 +35,12 @@ export default function Vermittlung() {
       isVisible: false,
     },
     {
-      id: "heading",
+      id: "last-circle",
       ref: useRef(null),
       isVisible: false,
     },
     {
-      id: "house",
+      id: "heading",
       ref: useRef(null),
       isVisible: false,
     },
@@ -65,7 +65,27 @@ export default function Vermittlung() {
       isVisible: false,
     },
     {
-      id: "last-circle",
+      id: "hidden-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-bold-text",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-bold-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-bold-header-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-bold-header-three",
       ref: useRef(null),
       isVisible: false,
     },
@@ -104,15 +124,15 @@ export default function Vermittlung() {
               isVisible={isVisible[sections[0].id]}
             />
             <LastCircle
-              ref={sections[7].ref}
-              isVisible={isVisible[sections[7].id]}
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
             />
           </Line>
           <FirstTable>
             <tr>
               <Heading
-                ref={sections[1].ref}
-                isVisible={isVisible[sections[1].id]}
+                ref={sections[2].ref}
+                isVisible={isVisible[sections[2].id]}
               >
                 Vermittlung
               </Heading>
@@ -128,12 +148,7 @@ export default function Vermittlung() {
                 Pro-Seite an erster Stelle steht.
               </LeftDiv>
               <th rowSpan={3}>
-                <Haus
-                  src={haus}
-                  alt="haus"
-                  ref={sections[2].ref}
-                  isVisible={isVisible[sections[2].id]}
-                />
+                <Haus src={haus} alt="haus" />
               </th>
             </tr>
             <tr>
@@ -209,7 +224,12 @@ export default function Vermittlung() {
           </FirstTable>
           <HiddenFirstTable>
             <tr>
-              <Heading>vermittlung</Heading>
+              <Heading
+                ref={sections[7].ref}
+                isVisible={isVisible[sections[7].id]}
+              >
+                vermittlung
+              </Heading>
             </tr>
             <tr>
               <LeftDiv>
@@ -232,7 +252,10 @@ export default function Vermittlung() {
               </LeftDiv>
             </tr>
             <tr>
-              <BoldText>
+              <BoldText
+                ref={sections[8].ref}
+                isVisible={isVisible[sections[8].id]}
+              >
                 Wenn Ihr Unternehmen ein Teil dieser Entwicklung sein möchte,
                 dann sind Sie bei uns genau an der richtigen Stelle!
               </BoldText>
@@ -244,7 +267,12 @@ export default function Vermittlung() {
               </th>
             </tr>
             <tr>
-              <BoldHeader>Woher kommen unsere Fachkräfte?</BoldHeader>
+              <BoldHeader
+                ref={sections[9].ref}
+                isVisible={isVisible[sections[9].id]}
+              >
+                Woher kommen unsere Fachkräfte?
+              </BoldHeader>
             </tr>
             <tr>
               <RightDiv>
@@ -265,7 +293,12 @@ export default function Vermittlung() {
               </th>
             </tr>
             <tr>
-              <BoldHeader>Wer sind unsere „Fachkräfte von morgen“?</BoldHeader>
+              <BoldHeader
+                ref={sections[10].ref}
+                isVisible={isVisible[sections[10].id]}
+              >
+                Wer sind unsere „Fachkräfte von morgen“?
+              </BoldHeader>
             </tr>
             <tr>
               <RightDiv>
@@ -279,7 +312,12 @@ export default function Vermittlung() {
               </RightDiv>
             </tr>
             <tr>
-              <BoldHeader>Auf welche Branchen verstehen wir uns?</BoldHeader>
+              <BoldHeader
+                ref={sections[11].ref}
+                isVisible={isVisible[sections[11].id]}
+              >
+                Auf welche Branchen verstehen wir uns?
+              </BoldHeader>
             </tr>
           </HiddenFirstTable>
         </FirstWrapper>
@@ -789,7 +827,7 @@ const BoldHeader = styled.th`
   width: 50%;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {

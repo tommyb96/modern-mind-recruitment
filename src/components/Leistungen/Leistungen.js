@@ -485,7 +485,7 @@ const HiddenTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 70px;
   margin-bottom: -80px;
 
   @media (min-width: 901px) {

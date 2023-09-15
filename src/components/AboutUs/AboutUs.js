@@ -654,6 +654,7 @@ const Heading = styled.th`
   }
 
   @media (max-width: 480px) {
+    padding-bottom: 30px;
     padding-left: 30px;
     font-size: 33px;
   }
@@ -686,6 +687,7 @@ const BoldText = styled.th`
   }
 
   @media (max-width: 480px) {
+    padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 20px;
     font-size: 18px;
@@ -718,6 +720,7 @@ const LeftDiv = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
+    padding-bottom: 30px;
     font-size: 18px;
   }
 `;
@@ -792,8 +795,8 @@ const Woman = styled.img`
   }
   @media (max-width: 480px) {
     width: 250px;
-    margin-right: 40px;
-    margin-top: 40px;
+    margin-right: 30px;
+    margin-top: 30px;
   }
 `;
 
@@ -910,7 +913,7 @@ const HeaderCell = styled.th`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
