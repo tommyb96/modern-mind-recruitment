@@ -63,12 +63,11 @@ const StyledCube = styled.div`
     opacity: 0.9;
   }
 
-  /* @media (min-width: 768px) {
-    margin: 1.8px;
-    border-radius: 10px;
+  @media (hover: none) {
+    /* Deaktiviere den Hover-Effekt für Touch-Geräte */
+    &:hover {
+      transform: none;
+      opacity: 1;
+    }
   }
-  @media (min-width: 1024px) {
-    margin: 1.3px;
-    border-radius: 0.8vw;
-  } */
 `;
