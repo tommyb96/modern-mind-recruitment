@@ -112,7 +112,6 @@ export default function Leistungen() {
         <Line>
           <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
         </Line>
-
         <FirstTable>
           <tr>
             <th></th>
@@ -332,6 +331,10 @@ const Papa = styled.img`
     transform: translateX(0);
     transition: none;
   }
+
+  @media (max-width: 480px) {
+    margin-top: 40px;
+  }
 `;
 
 const FirstTable = styled.table`
@@ -379,7 +382,7 @@ const Heading = styled.th`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
+    padding-right: 40px;
     padding-left: 50px;
   }
 
@@ -393,6 +396,7 @@ const Heading = styled.th`
 
   @media (max-width: 480px) {
     padding-left: 30px;
+    padding-bottom: 30px;
     font-size: 33px;
   }
 `;
@@ -407,7 +411,7 @@ const FirstText = styled.th`
 
   @media (max-width: 1400px) {
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right: 40px;
   }
 
   @media (max-width: 900px) {
@@ -421,6 +425,7 @@ const FirstText = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
+    padding-bottom: 20px;
     font-size: 18px;
   }
 `;
@@ -458,7 +463,7 @@ const SecondText = styled.th`
   opacity: 0.8;
 
   @media (max-width: 1400px) {
-    padding-right: 50px;
+    padding-right: 40px;
     padding-left: 50px;
   }
 
@@ -474,6 +479,7 @@ const SecondText = styled.th`
     padding-left: 30px;
     padding-right: 20px;
     font-size: 18px;
+    padding-top: 25px;
   }
 `;
 

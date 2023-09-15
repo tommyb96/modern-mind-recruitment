@@ -42,11 +42,6 @@ const AboutUs = () => {
 
   const sections = [
     {
-      id: "über-uns",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
       id: "headingcircle",
       ref: useRef(null),
       isVisible: false,
@@ -164,17 +159,11 @@ const AboutUs = () => {
     <>
       <WavesWrapper>
         {" "}
-        <WavesLine>
-          <WavesCircle
-            ref={sections[0].ref}
-            isVisible={isVisible[sections[0].id]}
-          />
-        </WavesLine>
-        <Waves id={sections[0].id} src={waves} alt="waves"></Waves>
+        <Waves id="über-uns" src={waves} alt="waves"></Waves>
       </WavesWrapper>
       <GreenWrapper>
         <GreenLine>
-          <Circle ref={sections[1].ref} isVisible={isVisible[sections[1].id]} />
+          <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
           <ContactButton
             onClick={() => scrollToSection("kontakt")}
             ref={contactButtonRef}
@@ -190,8 +179,8 @@ const AboutUs = () => {
         <FirstTable>
           <tr>
             <Heading
-              ref={sections[2].ref}
-              isVisible={isVisible[sections[2].id]}
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
             >
               über uns
             </Heading>
@@ -222,8 +211,8 @@ const AboutUs = () => {
         <HiddenFirstTable>
           <tr>
             <Heading
-              ref={sections[4].ref}
-              isVisible={isVisible[sections[4].id]}
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
             >
               über uns
             </Heading>
@@ -258,8 +247,8 @@ const AboutUs = () => {
         <Woman
           src={woman}
           alt="woman pointing at something"
-          ref={sections[3].ref}
-          isVisible={isVisible[sections[3].id]}
+          ref={sections[2].ref}
+          isVisible={isVisible[sections[2].id]}
         ></Woman>
       </GreenWrapper>
       <WhiteWrapper>
@@ -278,8 +267,8 @@ const AboutUs = () => {
         <SecondTable>
           <tr>
             <HeaderCell
-              ref={sections[5].ref}
-              isVisible={isVisible[sections[5].id]}
+              ref={sections[4].ref}
+              isVisible={isVisible[sections[4].id]}
             >
               Wofür wir stehen:
             </HeaderCell>
@@ -307,10 +296,21 @@ const AboutUs = () => {
               <Checkmark src={checkmark} alt="checkmark" />
             </th>
             <RightCell
+              ref={sections[5].ref}
+              isVisible={isVisible[sections[5].id]}
+            >
+              Transparenz
+            </RightCell>
+          </tr>
+          <tr>
+            <th>
+              <Checkmark src={checkmark} alt="checkmark" />
+            </th>
+            <RightCell
               ref={sections[6].ref}
               isVisible={isVisible[sections[6].id]}
             >
-              Transparenz
+              Ehrlichkeit
             </RightCell>
           </tr>
           <tr>
@@ -321,7 +321,7 @@ const AboutUs = () => {
               ref={sections[7].ref}
               isVisible={isVisible[sections[7].id]}
             >
-              Ehrlichkeit
+              Verlässlichkeit
             </RightCell>
           </tr>
           <tr>
@@ -332,7 +332,7 @@ const AboutUs = () => {
               ref={sections[8].ref}
               isVisible={isVisible[sections[8].id]}
             >
-              Verlässlichkeit
+              Persönlichkeit
             </RightCell>
           </tr>
           <tr>
@@ -343,7 +343,7 @@ const AboutUs = () => {
               ref={sections[9].ref}
               isVisible={isVisible[sections[9].id]}
             >
-              Persönlichkeit
+              Herzlichkeit
             </RightCell>
           </tr>
           <tr>
@@ -354,26 +354,15 @@ const AboutUs = () => {
               ref={sections[10].ref}
               isVisible={isVisible[sections[10].id]}
             >
-              Herzlichkeit
-            </RightCell>
-          </tr>
-          <tr>
-            <th>
-              <Checkmark src={checkmark} alt="checkmark" />
-            </th>
-            <RightCell
-              ref={sections[11].ref}
-              isVisible={isVisible[sections[11].id]}
-            >
               Zukunft
             </RightCell>
-          </tr>
+          </tr>{" "}
         </SecondTable>
         <HiddenSecondTable>
           <tr>
             <HeaderCell
-              ref={sections[12].ref}
-              isVisible={isVisible[sections[12].id]}
+              ref={sections[11].ref}
+              isVisible={isVisible[sections[11].id]}
             >
               Wofür wir stehen:
             </HeaderCell>
@@ -398,12 +387,22 @@ const AboutUs = () => {
           </tr>
           <tr>
             <RightCell
+              ref={sections[12].ref}
+              isVisible={isVisible[sections[12].id]}
+            >
+              {" "}
+              <Checkmark src={checkmark} alt="checkmark" />
+              Transparenz
+            </RightCell>
+          </tr>
+          <tr>
+            <RightCell
               ref={sections[13].ref}
               isVisible={isVisible[sections[13].id]}
             >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
-              Transparenz
+              Ehrlichkeit
             </RightCell>
           </tr>
           <tr>
@@ -413,7 +412,7 @@ const AboutUs = () => {
             >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
-              Ehrlichkeit
+              Verlässlichkeit
             </RightCell>
           </tr>
           <tr>
@@ -423,7 +422,7 @@ const AboutUs = () => {
             >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
-              Verlässlichkeit
+              Persönlichkeit
             </RightCell>
           </tr>
           <tr>
@@ -433,23 +432,13 @@ const AboutUs = () => {
             >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
-              Persönlichkeit
+              Herzlichkeit
             </RightCell>
           </tr>
           <tr>
             <RightCell
               ref={sections[17].ref}
               isVisible={isVisible[sections[17].id]}
-            >
-              {" "}
-              <Checkmark src={checkmark} alt="checkmark" />
-              Herzlichkeit
-            </RightCell>
-          </tr>
-          <tr>
-            <RightCell
-              ref={sections[18].ref}
-              isVisible={isVisible[sections[18].id]}
             >
               {" "}
               <Checkmark src={checkmark} alt="checkmark" />
@@ -470,47 +459,6 @@ const WavesWrapper = styled.div`
 
   @media (max-width: 900px) {
     margin-top: 50px;
-  }
-`;
-
-const WavesLine = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  height: 100%;
-  width: 3.5px;
-  background-color: darkgray;
-
-  @media (max-width: 900px) {
-    left: 10%;
-    height: 140%;
-  }
-
-  @media (max-width: 700px) {
-    left: 5%;
-  }
-
-  @media (max-width: 480px) {
-    display: none;
-  }
-`;
-
-const WavesCircle = styled.div`
-  position: absolute;
-  top: -40px;
-  left: -26px;
-  background-color: white;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 3.5px solid darkgray;
-  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
-  transition: transform 0.7s ease;
-
-  @media (max-width: 700px) {
-    width: 40px;
-    height: 40px;
-    left: -18px;
   }
 `;
 
@@ -563,10 +511,6 @@ const Circle = styled.div`
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
-
-  @media (max-width: 900px) {
-    top: 115px;
-  }
 `;
 
 const ContactButton = styled.a`
@@ -642,7 +586,7 @@ const Heading = styled.th`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
   }
 
   @media (max-width: 900px) {
@@ -673,7 +617,7 @@ const BoldText = styled.th`
   opacity: 0.8;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
@@ -704,7 +648,7 @@ const LeftDiv = styled.th`
   opacity: 0.8;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
@@ -737,7 +681,7 @@ const Statement = styled.th`
   padding-right: 50px;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
+    padding-right: 40px;
     padding-left: 50px;
   }
 
@@ -838,7 +782,7 @@ const HiddenContactButton = styled.a`
   border-radius: 50%;
   border: 1vw solid black;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 60px;
   transition: transform 0.3s ease;
 
   &:hover {
@@ -917,7 +861,7 @@ const HeaderCell = styled.th`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
   }
 
   @media (max-width: 900px) {
@@ -941,7 +885,7 @@ const LeftCell = styled.th`
   padding-right: 100px;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
@@ -996,10 +940,14 @@ const HiddenSecondTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 80px;
-  margin-bottom: 100px;
+  margin-top: 120px;
+  margin-bottom: 70px;
 
   @media (min-width: 901px) {
     display: none;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 70px;
   }
 `;
