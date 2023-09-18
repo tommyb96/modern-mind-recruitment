@@ -89,6 +89,186 @@ export default function Vermittlung() {
       ref: useRef(null),
       isVisible: false,
     },
+    {
+      id: "second-bold-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-six",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-six",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-seven",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-seven",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "aufzählung-eight",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "info-eight",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-second-bold-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-six",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-six",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-seven",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-seven",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-aufzählung-eight",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-info-eight",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "right-bold-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-right-bold-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
   ];
 
   const [isVisible, setIsVisible] = useState({});
@@ -329,7 +509,10 @@ export default function Vermittlung() {
           </SecondLine>
           <SecondTable>
             <tr>
-              <LeftBoldHeader>
+              <LeftBoldHeader
+                ref={sections[12].ref}
+                isVisible={isVisible[sections[12].id]}
+              >
                 Mit welchen Betrieben arbeiten wir zusammen?
               </LeftBoldHeader>
             </tr>
@@ -353,122 +536,137 @@ export default function Vermittlung() {
               <th rowSpan={18}>
                 <Visa src={visa} alt="visa" />
               </th>
-              <BoldHeader colSpan={2}>
+              <BoldHeader
+                colSpan={2}
+                ref={sections[46].ref}
+                isVisible={isVisible[sections[46].id]}
+              >
                 Schritt für Schritt, so funktioniert es:
               </BoldHeader>
             </tr>
-            <tr className="First">
-              <CheckmarkCol>
+            <Row ref={sections[13].ref} isVisible={isVisible[sections[13].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
-              <Aufzählung>Vorbereitung von Unternehmen </Aufzählung>
-            </tr>
-            <tr className="Second">
+              </CheckmarkCell>
+              <Aufzählung> Vorbereitung von Unternehmen </Aufzählung>{" "}
+            </Row>
+            <Row ref={sections[14].ref} isVisible={isVisible[sections[14].id]}>
               <Info colSpan={2}>
                 Einführung in die komplexen Verfahren der Erwerbsmigration
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[15].ref} isVisible={isVisible[sections[15].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
-              <Aufzählung>Profiling und Matchmaking</Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+              </CheckmarkCell>
+              <Aufzählung> Profiling und Matchmaking</Aufzählung>
+            </Row>
+            <Row ref={sections[16].ref} isVisible={isVisible[sections[16].id]}>
+              <Info colSpan={2}>
                 Erstellen individuell zugeschnittene Profile, die den
                 gewünschten Anforderungen entsprechen und Vorauswahl
                 potenzieller Bewerber
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+
+            <Row ref={sections[17].ref} isVisible={isVisible[sections[17].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>
+                {" "}
                 Organisation und Begleitung des Bewerbungsprozesses
               </Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+            </Row>
+            <Row ref={sections[18].ref} isVisible={isVisible[sections[18].id]}>
+              <Info colSpan={2}>
                 Online-Vorstellungsgespräch über Plattformen wie Microsoft Teams
                 oder Zoom, gegebenenfalls mit Übersetzungsunterstützung
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[19].ref} isVisible={isVisible[sections[19].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
-              <Aufzählung>Vorbereitung im Heimatland</Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+              </CheckmarkCell>
+              <Aufzählung> Vorbereitung im Heimatland</Aufzählung>{" "}
+            </Row>
+            <Row ref={sections[20].ref} isVisible={isVisible[sections[20].id]}>
+              <Info colSpan={2}>
                 Organisation und Management von Deutsch-Sprachkursen im
                 Heimatland und Vorbereitung auf das Leben und die berufliche
                 Tätigkeit in Deutschland
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[21].ref} isVisible={isVisible[sections[21].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>
+                {" "}
                 Anerkennung ausländischer Berufsqualifikationen
-              </Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+              </Aufzählung>{" "}
+            </Row>
+            <Row ref={sections[22].ref} isVisible={isVisible[sections[22].id]}>
+              <Info colSpan={2}>
                 Einleitung, Begleitung und Durchführung des
                 Anerkennungsverfahrens
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+
+            <Row ref={sections[23].ref} isVisible={isVisible[sections[23].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
-              <Aufzählung>Visabeantragung</Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>Begleitung des beschleunigten Fachkräfteverfahrens</Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+              </CheckmarkCell>
+              <Aufzählung>Visabeantragung</Aufzählung>{" "}
+            </Row>
+            <Row ref={sections[24].ref} isVisible={isVisible[sections[24].id]}>
+              <Info colSpan={2}>
+                Begleitung des beschleunigten Fachkräfteverfahrens
+              </Info>
+            </Row>
+            <Row ref={sections[25].ref} isVisible={isVisible[sections[25].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
-              <Aufzählung>Integration in Deutschland</Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+              </CheckmarkCell>
+              <Aufzählung> Integration in Deutschland</Aufzählung>
+            </Row>
+            <Row ref={sections[26].ref} isVisible={isVisible[sections[26].id]}>
+              <Info colSpan={2}>
                 Unterstützung bei der Suche nach einer Wohnung, Hilfe bei
                 Besuchen bei Behörden wie der Meldebehörde sowie Unterstützung
                 bei organisatorischen Angelegenheiten wie der Eröffnung eines
                 Bankkontos und Fragen zur Versicherung
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[27].ref} isVisible={isVisible[sections[27].id]}>
+              <CheckmarkCell>
+                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
-              <Aufzählung>Nachbetreuung</Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+              </CheckmarkCell>
+              <Aufzählung> Nachbetreuung</Aufzählung>
+            </Row>
+            <Row ref={sections[28].ref} isVisible={isVisible[sections[28].id]}>
+              <Info colSpan={2}>
                 Unterstützung beim Einführungsprozess im Unternehmen
                 (Onboarding) sowie Verlängerung des Aufenthaltstitels und
                 Familiennachzug
               </Info>
-            </tr>
+            </Row>
           </SecondTable>
           <HiddenSecondTable>
             <tr>
-              <LeftBoldHeader colSpan={2}>
+              <LeftBoldHeader
+                colSpan={2}
+                ref={sections[29].ref}
+                isVisible={isVisible[sections[29].id]}
+              >
                 {" "}
                 Mit welchen Betrieben arbeiten wir zusammen?
               </LeftBoldHeader>
@@ -491,125 +689,121 @@ export default function Vermittlung() {
             </tr>
             <tr>
               {" "}
-              <th colSpan={2}>
-                <Visa src={visa} alt="visa" />
-              </th>
+              <th colSpan={2}>{/* <Visa src={visa} alt="visa" /> */}</th>
             </tr>
             <tr>
               {" "}
-              <BoldHeader colSpan={2}>
+              <BoldHeader
+                colSpan={2}
+                ref={sections[47].ref}
+                isVisible={isVisible[sections[47].id]}
+              >
                 Schritt für Schritt, so funktioniert es:
               </BoldHeader>
-            </tr>
-            <tr>
-              <CheckmarkCol>
-                <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
-              <Aufzählung>Vorbereitung von Unternehmen </Aufzählung>
             </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+            <Row ref={sections[30].ref} isVisible={isVisible[sections[30].id]}>
+              <CheckmarkCell>
+                <Checkmark src={checkmark} alt="checkmark" />
+              </CheckmarkCell>
+              <Aufzählung>Vorbereitung von Unternehmen </Aufzählung>
+            </Row>
+            <Row ref={sections[31].ref} isVisible={isVisible[sections[31].id]}>
+              <Info colSpan={2}>
                 Einführung in die komplexen Verfahren der Erwerbsmigration
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[32].ref} isVisible={isVisible[sections[32].id]}>
+              <CheckmarkCell>
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>Profiling und Matchmaking</Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+            </Row>
+            <Row ref={sections[33].ref} isVisible={isVisible[sections[33].id]}>
+              <Info colSpan={2}>
                 Erstellen individuell zugeschnittene Profile, die den
                 gewünschten Anforderungen entsprechen und Vorauswahl
                 potenzieller Bewerber
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[34].ref} isVisible={isVisible[sections[34].id]}>
+              <CheckmarkCell>
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>
-                Organisation und Begleitung des Bewerbungsprozesses
-              </Aufzählung>
-            </tr>
-            <tr>
-              <th></th>
-              <Info>
+                Organisation und Begleitung von Bewerbungen
+              </Aufzählung>{" "}
+            </Row>
+            <Row ref={sections[35].ref} isVisible={isVisible[sections[35].id]}>
+              <Info colSpan={2}>
                 Online-Vorstellungsgespräch über Plattformen wie Microsoft Teams
                 oder Zoom, gegebenenfalls mit Übersetzungsunterstützung
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[36].ref} isVisible={isVisible[sections[36].id]}>
+              <CheckmarkCell>
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>Vorbereitung im Heimatland</Aufzählung>
-            </tr>
-            <tr>
-              <th></th>
-              <Info>
+            </Row>{" "}
+            <Row ref={sections[37].ref} isVisible={isVisible[sections[37].id]}>
+              <Info colSpan={2}>
                 Organisation und Management von Deutsch-Sprachkursen im
                 Heimatland und Vorbereitung auf das Leben und die berufliche
                 Tätigkeit in Deutschland
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[38].ref} isVisible={isVisible[sections[38].id]}>
+              <CheckmarkCell>
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>
                 Anerkennung ausländischer Berufsqualifikationen
               </Aufzählung>
-            </tr>
-            <tr>
-              <th></th>
-              <Info>
+            </Row>{" "}
+            <Row ref={sections[39].ref} isVisible={isVisible[sections[39].id]}>
+              <Info colSpan={2}>
                 Einleitung, Begleitung und Durchführung des
                 Anerkennungsverfahrens
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[40].ref} isVisible={isVisible[sections[40].id]}>
+              <CheckmarkCell>
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>Visabeantragung</Aufzählung>
-            </tr>
-            <tr>
-              <th></th>
-              <Info>Begleitung des beschleunigten Fachkräfteverfahrens</Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[41].ref} isVisible={isVisible[sections[41].id]}>
+              <Info colSpan={2}>
+                Begleitung des beschleunigten Fachkräfteverfahrens
+              </Info>
+            </Row>
+            <Row ref={sections[42].ref} isVisible={isVisible[sections[42].id]}>
+              <CheckmarkCell>
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>Integration in Deutschland</Aufzählung>
-            </tr>{" "}
-            <tr>
-              <th></th>
-              <Info>
+            </Row>
+            <Row ref={sections[43].ref} isVisible={isVisible[sections[43].id]}>
+              <Info colSpan={2}>
                 Unterstützung bei der Suche nach einer Wohnung, Hilfe bei
                 Besuchen bei Behörden wie der Meldebehörde sowie Unterstützung
                 bei organisatorischen Angelegenheiten wie der Eröffnung eines
                 Bankkontos und Fragen zur Versicherung
               </Info>
-            </tr>
-            <tr>
-              <CheckmarkCol>
+            </Row>
+            <Row ref={sections[44].ref} isVisible={isVisible[sections[44].id]}>
+              <CheckmarkCell>
                 <Checkmark src={checkmark} alt="checkmark" />
-              </CheckmarkCol>
+              </CheckmarkCell>
               <Aufzählung>Nachbetreuung</Aufzählung>
-            </tr>
-            <tr>
-              <th></th>
-              <Info>
+            </Row>{" "}
+            <Row ref={sections[45].ref} isVisible={isVisible[sections[45].id]}>
+              <Info colSpan={2}>
                 Unterstützung beim Einführungsprozess im Unternehmen
                 (Onboarding) sowie Verlängerung des Aufenthaltstitels und
                 Familiennachzug
               </Info>
-            </tr>
+            </Row>
           </HiddenSecondTable>
         </SecondWrapper>
         <People src={people} alt="people" />
@@ -919,6 +1113,9 @@ const Visa = styled.img`
     width: 430px;
   }
 
+  @media (max-width: 900px) {
+    margin-top: 30px;
+  }
   @media (max-width: 480px) {
     width: 300px;
   }
@@ -961,25 +1158,9 @@ const SecondTable = styled.table`
   @media (max-width: 900px) {
     display: none;
   }
-
-  tr.Second {
-    display: none;
-    opacity: 0;
-    border: 2px solid black;
-    transition: display 0s, opacity 0.3s ease;
-  }
-
-  tr.First:hover + tr.second {
-    display: table-row;
-    opacity: 1;
-  }
-
-  tr.First {
-    border: 2px solid black;
-  }
 `;
 
-const LeftBoldHeader = styled.th`
+const LeftBoldHeader = styled.td`
   color: black;
   width: 50%;
   padding-right: 50px;
@@ -987,6 +1168,10 @@ const LeftBoldHeader = styled.th`
   font-size: 33px;
   text-align: start;
   padding-bottom: 20px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-left: 40px;
@@ -1010,34 +1195,39 @@ const LeftBoldHeader = styled.th`
   }
 `;
 
-const CheckmarkCol = styled.th`
-  @media (max-width: 900px) {
-    width: 50px;
-  }
+const Row = styled.tr`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
+`;
+
+const CheckmarkCell = styled.th`
+  width: 5%;
 `;
 
 const Checkmark = styled.img`
   width: 40px;
-  margin-left: 30px;
+  margin-left: 80px;
+  margin-right: 10px;
 
   @media (max-width: 900px) {
     margin-left: 120px;
   }
 
   @media (max-width: 700px) {
-    margin-left: 70px;
+    margin-left: 90px;
   }
 
   @media (max-width: 480px) {
-    margin-left: 30px;
+    margin-left: 50px;
   }
 `;
 
-const Aufzählung = styled.th`
+const Aufzählung = styled.td`
   font-size: 33px;
   text-align: start;
   width: 200px;
-  padding-left: 20px;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
@@ -1045,6 +1235,7 @@ const Aufzählung = styled.th`
 
   @media (max-width: 900px) {
     width: 70%;
+    font-size: 30px;
   }
 
   @media (max-width: 480px) {
@@ -1052,19 +1243,27 @@ const Aufzählung = styled.th`
   }
 `;
 
-const Info = styled.th`
+const Info = styled.td`
   text-align: start;
   padding-bottom: 20px;
-  padding-left: 20px;
+  padding-left: 130px;
   opacity: 0.7;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
   }
 
+  @media (max-width: 900px) {
+    padding-left: 180px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 150px;
+  }
+
   @media (max-width: 480px) {
     padding-right: 20px;
-    font-size: 18px;
+    padding-left: 100px;
   }
 `;
 

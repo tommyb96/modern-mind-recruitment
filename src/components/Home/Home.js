@@ -66,11 +66,7 @@ const Home = () => {
             <Cubes />
           </CubeWrapper>
           <Logo src={logo} alt="Logo" />
-          <Message>
-            your <br /> future <br />
-            is our <br />
-            focus
-          </Message>
+          <Message>your future is our focus</Message>
         </HomeContainer>
         <StyledContainer>
           {" "}
@@ -128,25 +124,12 @@ const Message = styled.div`
   text-transform: uppercase;
   color: white;
   font-weight: bold;
-  font-size: 14vh;
+  font-size: 50px;
   text-align: end;
   line-height: 84%;
 
   align-self: center;
   z-index: 1100;
-
-  @media (max-width: 1500px) {
-    font-size: 12vh;
-  }
-
-  @media (max-width: 900px) {
-    bottom: 100px;
-    font-size: 9vh;
-  }
-
-  @media (max-width: 650px) {
-    font-size: 8vh;
-  }
 `;
 
 const CubeWrapper = styled.div`

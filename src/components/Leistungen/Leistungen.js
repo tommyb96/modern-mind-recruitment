@@ -1,6 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import papa from "../../assets/svg/Leistungen/leistungen-papa.svg";
 import pinnnadel from "../../assets/svg/Leistungen/leistungen-pinnnadel.svg";
@@ -330,14 +329,11 @@ const Papa = styled.img`
     margin-top: 60px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 480px) {
+    margin-top: 40px;
     opacity: 1;
     transform: translateX(0);
     transition: none;
-  }
-
-  @media (max-width: 480px) {
-    margin-top: 40px;
   }
 `;
 
@@ -445,6 +441,7 @@ const Aufzählung = styled.th`
   @media (max-width: 900px) {
     padding-left: 15%;
     padding-bottom: 5px;
+    font-size: 30px;
   }
 
   @media (max-width: 480px) {

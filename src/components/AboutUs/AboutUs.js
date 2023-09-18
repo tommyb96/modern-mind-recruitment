@@ -740,6 +740,9 @@ const Woman = styled.img`
     width: 250px;
     margin-right: 30px;
     margin-top: 30px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: none;
   }
 `;
 
@@ -921,6 +924,7 @@ const RightCell = styled.th`
   @media (max-width: 900px) {
     padding-left: 15%;
     padding-bottom: 10px;
+    font-size: 30px;
   }
 
   @media (max-width: 480px) {

@@ -62,12 +62,4 @@ const StyledCube = styled.div`
     transform: scale(1.6);
     opacity: 0.9;
   }
-
-  @media (hover: none) {
-    /* Deaktiviere den Hover-Effekt für Touch-Geräte */
-    &:hover {
-      transform: none;
-      opacity: 1;
-    }
-  }
 `;
