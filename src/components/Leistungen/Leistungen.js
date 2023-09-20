@@ -245,7 +245,7 @@ export default function Leistungen() {
               Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
               kulturellen Austausch und die Freude an Herausforderungen
               motivieren uns dazu, Ihnen innovative Lösungen und
-              außergewöhnliche Unterstützung anzubieten
+              außergewöhnliche Unterstützung anzubieten.
             </SecondText>
           </tr>
           <tr>
@@ -343,7 +343,6 @@ const FirstTable = styled.table`
   margin: auto;
   margin-top: 100px;
   margin-bottom: -60px;
-  font-size: 20px;
   width: 50%;
   width: 1350px;
 
@@ -427,7 +426,6 @@ const FirstText = styled.th`
     padding-left: 30px;
     padding-right: 20px;
     padding-bottom: 20px;
-    font-size: 18px;
   }
 `;
 
@@ -441,12 +439,13 @@ const Aufzählung = styled.th`
   @media (max-width: 900px) {
     padding-left: 15%;
     padding-bottom: 5px;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   @media (max-width: 480px) {
     padding-left: 5%;
-    font-size: 26px;
+    font-size: 23px;
+    padding-bottom: 0px;
   }
 
   //animation
@@ -481,7 +480,6 @@ const SecondText = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 18px;
     padding-top: 25px;
   }
 `;

@@ -175,6 +175,15 @@ const WelcomeMessage = styled.div`
   p {
     font-weight: bold;
     color: rgba(0, 167, 155);
+    font-size: 4.5vw;
+
+    @media (max-width: 900px) {
+      font-size: 8vw;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 35px;
+    }
   }
 
   @media (max-width: 900px) {

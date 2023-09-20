@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import Carousel from "../Vermittlung/Carousel";
 
 import haus from "../../assets/svg/Vermittlung/vermittlung-haus.svg";
 import globus from "../../assets/svg/Vermittlung/vermittlung-globus.svg";
@@ -297,7 +298,6 @@ export default function Vermittlung() {
     <>
       <Wrapper>
         <FirstWrapper>
-          ;{" "}
           <Line>
             <Circle
               ref={sections[0].ref}
@@ -393,12 +393,12 @@ export default function Vermittlung() {
               </RightDiv>
             </tr>
             <tr>
-              <BoldHeader
+              <LeftBoldHeader
                 ref={sections[6].ref}
                 isVisible={isVisible[sections[6].id]}
               >
                 Auf welche Branchen verstehen wir uns?
-              </BoldHeader>
+              </LeftBoldHeader>
               <th></th>
             </tr>
           </FirstTable>
@@ -501,7 +501,9 @@ export default function Vermittlung() {
             </tr>
           </HiddenFirstTable>
         </FirstWrapper>
-        <Karusell>Karusell</Karusell>
+        <div>
+          <Carousel />
+        </div>
         <SecondWrapper>
           <SecondLine>
             <FirstCircle />
@@ -895,7 +897,6 @@ const FirstTable = styled.table`
   margin: auto;
   margin-top: 100px;
   margin-bottom: 150px;
-  font-size: 20px;
   width: 50%;
   width: 1350px;
 
@@ -944,7 +945,6 @@ const LeftDiv = styled.th`
   color: black;
   width: 50%;
   padding-right: 100px;
-  font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
 
@@ -965,7 +965,6 @@ const LeftDiv = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 18px;
     padding-bottom: 20px;
   }
 `;
@@ -985,7 +984,6 @@ const BoldText = styled.th`
   color: black;
   width: 50%;
   padding-right: 100px;
-  font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
 
@@ -1011,7 +1009,6 @@ const BoldText = styled.th`
     padding-left: 30px;
     padding-right: 20px;
     padding-bottom: 20px;
-    font-size: 18px;
   }
 `;
 
@@ -1025,7 +1022,7 @@ const BoldHeader = styled.th`
   width: 50%;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
@@ -1035,6 +1032,10 @@ const BoldHeader = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 120px;
+    //animation
+    opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
   @media (max-width: 700px) {
@@ -1070,7 +1071,6 @@ const RightDiv = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 18px;
   }
 `;
 
@@ -1149,7 +1149,6 @@ const SecondTable = styled.table`
   margin: auto;
   margin-top: 100px;
   margin-bottom: 100px;
-  font-size: 20px;
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -1220,7 +1219,7 @@ const Checkmark = styled.img`
   }
 
   @media (max-width: 480px) {
-    margin-left: 50px;
+    margin-left: 30px;
   }
 `;
 
@@ -1235,11 +1234,11 @@ const Aufzählung = styled.td`
 
   @media (max-width: 900px) {
     width: 70%;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   @media (max-width: 480px) {
-    font-size: 26px;
+    font-size: 23px;
   }
 `;
 
@@ -1263,7 +1262,7 @@ const Info = styled.td`
 
   @media (max-width: 480px) {
     padding-right: 20px;
-    padding-left: 100px;
+    padding-left: 80px;
   }
 `;
 
@@ -1272,8 +1271,12 @@ const HiddenSecondTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   font-size: 20px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 30px;
+  }
 
   @media (min-width: 901px) {
     display: none;

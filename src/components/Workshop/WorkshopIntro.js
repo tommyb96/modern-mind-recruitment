@@ -14,47 +14,70 @@ export default function WorkshopIntro() {
     }
   };
 
-  const refs = {
-    circle: useRef(null),
-    // heading: useRef(null),
-    // leftdivone: useRef(null),
-    // leftdivtwo: useRef(null),
-    // laptop: useRef(null),
-    // boldText: useRef(null),
-    // fotosRight: useRef(null),
-    // foto: useRef(null),
-  };
-
-  const [isVisible, setIsVisible] = useState({
-    circle: false,
-    // heading: false,
-    // leftdivone: false,
-    // leftdivtwo: false,
-    // laptop: false,
-    // boldText: false,
-    // fotosRight: false,
-    // foto: false,
-  });
-
   const handleIntersection = (entry, target) => {
-    setIsVisible((prevState) => ({
-      ...prevState,
-      [target]: entry.isIntersecting,
-    }));
+    setIsVisible((prevState) => {
+      if (entry.isIntersecting) {
+        if (!prevState[target]) {
+          console.log(`[${target}] isVisible is changing to true`);
+        }
+        return {
+          ...prevState,
+          [target]: true,
+        };
+      } else {
+        if (prevState[target]) {
+          console.log(`[${target}] isVisible is changing to false`);
+        }
+        return {
+          ...prevState,
+          [target]: false,
+        };
+      }
+    });
   };
+
+  const sections = [
+    {
+      id: "headingcircle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "statement",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-eading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-statement",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState({});
 
   useEffect(() => {
     const observerOptions = {
       root: null,
       threshold: 0.5,
-      rootMargin: "-100px 0px -100px 0px",
+      rootMargin: "0px 0px -20px 0px",
     };
 
-    const observers = Object.keys(refs).map((key) => {
+    const observers = sections.map((section) => {
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => handleIntersection(entry, key));
+        entries.forEach((entry) => handleIntersection(entry, section.id));
       }, observerOptions);
-      observer.observe(refs[key].current);
+      observer.observe(section.ref.current);
       return observer;
     });
 
@@ -67,7 +90,7 @@ export default function WorkshopIntro() {
     <>
       <Wrapper>
         <Line>
-          <Circle ref={refs.circle} isVisible={isVisible.circle} />
+          <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
           <ContactButton
             onClick={() => scrollToSection("kontakt")}
             ref={contactButtonRef}
@@ -82,7 +105,12 @@ export default function WorkshopIntro() {
         </Line>
         <Table>
           <tr>
-            <Heading>workshop</Heading>
+            <Heading
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
+            >
+              workshop
+            </Heading>
             <th></th>
           </tr>
           <tr>
@@ -94,7 +122,11 @@ export default function WorkshopIntro() {
               die Hand zu nehmen und eventuell sogar eine eigene
               Personalabteilung für ausländische Fachkräfte zu gründen.
             </LeftDiv>
-            <Statement rowSpan={3}>
+            <Statement
+              ref={sections[2].ref}
+              isVisible={isVisible[sections[2].id]}
+              rowSpan={3}
+            >
               WIR MACHEN SIE FIT UM IHREN ERFOLG ZU MAXIMIEREN.
             </Statement>
           </tr>
@@ -118,7 +150,12 @@ export default function WorkshopIntro() {
         </Table>
         <HiddenTable>
           <tr>
-            <Heading>workshop</Heading>
+            <Heading
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
+            >
+              workshop
+            </Heading>
           </tr>
           <tr>
             <LeftDiv>
@@ -149,7 +186,10 @@ export default function WorkshopIntro() {
           </tr>
           <tr>
             {" "}
-            <Statement>
+            <Statement
+              ref={sections[4].ref}
+              isVisible={isVisible[sections[4].id]}
+            >
               WIR MACHEN SIE FIT UM IHREN ERFOLG ZU MAXIMIEREN.
             </Statement>
           </tr>
@@ -182,7 +222,7 @@ const Wrapper = styled.div`
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 150px;
+  top: 110px;
   height: 100%;
   width: 3.5px;
   background-color: darkgray;
@@ -202,7 +242,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 0;
+  top: -10px;
   left: -20px;
   background-color: white;
   width: 45px;
@@ -230,11 +270,11 @@ const ContactButton = styled.a`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
   }
 
   &:hover img {
-    transform: translateY(-70px) translateX(100px);
+    transform: translateY(-70px) translateX(-100px);
   }
 
   @media (max-width: 900px) {
@@ -264,7 +304,7 @@ const Table = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-bottom: 250px;
   font-size: 20px;
 
@@ -285,6 +325,10 @@ const Heading = styled.th`
   text-align: start;
   padding-bottom: 40px;
   color: black;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -342,6 +386,10 @@ const Statement = styled.th`
   color: white;
   padding-left: 100px;
   padding-right: 50px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -361,8 +409,11 @@ const Statement = styled.th`
 
   @media (max-width: 480px) {
     padding-left: 30px;
-    padding-right: 10px;
+    padding-right: 20px;
     font-size: 40px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: none;
   }
 `;
 
@@ -388,15 +439,6 @@ const HiddenContactButton = styled.a`
   border: 1vw solid black;
   margin: auto;
   margin-bottom: -25%;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  &:hover img {
-    transform: translateY(-70px) translateX(100px);
-  }
 
   @media (min-width: 901px) {
     display: none;

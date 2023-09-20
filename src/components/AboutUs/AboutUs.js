@@ -481,7 +481,7 @@ const GreenWrapper = styled.div`
 const GreenLine = styled.div`
   position: absolute;
   left: 50%;
-  top: 0%;
+  top: 10px;
   height: 100%;
   width: 3.5px;
   background-color: darkgray;
@@ -501,7 +501,7 @@ const GreenLine = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 0;
+  top: -10px;
   left: -20px;
   background-color: white;
   width: 45px;
@@ -528,7 +528,7 @@ const ContactButton = styled.a`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.07);
+    transform: scale(1.02);
   }
 
   &:hover img {
@@ -610,7 +610,6 @@ const BoldText = styled.th`
   color: black;
   width: 50%;
   padding-right: 100px;
-  font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
   color: white;
@@ -633,7 +632,6 @@ const BoldText = styled.th`
     padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 18px;
   }
 `;
 
@@ -641,7 +639,6 @@ const LeftDiv = styled.th`
   color: black;
   width: 50%;
   padding-right: 100px;
-  font-size: 20px;
   text-align: start;
   color: white;
   opacity: 0.8;
@@ -664,7 +661,6 @@ const LeftDiv = styled.th`
     padding-left: 30px;
     padding-right: 20px;
     padding-bottom: 30px;
-    font-size: 18px;
   }
 `;
 
@@ -787,14 +783,6 @@ const HiddenContactButton = styled.a`
   margin-top: 60px;
   transition: transform 0.3s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  &:hover img {
-    transform: translateY(-70px) translateX(100px);
-  }
-
   @media (min-width: 901px) {
     display: none;
   }
@@ -882,7 +870,6 @@ const HeaderCell = styled.th`
 
 const LeftCell = styled.th`
   text-align: start;
-  font-size: 20px;
   width: 50%;
   padding-right: 100px;
 
@@ -903,7 +890,6 @@ const LeftCell = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 18px;
   }
 `;
 
@@ -924,13 +910,13 @@ const RightCell = styled.th`
   @media (max-width: 900px) {
     padding-left: 15%;
     padding-bottom: 10px;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   @media (max-width: 480px) {
     padding-left: 5%;
-    font-size: 26px;
-    padding-bottom: 5px;
+    font-size: 23px;
+    padding-bottom: 0px;
   }
 
   //animation

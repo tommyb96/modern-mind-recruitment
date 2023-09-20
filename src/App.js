@@ -47,7 +47,7 @@ const Root = () => {
           <AboutUs />
           <Leistungen />
           <Vermittlung />
-          <Workshop />
+          {/* <Workshop /> */}
           <Beratung />
           <Kontakt />
           <Footer />
