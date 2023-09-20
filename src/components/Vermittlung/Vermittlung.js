@@ -896,7 +896,7 @@ const FirstTable = styled.table`
   width: 1350px;
   margin: auto;
   margin-top: 100px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   width: 50%;
   width: 1350px;
 
@@ -1088,7 +1088,7 @@ const HiddenFirstTable = styled.table`
   width: 100%;
   margin: auto;
   margin-top: 100px;
-  margin-bottom: 150px;
+  margin-bottom: 20px;
 
   @media (min-width: 901px) {
     display: none;
@@ -1270,7 +1270,7 @@ const HiddenSecondTable = styled.table`
   position: relative;
   border-collapse: collapse;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 30px;
   margin-bottom: 70px;
   font-size: 20px;
 

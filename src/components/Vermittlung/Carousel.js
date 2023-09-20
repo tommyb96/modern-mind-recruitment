@@ -22,15 +22,14 @@ const Container = styled.div`
 `;
 
 const SwiperSlideItem = styled(SwiperSlide)`
-  width: 470px;
-  height: 370px;
-  border-radius: 2rem;
+  width: 489px;
+  height: 376px;
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 
   img {
-    width: 470px;
-    height: 370px;
+    width: 489px;
+    height: 376px;
     border-radius: 2rem;
     object-fit: cover;
   }
@@ -46,58 +45,76 @@ const SwiperSlideItem = styled(SwiperSlide)`
     text-align: center;
   }
 
-  @media (max-width: 1350px) {
-    width: 400px !important;
-    height: 340px !important;
+  @media (max-width: 1000px) {
+    width: 403px !important;
+    height: 310px !important;
 
     img {
-      width: 400px !important;
-      height: 340px !important;
+      width: 403px !important;
+      height: 310px !important;
     }
   }
 
   @media (max-width: 900px) {
-    width: 300px !important;
-    height: 240px !important;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 700px) {
+    width: 307px !important;
+    height: 236px !important;
 
     img {
-      width: 300px !important;
-      height: 240px !important;
+      width: 307px !important;
+      height: 236px !important;
     }
   }
 
   @media (max-width: 480px) {
-    width: 230px !important;
-    height: 180px !important;
+    width: 262px !important;
+    height: 202px !important;
 
     img {
-      width: 230px !important;
-      height: 180px !important;
+      width: 262px !important;
+      height: 202px !important;
     }
   }
 `;
 
 const SliderControler = styled.div`
   position: relative;
-  bottom: 1rem;
+  bottom: 0rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50px;
 
   .swiper-button-next {
-    left: 68% !important;
-    top: 0%;
+    left: 64% !important;
+    top: 50%;
+    color: darkgray;
+    width: 50px;
     transform: translateX(-58%) !important;
   }
 
   .swiper-button-prev {
-    left: 30% !important;
-    top: 0%;
+    left: 36% !important;
+    top: 50%;
+    color: darkgray;
     transform: translateX(-30%) !important;
   }
 
   @media (max-width: 900px) {
-    bottom: 2rem;
+    bottom: 1rem;
+  }
+
+  @media (max-width: 700px) {
+    .swiper-button-next {
+      left: 68% !important;
+    }
+
+    .swiper-button-prev {
+      left: 31% !important;
+    }
   }
 
   @media (max-width: 480px) {
@@ -114,7 +131,7 @@ const SliderControler = styled.div`
 const SwiperPagination = styled.div`
   position: relative;
   width: 15rem !important;
-  bottom: 1rem;
+  bottom: 0rem;
 `;
 
 const Carousel = () => {
@@ -151,7 +168,7 @@ const Carousel = () => {
         </SwiperSlideItem>
         <SwiperSlideItem>
           <img src={slide_image_3} alt="slide_image" />
-          <div className="slide-label">Industrie</div>
+          <div className="slide-label">Bau</div>
         </SwiperSlideItem>
         <SwiperSlideItem>
           <img src={slide_image_4} alt="slide_image" />
@@ -159,11 +176,11 @@ const Carousel = () => {
         </SwiperSlideItem>
         <SwiperSlideItem>
           <img src={slide_image_5} alt="slide_image" />
-          <div className="slide-label">Bau</div>
+          <div className="slide-label">Gastronomie</div>
         </SwiperSlideItem>
         <SwiperSlideItem>
           <img src={slide_image_6} alt="slide_image" />
-          <div className="slide-label">Gastronomie</div>
+          <div className="slide-label">Industrie</div>
         </SwiperSlideItem>
 
         <SliderControler>
