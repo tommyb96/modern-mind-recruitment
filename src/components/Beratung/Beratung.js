@@ -85,12 +85,7 @@ export default function Beratung() {
         </HiddenTable>
       </PurpleWrapper>
       <WhiteWrapper>
-        {/* <CallToAction>
-          ALS IHR EXPERTE IM BEREICH REKRUTIERUNG UND ERWERBSMIGRATION VON
-          QUALIFIZIERTEM FACHPERSONAL STEHEN WIR IHNEN ZUR SEITE, UM IHRE
-          OFFENEN STELLEN LANGFRISTIG UND ZUKUNFTSORIENTIERT ZU BESETZEN.
-        </CallToAction> */}
-        <TableOne>
+        {/* <TableOne>
           <tr className="First">
             <Checkmark>checkmark</Checkmark>
             <Aufzählung>Aufzählung</Aufzählung>
@@ -98,7 +93,7 @@ export default function Beratung() {
           <tr className="Second">
             <Info colSpan={2}>Information</Info>
           </tr>
-        </TableOne>
+        </TableOne> */}
       </WhiteWrapper>
     </>
   );
@@ -122,10 +117,6 @@ const TableOne = styled.table`
   }
 `;
 
-const Checkmark = styled.th``;
-const Aufzählung = styled.th``;
-const Info = styled.th``;
-
 const PurpleWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -139,7 +130,7 @@ const Table = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-bottom: 150px;
   font-size: 20px;
   width: 50%;
@@ -172,10 +163,12 @@ const Line = styled.div`
 
   @media (max-width: 900px) {
     left: 10%;
+    height: 120%;
   }
 
   @media (max-width: 700px) {
     left: 5%;
+    height: 115%;
   }
 
   @media (max-width: 480px) {
@@ -231,6 +224,8 @@ const LeftDiv = styled.th`
   font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
+  color: white;
+  opacity: 0.8;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -264,11 +259,11 @@ const Card = styled.img`
   margin-bottom: -300px;
 
   @media (max-width: 1400px) {
-    width: 430px;
+    width: 410px;
   }
 
   @media (max-width: 900px) {
-    margin-bottom: -200px;
+    margin-bottom: -130px;
   }
 
   @media (max-width: 480px) {
@@ -283,38 +278,12 @@ const WhiteWrapper = styled.div`
   position: relative;
 `;
 
-const CallToAction = styled.div`
-  text-decoration: uppercase;
-  font-size: 60px;
-  font-weight: bold;
-  text-align: center;
-  max-width: 1350px;
-  margin: auto;
-  margin-top: 200px;
-  margin-bottom: 100px;
-
-  @media (max-width: 900px) {
-    margin-left: 120px;
-    font-size: 40px;
-  }
-
-  @media (max-width: 700px) {
-    margin-left: 70px;
-    font-size: 40px;
-  }
-
-  @media (max-width: 480px) {
-    margin-left: 30px;
-    font-size: 40px;
-  }
-`;
-
 const HiddenTable = styled.table`
   position: relative;
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 70px;
   margin-bottom: 50px;
 
   @media (min-width: 901px) {

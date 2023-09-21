@@ -1095,13 +1095,6 @@ const HiddenFirstTable = styled.table`
   }
 `;
 
-const Karusell = styled.div`
-  height: 200px;
-  width: 90%;
-  background-color: pink;
-  margin: auto;
-`;
-
 const SecondWrapper = styled.div`
   position: relative;
 `;

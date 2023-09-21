@@ -25,7 +25,7 @@ const SwiperSlideItem = styled(SwiperSlide)`
   width: 489px;
   height: 376px;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
   img {
     width: 489px;
@@ -36,13 +36,13 @@ const SwiperSlideItem = styled(SwiperSlide)`
 
   .slide-label {
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.5);
     color: black;
     padding: 10px;
     text-align: center;
+    font-size: 23px;
   }
 
   @media (max-width: 1000px) {
@@ -56,7 +56,7 @@ const SwiperSlideItem = styled(SwiperSlide)`
   }
 
   @media (max-width: 900px) {
-    margin-bottom: 50px;
+    margin-bottom: 65px;
   }
 
   @media (max-width: 700px) {
@@ -77,6 +77,10 @@ const SwiperSlideItem = styled(SwiperSlide)`
       width: 262px !important;
       height: 202px !important;
     }
+  }
+
+  .slide-label {
+    font-size: 20px;
   }
 `;
 
@@ -99,6 +103,7 @@ const SliderControler = styled.div`
   .swiper-button-prev {
     left: 36% !important;
     top: 50%;
+    width: 50px;
     color: darkgray;
     transform: translateX(-30%) !important;
   }
@@ -119,11 +124,11 @@ const SliderControler = styled.div`
 
   @media (max-width: 480px) {
     .swiper-button-next {
-      left: 73% !important;
+      display: none;
     }
 
     .swiper-button-prev {
-      left: 27% !important;
+      display: none;
     }
   }
 `;
@@ -144,10 +149,11 @@ const Carousel = () => {
         loop={false}
         slidesPerView={"auto"}
         coverflowEffect={{
-          rotate: 5,
+          rotate: 10,
           stretch: 0,
           depth: 200,
           modifier: 3,
+          slideShadows: false,
         }}
         pagination={{ el: ".swiper-pagination", clickable: true }}
         navigation={{

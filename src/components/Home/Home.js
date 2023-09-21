@@ -130,6 +130,11 @@ const Message = styled.div`
 
   align-self: center;
   z-index: 1100;
+
+  @media (max-width: 480px) {
+    font-size: 40px;
+    bottom: 10%;
+  }
 `;
 
 const CubeWrapper = styled.div`
