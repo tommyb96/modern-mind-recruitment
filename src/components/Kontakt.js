@@ -1,9 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
 
 import emailjs from "@emailjs/browser";
-import waves from "../assets/svg/Kontakt/kontakt_waves.png";
-import cubes from "../assets/svg/Kontakt/kontakt_cubes.svg";
+import waves from "../../src/assets/svg/AboutUs/about_us_waves.png";
+import tom from "../../src/assets/svg/Kontakt/kontakt-tom.png";
+import telefon from "../../src/assets/svg/Kontakt/kontakt-telefon.svg";
+import mail from "../../src/assets/svg/Kontakt/kontakt-mail.svg";
 
 const Kontakt = () => {
   const form = useRef();
@@ -59,65 +62,200 @@ const Kontakt = () => {
 
   return (
     <>
-      {/* <Waves src={waves} alt="waves" id="kontakt"></Waves> */}
-      <StyledContainer>
-        <Cubes src={cubes} alt="cubes" />
-
-        <Wrapper>
-          <StyledDivMobile>
-            Kontaktieren Sie uns und sichern Sie sich jetzt Ihr{" "}
-            <span>kostenloses</span> Erstgespräch.
-          </StyledDivMobile>
-          <Heading>
-            KONTAKT
-            <FormContainer ref={form} onSubmit={sendEmail}>
-              <input
-                onChange={(e) => setName(e.target.value)}
-                type="text"
-                placeholder="Name"
-                name="name"
-              />
-              {error && name.length <= 5 ? (
-                <ErrorMessage>bitte Namen eingeben</ErrorMessage>
-              ) : (
-                ""
-              )}
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                type="email"
-                placeholder="E-Mail"
-                name="email"
-              />
-              {error && !validateEmail(email) ? (
-                <ErrorMessage>bitte vollständige Email eingeben</ErrorMessage>
-              ) : (
-                ""
-              )}
-              <textarea
-                onChange={(e) => setMessage(e.target.value)}
-                name="message"
-                cols="30"
-                rows="10"
-              />
-              {error && message.length <= 10 ? (
-                <ErrorMessage>bitte Nachricht eingeben</ErrorMessage>
-              ) : (
-                ""
-              )}
-              <StyledButton
-                type="submit"
-                style={{ backgroundColor: error ? "" : "rgb(148,201,115)" }}
+      <Waves src={waves} alt="waves" id="kontakt"></Waves>
+      <GreenWrapper>
+        <Table>
+          <tr>
+            <Heading colSpan={2}>kontakt</Heading>
+          </tr>
+          <tr>
+            <LeftDiv rowSpan={6}>
+              Sind Sie in der aktuellen Personalbeschaffung auf der Suche nach
+              hochqualifizierten Fachkräften aus Nicht-EU-Ländern, um Ihre
+              offenen Stellen zu besetzen und Ihr Unternehmen auf das nächste
+              Level zu heben? Wir laden Sie herzlich dazu ein, von unserem
+              Angebot für ein kostenloses Erstgespräch Gebrauch zu machen. In
+              diesem Gespräch haben Sie die Gelegenheit, Ihre spezifischen
+              Anforderungen und Bedürfnisse im Detail zu besprechen. <br />{" "}
+              <br />{" "}
+              <Link to="https://calendly.com/modern-mind-recruitment/45min?month=2023-09">
+                <Button>Erstgespräch vereinbaren </Button>
+              </Link>{" "}
+              <br /> <br />
+              Alternativ dazu steht Ihnen unser Kontaktformular zur Verfügung,
+              über das Sie uns eine detaillierte Anfrage senden können. Unsere
+              Motivation ist hoch, und wir freuen uns darauf, mit Ihnen
+              gemeinsam daran zu arbeiten, die idealen Fachkräfte für Ihr
+              Unternehmen zu finden. Ihr Erfolg ist für uns von großer
+              Bedeutung, und wir sind voller Entschlossenheit, Sie auf diesem
+              Weg bestmöglich zu unterstützen und zum Gelingen Ihres
+              Unternehmens beizutragen.
+            </LeftDiv>
+            <TomWrapper>
+              <Tom src={tom} alt="tom"></Tom>
+            </TomWrapper>
+          </tr>
+          <tr>
+            <BoldDiv>Ihr Ansprechpartner</BoldDiv>
+          </tr>
+          <tr>
+            <Name>Tom Behrisch</Name>
+          </tr>
+          <tr>
+            <Position>Geschäftsführer</Position>
+          </tr>
+          <tr>
+            <td>
+              <StyledLinkTelefon
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  opacity: "0.8",
+                }}
+                href="tel:+4915202112164"
               >
-                Senden
-              </StyledButton>
-            </FormContainer>
-          </Heading>
-        </Wrapper>
-        <StyledDiv>
-          Kontaktieren Sie uns und sichern Sie sich jetzt Ihr{" "}
-          <span>kostenloses</span> Erstgespräch.
-        </StyledDiv>
-      </StyledContainer>
+                +49 152 0211 21 64
+              </StyledLinkTelefon>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {" "}
+              <StyledLinkMail
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  opacity: "0.8",
+                }}
+                href="mailto:info@modernmindrecruitment.com"
+              >
+                info@modernmindrecruitment.com
+              </StyledLinkMail>
+            </td>
+          </tr>
+        </Table>
+        <HiddenTable>
+          <tr>
+            <Heading>kontakt</Heading>
+          </tr>
+          <tr>
+            <LeftDiv>
+              {" "}
+              Sind Sie in der aktuellen Personalbeschaffung auf der Suche nach
+              hochqualifizierten Fachkräften aus Nicht-EU-Ländern, um Ihre
+              offenen Stellen zu besetzen und Ihr Unternehmen auf das nächste
+              Level zu heben? Wir laden Sie herzlich dazu ein, von unserem
+              Angebot für ein kostenloses Erstgespräch Gebrauch zu machen. In
+              diesem Gespräch haben Sie die Gelegenheit, Ihre spezifischen
+              Anforderungen und Bedürfnisse im Detail zu besprechen.
+            </LeftDiv>
+          </tr>
+          <tr>
+            <LeftDiv>
+              <Link to="https://calendly.com/modern-mind-recruitment/45min?month=2023-09">
+                <Button>Erstgespräch vereinbaren </Button>
+              </Link>
+            </LeftDiv>
+          </tr>
+          <tr>
+            <LeftDiv>
+              Alternativ dazu steht Ihnen unser Kontaktformular zur Verfügung,
+              über das Sie uns eine detaillierte Anfrage senden können. Unsere
+              Motivation ist hoch, und wir freuen uns darauf, mit Ihnen
+              gemeinsam daran zu arbeiten, die idealen Fachkräfte für Ihr
+              Unternehmen zu finden. Ihr Erfolg ist für uns von großer
+              Bedeutung, und wir sind voller Entschlossenheit, Sie auf diesem
+              Weg bestmöglich zu unterstützen und zum Gelingen Ihres
+              Unternehmens beizutragen.
+            </LeftDiv>
+          </tr>
+          <tr>
+            <BoldDiv>Ihr Ansprechpartner</BoldDiv>
+          </tr>
+          <tr>
+            <Name>Tom Behrisch</Name>
+          </tr>
+          <tr>
+            <Position>Geschäftsführer</Position>
+          </tr>
+          <tr>
+            <td>
+              {" "}
+              <StyledLinkTelefon
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  opacity: "0.8",
+                }}
+                href="tel:+4915202112164"
+              >
+                +49 152 0211 21 64
+              </StyledLinkTelefon>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <StyledLinkMail
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  opacity: "0.8",
+                }}
+                href="mailto:info@modernmindrecruitment.com"
+              >
+                info@modernmindrecruitment.com
+              </StyledLinkMail>
+            </td>
+          </tr>{" "}
+          <tr>
+            {" "}
+            <TomWrapper>
+              <Tom src={tom} alt="tom"></Tom>
+            </TomWrapper>
+          </tr>
+        </HiddenTable>
+        <FormContainer ref={form} onSubmit={sendEmail}>
+          <input
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="Name"
+            name="name"
+          />
+          {error && name.length <= 5 ? (
+            <ErrorMessage>bitte Namen eingeben</ErrorMessage>
+          ) : (
+            ""
+          )}
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="E-Mail"
+            name="email"
+          />
+          {error && !validateEmail(email) ? (
+            <ErrorMessage>bitte vollständige Email eingeben</ErrorMessage>
+          ) : (
+            ""
+          )}
+          <textarea
+            onChange={(e) => setMessage(e.target.value)}
+            name="message"
+            cols="30"
+            rows="10"
+          />
+          {error && message.length <= 10 ? (
+            <ErrorMessage>bitte Nachricht eingeben</ErrorMessage>
+          ) : (
+            ""
+          )}
+          <StyledButton
+            type="submit"
+            style={{ backgroundColor: error ? "" : "rgb(148,201,115)" }}
+          >
+            Senden
+          </StyledButton>
+        </FormContainer>
+      </GreenWrapper>
       {showSuccessMessage && (
         <SuccessMessageContainer>
           <SuccessMessage>
@@ -149,73 +287,257 @@ const Waves = styled.img`
   width: 100vw;
 `;
 
-const StyledContainer = styled.div`
-  background-color: rgb(92, 92, 255);
+const GreenWrapper = styled.div`
+  background-color: rgba(0, 167, 155);
   display: flex;
-  margin: 0;
-  height: 900px;
-  height: 1000px;
+  flex-direction: column;
   overflow: hidden;
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
-    height: 1200px;
-  }
+  align-items: center;
 `;
 
-const Cubes = styled.img`
-  position: absolute;
-  width: 380px;
-  right: 0;
-  margin: 40px;
-  z-index: 0;
-  opacity: 0.5;
+const Table = styled.table`
+  position: relative;
+  border-collapse: collapse;
+  width: 1350px;
+  margin: auto;
+  font-size: 20px;
 
-  @media (max-width: 1200px) {
-    width: 300px;
+  @media (max-width: 1300px) {
+    width: 100%;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-left: 200px;
+const Heading = styled.th`
+  font-family: Comfortaa;
+  font-size: 53px;
+  text-transform: uppercase;
+  text-shadow: 1px 0 rgb(0, 0, 0);
+  text-align: start;
+  padding-bottom: 40px;
 
-  @media (max-width: 1000px) {
-    align-self: center;
-    margin: 0;
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 30px;
+    padding-left: 30px;
+    font-size: 33px;
+  }
+`;
+const LeftDiv = styled.th`
+  color: black;
+  width: 50%;
+  padding-right: 100px;
+  text-align: start;
+  color: white;
+  opacity: 0.8;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-bottom: 50px;
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
   }
 `;
 
-const Heading = styled.h1`
-  position: relative;
-  font-family: Comfortaa;
-  font-size: 55px;
-  z-index: 20;
-  align-self: center;
-  margin-top: 50px;
+const Button = styled.button`
+  padding: 15px 20px;
+  background-color: rgb (255, 255, 255);
+  color: black;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: rgb (255, 255, 255, 0.5);
+  }
+`;
+
+const TomWrapper = styled.td`
+  display: flex;
+`;
+
+const Tom = styled.img`
+  width: 350px;
+  margin: auto;
+  @media (max-width: 900px) {
+    margin-top: 40px;
+  }
+  @media (max-width: 480px) {
+    width: 280px;
+  }
+`;
+
+const BoldDiv = styled.td`
+  font-weight: bold;
+  font-size: 33px;
+  color: white;
+  opacity: 0.8;
+  padding-left: 70px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 50%;
+
+  @media (max-width: 1400px) {
+    padding-right: 40px;
+    padding-left: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
 
   @media (max-width: 480px) {
-    font-size: 39px;
-    margin-top: 30px;
+    padding-left: 30px;
+    font-size: 26px;
+    padding-top: 30px;
+  }
+`;
+
+const Name = styled.td`
+  color: white;
+  opacity: 0.8;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 70px;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+`;
+
+const Position = styled.td`
+  color: white;
+  opacity: 0.8;
+  padding-left: 70px;
+  padding-bottom: 30px;
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+  }
+`;
+
+const Telefon = styled.img`
+  width: 40px;
+  margin-right: 20px;
+`;
+
+const Mail = styled.img`
+  width: 40px;
+  margin-right: 20px;
+`;
+
+const StyledLinkTelefon = styled.a`
+  text-decoration: none;
+  padding-left: 70px;
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+`;
+
+const StyledLinkMail = styled.a`
+  text-decoration: none;
+  padding-left: 70px;
+  margin-bottom: 70px;
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
   }
 `;
 
 const FormContainer = styled.form`
-  position: absolute;
-  top: 0px;
-  left: -113px;
   display: flex;
   flex-direction: column;
   width: 500px;
-  z-index: -1;
-  margin-top: 30px;
-  padding: 80px 40px 30px 40px;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  padding: 40px 40px 30px 40px;
   background-color: rgb(255, 255, 255, 0.1);
   border-radius: 60px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -241,27 +563,18 @@ const FormContainer = styled.form`
     resize: none;
   }
 
-  @media (max-width: 1000px) {
-    align-self: center;
+  @media (max-width: 900px) {
+    margin-top: 50px;
   }
 
-  @media (max-width: 550px) {
-    width: 400px;
-    left: -65px;
+  @media (max-width: 600px) {
+    width: 90%;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   @media (max-width: 480px) {
-    width: 335px;
-    top: -10px;
-    left: -70px;
-
-    input {
-      padding: 8px;
-    }
-
-    textarea {
-      height: 180px;
-    }
+    padding: 40px 20px 20px 20px;
   }
 `;
 
@@ -275,12 +588,12 @@ const StyledButton = styled.button`
   border-radius: 30px;
   font-size: 22px;
   width: 60%;
-  background-color: rgb(0, 0, 255);
-  color: white;
+  background-color: rgb(255, 255, 255, 0.8);
+  color: black;
 
   @media (hover: hover) {
     &:hover {
-      background-color: rgb(0, 0, 255, 0.3);
+      background-color: rgb(255, 255, 255);
     }
   }
 `;
@@ -376,26 +689,14 @@ const StyledDiv = styled.div`
   }
 `;
 
-const StyledDivMobile = styled.div`
-  font-family: system-ui;
-  color: white;
-  font-weight: 500;
-  font-size: 34px;
-  max-width: 600px;
-  margin: 20px;
-  margin-top: 120px;
-  margin-bottom: 90px;
-  text-align: center;
+const HiddenTable = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
 
-  span {
-    font-family: Righteous;
-    color: rgb(0, 167, 155);
-  }
-
-  @media (min-width: 1001px) {
+  @media (min-width: 901px) {
     display: none;
-  }
-  @media (max-width: 650px) {
-    font-size: 30px;
   }
 `;

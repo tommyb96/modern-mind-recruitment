@@ -133,8 +133,6 @@ const Table = styled.table`
   margin-top: 100px;
   margin-bottom: 150px;
   font-size: 20px;
-  width: 50%;
-  width: 1350px;
 
   @media (max-width: 1400px) {
     margin-bottom: 100px;
