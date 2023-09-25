@@ -111,10 +111,10 @@ const LogoWrapper = styled.div`
         width: 90vw;
       }
       40% {
-        width: 12vw;
+        width: 13vw;
       }
       80% {
-        width: 12vw;
+        width: 13vw;
       }
     }
   }
@@ -145,7 +145,7 @@ const HomeContainer = styled.div`
 
 const Message = styled.div`
   position: absolute;
-  bottom: 30%;
+  bottom: 35%;
   right: 11%;
   text-transform: uppercase;
   color: white;
