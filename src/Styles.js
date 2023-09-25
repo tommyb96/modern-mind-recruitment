@@ -9,14 +9,14 @@ export default createGlobalStyle`
     padding: 0;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
 
     @media (max-width: 900px) {
-      font-size: 18px;;
+      font-size: 17px;;
     } 
 
  @media (max-width: 480px) {
-      font-size: 16px;;
+      font-size: 16px;
     } 
   }
   

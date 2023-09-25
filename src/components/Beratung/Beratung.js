@@ -219,7 +219,6 @@ const LeftDiv = styled.th`
   color: black;
   width: 50%;
   padding-right: 100px;
-  font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
   color: white;
@@ -242,7 +241,6 @@ const LeftDiv = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 18px;
   }
 `;
 

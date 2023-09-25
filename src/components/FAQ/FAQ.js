@@ -223,7 +223,7 @@ const BigWrapper = styled.div`
 
 const Wrapper = styled.div`
   margin-top: 200px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
   margin-left: 40px;
   margin-right: 40px;
   font-size: 20px;
@@ -233,6 +233,7 @@ const Wrapper = styled.div`
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 140px;
+    margin-bottom: 50px;
   }
 `;
 

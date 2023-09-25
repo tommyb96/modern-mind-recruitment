@@ -538,13 +538,13 @@ export default function Vermittlung() {
               <th rowSpan={18}>
                 <Visa src={visa} alt="visa" />
               </th>
-              <BoldHeader
+              <SecondBoldHeader
                 colSpan={2}
                 ref={sections[46].ref}
                 isVisible={isVisible[sections[46].id]}
               >
                 Schritt für Schritt, so funktioniert es:
-              </BoldHeader>
+              </SecondBoldHeader>
             </tr>
             <Row ref={sections[13].ref} isVisible={isVisible[sections[13].id]}>
               <CheckmarkCell>
@@ -852,7 +852,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 120px;
+  top: 100px;
   left: -20px;
   background-color: white;
   width: 45px;
@@ -1049,6 +1049,35 @@ const BoldHeader = styled.th`
   }
 `;
 
+const SecondBoldHeader = styled.th`
+  font-weight: bold;
+  font-size: 33px;
+  text-align: start;
+  padding-bottom: 20px;
+  padding-left: 90px;
+  padding-top: 30px;
+  width: 50%;
+
+  @media (max-width: 1400px) {
+    padding-right: 40px;
+    padding-left: 80px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    font-size: 26px;
+    padding-top: 30px;
+  }
+`;
+
 const RightDiv = styled.th`
   width: 50%;
   text-align: start;
@@ -1200,7 +1229,7 @@ const CheckmarkCell = styled.th`
 
 const Checkmark = styled.img`
   width: 40px;
-  margin-left: 80px;
+  margin-left: 90px;
   margin-right: 10px;
 
   @media (max-width: 900px) {
@@ -1238,7 +1267,7 @@ const Aufzählung = styled.td`
 const Info = styled.td`
   text-align: start;
   padding-bottom: 20px;
-  padding-left: 130px;
+  padding-left: 140px;
   opacity: 0.7;
 
   @media (max-width: 1400px) {

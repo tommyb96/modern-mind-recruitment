@@ -9,8 +9,7 @@ import Vermittlung from "./components/Vermittlung/Vermittlung";
 import Workshop from "./components/Workshop/Workshop";
 import Beratung from "./components/Beratung/Beratung";
 import FAQ from "./components/FAQ/FAQ";
-import Kontakt from "./components/Kontakt";
-import Footer from "./components/Footer";
+import Kontakt from "./components//Kontakt/Kontakt";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Impressum from "./pages/Impressum";
 import Datenschutzerklärung from "./pages/Datenschutzerklärung";
@@ -52,7 +51,6 @@ const Root = () => {
           <Beratung />
           <FAQ />
           <Kontakt />
-          <Footer />
         </Wrapper>
       </div>
       <div>

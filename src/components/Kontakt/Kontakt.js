@@ -3,10 +3,15 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 import emailjs from "@emailjs/browser";
-import waves from "../../src/assets/svg/AboutUs/about_us_waves.png";
-import tom from "../../src/assets/svg/Kontakt/kontakt-tom.png";
-import telefon from "../../src/assets/svg/Kontakt/kontakt-telefon.svg";
-import mail from "../../src/assets/svg/Kontakt/kontakt-mail.svg";
+import waves from "../../assets/svg/AboutUs/about_us_waves.png";
+import tom from "../../assets/svg/Kontakt/kontakt-tom.png";
+import telefon from "../../assets/svg/Kontakt/kontakt-telefon.svg";
+import mail from "../../assets/svg/Kontakt/kontakt-mail.svg";
+import woman from "../../assets/svg/Kontakt/kontakt-woman.svg";
+import men from "../../assets/svg/Kontakt/kontakt-men.svg";
+
+import Impressum from "../../pages/Impressum";
+import Datenschutzerklärung from "../../pages/Datenschutzerklärung";
 
 const Kontakt = () => {
   const form = useRef();
@@ -66,7 +71,8 @@ const Kontakt = () => {
       <GreenWrapper>
         <Table>
           <tr>
-            <Heading colSpan={2}>kontakt</Heading>
+            <Heading>kontakt</Heading>
+            <Heading colSpan={2}></Heading>
           </tr>
           <tr>
             <LeftDiv rowSpan={6}>
@@ -91,20 +97,24 @@ const Kontakt = () => {
               Weg bestmöglich zu unterstützen und zum Gelingen Ihres
               Unternehmens beizutragen.
             </LeftDiv>
-            <TomWrapper>
+            <TomWrapper colSpan={2}>
               <Tom src={tom} alt="tom"></Tom>
             </TomWrapper>
           </tr>
           <tr>
-            <BoldDiv>Ihr Ansprechpartner</BoldDiv>
+            <BoldDiv colSpan={2}>Ihr Ansprechpartner</BoldDiv>
           </tr>
           <tr>
-            <Name>Tom Behrisch</Name>
+            <Name colSpan={2}>Tom Behrisch</Name>
           </tr>
           <tr>
-            <Position>Geschäftsführer</Position>
+            <Position colSpan={2}>Geschäftsführer</Position>
           </tr>
           <tr>
+            <SmallCell>
+              {" "}
+              <Telefon src={telefon} alt="telefon icon" />
+            </SmallCell>
             <td>
               <StyledLinkTelefon
                 style={{
@@ -119,6 +129,10 @@ const Kontakt = () => {
             </td>
           </tr>
           <tr>
+            <SmallCell>
+              {" "}
+              <Mail src={mail} alt="mail icon" />
+            </SmallCell>
             <td>
               {" "}
               <StyledLinkMail
@@ -136,10 +150,10 @@ const Kontakt = () => {
         </Table>
         <HiddenTable>
           <tr>
-            <Heading>kontakt</Heading>
+            <Heading colSpan={2}>kontakt</Heading>
           </tr>
           <tr>
-            <LeftDiv>
+            <LeftDiv colSpan={2}>
               {" "}
               Sind Sie in der aktuellen Personalbeschaffung auf der Suche nach
               hochqualifizierten Fachkräften aus Nicht-EU-Ländern, um Ihre
@@ -151,14 +165,14 @@ const Kontakt = () => {
             </LeftDiv>
           </tr>
           <tr>
-            <LeftDiv>
+            <LeftDiv colSpan={2}>
               <Link to="https://calendly.com/modern-mind-recruitment/45min?month=2023-09">
                 <Button>Erstgespräch vereinbaren </Button>
               </Link>
             </LeftDiv>
           </tr>
           <tr>
-            <LeftDiv>
+            <LeftDiv colSpan={2}>
               Alternativ dazu steht Ihnen unser Kontaktformular zur Verfügung,
               über das Sie uns eine detaillierte Anfrage senden können. Unsere
               Motivation ist hoch, und wir freuen uns darauf, mit Ihnen
@@ -170,16 +184,19 @@ const Kontakt = () => {
             </LeftDiv>
           </tr>
           <tr>
-            <BoldDiv>Ihr Ansprechpartner</BoldDiv>
+            <BoldDiv colSpan={2}>Ihr Ansprechpartner</BoldDiv>
           </tr>
           <tr>
-            <Name>Tom Behrisch</Name>
+            <Name colSpan={2}>Tom Behrisch</Name>
           </tr>
           <tr>
-            <Position>Geschäftsführer</Position>
+            <Position colSpan={2}>Geschäftsführer</Position>
           </tr>
           <tr>
-            <td>
+            <SmallCell>
+              <Telefon src={telefon} alt="telefon icon" />
+            </SmallCell>
+            <StyledLink>
               {" "}
               <StyledLinkTelefon
                 style={{
@@ -191,10 +208,14 @@ const Kontakt = () => {
               >
                 +49 152 0211 21 64
               </StyledLinkTelefon>
-            </td>
+            </StyledLink>
           </tr>
           <tr>
-            <td>
+            {" "}
+            <SmallCell>
+              <Mail src={mail} alt="mail icon" />
+            </SmallCell>
+            <StyledLink>
               <StyledLinkMail
                 style={{
                   textDecoration: "none",
@@ -205,11 +226,11 @@ const Kontakt = () => {
               >
                 info@modernmindrecruitment.com
               </StyledLinkMail>
-            </td>
+            </StyledLink>
           </tr>{" "}
           <tr>
             {" "}
-            <TomWrapper>
+            <TomWrapper colSpan={2}>
               <Tom src={tom} alt="tom"></Tom>
             </TomWrapper>
           </tr>
@@ -255,6 +276,19 @@ const Kontakt = () => {
             Senden
           </StyledButton>
         </FormContainer>
+        <Woman src={woman} alt="woman" />
+        <Men src={men} alt="men" />
+        <Nav>
+          <Link to="/Impressum" element={<Impressum />}>
+            Impressum
+          </Link>
+          <Link to="/Datenschutzerklärung" element={<Datenschutzerklärung />}>
+            Datenschutzerklärung
+          </Link>
+        </Nav>
+        <CopyRight>
+          © 2023 modern mind recruitment. Alle Rechte vorbehalten.
+        </CopyRight>
       </GreenWrapper>
       {showSuccessMessage && (
         <SuccessMessageContainer>
@@ -293,6 +327,7 @@ const GreenWrapper = styled.div`
   flex-direction: column;
   overflow: hidden;
   align-items: center;
+  position: relative;
 `;
 
 const Table = styled.table`
@@ -337,7 +372,8 @@ const Heading = styled.th`
     font-size: 33px;
   }
 `;
-const LeftDiv = styled.th`
+
+const LeftDiv = styled.td`
   color: black;
   width: 50%;
   padding-right: 100px;
@@ -381,17 +417,28 @@ const Button = styled.button`
 `;
 
 const TomWrapper = styled.td`
-  display: flex;
+  text-align: start;
+
+  @media (max-width: 480px) {
+    text-align: center;
+  }
 `;
 
 const Tom = styled.img`
   width: 350px;
-  margin: auto;
+  margin-left: 70px;
+
   @media (max-width: 900px) {
     margin-top: 40px;
+    margin-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    margin-left: 70px;
   }
   @media (max-width: 480px) {
     width: 280px;
+    margin-left: 0px;
   }
 `;
 
@@ -403,11 +450,10 @@ const BoldDiv = styled.td`
   padding-left: 70px;
   padding-top: 30px;
   padding-bottom: 30px;
-  width: 50%;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
-    padding-left: 50px;
+    padding-left: 40px;
   }
 
   @media (max-width: 900px) {
@@ -455,6 +501,7 @@ const Position = styled.td`
   opacity: 0.8;
   padding-left: 70px;
   padding-bottom: 30px;
+
   @media (max-width: 1400px) {
     padding-left: 40px;
     padding-right: 50px;
@@ -476,22 +523,12 @@ const Position = styled.td`
   }
 `;
 
-const Telefon = styled.img`
-  width: 40px;
-  margin-right: 20px;
-`;
-
-const Mail = styled.img`
-  width: 40px;
-  margin-right: 20px;
-`;
-
-const StyledLinkTelefon = styled.a`
-  text-decoration: none;
+const SmallCell = styled.td`
   padding-left: 70px;
+  width: 5%;
+
   @media (max-width: 1400px) {
     padding-left: 40px;
-    padding-right: 50px;
   }
 
   @media (max-width: 900px) {
@@ -504,29 +541,44 @@ const StyledLinkTelefon = styled.a`
 
   @media (max-width: 480px) {
     padding-left: 30px;
+  }
+`;
+
+const Telefon = styled.img`
+  width: 27px;
+  margin-right: 20px;
+
+  @media (max-width: 480px) {
+    margin-right: 10px;
+    width: 25px;
+  }
+`;
+
+const Mail = styled.img`
+  width: 27px;
+  margin-right: 20px;
+
+  @media (max-width: 480px) {
+    margin-right: 10px;
+    width: 25px;
+  }
+`;
+
+const StyledLink = styled.td``;
+
+const StyledLinkTelefon = styled.a`
+  text-decoration: none;
+
+  @media (max-width: 480px) {
     padding-right: 20px;
   }
 `;
 
 const StyledLinkMail = styled.a`
   text-decoration: none;
-  padding-left: 70px;
   margin-bottom: 70px;
-  @media (max-width: 1400px) {
-    padding-left: 40px;
-    padding-right: 50px;
-  }
-
-  @media (max-width: 900px) {
-    padding-left: 120px;
-  }
-
-  @media (max-width: 700px) {
-    padding-left: 70px;
-  }
 
   @media (max-width: 480px) {
-    padding-left: 30px;
     padding-right: 20px;
   }
 `;
@@ -575,6 +627,7 @@ const FormContainer = styled.form`
 
   @media (max-width: 480px) {
     padding: 40px 20px 20px 20px;
+    margin-bottom: 100px;
   }
 `;
 
@@ -667,28 +720,6 @@ const ErrorMessage = styled.label`
   }
 `;
 
-const StyledDiv = styled.div`
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: white;
-  font-weight: 500;
-  font-size: 45px;
-  max-width: 550px;
-  margin: 350px 30px 20px 250px;
-  span {
-    font-family: Righteous;
-    color: rgb(0, 167, 155);
-  }
-
-  @media (max-width: 1300px) {
-    margin: 350px 30px 10px 200px;
-  }
-
-  @media (max-width: 1000px) {
-    display: none;
-  }
-`;
-
 const HiddenTable = styled.table`
   border-collapse: collapse;
   width: 100%;
@@ -699,4 +730,71 @@ const HiddenTable = styled.table`
   @media (min-width: 901px) {
     display: none;
   }
+`;
+
+const Nav = styled.div`
+  display: flex;
+  align-self: center;
+  padding-top: 50px;
+  margin: auto;
+  z-index: 1;
+
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255, 0.8);
+    padding: 10px;
+    font-weight: bold;
+
+    &:hover {
+      color: rgb(255, 255, 255, 1);
+    }
+  }
+`;
+
+const Woman = styled.img`
+  width: 450px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  @media (max-width: 1180px) {
+    width: 37%;
+  }
+
+  @media (max-width: 900px) {
+    width: 42%;
+  }
+
+  @media (max-width: 480px) {
+    width: 48%;
+  }
+`;
+
+const Men = styled.img`
+  width: 470px;
+  position: absolute;
+  bottom: 0;
+  right: -50px;
+  transform: scaleX(-1);
+
+  @media (max-width: 1180px) {
+    width: 40%;
+  }
+
+  @media (max-width: 900px) {
+    width: 45%;
+  }
+
+  @media (max-width: 480px) {
+    width: 50%;
+  }
+`;
+
+const CopyRight = styled.div`
+  text-align: center;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 1;
+  color: rgb(255, 255, 255, 0.5);
 `;
