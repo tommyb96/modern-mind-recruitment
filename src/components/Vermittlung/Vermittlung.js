@@ -924,6 +924,7 @@ const Heading = styled.th`
 
   @media (max-width: 1400px) {
     padding-left: 40px;
+    font-size: 49px;
   }
 
   @media (max-width: 900px) {

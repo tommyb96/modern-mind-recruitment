@@ -299,7 +299,7 @@ const Question = styled.div`
   margin-left: 20px;
 
   @media (max-width: 480px) {
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 10px;
   }
 `;

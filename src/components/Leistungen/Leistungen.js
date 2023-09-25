@@ -115,15 +115,15 @@ export default function Leistungen() {
           <tr>
             <th></th>
             <Heading
+              colSpan={2}
               ref={sections[1].ref}
               isVisible={isVisible[sections[1].id]}
-              colSpan={2}
             >
               leistungen
             </Heading>
           </tr>
           <tr>
-            <PapaCell rowSpan="6">
+            <PapaCell rowSpan={6}>
               <Papa
                 src={papa}
                 alt="dad holding his son"
@@ -141,43 +141,39 @@ export default function Leistungen() {
               Schwerpunkte spezialisiert:
             </FirstText>
           </tr>
-          <tr>
-            <th>
-              {" "}
-              <PinnNadel src={pinnnadel} alt="pinnnadel" />
-            </th>
+          <Cell>
+            {" "}
             <Aufzählung
               ref={sections[2].ref}
               isVisible={isVisible[sections[2].id]}
             >
-              Vermittlung
-            </Aufzählung>
-          </tr>
-          <tr>
-            {" "}
-            <th>
               {" "}
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
-            </th>
+              Vermittlung
+            </Aufzählung>
+          </Cell>
+          <Cell>
+            {" "}
             <Aufzählung
               ref={sections[3].ref}
               isVisible={isVisible[sections[3].id]}
             >
-              Schulung
-            </Aufzählung>
-          </tr>
-          <tr>
-            <th>
               {" "}
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
-            </th>
+              Schulung
+            </Aufzählung>
+          </Cell>
+          <Cell>
+            {" "}
             <Aufzählung
               ref={sections[4].ref}
               isVisible={isVisible[sections[4].id]}
             >
+              {" "}
+              <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Beratung
             </Aufzählung>
-          </tr>
+          </Cell>
           <tr>
             <SecondText colSpan={2}>
               Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
@@ -188,7 +184,7 @@ export default function Leistungen() {
             </SecondText>
           </tr>
           <tr>
-            <SpaceCell />
+            <SpaceCell colSpan={2} />
           </tr>
         </FirstTable>
         <HiddenTable>
@@ -267,6 +263,7 @@ export default function Leistungen() {
 const PurpleWrapper = styled.div`
   display: flex;
   position: relative;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -312,7 +309,26 @@ const Circle = styled.div`
   }
 `;
 
-const PapaCell = styled.th`
+const FirstTable = styled.table`
+  border-collapse: collapse;
+  width: 1350px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: -60px;
+
+  @media (max-width: 1300px) {
+    width: 100%;
+    margin-bottom: -80px;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const PapaCell = styled.td`
+  text-align: center;
+  border: 2px solid black;
   width: 50%;
 `;
 
@@ -337,36 +353,14 @@ const Papa = styled.img`
   }
 `;
 
-const FirstTable = styled.table`
-  border-collapse: collapse;
-  width: 1350px;
-  margin: auto;
-  margin-top: 100px;
-  margin-bottom: -60px;
-  width: 50%;
-  width: 1350px;
-
-  @media (max-width: 1300px) {
-    width: 100%;
-    margin-bottom: -80px;
-  }
-
-  @media (max-width: 900px) {
-    display: none;
-  }
-`;
-
 const PinnNadel = styled.img`
   width: 40px;
-  margin-left: 30px;
-
-  @media (max-width: 900px) {
-    margin-right: 15px;
-  }
+  margin-right: 20px;
 `;
 
 const Heading = styled.th`
   width: 50%;
+  border: 2px solid black;
   font-family: Comfortaa;
   font-size: 53px;
   text-transform: uppercase;
@@ -383,6 +377,7 @@ const Heading = styled.th`
   @media (max-width: 1400px) {
     padding-right: 40px;
     padding-left: 50px;
+    font-size: 49px;
   }
 
   @media (max-width: 900px) {
@@ -400,12 +395,13 @@ const Heading = styled.th`
   }
 `;
 
-const FirstText = styled.th`
-  width: 50%;
+const FirstText = styled.td`
   text-align: start;
   padding-left: 70px;
   color: white;
   opacity: 0.8;
+  width: 50%;
+  border: 2px solid black;
 
   @media (max-width: 1400px) {
     padding-left: 50px;
@@ -429,23 +425,29 @@ const FirstText = styled.th`
   }
 `;
 
-const Aufzählung = styled.th`
+const Cell = styled.tr``;
+
+const Aufzählung = styled.td`
   font-size: 33px;
   text-align: start;
+
   color: white;
   opacity: 0.8;
   padding-right: 20px;
+  border: 2px solid black;
+  padding-left: 80px;
 
   @media (max-width: 900px) {
-    padding-left: 15%;
-    padding-bottom: 5px;
+    padding-left: 150px;
     font-size: 28px;
   }
 
+  @media (max-width: 700px) {
+    padding-left: 100px;
+  }
   @media (max-width: 480px) {
-    padding-left: 5%;
+    padding-left: 50px;
     font-size: 23px;
-    padding-bottom: 0px;
   }
 
   //animation
@@ -454,13 +456,13 @@ const Aufzählung = styled.th`
   transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
-const SecondText = styled.th`
-  width: 50%;
+const SecondText = styled.td`
   text-align: start;
   padding-top: 10px;
   padding-left: 70px;
   color: white;
   opacity: 0.8;
+  border: 2px solid black;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
@@ -484,8 +486,9 @@ const SecondText = styled.th`
   }
 `;
 
-const SpaceCell = styled.th`
+const SpaceCell = styled.td`
   height: 200px;
+  border: 2px solid black;
 `;
 
 const HiddenTable = styled.table`

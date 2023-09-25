@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Cubes from "./Cubes";
 import logo from "../../assets/svg/Home/logo.svg";
 import people from "../../assets/svg/Home/home-people.svg";
@@ -41,114 +41,132 @@ const Home = () => {
 
   return (
     <>
-      <div id="home">
-        <HomeContainer>
-          <CubeWrapper>
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-            <Cubes />
-          </CubeWrapper>
-          <Logo src={logo} alt="Logo" />
+      <HomeContainer id="home">
+        <Wrapper>
+          <LogoWrapper>
+            <Logo src={logo} />
+          </LogoWrapper>
           <Message>your future is our focus</Message>
-        </HomeContainer>
-        <StyledContainer>
-          {" "}
-          <People src={people} alt="people" />
-          <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
-            <p>HALLO!</p>
-            WIR SIND MODERN MIND RECRUITMENT
-          </WelcomeMessage>
-        </StyledContainer>
-      </div>
+        </Wrapper>
+      </HomeContainer>
+      <StyledContainer>
+        {" "}
+        <People src={people} alt="people" />
+        <WelcomeMessage ref={refs.welcome} isVisible={isVisible.welcome}>
+          <p>HALLO!</p>
+          WIR SIND MODERN MIND RECRUITMENT
+        </WelcomeMessage>
+      </StyledContainer>
     </>
   );
 };
 export default Home;
 
-const HomeContainer = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+const LogoWrapper = styled.div`
   background-color: rgb(92, 92, 255);
-`;
-
-const Logo = styled.img`
-  height: 80%;
-  z-index: 1100;
-  align-self: center;
-  margin: 100px;
-  opacity: 0.8;
-
-  @media (max-width: 1500px) {
-    height: 80%;
+  text-align: end;
+  z-index: 2;
+  animation: moveSideToSide 5s linear infinite;
+  @keyframes moveSideToSide {
+    0%,
+    100% {
+      width: 90vw;
+    }
+    20% {
+      width: 90vw;
+    }
+    40% {
+      width: 41.5vw;
+    }
+    80% {
+      width: 41.5vw;
+    }
   }
 
   @media (max-width: 900px) {
-    align-self: start;
-    margin: 40px;
-    height: 60%;
-  }
-
-  @media (max-width: 650px) {
-    height: 50%;
+    @keyframes moveSideToSide {
+      0%,
+      100% {
+        width: 90vw;
+      }
+      20% {
+        width: 90vw;
+      }
+      40% {
+        width: 19vw;
+      }
+      80% {
+        width: 19vw;
+      }
+    }
   }
 
   @media (max-width: 480px) {
-    margin: 30px;
+    @keyframes moveSideToSide {
+      0%,
+      100% {
+        width: 90vw;
+      }
+      20% {
+        width: 90vw;
+      }
+      40% {
+        width: 12vw;
+      }
+      80% {
+        width: 12vw;
+      }
+    }
   }
+`;
+
+const Logo = styled.img`
+  width: 6vw;
+  margin-right: -20px;
+
+  @media (max-width: 900px) {
+    width: 8vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 10vw;
+  }
+`;
+
+const HomeContainer = styled.div`
+  align-items: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -2;
+  background-color: rgb(92, 92, 255);
 `;
 
 const Message = styled.div`
   position: absolute;
-  right: 7%;
+  bottom: 30%;
+  right: 11%;
   text-transform: uppercase;
   color: white;
   font-weight: bold;
-  font-size: 50px;
-  text-align: end;
+  font-size: 3.05vw;
   line-height: 84%;
+  z-index: -1;
 
-  align-self: center;
-  z-index: 1100;
+  @media (max-width: 900px) {
+    font-size: 4.5vw;
+  }
 
   @media (max-width: 480px) {
-    font-size: 40px;
-    bottom: 10%;
+    font-size: 4.7vw;
   }
 `;
 
-const CubeWrapper = styled.div`
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  display: flex;
-  flex-direction: column;
+const Wrapper = styled.div`
+  width: 100vw;
+  position: relative;
   align-items: end;
-  padding: 1vw;
-
-  @media (max-width: 768px) {
-    margin-top: 0;
-  }
 `;
 
 const StyledContainer = styled.div`
