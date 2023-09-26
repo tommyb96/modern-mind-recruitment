@@ -6,8 +6,11 @@ const navLinks = [
   { id: 1, to: "#home", label: "Home" },
   { id: 2, to: "#über-uns", label: "Über uns" },
   { id: 3, to: "#leistungen", label: "Leistungen" },
-  { id: 4, to: "#workshop", label: "Workshop" },
-  { id: 5, to: "#kontakt", label: "Kontakt" },
+  { id: 4, to: "#vermittlung", label: "Vermittlung" },
+  { id: 5, to: "#workshop", label: "Workshop" },
+  { id: 6, to: "#beratung", label: "Beratung" },
+  { id: 7, to: "#faq", label: "FAQ" },
+  { id: 8, to: "#kontakt", label: "Kontakt" },
 ];
 
 export default function RightNavBar({ open, setOpen }) {
@@ -63,7 +66,7 @@ const NavContainer = styled.nav`
   left: 0;
   opacity: ${({ scrollBackground }) => (scrollBackground ? 0 : 1)};
   background-color: ${({ scrollBackground }) =>
-    scrollBackground ? "rgb(255, 255, 255, 0.7)" : "rgb(255, 255, 255, 0.7)"};
+    scrollBackground ? "rgb(255, 255, 255, 1)" : "rgb(255, 255, 255, 0)"};
   transition: opacity 0.3s ease-in-out;
 
   &:hover {
@@ -73,10 +76,10 @@ const NavContainer = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin: 5px 10px 5px 150px;
+    margin: 5px 10px 5px 50px;
 
     li {
-      padding: 1.2vw 2.5vw 1.2vw 2.5vw;
+      padding: 0.7vw 2vw 0.7vw 2vw;
       white-space: nowrap;
     }
   }
@@ -118,19 +121,18 @@ const NavLink = styled.a`
     font-size: 18px;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      &::after {
-        content: "";
-        position: absolute;
-        left: 45%;
-        right: 0;
-        bottom: -13px;
-        height: 8px;
-        width: 8px;
-        border-radius: 2px;
-        background-color: black;
-      }
+  &:hover {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto; /* Center the line horizontally */
+      bottom: -13px; /* Adjust this value to control the line's distance from text */
+      height: 5px;
+      width: 35px;
+      border-radius: 2px;
+      background-color: black;
     }
   }
 `;

@@ -292,9 +292,9 @@ const AboutUs = () => {
             </LeftCell>
           </tr>
           <tr>
-            <th>
+            <CheckmarkCell>
               <Checkmark src={checkmark} alt="checkmark" />
-            </th>
+            </CheckmarkCell>
             <RightCell
               ref={sections[5].ref}
               isVisible={isVisible[sections[5].id]}
@@ -303,9 +303,9 @@ const AboutUs = () => {
             </RightCell>
           </tr>
           <tr>
-            <th>
+            <CheckmarkCell>
               <Checkmark src={checkmark} alt="checkmark" />
-            </th>
+            </CheckmarkCell>
             <RightCell
               ref={sections[6].ref}
               isVisible={isVisible[sections[6].id]}
@@ -314,9 +314,9 @@ const AboutUs = () => {
             </RightCell>
           </tr>
           <tr>
-            <th>
+            <CheckmarkCell>
               <Checkmark src={checkmark} alt="checkmark" />
-            </th>
+            </CheckmarkCell>
             <RightCell
               ref={sections[7].ref}
               isVisible={isVisible[sections[7].id]}
@@ -325,9 +325,9 @@ const AboutUs = () => {
             </RightCell>
           </tr>
           <tr>
-            <th>
+            <CheckmarkCell>
               <Checkmark src={checkmark} alt="checkmark" />
-            </th>
+            </CheckmarkCell>
             <RightCell
               ref={sections[8].ref}
               isVisible={isVisible[sections[8].id]}
@@ -336,9 +336,9 @@ const AboutUs = () => {
             </RightCell>
           </tr>
           <tr>
-            <th>
+            <CheckmarkCell>
               <Checkmark src={checkmark} alt="checkmark" />
-            </th>
+            </CheckmarkCell>
             <RightCell
               ref={sections[9].ref}
               isVisible={isVisible[sections[9].id]}
@@ -347,9 +347,9 @@ const AboutUs = () => {
             </RightCell>
           </tr>
           <tr>
-            <th>
+            <CheckmarkCell>
               <Checkmark src={checkmark} alt="checkmark" />
-            </th>
+            </CheckmarkCell>
             <RightCell
               ref={sections[10].ref}
               isVisible={isVisible[sections[10].id]}
@@ -484,7 +484,7 @@ const GreenLine = styled.div`
   top: 10px;
   height: 100%;
   width: 3.5px;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
@@ -507,7 +507,7 @@ const Circle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
@@ -591,7 +591,7 @@ const Heading = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -622,7 +622,7 @@ const BoldText = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -651,7 +651,7 @@ const LeftDiv = styled.th`
 
   @media (max-width: 900px) {
     padding-bottom: 50px;
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -757,7 +757,7 @@ const WhiteLine = styled.div`
   top: 0%;
   height: 100%;
   width: 3.5px;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
@@ -830,7 +830,7 @@ const SecondTable = styled.table`
   width: 1350px;
   margin: auto;
   margin-top: 350px;
-  margin-bottom: 150px;
+  margin-bottom: 120px;
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -856,7 +856,7 @@ const HeaderCell = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -881,7 +881,7 @@ const LeftCell = styled.th`
 
   @media (max-width: 900px) {
     padding-bottom: 30px;
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -892,6 +892,9 @@ const LeftCell = styled.th`
     padding-left: 30px;
     padding-right: 20px;
   }
+`;
+const CheckmarkCell = styled.th`
+  width: 100px;
 `;
 
 const Checkmark = styled.img`

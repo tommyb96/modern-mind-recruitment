@@ -270,6 +270,16 @@ export default function Vermittlung() {
       ref: useRef(null),
       isVisible: false,
     },
+    {
+      id: "second-first-circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "second-last-circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
   ];
 
   const [isVisible, setIsVisible] = useState({});
@@ -296,7 +306,7 @@ export default function Vermittlung() {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper id="vermittlung">
         <FirstWrapper>
           <Line>
             <Circle
@@ -506,8 +516,14 @@ export default function Vermittlung() {
         </div>
         <SecondWrapper>
           <SecondLine>
-            <FirstCircle />
-            <LastCircle />
+            <FirstCircle
+              ref={sections[48].ref}
+              isVisible={isVisible[sections[48].id]}
+            />
+            <LastCircle
+              ref={sections[49].ref}
+              isVisible={isVisible[sections[49].id]}
+            />
           </SecondLine>
           <SecondTable>
             <tr>
@@ -832,9 +848,10 @@ const Line = styled.div`
   position: absolute;
   left: 50%;
   top: 0%;
-  height: 89%;
+  bottom: 120px;
+  /* height: 94%; */
   width: 3.5px;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
@@ -858,10 +875,14 @@ const Circle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
+
+  @media (max-width: 900px) {
+    top: 120px;
+  }
 `;
 
 const LastCircle = styled.div`
@@ -872,7 +893,7 @@ const LastCircle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
@@ -880,14 +901,16 @@ const LastCircle = styled.div`
 
 const FirstCircle = styled.div`
   position: absolute;
-  top: 0;
+  top: -10px;
   left: -20px;
   background-color: white;
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 `;
 
 const FirstTable = styled.table`
@@ -928,7 +951,7 @@ const Heading = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -956,7 +979,7 @@ const LeftDiv = styled.th`
 
   @media (max-width: 900px) {
     padding-bottom: 30px;
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -999,7 +1022,7 @@ const BoldText = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -1019,7 +1042,7 @@ const BoldHeader = styled.th`
   text-align: start;
   padding-bottom: 20px;
   padding-left: 70px;
-  padding-top: 30px;
+  padding-top: 60px;
   width: 50%;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -1032,7 +1055,7 @@ const BoldHeader = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
     //animation
     opacity: ${(props) => (props.isVisible ? 1 : 0)};
     transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
@@ -1065,7 +1088,7 @@ const SecondBoldHeader = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -1091,7 +1114,7 @@ const RightDiv = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -1117,7 +1140,7 @@ const HiddenFirstTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 120px;
   margin-bottom: 20px;
 
   @media (min-width: 901px) {
@@ -1131,9 +1154,13 @@ const SecondWrapper = styled.div`
 
 const Visa = styled.img`
   width: 500px;
+  margin-left: 20px;
 
   @media (max-width: 1200px) {
-    width: 430px;
+    width: 410px;
+  }
+
+  @media (max-width: 1000px) {
   }
 
   @media (max-width: 900px) {
@@ -1147,10 +1174,10 @@ const Visa = styled.img`
 const SecondLine = styled.div`
   position: absolute;
   left: 50%;
-  top: 5%;
-  height: 90%;
+  top: 65px;
+  bottom: 70px;
   width: 3.5px;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
@@ -1170,7 +1197,8 @@ const SecondTable = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 30px;
+
   margin-bottom: 100px;
 
   @media (max-width: 1300px) {
@@ -1186,10 +1214,12 @@ const LeftBoldHeader = styled.td`
   color: black;
   width: 50%;
   padding-right: 50px;
+  padding-top: 60px;
   font-weight: bold;
   font-size: 33px;
   text-align: start;
   padding-bottom: 20px;
+
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
@@ -1201,8 +1231,7 @@ const LeftBoldHeader = styled.td`
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
-    padding-left: 120px;
+    padding-left: 140px;
     width: 100%;
   }
 
@@ -1214,6 +1243,7 @@ const LeftBoldHeader = styled.td`
     padding-left: 30px;
     padding-right: 20px;
     font-size: 26px;
+    padding-top: 20px;
   }
 `;
 
@@ -1234,11 +1264,11 @@ const Checkmark = styled.img`
   margin-right: 10px;
 
   @media (max-width: 900px) {
-    margin-left: 120px;
+    margin-left: 140px;
   }
 
   @media (max-width: 700px) {
-    margin-left: 90px;
+    margin-left: 60px;
   }
 
   @media (max-width: 480px) {
@@ -1276,16 +1306,16 @@ const Info = styled.td`
   }
 
   @media (max-width: 900px) {
-    padding-left: 180px;
+    padding-left: 200px;
   }
 
   @media (max-width: 700px) {
-    padding-left: 150px;
+    padding-left: 120px;
   }
 
   @media (max-width: 480px) {
     padding-right: 20px;
-    padding-left: 80px;
+    padding-left: 85px;
   }
 `;
 
@@ -1293,7 +1323,6 @@ const HiddenSecondTable = styled.table`
   position: relative;
   border-collapse: collapse;
   width: 100%;
-  margin-top: 30px;
   margin-bottom: 70px;
   font-size: 20px;
 

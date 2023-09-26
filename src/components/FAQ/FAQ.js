@@ -39,7 +39,7 @@ export default function FAQ() {
   };
   return (
     <>
-      <BigWrapper>
+      <BigWrapper id="FAQ">
         <Wrapper>
           <Heading>faq</Heading>{" "}
           <Row>
@@ -222,17 +222,20 @@ const BigWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  margin-top: 200px;
+  margin-top: 150px;
   margin-bottom: 100px;
   margin-left: 40px;
   margin-right: 40px;
   font-size: 20px;
   width: 750px;
 
+  @media (max-width: 900px) {
+    margin-top: 120px;
+  }
+
   @media (max-width: 480px) {
     margin-left: 30px;
     margin-right: 30px;
-    margin-top: 140px;
     margin-bottom: 50px;
   }
 `;
@@ -317,5 +320,9 @@ const Answer = styled.div`
 
 const GrayLine = styled.div`
   border-bottom: 2px solid darkgray;
-  opacity: 0.7;
+  opacity: 0.3;
+
+  @media (max-width: 480px) {
+    border-bottom: 1px solid darkgray;
+  }
 `;

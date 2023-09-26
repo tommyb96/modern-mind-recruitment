@@ -72,7 +72,9 @@ const Kontakt = () => {
         <Table>
           <tr>
             <Heading>kontakt</Heading>
-            <Heading colSpan={2}></Heading>
+            <TomWrapper colSpan={2} rowSpan={2}>
+              <Tom src={tom} alt="tom"></Tom>
+            </TomWrapper>
           </tr>
           <tr>
             <LeftDiv rowSpan={6}>
@@ -97,9 +99,6 @@ const Kontakt = () => {
               Weg bestmöglich zu unterstützen und zum Gelingen Ihres
               Unternehmens beizutragen.
             </LeftDiv>
-            <TomWrapper colSpan={2}>
-              <Tom src={tom} alt="tom"></Tom>
-            </TomWrapper>
           </tr>
           <tr>
             <BoldDiv colSpan={2}>Ihr Ansprechpartner</BoldDiv>
@@ -387,7 +386,7 @@ const LeftDiv = styled.td`
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     padding-left: 120px;
   }
 
@@ -407,12 +406,17 @@ const Button = styled.button`
   background-color: rgb (255, 255, 255);
   color: black;
   border: none;
+  margin: 15px;
   border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
 
   &:hover {
     background-color: rgb (255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 900px) {
+    margin: 0;
   }
 `;
 
@@ -425,7 +429,7 @@ const TomWrapper = styled.td`
 `;
 
 const Tom = styled.img`
-  width: 350px;
+  width: 310px;
   margin-left: 70px;
 
   @media (max-width: 900px) {
@@ -458,6 +462,7 @@ const BoldDiv = styled.td`
 
   @media (max-width: 900px) {
     padding-left: 120px;
+    padding-top: 20px;
   }
 
   @media (max-width: 700px) {
@@ -467,7 +472,6 @@ const BoldDiv = styled.td`
   @media (max-width: 480px) {
     padding-left: 30px;
     font-size: 26px;
-    padding-top: 30px;
   }
 `;
 
@@ -500,7 +504,7 @@ const Position = styled.td`
   color: white;
   opacity: 0.8;
   padding-left: 70px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 
   @media (max-width: 1400px) {
     padding-left: 40px;

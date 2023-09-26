@@ -5,12 +5,13 @@ import card from "../../assets/svg/Beratung/beratung-card.svg";
 export default function Beratung() {
   return (
     <>
-      <PurpleWrapper>
+      <PurpleWrapper id="beratung">
+        <Line>
+          <Circle />
+          <LastCircle />
+          <Card src={card} alt="card" />
+        </Line>
         <Table>
-          <Line>
-            {" "}
-            <Circle /> <LastCircle />
-          </Line>
           <tr>
             <Heading colSpan={2}>beratung</Heading>
           </tr>
@@ -24,9 +25,7 @@ export default function Beratung() {
               neuen Möglichkeiten des Fachkräfteeinwanderungsgesetzes
               profitieren können.
             </LeftDiv>
-            <th rowSpan={3}>
-              <Card src={card} alt="card" />
-            </th>
+            <th></th>
           </tr>
           <tr>
             <LeftDiv>
@@ -40,16 +39,10 @@ export default function Beratung() {
               Personalabteilung für ausländische Fachkräfte zu etablieren – wir
               unterstützen Sie bei jedem Schritt auf diesem Weg.
             </LeftDiv>
-          </tr>
-          <tr>
             <th></th>
           </tr>
         </Table>
         <HiddenTable>
-          <Line>
-            {" "}
-            <Circle /> <LastCircle />
-          </Line>
           <tr>
             <Heading>beratung</Heading>
           </tr>
@@ -79,7 +72,7 @@ export default function Beratung() {
           </tr>
           <tr>
             <CardContainer>
-              <Card src={card} alt="card" />
+              <SecondCard src={card} alt="card" />
             </CardContainer>
           </tr>
         </HiddenTable>
@@ -131,12 +124,8 @@ const Table = styled.table`
   width: 1350px;
   margin: auto;
   margin-top: 100px;
-  margin-bottom: 150px;
+  margin-bottom: 120px;
   font-size: 20px;
-
-  @media (max-width: 1400px) {
-    margin-bottom: 100px;
-  }
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -150,23 +139,19 @@ const Table = styled.table`
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 0%;
-  height: 150%;
+  top: 100px;
+  bottom: -175px;
   width: 3.5px;
-  background-color: darkgray;
-
-  @media (max-width: 1400px) {
-    height: 129%;
-  }
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
-    height: 120%;
+    top: 70px;
+    bottom: -145px;
   }
 
   @media (max-width: 700px) {
     left: 5%;
-    height: 115%;
   }
 
   @media (max-width: 480px) {
@@ -182,7 +167,7 @@ const Circle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
 `;
 
@@ -194,15 +179,14 @@ const Heading = styled.th`
   text-shadow: 1px 0 rgb(0, 0, 0);
   text-align: start;
   padding-bottom: 40px;
-  padding-left: 70px;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
-    padding-left: 50px;
+    padding-left: 40px;
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -225,13 +209,12 @@ const LeftDiv = styled.th`
   opacity: 0.8;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -241,6 +224,7 @@ const LeftDiv = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
+    padding-bottom: 30px;
   }
 `;
 
@@ -251,19 +235,33 @@ const CardContainer = styled.th`
 `;
 
 const Card = styled.img`
-  width: 500px;
-  margin-bottom: -300px;
-
-  @media (max-width: 1400px) {
-    width: 410px;
-  }
+  width: 480px;
+  position: absolute;
+  left: 100px;
+  bottom: 80px;
 
   @media (max-width: 900px) {
-    margin-bottom: -130px;
+    display: none;
+  }
+
+  @media (max-width: 1400px) {
+    width: 360px;
+    left: 60px;
+  }
+`;
+
+const SecondCard = styled.img`
+  margin-top: 30px;
+  margin-bottom: -60px;
+  width: 350px;
+
+  @media (min-width: 901px) {
+    display: none;
   }
 
   @media (max-width: 480px) {
-    width: 300px;
+    width: 250px;
+    margin-top: 20px;
   }
 `;
 
@@ -280,7 +278,6 @@ const HiddenTable = styled.table`
   width: 100%;
   margin: auto;
   margin-top: 70px;
-  margin-bottom: 50px;
 
   @media (min-width: 901px) {
     display: none;
@@ -295,6 +292,6 @@ const LastCircle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
 `;

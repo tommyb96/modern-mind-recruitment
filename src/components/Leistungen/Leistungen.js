@@ -107,9 +107,15 @@ export default function Leistungen() {
 
   return (
     <>
-      <PurpleWrapper>
+      <PurpleWrapper id="leistungen">
         <Line>
           <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
+          <Papa
+            src={papa}
+            alt="dad holding his son"
+            ref={sections[10].ref}
+            isVisible={isVisible[sections[10].id]}
+          />
         </Line>
         <FirstTable>
           <tr>
@@ -123,15 +129,8 @@ export default function Leistungen() {
             </Heading>
           </tr>
           <tr>
-            <PapaCell rowSpan={6}>
-              <Papa
-                src={papa}
-                alt="dad holding his son"
-                ref={sections[10].ref}
-                isVisible={isVisible[sections[10].id]}
-              />
-            </PapaCell>
-            <FirstText colSpan={2}>
+            <th></th>
+            <FirstText colSpan={1}>
               Unser Fachgebiet erstreckt sich über eine breite Palette von
               Dienstleistungen, die darauf abzielen, sowohl Unternehmen als auch
               ausländischen Fachkräften zu helfen, ihr volles Potenzial
@@ -141,30 +140,28 @@ export default function Leistungen() {
               Schwerpunkte spezialisiert:
             </FirstText>
           </tr>
-          <Cell>
-            {" "}
+          <tr>
+            <th></th>
             <Aufzählung
               ref={sections[2].ref}
               isVisible={isVisible[sections[2].id]}
             >
-              {" "}
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Vermittlung
             </Aufzählung>
-          </Cell>
-          <Cell>
-            {" "}
+          </tr>
+          <tr>
+            <th></th>
             <Aufzählung
               ref={sections[3].ref}
               isVisible={isVisible[sections[3].id]}
             >
-              {" "}
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Schulung
             </Aufzählung>
-          </Cell>
-          <Cell>
-            {" "}
+          </tr>
+          <tr>
+            <th></th>
             <Aufzählung
               ref={sections[4].ref}
               isVisible={isVisible[sections[4].id]}
@@ -173,8 +170,9 @@ export default function Leistungen() {
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Beratung
             </Aufzählung>
-          </Cell>
+          </tr>
           <tr>
+            <th></th>
             <SecondText colSpan={2}>
               Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
               Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
@@ -182,9 +180,6 @@ export default function Leistungen() {
               motivieren uns dazu, Ihnen innovative Lösungen und
               außergewöhnliche Unterstützung anzubieten
             </SecondText>
-          </tr>
-          <tr>
-            <SpaceCell colSpan={2} />
           </tr>
         </FirstTable>
         <HiddenTable>
@@ -246,7 +241,7 @@ export default function Leistungen() {
           </tr>
           <tr>
             <th>
-              <Papa
+              <SecondPapa
                 src={papa}
                 alt="dad holding his son"
                 ref={sections[9].ref}
@@ -276,7 +271,7 @@ const Line = styled.div`
   top: 0%;
   height: 100%;
   width: 3.5px;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
@@ -299,7 +294,7 @@ const Circle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
@@ -314,11 +309,10 @@ const FirstTable = styled.table`
   width: 1350px;
   margin: auto;
   margin-top: 100px;
-  margin-bottom: -60px;
+  margin-bottom: 120px;
 
   @media (max-width: 1300px) {
     width: 100%;
-    margin-bottom: -80px;
   }
 
   @media (max-width: 900px) {
@@ -326,14 +320,11 @@ const FirstTable = styled.table`
   }
 `;
 
-const PapaCell = styled.td`
-  text-align: center;
-  border: 2px solid black;
-  width: 50%;
-`;
-
 const Papa = styled.img`
-  width: 280px;
+  position: absolute;
+  width: 230px;
+  bottom: -50px;
+  left: -350px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -341,12 +332,20 @@ const Papa = styled.img`
   transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
 
   @media (max-width: 900px) {
-    width: 200px;
-    margin-top: 60px;
+    display: none;
   }
+`;
+
+const SecondPapa = styled.img`
+  @media (min-width: 901px) {
+    display: none;
+  }
+  width: 200px;
+  margin-top: 60px;
 
   @media (max-width: 480px) {
     margin-top: 40px;
+    width: 150px;
     opacity: 1;
     transform: translateX(0);
     transition: none;
@@ -355,12 +354,11 @@ const Papa = styled.img`
 
 const PinnNadel = styled.img`
   width: 40px;
-  margin-right: 20px;
+  margin-right: 15px;
 `;
 
 const Heading = styled.th`
   width: 50%;
-  border: 2px solid black;
   font-family: Comfortaa;
   font-size: 53px;
   text-transform: uppercase;
@@ -381,7 +379,7 @@ const Heading = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -401,7 +399,7 @@ const FirstText = styled.td`
   color: white;
   opacity: 0.8;
   width: 50%;
-  border: 2px solid black;
+  padding-bottom: 20px;
 
   @media (max-width: 1400px) {
     padding-left: 50px;
@@ -410,7 +408,7 @@ const FirstText = styled.td`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
     padding-bottom: 30px;
   }
 
@@ -425,20 +423,15 @@ const FirstText = styled.td`
   }
 `;
 
-const Cell = styled.tr``;
-
 const Aufzählung = styled.td`
   font-size: 33px;
   text-align: start;
-
   color: white;
-  opacity: 0.8;
-  padding-right: 20px;
-  border: 2px solid black;
-  padding-left: 80px;
+  padding-right: 10px;
+  padding-left: 70px;
 
   @media (max-width: 900px) {
-    padding-left: 150px;
+    padding-left: 160px;
     font-size: 28px;
   }
 
@@ -458,11 +451,12 @@ const Aufzählung = styled.td`
 
 const SecondText = styled.td`
   text-align: start;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-left: 70px;
   color: white;
   opacity: 0.8;
-  border: 2px solid black;
+  font-weight: 500;
+  font-family: system-ui;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
@@ -471,7 +465,7 @@ const SecondText = styled.td`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
     padding-top: 30px;
   }
 
@@ -484,11 +478,6 @@ const SecondText = styled.td`
     padding-right: 20px;
     padding-top: 25px;
   }
-`;
-
-const SpaceCell = styled.td`
-  height: 200px;
-  border: 2px solid black;
 `;
 
 const HiddenTable = styled.table`
