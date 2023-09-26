@@ -230,7 +230,7 @@ const Wrapper = styled.div`
   width: 750px;
 
   @media (max-width: 900px) {
-    margin-top: 120px;
+    margin-top: 70px;
   }
 
   @media (max-width: 480px) {

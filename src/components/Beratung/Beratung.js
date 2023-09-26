@@ -147,7 +147,7 @@ const Line = styled.div`
   @media (max-width: 900px) {
     left: 10%;
     top: 70px;
-    bottom: -145px;
+    bottom: -100px;
   }
 
   @media (max-width: 700px) {
@@ -237,23 +237,78 @@ const CardContainer = styled.th`
 const Card = styled.img`
   width: 480px;
   position: absolute;
-  left: 100px;
   bottom: 80px;
+  animation: moveSideToSide 8s linear infinite; /* Ändere die Dauer auf 20s für eine 5-Sekunden-Pause zwischen den Bewegungen */
 
-  @media (max-width: 900px) {
-    display: none;
+  @keyframes moveSideToSide {
+    0% {
+      left: 200px; /* Startposition links */
+    }
+    20% {
+      left: 200px; /* Startposition links */
+    }
+    50% {
+      left: 50px; /* Endposition rechts */
+    }
+    70% {
+      left: 50px; /* Startposition rechts */
+    }
+    100% {
+      left: 200px; /* Endposition links */
+    }
+  }
+  @media (max-width: 1400px) {
+    width: 320px;
   }
 
-  @media (max-width: 1400px) {
-    width: 360px;
-    left: 60px;
+  @media (max-width: 1080px) {
+    width: 280px;
+
+    @keyframes moveSideToSide {
+      0% {
+        left: 130px; /* Startposition links */
+      }
+      20% {
+        left: 130px; /* Startposition links */
+      }
+      50% {
+        left: 50px; /* Endposition rechts */
+      }
+      70% {
+        left: 50px; /* Startposition rechts */
+      }
+      100% {
+        left: 130px; /* Endposition links */
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
 
 const SecondCard = styled.img`
   margin-top: 30px;
-  margin-bottom: -60px;
   width: 350px;
+  animation: moveSideToSide 7s linear infinite; /* Ändere die Dauer auf 8s für eine 5-Sekunden-Pause zwischen den Bewegungen */
+
+  @keyframes moveSideToSide {
+    0% {
+      margin-left: 100px; /* Startposition links */
+    }
+    20% {
+      margin-left: 100px; /* Startposition links */
+    }
+    50% {
+      margin-left: -100px; /* Endposition rechts */
+    }
+    70% {
+      margin-left: -100px; /* Startposition rechts */
+    }
+    100% {
+      margin-left: 100px; /* Endposition links */
+    }
+  }
 
   @media (min-width: 901px) {
     display: none;
