@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import Cubes from "./Cubes";
 import logo from "../../assets/svg/Home/logo.svg";
 import people from "../../assets/svg/Home/home-people.svg";
+import allpeople from "../../assets/svg/Home/home-big-people.png";
 
 const Home = () => {
   const refs = {
@@ -42,12 +42,15 @@ const Home = () => {
   return (
     <>
       <HomeContainer id="home">
+        <Logo src={logo} alt="modern mind recruitment logo" />
+        <BigPeople src={allpeople} alt="staff" />
         <Wrapper>
-          <LogoWrapper>
-            <Logo src={logo} />
-          </LogoWrapper>
-          <Message>your future is our focus</Message>
-        </Wrapper>
+          {" "}
+          <Circle />
+          <MessageWrapper>
+            <Message>your future is our focus</Message>
+          </MessageWrapper>
+        </Wrapper>{" "}
       </HomeContainer>
       <StyledContainer>
         {" "}
@@ -62,111 +65,134 @@ const Home = () => {
 };
 export default Home;
 
-const LogoWrapper = styled.div`
-  background-color: rgb(92, 92, 255);
-  text-align: end;
-  z-index: 2;
-  animation: moveSideToSide 5s linear infinite;
-  @keyframes moveSideToSide {
-    0%,
-    100% {
-      width: 90vw;
-    }
-    20% {
-      width: 90vw;
-    }
-    40% {
-      width: 41.5vw;
-    }
-    80% {
-      width: 41.5vw;
-    }
-  }
-
-  @media (max-width: 900px) {
-    @keyframes moveSideToSide {
-      0%,
-      100% {
-        width: 90vw;
-      }
-      20% {
-        width: 90vw;
-      }
-      40% {
-        width: 19vw;
-      }
-      80% {
-        width: 19vw;
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
-    @keyframes moveSideToSide {
-      0%,
-      100% {
-        width: 90vw;
-      }
-      20% {
-        width: 90vw;
-      }
-      40% {
-        width: 13vw;
-      }
-      80% {
-        width: 13vw;
-      }
-    }
-  }
-`;
-
-const Logo = styled.img`
-  width: 6vw;
-  margin-right: -20px;
-
-  @media (max-width: 900px) {
-    width: 8vw;
-  }
-
-  @media (max-width: 480px) {
-    width: 10vw;
-  }
-`;
-
 const HomeContainer = styled.div`
-  align-items: center;
   display: flex;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  z-index: -2;
   background-color: rgb(92, 92, 255);
+  position: relative;
 `;
 
-const Message = styled.div`
+const Logo = styled.img`
   position: absolute;
-  bottom: 35%;
-  right: 11%;
-  text-transform: uppercase;
-  color: white;
-  font-weight: bold;
-  font-size: 3.05vw;
-  line-height: 84%;
-  z-index: -1;
+  top: 2%;
+  left: 2%;
+  width: 80px;
+  margin-right: -20px;
+`;
 
-  @media (max-width: 900px) {
-    font-size: 4.5vw;
+const BigPeople = styled.img`
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 120%;
+  opacity: 0.5;
+
+  @media (max-width: 1000px) {
+    width: 200%;
+    bottom: -20%;
+    top: auto;
   }
 
   @media (max-width: 480px) {
-    font-size: 4.7vw;
+    width: 270%;
+    bottom: -10%;
   }
 `;
 
 const Wrapper = styled.div`
   width: 100vw;
-  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: end;
+`;
+
+const MessageWrapper = styled.div`
+  display: flex;
+  position: relative;
+  width: 50%;
+  height: 5vw;
+  overflow: hidden;
+  z-index: 2;
+
+  animation: openContainer 5s linear infinite;
+  @keyframes openContainer {
+    0%,
+    100% {
+      width: 50%;
+    }
+    37.5% {
+      width: 50%;
+    }
+    50% {
+      width: 72%;
+    }
+    87.5% {
+      width: 72%;
+    }
+  }
+`;
+
+const Circle = styled.div`
+  position: absolute;
+  margin: auto;
+  left: 49%;
+  width: 5vw;
+  height: 5vw;
+  border: 5px solid rgb(192, 192, 192);
+  background-color: white;
+  border-radius: 50%;
+  z-index: 3;
+
+  animation: moveCircle 5s linear infinite;
+  @keyframes moveCircle {
+    0%,
+    100% {
+      left: 49%;
+    }
+    37.5% {
+      left: 49%;
+    }
+    50% {
+      left: 23%;
+    }
+    87.5% {
+      left: 23%;
+    }
+  }
+`;
+
+const Message = styled.div`
+  position: absolute;
+  bottom: 25%;
+  left: -800px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  width: 50vw;
+  line-height: 84%;
+  z-index: -1;
+  font-size: 3.3vw;
+  animation: moveMessage 5s linear infinite;
+  @keyframes moveMessage {
+    0%,
+    100% {
+      left: -800px;
+    }
+    37.5% {
+      left: -800px;
+    }
+    50% {
+      left: 0;
+    }
+    87.5% {
+      left: 0;
+    }
+  }
 `;
 
 const StyledContainer = styled.div`

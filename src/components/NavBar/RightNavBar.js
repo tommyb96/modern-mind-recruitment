@@ -79,7 +79,7 @@ const NavContainer = styled.nav`
     margin: 5px 10px 5px 50px;
 
     li {
-      padding: 0.7vw 2vw 0.7vw 2vw;
+      padding: 0.7vw 1.5vw 0.7vw 1.5vw;
       white-space: nowrap;
     }
   }
@@ -121,14 +121,23 @@ const NavLink = styled.a`
     font-size: 18px;
   }
 
+  &[href="#home"] {
+    padding-left: 90px;
+  }
+
+  &[href="#kontakt"] {
+    color: orange;
+    font-weight: bold;
+  }
+
   &:hover {
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      left: ${({ href }) => (href === "#home" ? "90px" : "0")};
       right: 0;
       margin: 0 auto; /* Center the line horizontally */
-      bottom: -13px; /* Adjust this value to control the line's distance from text */
+      bottom: -12px; /* Adjust this value to control the line's distance from text */
       height: 5px;
       width: 35px;
       border-radius: 2px;

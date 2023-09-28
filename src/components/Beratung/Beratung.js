@@ -238,50 +238,48 @@ const Card = styled.img`
   width: 480px;
   position: absolute;
   bottom: 80px;
-  animation: moveSideToSide 8s linear infinite; /* Ändere die Dauer auf 20s für eine 5-Sekunden-Pause zwischen den Bewegungen */
-
+  left: 200px; /* Startposition */
+  animation: moveSideToSide 8s linear infinite;
   @keyframes moveSideToSide {
     0% {
-      left: 200px; /* Startposition links */
+      transform: translateX(0); /* Startposition */
     }
     20% {
-      left: 200px; /* Startposition links */
+      transform: translateX(0); /* Position in der Mitte */
     }
     50% {
-      left: 50px; /* Endposition rechts */
+      transform: translateX(-150px); /* Endposition (150px nach links) */
     }
     70% {
-      left: 50px; /* Startposition rechts */
+      transform: translateX(-150px); /* Position in der Mitte */
     }
     100% {
-      left: 200px; /* Endposition links */
+      transform: translateX(0); /* Zurück zur Startposition */
     }
   }
+
   @media (max-width: 1400px) {
     width: 320px;
-  }
-
-  @media (max-width: 1080px) {
-    width: 280px;
-
+    left: 120px;
     @keyframes moveSideToSide {
       0% {
-        left: 130px; /* Startposition links */
+        transform: translateX(0); /* Startposition */
       }
       20% {
-        left: 130px; /* Startposition links */
+        transform: translateX(0); /* Position in der Mitte */
       }
       50% {
-        left: 50px; /* Endposition rechts */
+        transform: translateX(-90px); /* Endposition (150px nach links) */
       }
       70% {
-        left: 50px; /* Startposition rechts */
+        transform: translateX(-90px); /* Position in der Mitte */
       }
       100% {
-        left: 130px; /* Endposition links */
+        transform: translateX(0); /* Zurück zur Startposition */
       }
     }
   }
+
   @media (max-width: 900px) {
     display: none;
   }
@@ -290,9 +288,9 @@ const Card = styled.img`
 const SecondCard = styled.img`
   margin-top: 30px;
   width: 350px;
-  animation: moveSideToSide 7s linear infinite; /* Ändere die Dauer auf 8s für eine 5-Sekunden-Pause zwischen den Bewegungen */
+  animation: moveSideTo 7s linear infinite; /* Ändere die Dauer auf 8s für eine 5-Sekunden-Pause zwischen den Bewegungen */
 
-  @keyframes moveSideToSide {
+  @keyframes moveSideTo {
     0% {
       margin-left: 100px; /* Startposition links */
     }
