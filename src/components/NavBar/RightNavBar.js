@@ -79,12 +79,16 @@ const NavContainer = styled.nav`
     margin: 5px 10px 5px 50px;
 
     li {
-      padding: 0.7vw 1.5vw 0.7vw 1.5vw;
+      padding: 0.9vw 1.5vw 0.9vw 1.5vw;
       white-space: nowrap;
+
+      @media (max-width: 1024px) {
+        padding: 0.9vw 1.3vw 0.9vw 1.3vw;
+      }
     }
   }
 
-  @media (max-width: 768px), (hover: none), (pointer: coarse) {
+  @media (max-width: 900px), (hover: none), (pointer: coarse) {
     opacity: 1;
     ul {
       flex-flow: column nowrap;
@@ -113,23 +117,6 @@ const NavLink = styled.a`
   text-decoration: none;
   font-size: 18px;
   text-transform: uppercase;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-  @media (max-width: 480px) {
-    font-size: 18px;
-  }
-
-  &[href="#home"] {
-    padding-left: 90px;
-  }
-
-  &[href="#kontakt"] {
-    color: orange;
-    font-weight: bold;
-  }
-
   &:hover {
     &::after {
       content: "";
@@ -143,5 +130,25 @@ const NavLink = styled.a`
       border-radius: 2px;
       background-color: black;
     }
+  }
+
+  &[href="#home"] {
+    padding-left: 90px;
+  }
+
+  &[href="#kontakt"] {
+    color: orange;
+    font-weight: bold;
+  }
+
+  @media (max-width: 1400px) {
+    font-size: 16px;
+    &[href="#home"] {
+      padding-left: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 `;

@@ -84,22 +84,11 @@ const Logo = styled.img`
 
 const BigPeople = styled.img`
   position: absolute;
-  top: 20%;
+  bottom: -20%;
   left: 50%;
   transform: translate(-50%);
-  width: 120%;
+  height: 100vh;
   opacity: 0.5;
-
-  @media (max-width: 1000px) {
-    width: 200%;
-    bottom: -20%;
-    top: auto;
-  }
-
-  @media (max-width: 480px) {
-    width: 270%;
-    bottom: -10%;
-  }
 `;
 
 const Wrapper = styled.div`
@@ -114,7 +103,7 @@ const Wrapper = styled.div`
 const MessageWrapper = styled.div`
   display: flex;
   position: relative;
-  width: 50%;
+  width: 47%;
   height: 5vw;
   overflow: hidden;
   z-index: 2;
@@ -123,16 +112,35 @@ const MessageWrapper = styled.div`
   @keyframes openContainer {
     0%,
     100% {
-      width: 50%;
+      width: 47%;
     }
     37.5% {
-      width: 50%;
+      width: 47%;
     }
     50% {
       width: 72%;
     }
     87.5% {
       width: 72%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    height: 10vw;
+    @keyframes openContainer {
+      0%,
+      100% {
+        width: 47%;
+      }
+      37.5% {
+        width: 47%;
+      }
+      50% {
+        width: 83%;
+      }
+      87.5% {
+        width: 83%;
+      }
     }
   }
 `;
@@ -158,10 +166,30 @@ const Circle = styled.div`
       left: 49%;
     }
     50% {
-      left: 23%;
+      left: 22.5%;
     }
     87.5% {
-      left: 23%;
+      left: 22.5%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    width: 9vw;
+    height: 9vw;
+    @keyframes moveCircle {
+      0%,
+      100% {
+        left: 49%;
+      }
+      37.5% {
+        left: 49%;
+      }
+      50% {
+        left: 7%;
+      }
+      87.5% {
+        left: 7%;
+      }
     }
   }
 `;
@@ -169,11 +197,10 @@ const Circle = styled.div`
 const Message = styled.div`
   position: absolute;
   bottom: 25%;
-  left: -800px;
+  left: -106%;
   text-transform: uppercase;
   color: white;
   font-weight: bold;
-  width: 50vw;
   line-height: 84%;
   z-index: -1;
   font-size: 3.3vw;
@@ -181,16 +208,35 @@ const Message = styled.div`
   @keyframes moveMessage {
     0%,
     100% {
-      left: -800px;
+      left: -106%;
     }
     37.5% {
-      left: -800px;
+      left: -106%;
     }
     50% {
       left: 0;
     }
     87.5% {
       left: 0;
+    }
+  }
+
+  @media (max-width: 900px) {
+    font-size: 5vw;
+    @keyframes moveMessage {
+      0%,
+      100% {
+        left: -153%;
+      }
+      37.5% {
+        left: -153%;
+      }
+      50% {
+        left: 0;
+      }
+      87.5% {
+        left: 0;
+      }
     }
   }
 `;
