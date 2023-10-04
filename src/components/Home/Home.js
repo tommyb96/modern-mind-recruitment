@@ -80,6 +80,11 @@ const Logo = styled.img`
   left: 2%;
   width: 80px;
   margin-right: -20px;
+  z-index: 2;
+  @media (max-width: 480px) {
+    top: 20px;
+    left: 20px;
+  }
 `;
 
 const BigPeople = styled.img`

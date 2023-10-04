@@ -14,7 +14,7 @@ const AboutUs = () => {
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
+      sectionElement.scrollIntoView({ behavior: "auto" });
     }
   };
 
@@ -274,7 +274,7 @@ const AboutUs = () => {
             </HeaderCell>
           </tr>
           <tr>
-            <LeftCell rowSpan="7">
+            <LeftCell>
               Unser junges Team hat sich als Partner in Personalfragen auf die
               Organisation und Durchführung der Erwerbsmigration von
               qualifizierten Fachkräften aus Nicht-EU-Ländern spezialisiert. Als
@@ -290,73 +290,57 @@ const AboutUs = () => {
               Bildungssystem dem deutschen ähnlich ist. Ihre Bedürfnisse stehen
               im Mittelpunkt unserer Bemühungen.
             </LeftCell>
+            <td>
+              <Right
+                ref={sections[5].ref}
+                isVisible={isVisible[sections[5].id]}
+              >
+                {" "}
+                <Checkmark src={checkmark} alt="checkmark" />
+                Transparenz
+              </Right>
+              <Right
+                ref={sections[6].ref}
+                isVisible={isVisible[sections[6].id]}
+              >
+                {" "}
+                <Checkmark src={checkmark} alt="checkmark" />
+                Ehrlichkeit
+              </Right>
+              <Right
+                ref={sections[7].ref}
+                isVisible={isVisible[sections[7].id]}
+              >
+                {" "}
+                <Checkmark src={checkmark} alt="checkmark" />
+                Verlässlichkeit
+              </Right>
+              <Right
+                ref={sections[8].ref}
+                isVisible={isVisible[sections[8].id]}
+              >
+                {" "}
+                <Checkmark src={checkmark} alt="checkmark" />
+                Persönlichkeit
+              </Right>
+              <Right
+                ref={sections[9].ref}
+                isVisible={isVisible[sections[9].id]}
+              >
+                {" "}
+                <Checkmark src={checkmark} alt="checkmark" />
+                Herzlichkeit
+              </Right>
+              <Right
+                ref={sections[10].ref}
+                isVisible={isVisible[sections[10].id]}
+              >
+                {" "}
+                <Checkmark src={checkmark} alt="checkmark" />
+                Zukunft
+              </Right>
+            </td>
           </tr>
-          <tr>
-            <CheckmarkCell>
-              <Checkmark src={checkmark} alt="checkmark" />
-            </CheckmarkCell>
-            <RightCell
-              ref={sections[5].ref}
-              isVisible={isVisible[sections[5].id]}
-            >
-              Transparenz
-            </RightCell>
-          </tr>
-          <tr>
-            <CheckmarkCell>
-              <Checkmark src={checkmark} alt="checkmark" />
-            </CheckmarkCell>
-            <RightCell
-              ref={sections[6].ref}
-              isVisible={isVisible[sections[6].id]}
-            >
-              Ehrlichkeit
-            </RightCell>
-          </tr>
-          <tr>
-            <CheckmarkCell>
-              <Checkmark src={checkmark} alt="checkmark" />
-            </CheckmarkCell>
-            <RightCell
-              ref={sections[7].ref}
-              isVisible={isVisible[sections[7].id]}
-            >
-              Verlässlichkeit
-            </RightCell>
-          </tr>
-          <tr>
-            <CheckmarkCell>
-              <Checkmark src={checkmark} alt="checkmark" />
-            </CheckmarkCell>
-            <RightCell
-              ref={sections[8].ref}
-              isVisible={isVisible[sections[8].id]}
-            >
-              Persönlichkeit
-            </RightCell>
-          </tr>
-          <tr>
-            <CheckmarkCell>
-              <Checkmark src={checkmark} alt="checkmark" />
-            </CheckmarkCell>
-            <RightCell
-              ref={sections[9].ref}
-              isVisible={isVisible[sections[9].id]}
-            >
-              Herzlichkeit
-            </RightCell>
-          </tr>
-          <tr>
-            <CheckmarkCell>
-              <Checkmark src={checkmark} alt="checkmark" />
-            </CheckmarkCell>
-            <RightCell
-              ref={sections[10].ref}
-              isVisible={isVisible[sections[10].id]}
-            >
-              Zukunft
-            </RightCell>
-          </tr>{" "}
         </SecondTable>
         <HiddenSecondTable>
           <tr>
@@ -456,6 +440,7 @@ export default AboutUs;
 const WavesWrapper = styled.div`
   display: flex;
   position: relative;
+  z-index: -1;
 
   @media (max-width: 900px) {
     margin-top: 50px;
@@ -715,11 +700,6 @@ const Woman = styled.img`
   align-self: center;
   margin-left: 1000px;
 
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "30px")});
-  transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
-
   &:hover {
     transform: scale(1.05);
   }
@@ -893,17 +873,24 @@ const LeftCell = styled.th`
     padding-right: 20px;
   }
 `;
-const CheckmarkCell = styled.th`
-  width: 100px;
-`;
 
 const Checkmark = styled.img`
   width: 40px;
   margin-left: 30px;
+  margin-right: 20px;
 
   @media (max-width: 900px) {
     margin-right: 10px;
   }
+`;
+
+const Right = styled.div`
+  font-size: 33px;
+  padding-left: 30px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
 const RightCell = styled.th`

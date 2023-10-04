@@ -1,19 +1,95 @@
 import styled from "styled-components";
+import React from "react";
+import { useState, useEffect, useRef } from "react";
 
 import card from "../../assets/svg/Beratung/beratung-card.svg";
 
 export default function Beratung() {
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => {
+      if (entry.isIntersecting) {
+        if (!prevState[target]) {
+        }
+        return {
+          ...prevState,
+          [target]: true,
+        };
+      } else {
+        if (prevState[target]) {
+        }
+        return {
+          ...prevState,
+          [target]: false,
+        };
+      }
+    });
+  };
+
+  const sections = [
+    {
+      id: "circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "last-circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState({});
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+      rootMargin: "0px 0px -20px 0px",
+    };
+
+    const observers = sections.map((section) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, section.id));
+      }, observerOptions);
+      observer.observe(section.ref.current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       <PurpleWrapper id="beratung">
         <Line>
-          <Circle />
-          <LastCircle />
+          <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
+          <LastCircle
+            ref={sections[1].ref}
+            isVisible={isVisible[sections[1].id]}
+          />
           <Card src={card} alt="card" />
         </Line>
         <Table>
           <tr>
-            <Heading colSpan={2}>beratung</Heading>
+            <Heading
+              ref={sections[2].ref}
+              isVisible={isVisible[sections[2].id]}
+              colSpan={2}
+            >
+              beratung
+            </Heading>
           </tr>
           <tr>
             <LeftDiv>
@@ -44,7 +120,12 @@ export default function Beratung() {
         </Table>
         <HiddenTable>
           <tr>
-            <Heading>beratung</Heading>
+            <Heading
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
+            >
+              beratung
+            </Heading>
           </tr>
           <tr>
             <LeftDiv>
@@ -139,7 +220,7 @@ const Table = styled.table`
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 100px;
+  top: 120px;
   bottom: -175px;
   width: 3.5px;
   background-color: rgb(192, 192, 192, 0.5);
@@ -161,7 +242,7 @@ const Line = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 0;
+  top: -20px;
   left: -20px;
   background-color: white;
   width: 45px;
@@ -169,6 +250,8 @@ const Circle = styled.div`
   border-radius: 50%;
   border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 `;
 
 const Heading = styled.th`
@@ -179,6 +262,10 @@ const Heading = styled.th`
   text-shadow: 1px 0 rgb(0, 0, 0);
   text-align: start;
   padding-bottom: 40px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -347,4 +434,6 @@ const LastCircle = styled.div`
   border-radius: 50%;
   border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 `;

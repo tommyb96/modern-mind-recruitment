@@ -65,15 +65,124 @@ const Kontakt = () => {
     }
   };
 
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => {
+      if (entry.isIntersecting) {
+        if (!prevState[target]) {
+          console.log(`[${target}] isVisible is changing to true`);
+        }
+        return {
+          ...prevState,
+          [target]: true,
+        };
+      } else {
+        if (prevState[target]) {
+          console.log(`[${target}] isVisible is changing to false`);
+        }
+        return {
+          ...prevState,
+          [target]: false,
+        };
+      }
+    });
+  };
+
+  const sections = [
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "tom",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-tom",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState({});
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+      rootMargin: "0px 0px -20px 0px",
+    };
+
+    const observers = sections.map((section) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, section.id));
+      }, observerOptions);
+      observer.observe(section.ref.current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       <Waves src={waves} alt="waves" id="kontakt"></Waves>
       <GreenWrapper>
         <Table>
           <tr>
-            <Heading>kontakt</Heading>
-            <TomWrapper colSpan={2} rowSpan={2}>
-              <Tom src={tom} alt="tom"></Tom>
+            <Heading
+              ref={sections[0].ref}
+              isVisible={isVisible[sections[0].id]}
+            >
+              kontakt
+            </Heading>
+            <TomWrapper colSpan={3} rowSpan={2}>
+              <Tom
+                ref={sections[2].ref}
+                isVisible={isVisible[sections[2].id]}
+                src={tom}
+                alt="tom"
+              ></Tom>
+              <StyledDiv>Ihr Ansprechpartner</StyledDiv>
+              <StyledName>Tom Behrisch</StyledName>
+              <StyledPosition>Geschäftsführer</StyledPosition>
+              <StyledTelefon>
+                {" "}
+                <Telefon src={telefon} alt="telefon icon" />
+                <StyledLinkTelefon
+                  style={{
+                    textDecoration: "none",
+
+                    color: "white",
+                    opacity: "0.8",
+                  }}
+                  href="tel:+4915202112164"
+                >
+                  +49 152 0211 21 64
+                </StyledLinkTelefon>
+              </StyledTelefon>
+              <StyledMail>
+                {" "}
+                <Mail src={mail} alt="mail icon" />{" "}
+                <StyledLinkMail
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    opacity: "0.8",
+                  }}
+                  href="mailto:info@modernmindrecruitment.com"
+                >
+                  info@modernmindrecruitment.com
+                </StyledLinkMail>
+              </StyledMail>
             </TomWrapper>
           </tr>
           <tr>
@@ -100,56 +209,16 @@ const Kontakt = () => {
               Unternehmens beizutragen.
             </LeftDiv>
           </tr>
-          <tr>
-            <BoldDiv colSpan={2}>Ihr Ansprechpartner</BoldDiv>
-          </tr>
-          <tr>
-            <Name colSpan={2}>Tom Behrisch</Name>
-          </tr>
-          <tr>
-            <Position colSpan={2}>Geschäftsführer</Position>
-          </tr>
-          <tr>
-            <SmallCell>
-              {" "}
-              <Telefon src={telefon} alt="telefon icon" />
-            </SmallCell>
-            <td>
-              <StyledLinkTelefon
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  opacity: "0.8",
-                }}
-                href="tel:+4915202112164"
-              >
-                +49 152 0211 21 64
-              </StyledLinkTelefon>
-            </td>
-          </tr>
-          <tr>
-            <SmallCell>
-              {" "}
-              <Mail src={mail} alt="mail icon" />
-            </SmallCell>
-            <td>
-              {" "}
-              <StyledLinkMail
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  opacity: "0.8",
-                }}
-                href="mailto:info@modernmindrecruitment.com"
-              >
-                info@modernmindrecruitment.com
-              </StyledLinkMail>
-            </td>
-          </tr>
         </Table>
         <HiddenTable>
           <tr>
-            <Heading colSpan={2}>kontakt</Heading>
+            <Heading
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
+              colSpan={2}
+            >
+              kontakt
+            </Heading>
           </tr>
           <tr>
             <LeftDiv colSpan={2}>
@@ -192,11 +261,9 @@ const Kontakt = () => {
             <Position colSpan={2}>Geschäftsführer</Position>
           </tr>
           <tr>
-            <SmallCell>
-              <Telefon src={telefon} alt="telefon icon" />
-            </SmallCell>
             <StyledLink>
               {" "}
+              <Telefon src={telefon} alt="telefon icon" />
               <StyledLinkTelefon
                 style={{
                   textDecoration: "none",
@@ -210,11 +277,8 @@ const Kontakt = () => {
             </StyledLink>
           </tr>
           <tr>
-            {" "}
-            <SmallCell>
-              <Mail src={mail} alt="mail icon" />
-            </SmallCell>
             <StyledLink>
+              <Mail src={mail} alt="mail icon" />
               <StyledLinkMail
                 style={{
                   textDecoration: "none",
@@ -230,10 +294,16 @@ const Kontakt = () => {
           <tr>
             {" "}
             <TomWrapper colSpan={2}>
-              <Tom src={tom} alt="tom"></Tom>
+              <Tom
+                ref={sections[3].ref}
+                isVisible={isVisible[sections[3].id]}
+                src={tom}
+                alt="tom"
+              ></Tom>
             </TomWrapper>
           </tr>
         </HiddenTable>
+        <CallToAction>Schicken Sie Ihre personalisierte Anfrage!</CallToAction>
         <FormContainer ref={form} onSubmit={sendEmail}>
           <input
             onChange={(e) => setName(e.target.value)}
@@ -334,6 +404,7 @@ const Table = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
+  margin-top: 15px;
   font-size: 20px;
 
   @media (max-width: 1300px) {
@@ -352,6 +423,10 @@ const Heading = styled.th`
   text-shadow: 1px 0 rgb(0, 0, 0);
   text-align: start;
   padding-bottom: 40px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-left: 40px;
@@ -377,8 +452,7 @@ const LeftDiv = styled.td`
   width: 50%;
   padding-right: 100px;
   text-align: start;
-  color: white;
-  opacity: 0.8;
+  color: rgb(255, 255, 255, 0.8);
 
   @media (max-width: 1400px) {
     padding-left: 40px;
@@ -412,7 +486,6 @@ const Button = styled.button`
   font-weight: bold;
 
   &:hover {
-    background-color: rgb (255, 255, 255, 0.5);
   }
 
   @media (max-width: 900px) {
@@ -431,10 +504,15 @@ const TomWrapper = styled.td`
 const Tom = styled.img`
   width: 310px;
   margin-left: 70px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});
+  transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
 
   @media (max-width: 900px) {
     margin-top: 40px;
     margin-left: 120px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
   }
 
   @media (max-width: 700px) {
@@ -446,24 +524,69 @@ const Tom = styled.img`
   }
 `;
 
-const BoldDiv = styled.td`
+const StyledDiv = styled.div`
   font-weight: bold;
   font-size: 33px;
   color: white;
-  opacity: 0.8;
   padding-left: 70px;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
     padding-left: 40px;
   }
+`;
 
-  @media (max-width: 900px) {
-    padding-left: 120px;
-    padding-top: 20px;
+const StyledName = styled.div`
+  color: white;
+  opacity: 0.8;
+  font-weight: bold;
+  padding-left: 70px;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
   }
+`;
+
+const StyledPosition = styled.div`
+  color: white;
+  opacity: 0.8;
+  padding-left: 70px;
+  padding-bottom: 10px;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+`;
+
+const StyledTelefon = styled.div`
+  padding-left: 70px;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+`;
+
+const StyledMail = styled.div`
+  padding-left: 70px;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+`;
+
+const BoldDiv = styled.td`
+  font-weight: bold;
+  font-size: 33px;
+  color: white;
+  padding-top: 10px;
+  padding-left: 120px;
+  padding-bottom: 15px;
 
   @media (max-width: 700px) {
     padding-left: 70px;
@@ -478,17 +601,8 @@ const BoldDiv = styled.td`
 const Name = styled.td`
   color: white;
   opacity: 0.8;
-  font-family: Arial, Helvetica, sans-serif;
-  padding-left: 70px;
-
-  @media (max-width: 1400px) {
-    padding-left: 40px;
-    padding-right: 50px;
-  }
-
-  @media (max-width: 900px) {
-    padding-left: 120px;
-  }
+  font-weight: bold;
+  padding-left: 120px;
 
   @media (max-width: 700px) {
     padding-left: 70px;
@@ -503,18 +617,8 @@ const Name = styled.td`
 const Position = styled.td`
   color: white;
   opacity: 0.8;
-  padding-left: 70px;
-  padding-bottom: 20px;
-
-  @media (max-width: 1400px) {
-    padding-left: 40px;
-    padding-right: 50px;
-  }
-
-  @media (max-width: 900px) {
-    padding-left: 120px;
-    padding-bottom: 20px;
-  }
+  padding-left: 120px;
+  padding-bottom: 10px;
 
   @media (max-width: 700px) {
     padding-left: 70px;
@@ -527,63 +631,55 @@ const Position = styled.td`
   }
 `;
 
-const SmallCell = styled.td`
-  padding-left: 70px;
-  width: 5%;
+const Telefon = styled.img`
+  width: 24px;
+  margin-right: 15px;
+`;
 
-  @media (max-width: 1400px) {
-    padding-left: 40px;
-  }
+const Mail = styled.img`
+  width: 24px;
+  margin-right: 15px;
+`;
 
-  @media (max-width: 900px) {
-    padding-left: 120px;
-  }
-
+const StyledLink = styled.td`
+  padding-left: 120px;
   @media (max-width: 700px) {
     padding-left: 70px;
   }
 
   @media (max-width: 480px) {
     padding-left: 30px;
+    padding-right: 20px;
   }
 `;
-
-const Telefon = styled.img`
-  width: 27px;
-  margin-right: 20px;
-
-  @media (max-width: 480px) {
-    margin-right: 10px;
-    width: 25px;
-  }
-`;
-
-const Mail = styled.img`
-  width: 27px;
-  margin-right: 20px;
-
-  @media (max-width: 480px) {
-    margin-right: 10px;
-    width: 25px;
-  }
-`;
-
-const StyledLink = styled.td``;
 
 const StyledLinkTelefon = styled.a`
   text-decoration: none;
-
-  @media (max-width: 480px) {
-    padding-right: 20px;
-  }
 `;
 
 const StyledLinkMail = styled.a`
   text-decoration: none;
   margin-bottom: 70px;
+`;
+
+const CallToAction = styled.div`
+  margin: auto;
+  margin-top: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media (max-width: 900px) {
+    margin-top: 60px;
+    font-size: 28px;
+  }
 
   @media (max-width: 480px) {
-    padding-right: 20px;
+    margin-top: 40px;
+    font-size: 24px;
+    text-align: center;
   }
 `;
 
@@ -591,7 +687,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 500px;
-  margin-top: 100px;
+  margin-top: 20px;
   margin-bottom: 150px;
   padding: 40px 40px 30px 40px;
   background-color: rgb(255, 255, 255, 0.1);
@@ -620,7 +716,6 @@ const FormContainer = styled.form`
   }
 
   @media (max-width: 900px) {
-    margin-top: 50px;
   }
 
   @media (max-width: 600px) {

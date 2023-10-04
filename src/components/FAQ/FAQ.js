@@ -37,11 +37,64 @@ export default function FAQ() {
   const toggleOpenSeven = () => {
     setIsOpenSeven(!isOpenSeven);
   };
+
+  const handleIntersection = (entry, target) => {
+    setIsVisible((prevState) => {
+      if (entry.isIntersecting) {
+        if (!prevState[target]) {
+        }
+        return {
+          ...prevState,
+          [target]: true,
+        };
+      } else {
+        if (prevState[target]) {
+        }
+        return {
+          ...prevState,
+          [target]: false,
+        };
+      }
+    });
+  };
+
+  const sections = [
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState({});
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+      rootMargin: "0px 0px -20px 0px",
+    };
+
+    const observers = sections.map((section) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => handleIntersection(entry, section.id));
+      }, observerOptions);
+      observer.observe(section.ref.current);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       <BigWrapper id="FAQ">
         <Wrapper>
-          <Heading>faq</Heading>{" "}
+          <Heading ref={sections[0].ref} isVisible={isVisible[sections[0].id]}>
+            faq
+          </Heading>{" "}
           <Row>
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
@@ -249,6 +302,10 @@ const Heading = styled.div`
   text-align: start;
   margin-bottom: 40px;
   margin-left: 70px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     margin-right: 20px;

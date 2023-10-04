@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 import WorkshopIntro from "./WorkshopIntro";
 import woman from "../../assets/svg/Workshop/wokshop-woman.svg";
+import bluecircle from "../../assets/svg/Workshop/workshop-blue-circle.svg";
 
 export default function Workshop() {
   const [isOpenOne, setIsOpenOne] = useState(false);
@@ -63,188 +64,7 @@ export default function Workshop() {
     });
   };
 
-  const sections = [
-    {
-      id: "0",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "1",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "2",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "3",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "4",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "5",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "6",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "7",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "8",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "9",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "10",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "11",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "12",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "13",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "14",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "15",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "16",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "17",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "18",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "19",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "20",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "21",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "22",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "23",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "24",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "25",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "26",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "27",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "28",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "29",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "30",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "31",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "32",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "33",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "34",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "35",
-      ref: useRef(null),
-      isVisible: false,
-    },
-  ];
+  const sections = [];
 
   const [isVisible, setIsVisible] = useState({ sections });
 
@@ -276,350 +96,481 @@ export default function Workshop() {
         <Wrapper>
           {" "}
           <Line>
-            <WorkshopCircle
-              ref={sections[0].ref}
-              isVisible={isVisible[sections[0].id]}
-            />
+            <WorkshopCircle />
             <LastCircle />
+            <Woman src={woman} alt="woman" />
           </Line>
           <Table>
             <tr>
-              <WomanCell rowSpan={26}>
-                <Woman src={woman} alt="woman" />
-              </WomanCell>
-            </tr>
-            <tr>
-              <Heading
-                colSpan={3}
-                ref={sections[1].ref}
-                isVisible={isVisible[sections[1].id]}
-              >
+              {" "}
+              <SpaceCell>
+                <Space></Space>
+              </SpaceCell>
+              <Heading colSpan={4}>
                 Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
                 in Deutschland:
               </Heading>
             </tr>
-            <Row ref={sections[2].ref} isVisible={isVisible[sections[2].id]}>
+            <tr>
+              <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
               </BlueTriangle>
-              <Zahl>1</Zahl>
-              <Überschrift colSpan={2}>Allgemeine Voraussetzungen</Überschrift>
-            </Row>
+              <Zahl open={isOpenOne} onClick={toggleOpenOne}>
+                1
+              </Zahl>
+              <Überschrift open={isOpenOne} onClick={toggleOpenOne} colSpan={2}>
+                Allgemeine Voraussetzungen
+              </Überschrift>
+            </tr>
             {isOpenOne && (
-              <SmallRow
-                ref={sections[3].ref}
-                isVisible={isVisible[sections[3].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
+
                 <ListParagraph open={isOpenOne} colSpan={3}>
                   Allgemeine Richtlinien für die Einstellung ausländischer
                   Fachkräfte
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}
-            <Row ref={sections[4].ref} isVisible={isVisible[sections[4].id]}>
+            <tr>
+              <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
               </BlueTriangle>
-              <Zahl>2</Zahl>
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenTwo} onClick={toggleOpenTwo}>
+                2
+              </Zahl>
+              <Überschrift open={isOpenTwo} onClick={toggleOpenTwo} colSpan={2}>
                 Regelungen für Visum und Aufenthaltstitel
               </Überschrift>
-            </Row>
+            </tr>
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[5].ref}
-                isVisible={isVisible[sections[5].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
+                  {" "}
                   Einreisevisum und Aufenthaltstitel
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[6].ref}
-                isVisible={isVisible[sections[6].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
+                  {" "}
                   Fachkräfte mit Berufsausbildung
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[7].ref}
-                isVisible={isVisible[sections[7].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
+                  {" "}
                   Fachkräfte mit akademischer Ausbildung
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[8].ref}
-                isVisible={isVisible[sections[8].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Regelung für ausländische Auszubildende
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[9].ref}
-                isVisible={isVisible[sections[9].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Regelung für ausländische Studierende
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
-            <Row ref={sections[10].ref} isVisible={isVisible[sections[10].id]}>
+            <tr>
+              <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
               </BlueTriangle>
-              <Zahl>3</Zahl>
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenThree} onClick={toggleOpenThree}>
+                3
+              </Zahl>
+              <Überschrift
+                open={isOpenThree}
+                onClick={toggleOpenThree}
+                colSpan={2}
+              >
                 Beteiligung der Bundesagentur für Arbeit
               </Überschrift>
-            </Row>
+            </tr>
             {isOpenThree && (
-              <SmallRow
-                ref={sections[11].ref}
-                isVisible={isVisible[sections[11].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Zustimmung der Bundesagentur
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenThree && (
-              <SmallRow
-                ref={sections[12].ref}
-                isVisible={isVisible[sections[12].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Arbeitsmarktzulassung</ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
-            <Row ref={sections[13].ref} isVisible={isVisible[sections[13].id]}>
+            <tr>
+              <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
               </BlueTriangle>
-              <Zahl>4</Zahl>
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenFour} onClick={toggleOpenFour}>
+                4
+              </Zahl>
+              <Überschrift
+                open={isOpenFour}
+                onClick={toggleOpenFour}
+                colSpan={2}
+              >
                 Beteiligung der Ausländerbehörde
               </Überschrift>
-            </Row>
+            </tr>
             {isOpenFour && (
-              <SmallRow
-                ref={sections[14].ref}
-                isVisible={isVisible[sections[14].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Das beschleunigte Fachkräfteverfahren nach §81a
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenFour && (
-              <SmallRow
-                ref={sections[15].ref}
-                isVisible={isVisible[sections[15].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Aufenthaltstitelbentragung und -verlängerung
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
-            <Row ref={sections[16].ref} isVisible={isVisible[sections[16].id]}>
+            <tr>
+              <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
               </BlueTriangle>
-              <Zahl>5</Zahl>
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenFive} onClick={toggleOpenFive}>
+                5
+              </Zahl>
+              <Überschrift
+                open={isOpenFive}
+                onClick={toggleOpenFive}
+                colSpan={2}
+              >
                 Anerkennung ausländischer Berufsabschlüsse
               </Überschrift>
-            </Row>
+            </tr>
             {isOpenFive && (
-              <SmallRow
-                ref={sections[17].ref}
-                isVisible={isVisible[sections[17].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Grundlagen der Anerkennung
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenFive && (
-              <SmallRow
-                ref={sections[18].ref}
-                isVisible={isVisible[sections[18].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Anerkennungsverfahren</ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenFive && (
-              <SmallRow
-                ref={sections[19].ref}
-                isVisible={isVisible[sections[19].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Anerkennungsbescheid / Defizitbescheid
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
-            <Row ref={sections[20].ref} isVisible={isVisible[sections[20].id]}>
+            <tr>
+              <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
               </BlueTriangle>
-              <Zahl>6</Zahl>
-              <Überschrift colSpan={2}>Möglichkeiten der Förderung</Überschrift>
-            </Row>
+              <Zahl open={isOpenSix} onClick={toggleOpenSix}>
+                6
+              </Zahl>
+              <Überschrift open={isOpenSix} onClick={toggleOpenSix} colSpan={2}>
+                Möglichkeiten der Förderung
+              </Überschrift>
+            </tr>
             {isOpenSix && (
-              <SmallRow
-                ref={sections[21].ref}
-                isVisible={isVisible[sections[21].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Anforderungen und Optionen zur Antragstellung von
                   Fördermitteln
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
-            <Row ref={sections[22].ref} isVisible={isVisible[sections[22].id]}>
+            <tr>
+              <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
               </BlueTriangle>
-              <Zahl>7</Zahl>
-              <Überschrift colSpan={2}>Sozialer Aspekt</Überschrift>
-            </Row>
-            {isOpenSeven && (
-              <SmallRow
-                ref={sections[23].ref}
-                isVisible={isVisible[sections[23].id]}
+              <Zahl open={isOpenSeven} onClick={toggleOpenSeven}>
+                7
+              </Zahl>
+              <Überschrift
+                open={isOpenSeven}
+                onClick={toggleOpenSeven}
+                colSpan={2}
               >
+                Sozialer Aspekt
+              </Überschrift>
+            </tr>
+            {isOpenSeven && (
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Familiennachzug</ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenSeven && (
-              <SmallRow
-                ref={sections[24].ref}
-                isVisible={isVisible[sections[24].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Onboarding-Prozess</ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenSeven && (
-              <SmallRow
-                ref={sections[25].ref}
-                isVisible={isVisible[sections[25].id]}
-              >
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  {" "}
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Integration von ausländischen Fachkräften
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}
           </Table>
           <HiddenTable>
             <tr>
               {" "}
-              <Heading
-                colSpan={3}
-                ref={sections[26].ref}
-                isVisible={isVisible[sections[26].id]}
-              >
+              <Heading colSpan={4}>
                 Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
                 in Deutschland:
               </Heading>
             </tr>
-            <Row ref={sections[27].ref} isVisible={isVisible[sections[27].id]}>
+            <Row>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
               </BlueTriangle>
-              <Zahl>1</Zahl>
-              <Überschrift colSpan={2}>Allgemeine Voraussetzungen</Überschrift>
+              <Zahl open={isOpenOne} onClick={toggleOpenOne}>
+                1
+              </Zahl>
+              <Überschrift open={isOpenOne} onClick={toggleOpenOne} colSpan={2}>
+                Allgemeine Voraussetzungen
+              </Überschrift>
             </Row>
             {isOpenOne && (
-              <SmallRow
-                ref={sections[28].ref}
-                isVisible={isVisible[sections[28].id]}
-              >
+              <SmallRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Allgemeine Richtlinien für die Einstellung ausländischer
                   Fachkräfte
                 </ListParagraph>
               </SmallRow>
             )}
-            <Row ref={sections[29].ref} isVisible={isVisible[sections[29].id]}>
+            <Row>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
               </BlueTriangle>
-              <Zahl>2</Zahl>
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenTwo} onClick={toggleOpenTwo}>
+                2
+              </Zahl>
+              <Überschrift open={isOpenTwo} onClick={toggleOpenTwo} colSpan={2}>
                 Regelungen für Visum und Aufenthaltstitel
               </Überschrift>
             </Row>
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[30].ref}
-                isVisible={isVisible[sections[30].id]}
-              >
+              <SmallRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Einreisevisum und Aufenthaltstitel
                 </ListParagraph>
               </SmallRow>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[31].ref}
-                isVisible={isVisible[sections[31].id]}
-              >
+              <SmallRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Fachkräfte mit Berufsausbildung
                 </ListParagraph>
               </SmallRow>
             )}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[32].ref}
-                isVisible={isVisible[sections[32].id]}
-              >
+              <SmallRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Fachkräfte mit akademischer Ausbildung
                 </ListParagraph>
               </SmallRow>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[33].ref}
-                isVisible={isVisible[sections[33].id]}
-              >
+              <SmallRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Regelung für ausländische Auszubildende
                 </ListParagraph>
               </SmallRow>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow
-                ref={sections[34].ref}
-                isVisible={isVisible[sections[34].id]}
-              >
+              <SmallRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Regelung für ausländische Studierende
                 </ListParagraph>
               </SmallRow>
             )}{" "}
-            <Row ref={sections[35].ref} isVisible={isVisible[sections[35].id]}>
+            <Row>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
               </BlueTriangle>
-              <Zahl>3</Zahl>
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenThree} onClick={toggleOpenThree}>
+                3
+              </Zahl>
+              <Überschrift
+                open={isOpenThree}
+                onClick={toggleOpenThree}
+                colSpan={2}
+              >
                 Beteiligung der Bundesagentur für Arbeit
               </Überschrift>
             </Row>
             {isOpenThree && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Zustimmung der Bundesagentur
                 </ListParagraph>
@@ -627,6 +578,11 @@ export default function Workshop() {
             )}{" "}
             {isOpenThree && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Arbeitsmarktzulassung</ListParagraph>
               </TableRow>
             )}{" "}
@@ -634,15 +590,24 @@ export default function Workshop() {
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
               </BlueTriangle>
-
-              <Zahl>4</Zahl>
-
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenFour} onClick={toggleOpenFour}>
+                4
+              </Zahl>
+              <Überschrift
+                open={isOpenFour}
+                onClick={toggleOpenFour}
+                colSpan={2}
+              >
                 Beteiligung der Ausländerbehörde
               </Überschrift>
             </TableRow>
             {isOpenFour && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Das beschleunigte Fachkräfteverfahren nach §81a
                 </ListParagraph>
@@ -650,6 +615,11 @@ export default function Workshop() {
             )}{" "}
             {isOpenFour && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Aufenthaltstitelbentragung und -verlängerung
                 </ListParagraph>
@@ -659,15 +629,24 @@ export default function Workshop() {
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
               </BlueTriangle>
-
-              <Zahl>5</Zahl>
-
-              <Überschrift colSpan={2}>
+              <Zahl open={isOpenFive} onClick={toggleOpenFive}>
+                5
+              </Zahl>
+              <Überschrift
+                open={isOpenFive}
+                onClick={toggleOpenFive}
+                colSpan={2}
+              >
                 Anerkennung ausländischer Berufsabschlüsse
               </Überschrift>
             </TableRow>
             {isOpenFive && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Grundlagen der Anerkennung
                 </ListParagraph>
@@ -675,11 +654,21 @@ export default function Workshop() {
             )}{" "}
             {isOpenFive && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Anerkennungsverfahren</ListParagraph>
               </TableRow>
             )}{" "}
             {isOpenFive && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Anerkennungsbescheid / Defizitbescheid
                 </ListParagraph>
@@ -689,13 +678,20 @@ export default function Workshop() {
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
               </BlueTriangle>
-
-              <Zahl>6</Zahl>
-
-              <Überschrift colSpan={2}>Möglichkeiten der Förderung</Überschrift>
+              <Zahl open={isOpenSix} onClick={toggleOpenSix}>
+                6
+              </Zahl>
+              <Überschrift open={isOpenSix} onClick={toggleOpenSix} colSpan={2}>
+                Möglichkeiten der Förderung
+              </Überschrift>
             </TableRow>
             {isOpenSix && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Anforderungen und Optionen zur Antragstellung von
                   Fördermitteln
@@ -706,23 +702,44 @@ export default function Workshop() {
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
               </BlueTriangle>
-
-              <Zahl>7</Zahl>
-
-              <Überschrift colSpan={2}>Sozialer Aspekt</Überschrift>
+              <Zahl open={isOpenSeven} onClick={toggleOpenSeven}>
+                7
+              </Zahl>
+              <Überschrift
+                open={isOpenSeven}
+                onClick={toggleOpenSeven}
+                colSpan={2}
+              >
+                Sozialer Aspekt
+              </Überschrift>
             </TableRow>
             {isOpenSeven && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Familiennachzug</ListParagraph>
               </TableRow>
             )}{" "}
             {isOpenSeven && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>Onboarding-Prozess</ListParagraph>
               </TableRow>
             )}{" "}
             {isOpenSeven && (
               <TableRow>
+                <td></td>
+                <td></td>
+                <BlueCircleCell>
+                  <BlueCircle src={bluecircle} alt="bluecircle" />
+                </BlueCircleCell>
                 <ListParagraph colSpan={3}>
                   Integration von ausländischen Fachkräften
                 </ListParagraph>
@@ -776,6 +793,17 @@ const Line = styled.div`
   }
 `;
 
+const Woman = styled.img`
+  position: absolute;
+  left: -400px;
+  top: 400px;
+  width: 300px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
 const Table = styled.table`
   position: relative;
   border-collapse: collapse;
@@ -796,8 +824,12 @@ const Table = styled.table`
   }
 `;
 
-const WomanCell = styled.th`
-  width: 50%;
+const SpaceCell = styled.th`
+  width: 50vw;
+`;
+
+const Space = styled.div`
+  width: 50vw;
 `;
 
 const Heading = styled.th`
@@ -807,9 +839,6 @@ const Heading = styled.th`
   padding-left: 70px;
   padding-bottom: 40px;
   width: 50%;
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -817,9 +846,6 @@ const Heading = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 120px;
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
   @media (max-width: 700px) {
@@ -835,6 +861,9 @@ const Heading = styled.th`
 const BlueTriangle = styled.th`
   padding-left: 60px;
   padding-top: 10px;
+
+  @media (max-width: 1400px) {
+  }
 
   @media (max-width: 900px) {
     padding-left: 120px;
@@ -854,34 +883,15 @@ const Zahl = styled.th`
   font-size: 90px;
   color: blue;
   font-family: Righteous;
-  padding-top: 10px;
   width: 5%;
+  padding-top: 10px;
 
   @media (max-width: 480px) {
     font-size: 70px;
   }
 `;
 
-const TableRow = styled.tr``;
-
-const Row = styled.tr`
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
-`;
-
-const SmallRow = styled.tr`
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
-  transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
-`;
-
-const Woman = styled.img`
-  width: 300px;
-`;
-
-const Überschrift = styled.th`
+const Überschrift = styled.td`
   font-size: 33px;
   text-align: start;
   padding-right: 20px;
@@ -900,6 +910,23 @@ const Überschrift = styled.th`
   }
 `;
 
+const TableRow = styled.tr``;
+
+const Row = styled.tr``;
+
+const SmallRow = styled.tr``;
+
+const BlueCircleCell = styled.td`
+  text-align: end;
+  width: 30px;
+  @media (max-width: 900px) {
+    width: 2%;
+  }
+`;
+const BlueCircle = styled.img`
+  width: 8px;
+  margin-right: 8px;
+`;
 const WorkshopCircle = styled.div`
   position: absolute;
   top: 300px;
@@ -917,7 +944,6 @@ const WorkshopCircle = styled.div`
     top: 245px;
   }
 `;
-
 const BlueTriangleOne = styled.div`
   width: 20px;
   height: 20px;
@@ -932,36 +958,31 @@ const BlueTriangleOne = styled.div`
     border-width: 17px 10px 0 10px;
   }
 `;
-
 const ListParagraph = styled.th`
-  font-size: 23px;
+  font-size: 20px;
   text-align: start;
-  padding-left: 160px;
-  padding-top: 10px;
+  padding-top: 7px;
   max-height: ${({ open }) => (open ? "1000px" : "0")};
   overflow: hidden;
   transition: max-height 0.5 ease-in-out;
+  color: rgb(0, 0, 0, 0.7);
 
   @media (max-width: 1400px) {
     padding-right: 20px;
   }
 
   @media (max-width: 900px) {
-    padding-left: 230px;
     padding-top: 8px;
   }
 
   @media (max-width: 700px) {
-    padding-left: 180px;
   }
 
   @media (max-width: 480px) {
     font-size: 18px;
-    padding-left: 110px;
     padding-top: 5px;
   }
 `;
-
 const LastCircle = styled.div`
   position: absolute;
   bottom: -20px;
@@ -973,7 +994,6 @@ const LastCircle = styled.div`
   border: 3.5px solid darkgray;
   z-index: 200;
 `;
-
 const HiddenTable = styled.table`
   position: relative;
   border-collapse: collapse;
@@ -993,7 +1013,6 @@ const HiddenTable = styled.table`
     margin-top: 200px;
   }
 `;
-
 const HiddenWoman = styled.img`
   width: 250px;
   margin: auto;
@@ -1002,7 +1021,6 @@ const HiddenWoman = styled.img`
     display: none;
   }
 `;
-
 const Header = styled.div`
   width: 1350px;
   margin: auto;
@@ -1035,7 +1053,6 @@ const Header = styled.div`
     font-size: 26px;
   }
 `;
-
 const StyledDiv = styled.div`
   font-size: 20px;
   margin: auto;

@@ -142,35 +142,32 @@ export default function Leistungen() {
           </tr>
           <tr>
             <th></th>
-            <Aufzählung
+            <StyledDiv
               ref={sections[2].ref}
               isVisible={isVisible[sections[2].id]}
             >
+              {" "}
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Vermittlung
-            </Aufzählung>
-          </tr>
-          <tr>
-            <th></th>
-            <Aufzählung
+            </StyledDiv>
+            <StyledDiv
               ref={sections[3].ref}
               isVisible={isVisible[sections[3].id]}
             >
+              {" "}
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Schulung
-            </Aufzählung>
-          </tr>
-          <tr>
-            <th></th>
-            <Aufzählung
+            </StyledDiv>
+            <StyledDiv
               ref={sections[4].ref}
               isVisible={isVisible[sections[4].id]}
             >
               {" "}
               <PinnNadel src={pinnnadel} alt="pinnnadel" />
               Beratung
-            </Aufzählung>
+            </StyledDiv>
           </tr>
+
           <tr>
             <th></th>
             <SecondText colSpan={2}>
@@ -421,6 +418,18 @@ const FirstText = styled.td`
     padding-right: 20px;
     padding-bottom: 20px;
   }
+`;
+
+const StyledDiv = styled.div`
+  font-size: 33px;
+  text-align: start;
+  color: white;
+  padding-right: 10px;
+  padding-left: 70px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
 const Aufzählung = styled.td`

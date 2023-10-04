@@ -533,6 +533,7 @@ export default function Vermittlung() {
               >
                 Mit welchen Betrieben arbeiten wir zusammen?
               </LeftBoldHeader>
+              <th></th>
             </tr>
             <tr>
               <LeftDiv>
@@ -967,7 +968,7 @@ const Heading = styled.th`
 
 const LeftDiv = styled.th`
   color: black;
-  width: 50%;
+  width: 50vw;
   padding-right: 100px;
   text-align: start;
   padding-bottom: 30px;
@@ -1043,7 +1044,7 @@ const BoldHeader = styled.th`
   padding-bottom: 20px;
   padding-left: 70px;
   padding-top: 60px;
-  width: 50%;
+  width: 50vw;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
@@ -1080,7 +1081,7 @@ const SecondBoldHeader = styled.th`
   padding-bottom: 20px;
   padding-left: 90px;
   padding-top: 30px;
-  width: 50%;
+  width: 50vw;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
@@ -1210,9 +1211,9 @@ const SecondTable = styled.table`
   }
 `;
 
-const LeftBoldHeader = styled.td`
+const LeftBoldHeader = styled.th`
   color: black;
-  width: 50%;
+  width: 50vw;
   padding-right: 50px;
   padding-top: 60px;
   font-weight: bold;
@@ -1282,7 +1283,7 @@ const Aufzählung = styled.td`
   width: 200px;
 
   @media (max-width: 1400px) {
-    padding-right: 40px;
+    padding-right: 20px;
   }
 
   @media (max-width: 900px) {
@@ -1302,7 +1303,7 @@ const Info = styled.td`
   opacity: 0.7;
 
   @media (max-width: 1400px) {
-    padding-right: 40px;
+    padding-right: 20px;
   }
 
   @media (max-width: 900px) {

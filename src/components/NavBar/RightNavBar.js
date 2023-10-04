@@ -66,7 +66,7 @@ const NavContainer = styled.nav`
   left: 0;
   opacity: ${({ scrollBackground }) => (scrollBackground ? 0 : 1)};
   background-color: ${({ scrollBackground }) =>
-    scrollBackground ? "rgb(255, 255, 255, 1)" : "rgb(255, 255, 255, 0)"};
+    scrollBackground ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0)"};
   transition: opacity 0.3s ease-in-out;
 
   &:hover {
@@ -79,11 +79,11 @@ const NavContainer = styled.nav`
     margin: 5px 10px 5px 50px;
 
     li {
-      padding: 0.9vw 1.5vw 0.9vw 1.5vw;
+      padding: 0.9vw 1.5vw;
       white-space: nowrap;
 
       @media (max-width: 1024px) {
-        padding: 0.9vw 1.3vw 0.9vw 1.3vw;
+        padding: 0.9vw 1.3vw;
       }
     }
   }
@@ -98,14 +98,18 @@ const NavContainer = styled.nav`
       top: 0;
       right: 0;
       height: 100vh;
-      width: 250px;
-      padding-top: 3.5rem;
+      width: 230px;
+      padding-top: 6rem;
       transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
       transition: transform 0.7s ease-in-out;
 
       li {
         margin-top: 20px;
-        margin-left: 20px;
+        margin-right: 30px;
+        text-align: end;
+
+        a {
+        }
       }
     }
   }
@@ -117,14 +121,15 @@ const NavLink = styled.a`
   text-decoration: none;
   font-size: 18px;
   text-transform: uppercase;
+
   &:hover {
     &::after {
       content: "";
       position: absolute;
       left: ${({ href }) => (href === "#home" ? "90px" : "0")};
       right: 0;
-      margin: 0 auto; /* Center the line horizontally */
-      bottom: -12px; /* Adjust this value to control the line's distance from text */
+      margin: 0 auto;
+      bottom: -12px;
       height: 5px;
       width: 35px;
       border-radius: 2px;
@@ -134,6 +139,7 @@ const NavLink = styled.a`
 
   &[href="#home"] {
     padding-left: 90px;
+    font-weight: bold;
   }
 
   &[href="#kontakt"] {
@@ -143,6 +149,13 @@ const NavLink = styled.a`
 
   @media (max-width: 1400px) {
     font-size: 16px;
+
+    &:hover {
+      &::after {
+        left: ${({ href }) => (href === "#home" ? "60px" : "0")};
+      }
+    }
+
     &[href="#home"] {
       padding-left: 60px;
     }
