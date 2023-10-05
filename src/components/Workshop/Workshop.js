@@ -1034,7 +1034,7 @@ const HiddenTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin-top: 300px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   font-size: 20px;
 
   @media (min-width: 901px) {
@@ -1045,6 +1045,7 @@ const HiddenTable = styled.table`
     margin-top: 250px;
   }
   @media (max-width: 480px) {
+    margin-bottom: 30px;
     margin-top: 170px;
   }
 `;
