@@ -94,7 +94,7 @@ export default function Beratung() {
             <Cell></Cell>
           </tr>
           <tr>
-            <LeftDiv>
+            <FirstText>
               Unsere individuelle Beratung beinhaltet eine gründliche Analyse
               Ihrer spezifischen Anforderungen, die Entwicklung
               maßgeschneiderter Strategien und die Bereitstellung praktischer
@@ -102,11 +102,11 @@ export default function Beratung() {
               verstehen und Ihnen die besten Wege aufzuzeigen, wie Sie von den
               neuen Möglichkeiten des Fachkräfteeinwanderungsgesetzes
               profitieren können.
-            </LeftDiv>
+            </FirstText>
             <Cell></Cell>
           </tr>
           <tr>
-            <LeftDiv>
+            <SecondText>
               Unser Hauptaugenmerk liegt darauf, Ihnen einen klaren und
               effektiven Weg zur Rekrutierung internationaler Fachkräfte
               aufzuzeigen. Wir sind mit den komplexen bürokratischen Aspekten
@@ -116,7 +116,7 @@ export default function Beratung() {
               Fachkräfteeinwanderungsgesetzes optimal zu nutzen oder Ihre eigene
               Personalabteilung für ausländische Fachkräfte zu etablieren – wir
               unterstützen Sie bei jedem Schritt auf diesem Weg.
-            </LeftDiv>
+            </SecondText>
             <Cell></Cell>
           </tr>
         </Table>
@@ -130,7 +130,7 @@ export default function Beratung() {
             </Heading>
           </tr>
           <tr>
-            <LeftDiv>
+            <FirstText>
               Unsere individuelle Beratung beinhaltet eine gründliche Analyse
               Ihrer spezifischen Anforderungen, die Entwicklung
               maßgeschneiderter Strategien und die Bereitstellung praktischer
@@ -138,10 +138,10 @@ export default function Beratung() {
               verstehen und Ihnen die besten Wege aufzuzeigen, wie Sie von den
               neuen Möglichkeiten des Fachkräfteeinwanderungsgesetzes
               profitieren können.
-            </LeftDiv>
+            </FirstText>
           </tr>
           <tr>
-            <LeftDiv>
+            <SecondText>
               Unser Hauptaugenmerk liegt darauf, Ihnen einen klaren und
               effektiven Weg zur Rekrutierung internationaler Fachkräfte
               aufzuzeigen. Wir sind mit den komplexen bürokratischen Aspekten
@@ -151,7 +151,7 @@ export default function Beratung() {
               Fachkräfteeinwanderungsgesetzes optimal zu nutzen oder Ihre eigene
               Personalabteilung für ausländische Fachkräfte zu etablieren – wir
               unterstützen Sie bei jedem Schritt auf diesem Weg.
-            </LeftDiv>
+            </SecondText>
           </tr>
           <tr>
             <CardContainer>
@@ -292,7 +292,38 @@ const Heading = styled.th`
   }
 `;
 
-const LeftDiv = styled.th`
+const FirstText = styled.th`
+  color: black;
+  width: 50%;
+  padding-right: 100px;
+  text-align: start;
+  padding-bottom: 30px;
+  color: white;
+  opacity: 0.8;
+  font-weight: 500;
+  font-family: system-ui;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 140px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+`;
+
+const SecondText = styled.th`
   color: black;
   width: 50%;
   padding-right: 100px;

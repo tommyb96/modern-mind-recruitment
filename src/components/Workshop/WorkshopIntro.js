@@ -365,6 +365,8 @@ const LeftDiv = styled.th`
   font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
+  color: white;
+  opacity: 0.8;
 
   @media (max-width: 1400px) {
     padding-left: 20px;
@@ -392,7 +394,7 @@ const Statement = styled.th`
   text-align: start;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 60px;
+  font-size: 53px;
   color: white;
   padding-left: 100px;
   padding-right: 50px;

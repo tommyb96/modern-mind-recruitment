@@ -502,7 +502,7 @@ const TomWrapper = styled.td`
 
 const Tom = styled.img`
   width: 310px;
-  margin-left: 70px;
+  margin-left: 50px;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});

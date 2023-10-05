@@ -184,14 +184,17 @@ const AboutUs = () => {
             >
               über uns
             </Heading>
+            <th></th>
           </tr>
           <tr>
             <BoldText>
-              Unsere Vision geht über das Hier und Jetzt hinaus – als Ihr
-              Partner in Personalfragen setzen wir auf moderne und nachhaltige
-              Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
-              sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
-              vermitteln die Talente von Morgen.
+              Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
+              und ist das Ergebnis unserer langjährigen Erfahrung rund um das
+              Thema Personalvermittlung. Als Ihr vertrauenswürdiger Partner in
+              Personalfragen setzen wir auf moderne und nachhaltige Lösungen, um
+              nicht nur offene Positionen zu besetzen, sondern diese langfristig
+              mit qualifizierten Fachkräften zu beleben. Die Vermittlung der
+              Talente von morgen steht dabei im Mittelpunkt unserer Mission.
             </BoldText>
             <Statement rowSpan="2">
               lasst uns gemeinsam <br />
@@ -200,11 +203,22 @@ const AboutUs = () => {
           </tr>
           <tr>
             <LeftDiv>
-              Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
-              Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
-              unterstützen, sie entlasten und gleichzeitig aktiv dem
-              Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
-              und den allgemeinen Wohlstand zu sichern.
+              Bei Modern Mind Recruitment schätzen wir unsere vielfältigen
+              Wurzeln, die unsere kulturelle Vielfalt geprägt und unsere
+              Herangehensweise an die Personalvermittlung beeinflusst haben. Wir
+              brechen bewusst aus dem traditionellen Rahmen aus und legen
+              unseren Schwerpunkt auf das unerschlossene Potenzial der
+              internationalen Fachkräfte.
+            </LeftDiv>
+          </tr>
+          <tr>
+            <LeftDiv>
+              Unsere Leidenschaft besteht darin, qualifizierte Talente aus
+              verschiedenen Teilen der Welt zu entdecken und ihnen eine neue
+              Zukunft in Deutschland zu ermöglichen. Wir glauben an
+              Win-Win-Lösungen, bei denen unsere Kunden ihr Team erweitern und
+              gleichzeitig Menschen die Möglichkeit erhalten, ihre Karrieren in
+              Deutschland aufzubauen.
             </LeftDiv>
           </tr>
         </FirstTable>
@@ -219,21 +233,34 @@ const AboutUs = () => {
           </tr>
           <tr>
             <BoldText>
-              Unsere Vision geht über das Hier und Jetzt hinaus – als Ihr
-              Partner in Personalfragen setzen wir auf moderne und nachhaltige
-              Lösungen, um Ihre offenen Positionen nicht nur zu besetzen,
-              sondern dauerhaft mit qualifizierten Fachkräften zu beleben. Wir
-              vermitteln die Talente von Morgen.
+              Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
+              und ist das Ergebnis unserer langjährigen Erfahrung rund um das
+              Thema Personalvermittlung. Als Ihr vertrauenswürdiger Partner in
+              Personalfragen setzen wir auf moderne und nachhaltige Lösungen, um
+              nicht nur offene Positionen zu besetzen, sondern diese langfristig
+              mit qualifizierten Fachkräften zu beleben. Die Vermittlung der
+              Talente von morgen steht dabei im Mittelpunkt unserer Mission.
             </BoldText>
           </tr>
           <tr>
             <LeftDiv>
+              Bei Modern Mind Recruitment schätzen wir unsere vielfältigen
+              Wurzeln, die unsere kulturelle Vielfalt geprägt und unsere
+              Herangehensweise an die Personalvermittlung beeinflusst haben. Wir
+              brechen bewusst aus dem traditionellen Rahmen aus und legen
+              unseren Schwerpunkt auf das unerschlossene Potenzial der
+              internationalen Fachkräfte.
+            </LeftDiv>
+          </tr>
+          <tr>
+            <LeftDiv>
               {" "}
-              Mit langjähriger Erfahrung möchten wir in Deutschland ansässige
-              Unternehmen durch qualifizierte Fachkräfte aus Nicht-EU-Ländern
-              unterstützen, sie entlasten und gleichzeitig aktiv dem
-              Fachkräftemangel entgegenwirken, um unsere Wirtschaft zu stärken
-              und den allgemeinen Wohlstand zu sichern.
+              Unsere Leidenschaft besteht darin, qualifizierte Talente aus
+              verschiedenen Teilen der Welt zu entdecken und ihnen eine neue
+              Zukunft in Deutschland zu ermöglichen. Wir glauben an
+              Win-Win-Lösungen, bei denen unsere Kunden ihr Team erweitern und
+              gleichzeitig Menschen die Möglichkeit erhalten, ihre Karrieren in
+              Deutschland aufzubauen.
             </LeftDiv>
           </tr>
           <tr>
@@ -628,6 +655,7 @@ const LeftDiv = styled.th`
   text-align: start;
   color: white;
   opacity: 0.8;
+  padding-bottom: 30px;
 
   @media (max-width: 1400px) {
     padding-left: 40px;
@@ -635,7 +663,6 @@ const LeftDiv = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
     padding-left: 140px;
   }
 
@@ -646,7 +673,7 @@ const LeftDiv = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -655,7 +682,7 @@ const Statement = styled.th`
   text-align: start;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 60px;
+  font-size: 53px;
   color: white;
   padding-left: 100px;
   padding-right: 50px;
@@ -666,6 +693,7 @@ const Statement = styled.th`
   }
 
   @media (max-width: 900px) {
+    padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 200px;
     padding-right: 50px;
@@ -673,7 +701,6 @@ const Statement = styled.th`
 
   @media (max-width: 700px) {
     padding-left: 70px;
-    font-size: 55px;
   }
 
   @media (max-width: 480px) {
@@ -698,6 +725,7 @@ const Woman = styled.img`
   width: 350px;
   align-self: center;
   margin-left: 1000px;
+  margin-top: -140px;
 
   &:hover {
     transform: scale(1.05);
@@ -705,10 +733,11 @@ const Woman = styled.img`
 
   @media (max-width: 1400px) {
     align-self: flex-end;
-    margin: 0 40px -50px 0;
+    margin: -100px 40px -50px 0;
   }
 
   @media (max-width: 900px) {
+    margin-top: 0;
     margin-right: 40px;
     margin-bottom: -30px;
   }
