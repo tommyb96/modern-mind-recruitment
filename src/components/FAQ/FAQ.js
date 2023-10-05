@@ -90,7 +90,7 @@ export default function FAQ() {
 
   return (
     <>
-      <BigWrapper id="FAQ">
+      <BigWrapper id="faq">
         <Wrapper>
           <Heading ref={sections[0].ref} isVisible={isVisible[sections[0].id]}>
             faq
@@ -99,7 +99,7 @@ export default function FAQ() {
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
             </BlueTriangleDiv>
-            <Question>
+            <Question open={isOpenOne} onClick={toggleOpenOne}>
               Wozu eine Anerkennung ausländischer Jobqualifikationen?
             </Question>
           </Row>
@@ -134,7 +134,9 @@ export default function FAQ() {
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
             </BlueTriangleDiv>
-            <Question>Was ist das beschleunigte Fachkräfteverfahren?</Question>
+            <Question open={isOpenTwo} onClick={toggleOpenTwo}>
+              Was ist das beschleunigte Fachkräfteverfahren?
+            </Question>
           </Row>{" "}
           <Answer
             open={isOpenTwo}
@@ -156,7 +158,7 @@ export default function FAQ() {
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
             </BlueTriangleDiv>
-            <Question>
+            <Question open={isOpenThree} onClick={toggleOpenThree}>
               Wie lange dauert es, bis eine Fachkraft anfangen kann zu arbeiten?
             </Question>
           </Row>
@@ -176,7 +178,7 @@ export default function FAQ() {
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
             </BlueTriangleDiv>
-            <Question>
+            <Question open={isOpenFour} onClick={toggleOpenFour}>
               Welche Kosten kommen auf mich als Arbeitgeber zu?
             </Question>
           </Row>{" "}
@@ -200,7 +202,7 @@ export default function FAQ() {
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
             </BlueTriangleDiv>
-            <Question>
+            <Question open={isOpenFive} onClick={toggleOpenFive}>
               Mit welchem Sprachniveau reist die Fachkraft nach Deutschland ein?
             </Question>
           </Row>{" "}
@@ -222,7 +224,7 @@ export default function FAQ() {
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
             </BlueTriangleDiv>
-            <Question>
+            <Question open={isOpenSix} onClick={toggleOpenSix}>
               Was sind Voraussetzungen für eine erfolgreiche Integration?
             </Question>
           </Row>{" "}
@@ -248,7 +250,9 @@ export default function FAQ() {
             <BlueTriangleDiv>
               <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
             </BlueTriangleDiv>
-            <Question>Wie unterstützen wir Sie bei der Integration?</Question>
+            <Question open={isOpenSeven} onClick={toggleOpenSeven}>
+              Wie unterstützen wir Sie bei der Integration?
+            </Question>
           </Row>{" "}
           <Answer
             open={isOpenSeven}

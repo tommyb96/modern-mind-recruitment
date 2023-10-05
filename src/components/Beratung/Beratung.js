@@ -83,13 +83,15 @@ export default function Beratung() {
         </Line>
         <Table>
           <tr>
+            {" "}
             <Heading
               ref={sections[2].ref}
               isVisible={isVisible[sections[2].id]}
               colSpan={2}
             >
               beratung
-            </Heading>
+            </Heading>{" "}
+            <Cell></Cell>
           </tr>
           <tr>
             <LeftDiv>
@@ -101,7 +103,7 @@ export default function Beratung() {
               neuen Möglichkeiten des Fachkräfteeinwanderungsgesetzes
               profitieren können.
             </LeftDiv>
-            <th></th>
+            <Cell></Cell>
           </tr>
           <tr>
             <LeftDiv>
@@ -115,7 +117,7 @@ export default function Beratung() {
               Personalabteilung für ausländische Fachkräfte zu etablieren – wir
               unterstützen Sie bei jedem Schritt auf diesem Weg.
             </LeftDiv>
-            <th></th>
+            <Cell></Cell>
           </tr>
         </Table>
         <HiddenTable>
@@ -252,6 +254,10 @@ const Circle = styled.div`
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
+`;
+
+const Cell = styled.th`
+  width: 50vw;
 `;
 
 const Heading = styled.th`

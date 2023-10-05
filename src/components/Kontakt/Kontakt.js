@@ -303,7 +303,6 @@ const Kontakt = () => {
             </TomWrapper>
           </tr>
         </HiddenTable>
-        <CallToAction>Schicken Sie Ihre personalisierte Anfrage!</CallToAction>
         <FormContainer ref={form} onSubmit={sendEmail}>
           <input
             onChange={(e) => setName(e.target.value)}
@@ -687,7 +686,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 500px;
-  margin-top: 20px;
+  margin-top: 100px;
   margin-bottom: 150px;
   padding: 40px 40px 30px 40px;
   background-color: rgb(255, 255, 255, 0.1);
@@ -716,6 +715,7 @@ const FormContainer = styled.form`
   }
 
   @media (max-width: 900px) {
+    margin-top: 60px;
   }
 
   @media (max-width: 600px) {
@@ -725,6 +725,7 @@ const FormContainer = styled.form`
   }
 
   @media (max-width: 480px) {
+    margin-top: 40px;
     padding: 40px 20px 20px 20px;
     margin-bottom: 100px;
   }
