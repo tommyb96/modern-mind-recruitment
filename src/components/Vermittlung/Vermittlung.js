@@ -1041,7 +1041,7 @@ const BoldHeader = styled.th`
   font-weight: bold;
   font-size: 33px;
   text-align: start;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   padding-left: 70px;
   padding-top: 60px;
   width: 50vw;
@@ -1065,6 +1065,7 @@ const BoldHeader = styled.th`
   }
 
   @media (max-width: 480px) {
+    padding-bottom: 20px;
     padding-left: 30px;
     font-size: 26px;
     padding-top: 30px;
@@ -1075,7 +1076,7 @@ const SecondBoldHeader = styled.th`
   font-weight: bold;
   font-size: 33px;
   text-align: start;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   padding-left: 90px;
   padding-top: 30px;
   width: 50vw;
@@ -1097,6 +1098,7 @@ const SecondBoldHeader = styled.th`
     padding-left: 30px;
     font-size: 26px;
     padding-top: 30px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -1216,7 +1218,7 @@ const LeftBoldHeader = styled.th`
   font-weight: bold;
   font-size: 33px;
   text-align: start;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -1242,6 +1244,7 @@ const LeftBoldHeader = styled.th`
     padding-right: 20px;
     font-size: 26px;
     padding-top: 20px;
+    padding-bottom: 20px;
   }
 `;
 

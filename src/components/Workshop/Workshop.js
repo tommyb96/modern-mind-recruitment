@@ -1063,7 +1063,7 @@ const Header = styled.div`
   font-size: 55px;
   font-weight: bold;
   text-align: start;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   color: black;
   font-size: 33px;
 
@@ -1087,6 +1087,7 @@ const Header = styled.div`
   @media (max-width: 480px) {
     padding-left: 30px;
     font-size: 26px;
+    padding-bottom: 20px;
   }
 `;
 const StyledDiv = styled.div`
