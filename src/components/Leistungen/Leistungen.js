@@ -119,7 +119,7 @@ export default function Leistungen() {
         </Line>
         <FirstTable>
           <tr>
-            <th></th>
+            <Cell></Cell>
             <Heading
               colSpan={2}
               ref={sections[1].ref}
@@ -129,7 +129,7 @@ export default function Leistungen() {
             </Heading>
           </tr>
           <tr>
-            <th></th>
+            <Cell></Cell>
             <FirstText colSpan={1}>
               Unser Fachgebiet erstreckt sich über eine breite Palette von
               Dienstleistungen, die darauf abzielen, sowohl Unternehmen als auch
@@ -141,7 +141,7 @@ export default function Leistungen() {
             </FirstText>
           </tr>
           <tr>
-            <th></th>
+            <Cell></Cell>
             <StyledDiv
               ref={sections[2].ref}
               isVisible={isVisible[sections[2].id]}
@@ -167,9 +167,8 @@ export default function Leistungen() {
               Beratung
             </StyledDiv>
           </tr>
-
           <tr>
-            <th></th>
+            <Cell></Cell>
             <SecondText colSpan={2}>
               Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
               Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
@@ -315,6 +314,10 @@ const FirstTable = styled.table`
   @media (max-width: 900px) {
     display: none;
   }
+`;
+
+const Cell = styled.th`
+  width: 50vw;
 `;
 
 const Papa = styled.img`
