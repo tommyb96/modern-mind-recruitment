@@ -1057,10 +1057,7 @@ const BoldHeader = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 140px;
-    //animation
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
     transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
   @media (max-width: 700px) {

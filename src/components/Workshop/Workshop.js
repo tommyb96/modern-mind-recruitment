@@ -64,7 +64,28 @@ export default function Workshop() {
     });
   };
 
-  const sections = [];
+  const sections = [
+    {
+      id: "circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "lastcircle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+  ];
 
   const [isVisible, setIsVisible] = useState({ sections });
 
@@ -96,8 +117,14 @@ export default function Workshop() {
         <Wrapper>
           {" "}
           <Line>
-            <WorkshopCircle />
-            <LastCircle />
+            <WorkshopCircle
+              ref={sections[0].ref}
+              isVisible={isVisible[sections[0].id]}
+            />
+            <LastCircle
+              ref={sections[1].ref}
+              isVisible={isVisible[sections[1].id]}
+            />
             <Woman src={woman} alt="woman" />
           </Line>
           <Table>
@@ -106,12 +133,16 @@ export default function Workshop() {
               <SpaceCell>
                 <Space></Space>
               </SpaceCell>
-              <Heading colSpan={4}>
+              <Heading
+                ref={sections[2].ref}
+                isVisible={isVisible[sections[2].id]}
+                colSpan={4}
+              >
                 Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
                 in Deutschland:
               </Heading>
             </tr>
-            <tr>
+            <Row>
               <td></td>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
@@ -122,7 +153,7 @@ export default function Workshop() {
               <Überschrift open={isOpenOne} onClick={toggleOpenOne} colSpan={2}>
                 Allgemeine Voraussetzungen
               </Überschrift>
-            </tr>
+            </Row>
             {isOpenOne && (
               <tr>
                 <td></td>
@@ -449,12 +480,16 @@ export default function Workshop() {
           <HiddenTable>
             <tr>
               {" "}
-              <Heading colSpan={4}>
+              <Heading
+                ref={sections[3].ref}
+                isVisible={isVisible[sections[3].id]}
+                colSpan={4}
+              >
                 Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
                 in Deutschland:
               </Heading>
             </tr>
-            <Row>
+            <tr>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
               </BlueTriangle>
@@ -464,9 +499,9 @@ export default function Workshop() {
               <Überschrift open={isOpenOne} onClick={toggleOpenOne} colSpan={2}>
                 Allgemeine Voraussetzungen
               </Überschrift>
-            </Row>
+            </tr>
             {isOpenOne && (
-              <SmallRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -476,9 +511,9 @@ export default function Workshop() {
                   Allgemeine Richtlinien für die Einstellung ausländischer
                   Fachkräfte
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}
-            <Row>
+            <tr>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
               </BlueTriangle>
@@ -488,9 +523,9 @@ export default function Workshop() {
               <Überschrift open={isOpenTwo} onClick={toggleOpenTwo} colSpan={2}>
                 Regelungen für Visum und Aufenthaltstitel
               </Überschrift>
-            </Row>
+            </tr>
             {isOpenTwo && (
-              <SmallRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -499,10 +534,10 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Einreisevisum und Aufenthaltstitel
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -511,10 +546,10 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Fachkräfte mit Berufsausbildung
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}
             {isOpenTwo && (
-              <SmallRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -523,10 +558,10 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Fachkräfte mit akademischer Ausbildung
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -535,10 +570,10 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Regelung für ausländische Auszubildende
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
             {isOpenTwo && (
-              <SmallRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -547,9 +582,9 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Regelung für ausländische Studierende
                 </ListParagraph>
-              </SmallRow>
+              </tr>
             )}{" "}
-            <Row>
+            <tr>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
               </BlueTriangle>
@@ -563,9 +598,9 @@ export default function Workshop() {
               >
                 Beteiligung der Bundesagentur für Arbeit
               </Überschrift>
-            </Row>
+            </tr>
             {isOpenThree && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -574,19 +609,19 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Zustimmung der Bundesagentur
                 </ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
             {isOpenThree && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
                   <BlueCircle src={bluecircle} alt="bluecircle" />
                 </BlueCircleCell>
                 <ListParagraph colSpan={3}>Arbeitsmarktzulassung</ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
-            <TableRow>
+            <tr>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
               </BlueTriangle>
@@ -600,9 +635,9 @@ export default function Workshop() {
               >
                 Beteiligung der Ausländerbehörde
               </Überschrift>
-            </TableRow>
+            </tr>
             {isOpenFour && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -611,10 +646,10 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Das beschleunigte Fachkräfteverfahren nach §81a
                 </ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
             {isOpenFour && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -623,9 +658,9 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Aufenthaltstitelbentragung und -verlängerung
                 </ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
-            <TableRow>
+            <tr>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
               </BlueTriangle>
@@ -639,9 +674,9 @@ export default function Workshop() {
               >
                 Anerkennung ausländischer Berufsabschlüsse
               </Überschrift>
-            </TableRow>
+            </tr>
             {isOpenFive && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -650,20 +685,20 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Grundlagen der Anerkennung
                 </ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
             {isOpenFive && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
                   <BlueCircle src={bluecircle} alt="bluecircle" />
                 </BlueCircleCell>
                 <ListParagraph colSpan={3}>Anerkennungsverfahren</ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
             {isOpenFive && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -672,9 +707,9 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Anerkennungsbescheid / Defizitbescheid
                 </ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
-            <TableRow>
+            <tr>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
               </BlueTriangle>
@@ -684,9 +719,9 @@ export default function Workshop() {
               <Überschrift open={isOpenSix} onClick={toggleOpenSix} colSpan={2}>
                 Möglichkeiten der Förderung
               </Überschrift>
-            </TableRow>
+            </tr>
             {isOpenSix && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -696,9 +731,9 @@ export default function Workshop() {
                   Anforderungen und Optionen zur Antragstellung von
                   Fördermitteln
                 </ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
-            <TableRow>
+            <tr>
               <BlueTriangle>
                 <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
               </BlueTriangle>
@@ -712,29 +747,29 @@ export default function Workshop() {
               >
                 Sozialer Aspekt
               </Überschrift>
-            </TableRow>
+            </tr>
             {isOpenSeven && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
                   <BlueCircle src={bluecircle} alt="bluecircle" />
                 </BlueCircleCell>
                 <ListParagraph colSpan={3}>Familiennachzug</ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
             {isOpenSeven && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
                   <BlueCircle src={bluecircle} alt="bluecircle" />
                 </BlueCircleCell>
                 <ListParagraph colSpan={3}>Onboarding-Prozess</ListParagraph>
-              </TableRow>
+              </tr>
             )}{" "}
             {isOpenSeven && (
-              <TableRow>
+              <tr>
                 <td></td>
                 <td></td>
                 <BlueCircleCell>
@@ -743,7 +778,7 @@ export default function Workshop() {
                 <ListParagraph colSpan={3}>
                   Integration von ausländischen Fachkräften
                 </ListParagraph>
-              </TableRow>
+              </tr>
             )}
           </HiddenTable>
           <HiddenWoman src={woman} alt="woman"></HiddenWoman>
@@ -777,7 +812,7 @@ const Line = styled.div`
   top: 0%;
   height: 97%;
   width: 3.5px;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
@@ -839,6 +874,10 @@ const Heading = styled.th`
   padding-left: 70px;
   padding-bottom: 40px;
   width: 50%;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -846,6 +885,7 @@ const Heading = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 120px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   }
 
   @media (max-width: 700px) {
@@ -857,6 +897,8 @@ const Heading = styled.th`
     font-size: 26px;
   }
 `;
+
+const Row = styled.tr``;
 
 const BlueTriangle = styled.th`
   padding-left: 60px;
@@ -892,7 +934,7 @@ const Zahl = styled.th`
 `;
 
 const Überschrift = styled.td`
-  font-size: 33px;
+  font-size: 28px;
   text-align: start;
   padding-right: 20px;
   padding-left: 10px;
@@ -910,12 +952,6 @@ const Überschrift = styled.td`
   }
 `;
 
-const TableRow = styled.tr``;
-
-const Row = styled.tr``;
-
-const SmallRow = styled.tr``;
-
 const BlueCircleCell = styled.td`
   text-align: end;
   width: 30px;
@@ -925,7 +961,8 @@ const BlueCircleCell = styled.td`
 `;
 const BlueCircle = styled.img`
   width: 8px;
-  margin-right: 8px;
+  margin-right: 10px;
+  margin-top: 10px;
 `;
 const WorkshopCircle = styled.div`
   position: absolute;
@@ -971,10 +1008,6 @@ const ListParagraph = styled.th`
     padding-right: 20px;
   }
 
-  @media (max-width: 900px) {
-    padding-top: 8px;
-  }
-
   @media (max-width: 700px) {
   }
 
@@ -993,6 +1026,8 @@ const LastCircle = styled.div`
   border-radius: 50%;
   border: 3.5px solid darkgray;
   z-index: 200;
+  transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
+  transition: transform 0.7s ease;
 `;
 const HiddenTable = styled.table`
   position: relative;
@@ -1010,7 +1045,7 @@ const HiddenTable = styled.table`
     margin-top: 250px;
   }
   @media (max-width: 480px) {
-    margin-top: 200px;
+    margin-top: 170px;
   }
 `;
 const HiddenWoman = styled.img`
@@ -1056,7 +1091,7 @@ const Header = styled.div`
 const StyledDiv = styled.div`
   font-size: 20px;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   max-width: 1350px;
 
   @media (max-width: 1400px) {
@@ -1070,6 +1105,7 @@ const StyledDiv = styled.div`
 
   @media (max-width: 900px) {
     padding-left: 120px;
+    margin-bottom: 70px;
   }
 
   @media (max-width: 700px) {

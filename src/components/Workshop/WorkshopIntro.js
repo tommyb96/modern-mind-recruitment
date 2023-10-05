@@ -91,8 +91,9 @@ export default function WorkshopIntro() {
       <Wrapper>
         <Line>
           <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
+
           <ContactButton
-            onClick={() => scrollToSection("kontakt")}
+            href="https://calendly.com/modern-mind-recruitment/45min?month=2023-09"
             ref={contactButtonRef}
           >
             <CallToAction>
@@ -195,7 +196,7 @@ export default function WorkshopIntro() {
           </tr>
         </HiddenTable>
         <HiddenContactButton
-          onClick={() => scrollToSection("kontakt")}
+          href="https://calendly.com/modern-mind-recruitment/45min?month=2023-09"
           ref={contactButtonRef}
         >
           <HiddenCallToAction>
@@ -225,7 +226,7 @@ const Line = styled.div`
   top: 110px;
   height: 100%;
   width: 3.5px;
-  background-color: darkgray;
+  background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
@@ -266,6 +267,7 @@ const ContactButton = styled.a`
   border-radius: 50%;
   border: 6px solid black;
   z-index: 200;
+  text-decoration: none;
 
   transition: transform 0.3s ease;
 
@@ -289,6 +291,7 @@ const CallToAction = styled.div`
   font-size: 38px;
   text-align: center;
   align-self: center;
+  color: black;
 `;
 
 const Hand = styled.img`
@@ -421,7 +424,7 @@ const HiddenTable = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 70px;
   margin-bottom: 50px;
 
   @media (min-width: 901px) {
@@ -439,6 +442,7 @@ const HiddenContactButton = styled.a`
   border: 1vw solid black;
   margin: auto;
   margin-bottom: -25%;
+  text-decoration: none;
 
   @media (min-width: 901px) {
     display: none;
