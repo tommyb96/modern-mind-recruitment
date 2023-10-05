@@ -229,6 +229,7 @@ const Line = styled.div`
   background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
+    top: 80px;
     left: 10%;
   }
 
@@ -279,6 +280,12 @@ const ContactButton = styled.a`
     transform: translateY(-70px) translateX(-100px);
   }
 
+  @media (hover: none) {
+    &:hover {
+      transform: none;
+    }
+  }
+
   @media (max-width: 900px) {
     display: none;
   }
@@ -299,7 +306,6 @@ const Hand = styled.img`
   bottom: -120px;
   left: 250px;
   width: 300px;
-
   transition: transform 0.4s ease; /* Hinzugefügte Transition */
 `;
 
@@ -346,6 +352,7 @@ const Heading = styled.th`
   }
 
   @media (max-width: 480px) {
+    padding-bottom: 30px;
     padding-left: 30px;
     font-size: 33px;
   }
@@ -365,7 +372,6 @@ const LeftDiv = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 50px;
     padding-left: 120px;
   }
 
@@ -374,6 +380,7 @@ const LeftDiv = styled.th`
   }
 
   @media (max-width: 480px) {
+    padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 20px;
     font-size: 18px;
@@ -389,6 +396,7 @@ const Statement = styled.th`
   color: white;
   padding-left: 100px;
   padding-right: 50px;
+
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
@@ -400,6 +408,7 @@ const Statement = styled.th`
   }
 
   @media (max-width: 900px) {
+    padding-top: 20px;
     padding-bottom: 50px;
     padding-left: 200px;
     padding-right: 50px;
@@ -411,6 +420,8 @@ const Statement = styled.th`
   }
 
   @media (max-width: 480px) {
+    padding-bottom: 30px;
+    padding-top: 10px;
     padding-left: 30px;
     padding-right: 20px;
     font-size: 40px;

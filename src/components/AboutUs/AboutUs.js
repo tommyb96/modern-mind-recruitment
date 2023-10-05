@@ -657,7 +657,6 @@ const Statement = styled.th`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 60px;
   color: white;
-  opacity: 0.8;
   padding-left: 100px;
   padding-right: 50px;
 
