@@ -189,11 +189,11 @@ const AboutUs = () => {
           <tr>
             <BoldText>
               Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
-              und ist das Ergebnis unserer langjährigen Erfahrung rund um das
-              Thema Personalvermittlung. Als Ihr vertrauenswürdiger Partner in
-              Personalfragen setzen wir auf moderne und nachhaltige Lösungen, um
+              und ist das Ergebnis unserer langjährigen Erfahrung im Bereich der
+              Personalvermittlung. Als Ihr vertrauenswürdiger Partner in Fragen
+              des Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
-              mit qualifizierten Fachkräften zu beleben. Die Vermittlung der
+              mit qualifizierten Fachkräften zu besetzen. Die Vermittlung der
               Talente von morgen steht dabei im Mittelpunkt unserer Mission.
             </BoldText>
             <Statement rowSpan="2">
@@ -216,7 +216,7 @@ const AboutUs = () => {
               Unsere Leidenschaft besteht darin, qualifizierte Talente aus
               verschiedenen Teilen der Welt zu entdecken und ihnen eine neue
               Zukunft in Deutschland zu ermöglichen. Wir glauben an
-              Win-Win-Lösungen, bei denen unsere Kunden ihr Team erweitern und
+              Win-Win-Lösungen, bei denen Unternehmen ihr Team erweitern und
               gleichzeitig Menschen die Möglichkeit erhalten, ihre Karrieren in
               Deutschland aufzubauen.
             </LeftDiv>
@@ -234,11 +234,11 @@ const AboutUs = () => {
           <tr>
             <BoldText>
               Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
-              und ist das Ergebnis unserer langjährigen Erfahrung rund um das
-              Thema Personalvermittlung. Als Ihr vertrauenswürdiger Partner in
-              Personalfragen setzen wir auf moderne und nachhaltige Lösungen, um
+              und ist das Ergebnis unserer langjährigen Erfahrung im Bereich der
+              Personalvermittlung. Als Ihr vertrauenswürdiger Partner in Fragen
+              des Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
-              mit qualifizierten Fachkräften zu beleben. Die Vermittlung der
+              mit qualifizierten Fachkräften zu besetzen. Die Vermittlung der
               Talente von morgen steht dabei im Mittelpunkt unserer Mission.
             </BoldText>
           </tr>
@@ -254,11 +254,10 @@ const AboutUs = () => {
           </tr>
           <tr>
             <LeftDiv>
-              {" "}
               Unsere Leidenschaft besteht darin, qualifizierte Talente aus
               verschiedenen Teilen der Welt zu entdecken und ihnen eine neue
               Zukunft in Deutschland zu ermöglichen. Wir glauben an
-              Win-Win-Lösungen, bei denen unsere Kunden ihr Team erweitern und
+              Win-Win-Lösungen, bei denen Unternehmen ihr Team erweitern und
               gleichzeitig Menschen die Möglichkeit erhalten, ihre Karrieren in
               Deutschland aufzubauen.
             </LeftDiv>

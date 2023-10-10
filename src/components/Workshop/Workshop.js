@@ -71,17 +71,17 @@ export default function Workshop() {
       isVisible: false,
     },
     {
+      id: "last-circle",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
       id: "heading",
       ref: useRef(null),
       isVisible: false,
     },
     {
       id: "hidden-heading",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
-      id: "lastcircle",
       ref: useRef(null),
       isVisible: false,
     },
@@ -127,660 +127,428 @@ export default function Workshop() {
             />
             <Woman src={woman} alt="woman" />
           </Line>
-          <Table>
-            <tr>
-              {" "}
-              <SpaceCell>
-                <Space></Space>
-              </SpaceCell>
+          <Container>
+            <SmallContainer>
               <Heading
                 ref={sections[2].ref}
                 isVisible={isVisible[sections[2].id]}
-                colSpan={4}
               >
                 Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
                 in Deutschland:
               </Heading>
-            </tr>
+              <Section open={isOpenOne} onClick={toggleOpenOne}>
+                <BlueTriangle>
+                  <BlueTriangleOne open={isOpenOne} />
+                </BlueTriangle>
+                <Zahl>1</Zahl>
+                <Überschrift> Allgemeine Voraussetzungen</Überschrift>
+              </Section>
+              <Row>
+                {isOpenOne && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenOne}>
+                      Allgemeine Richtlinien für die Einstellung ausländischer
+                      Fachkräfte
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+              </Row>
+              <Section open={isOpenTwo} onClick={toggleOpenTwo}>
+                <BlueTriangle>
+                  <BlueTriangleOne open={isOpenTwo} />
+                </BlueTriangle>
+                <Zahl>2</Zahl>
+                <Überschrift>
+                  {" "}
+                  Regelungen für Visum und Aufenthaltstitel
+                </Überschrift>
+              </Section>
+              <Row>
+                {isOpenTwo && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenTwo}>
+                      Einreisevisum und Aufenthaltstitel
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenTwo && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenTwo}>
+                      Fachkräfte mit Berufsausbildung
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenTwo && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenTwo}>
+                      Fachkräfte mit akademischer Ausbildung
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenTwo && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenTwo}>
+                      Regelung für ausländische Studierende
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+              </Row>
+              <Section open={isOpenThree} onClick={toggleOpenThree}>
+                <BlueTriangle>
+                  <BlueTriangleOne open={isOpenThree} />
+                </BlueTriangle>
+                <Zahl>3</Zahl>
+                <Überschrift>
+                  Beteiligung der Bundesagentur für Arbeit
+                </Überschrift>
+              </Section>
+              <Row>
+                {isOpenThree && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenThree}>
+                      Zustimmung der Bundesagentur
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenThree && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenThree}>
+                      Arbeitsmarktzulassung
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+              </Row>
+              <Section open={isOpenFour} onClick={toggleOpenFour}>
+                <BlueTriangle>
+                  <BlueTriangleOne open={isOpenFour} />
+                </BlueTriangle>
+                <Zahl>4</Zahl>
+                <Überschrift>Beteiligung der Ausländerbehörde</Überschrift>
+              </Section>
+              <Row>
+                {isOpenFour && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenFour}>
+                      Das beschleunigte Fachkräfteverfahren nach §81a
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenFour && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenFour}>
+                      Aufenthaltstitelbentragung und -verlängerung
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+              </Row>
+              <Section open={isOpenFive} onClick={toggleOpenFive}>
+                <BlueTriangle>
+                  <BlueTriangleOne open={isOpenFive} />
+                </BlueTriangle>
+                <Zahl>5</Zahl>
+                <Überschrift>
+                  {" "}
+                  Anerkennung ausländischer Berufsabschlüsse
+                </Überschrift>
+              </Section>
+              <Row>
+                {isOpenFive && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenFive}>
+                      Grundlagen der Anerkennung
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenFive && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenFive}>
+                      Anerkennungsverfahren
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenFive && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenFive}>
+                      Anerkennungsbescheid / Defizitbescheid
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+              </Row>
+              <Section open={isOpenSix} onClick={toggleOpenSix}>
+                <BlueTriangle>
+                  <BlueTriangleOne open={isOpenSix} />
+                </BlueTriangle>
+                <Zahl>6</Zahl>
+                <Überschrift>Möglichkeiten der Förderung</Überschrift>
+              </Section>
+              <Row>
+                {isOpenSix && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenSix}>
+                      Anforderungen und Optionen zur Antragstellung von
+                      Fördermitteln
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+              </Row>
+              <Section open={isOpenSeven} onClick={toggleOpenSeven}>
+                <BlueTriangle>
+                  <BlueTriangleOne open={isOpenSeven} />
+                </BlueTriangle>
+                <Zahl>7</Zahl>
+                <Überschrift> Sozialer Aspekt</Überschrift>
+              </Section>
+              <Row>
+                {isOpenSeven && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenSeven}>
+                      Familiennachzug
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenSeven && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenSeven}>
+                      Onboarding-Prozess
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+                {isOpenSeven && (
+                  <SingleRow>
+                    <BlueCircle src={bluecircle} alt="blue circle" />
+                    <ListParagraph open={isOpenSeven}>
+                      Integration von ausländischen Fachkräften
+                    </ListParagraph>
+                  </SingleRow>
+                )}
+              </Row>
+            </SmallContainer>
+          </Container>
+          <HiddenSection>
+            <Heading
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
+            >
+              Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
+              in Deutschland:
+            </Heading>
+            <Section open={isOpenOne} onClick={toggleOpenOne}>
+              <BlueTriangle>
+                <BlueTriangleOne open={isOpenOne} />
+              </BlueTriangle>
+              <Zahl>1</Zahl>
+              <Überschrift> Allgemeine Voraussetzungen</Überschrift>
+            </Section>
             <Row>
-              <td></td>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
-              </BlueTriangle>
-              <Zahl open={isOpenOne} onClick={toggleOpenOne}>
-                1
-              </Zahl>
-              <Überschrift open={isOpenOne} onClick={toggleOpenOne} colSpan={2}>
-                Allgemeine Voraussetzungen
-              </Überschrift>
+              {isOpenOne && (
+                <SingleRow>
+                  <BlueCircle src={bluecircle} alt="blue circle" />
+                  <ListParagraph open={isOpenOne}>
+                    Allgemeine Richtlinien für die Einstellung ausländischer
+                    Fachkräfte
+                  </ListParagraph>
+                </SingleRow>
+              )}
             </Row>
-            {isOpenOne && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-
-                <ListParagraph open={isOpenOne} colSpan={3}>
-                  Allgemeine Richtlinien für die Einstellung ausländischer
-                  Fachkräfte
-                </ListParagraph>
-              </tr>
-            )}
-            <tr>
-              <td></td>
+            <Section open={isOpenTwo} onClick={toggleOpenTwo}>
               <BlueTriangle>
-                <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
+                <BlueTriangleOne open={isOpenTwo} />
               </BlueTriangle>
-              <Zahl open={isOpenTwo} onClick={toggleOpenTwo}>
-                2
-              </Zahl>
-              <Überschrift open={isOpenTwo} onClick={toggleOpenTwo} colSpan={2}>
+              <Zahl>2</Zahl>
+              <Überschrift>
+                {" "}
                 Regelungen für Visum und Aufenthaltstitel
               </Überschrift>
-            </tr>
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+            </Section>
+            <Row>
+              {isOpenTwo && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  {" "}
-                  Einreisevisum und Aufenthaltstitel
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenTwo}>
+                    Einreisevisum und Aufenthaltstitel
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenTwo && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  {" "}
-                  Fachkräfte mit Berufsausbildung
-                </ListParagraph>
-              </tr>
-            )}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenTwo}>
+                    Fachkräfte mit Berufsausbildung
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenTwo && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  {" "}
-                  Fachkräfte mit akademischer Ausbildung
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenTwo}>
+                    Fachkräfte mit akademischer Ausbildung
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenTwo && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Regelung für ausländische Auszubildende
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Regelung für ausländische Studierende
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <td></td>
+                  <ListParagraph open={isOpenTwo}>
+                    Regelung für ausländische Studierende
+                  </ListParagraph>
+                </SingleRow>
+              )}
+            </Row>
+            <Section open={isOpenThree} onClick={toggleOpenThree}>
               <BlueTriangle>
-                <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
+                <BlueTriangleOne open={isOpenThree} />
               </BlueTriangle>
-              <Zahl open={isOpenThree} onClick={toggleOpenThree}>
-                3
-              </Zahl>
-              <Überschrift
-                open={isOpenThree}
-                onClick={toggleOpenThree}
-                colSpan={2}
-              >
+              <Zahl>3</Zahl>
+              <Überschrift>
                 Beteiligung der Bundesagentur für Arbeit
               </Überschrift>
-            </tr>
-            {isOpenThree && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+            </Section>
+            <Row>
+              {isOpenThree && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Zustimmung der Bundesagentur
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenThree && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenThree}>
+                    Zustimmung der Bundesagentur
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenThree && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Arbeitsmarktzulassung</ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <td></td>
+                  <ListParagraph open={isOpenThree}>
+                    Arbeitsmarktzulassung
+                  </ListParagraph>
+                </SingleRow>
+              )}
+            </Row>
+            <Section open={isOpenFour} onClick={toggleOpenFour}>
               <BlueTriangle>
-                <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
+                <BlueTriangleOne open={isOpenFour} />
               </BlueTriangle>
-              <Zahl open={isOpenFour} onClick={toggleOpenFour}>
-                4
-              </Zahl>
-              <Überschrift
-                open={isOpenFour}
-                onClick={toggleOpenFour}
-                colSpan={2}
-              >
-                Beteiligung der Ausländerbehörde
-              </Überschrift>
-            </tr>
-            {isOpenFour && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+              <Zahl>4</Zahl>
+              <Überschrift>Beteiligung der Ausländerbehörde</Überschrift>
+            </Section>
+            <Row>
+              {isOpenFour && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Das beschleunigte Fachkräfteverfahren nach §81a
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenFour && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenFour}>
+                    Das beschleunigte Fachkräfteverfahren nach §81a
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenFour && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Aufenthaltstitelbentragung und -verlängerung
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <td></td>
+                  <ListParagraph open={isOpenFour}>
+                    Aufenthaltstitelbentragung und -verlängerung
+                  </ListParagraph>
+                </SingleRow>
+              )}
+            </Row>
+            <Section open={isOpenFive} onClick={toggleOpenFive}>
               <BlueTriangle>
-                <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
+                <BlueTriangleOne open={isOpenFive} />
               </BlueTriangle>
-              <Zahl open={isOpenFive} onClick={toggleOpenFive}>
-                5
-              </Zahl>
-              <Überschrift
-                open={isOpenFive}
-                onClick={toggleOpenFive}
-                colSpan={2}
-              >
+              <Zahl>5</Zahl>
+              <Überschrift>
+                {" "}
                 Anerkennung ausländischer Berufsabschlüsse
               </Überschrift>
-            </tr>
-            {isOpenFive && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
+            </Section>
+            <Row>
+              {isOpenFive && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Grundlagen der Anerkennung
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenFive && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenFive}>
+                    Grundlagen der Anerkennung
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenFive && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Anerkennungsverfahren</ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenFive && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenFive}>
+                    Anerkennungsverfahren
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenFive && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Anerkennungsbescheid / Defizitbescheid
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <td></td>
+                  <ListParagraph open={isOpenFive}>
+                    Anerkennungsbescheid / Defizitbescheid
+                  </ListParagraph>
+                </SingleRow>
+              )}
+            </Row>
+            <Section open={isOpenSix} onClick={toggleOpenSix}>
               <BlueTriangle>
-                <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
+                <BlueTriangleOne open={isOpenSix} />
               </BlueTriangle>
-              <Zahl open={isOpenSix} onClick={toggleOpenSix}>
-                6
-              </Zahl>
-              <Überschrift open={isOpenSix} onClick={toggleOpenSix} colSpan={2}>
-                Möglichkeiten der Förderung
-              </Überschrift>
-            </tr>
-            {isOpenSix && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+              <Zahl>6</Zahl>
+              <Überschrift>Möglichkeiten der Förderung</Überschrift>
+            </Section>
+            <Row>
+              {isOpenSix && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Anforderungen und Optionen zur Antragstellung von
-                  Fördermitteln
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <td></td>
+                  <ListParagraph open={isOpenSix}>
+                    Anforderungen und Optionen zur Antragstellung von
+                    Fördermitteln
+                  </ListParagraph>
+                </SingleRow>
+              )}
+            </Row>
+            <Section open={isOpenSeven} onClick={toggleOpenSeven}>
               <BlueTriangle>
-                <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
+                <BlueTriangleOne open={isOpenSeven} />
               </BlueTriangle>
-              <Zahl open={isOpenSeven} onClick={toggleOpenSeven}>
-                7
-              </Zahl>
-              <Überschrift
-                open={isOpenSeven}
-                onClick={toggleOpenSeven}
-                colSpan={2}
-              >
-                Sozialer Aspekt
-              </Überschrift>
-            </tr>
-            {isOpenSeven && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+              <Zahl>7</Zahl>
+              <Überschrift> Sozialer Aspekt</Überschrift>
+            </Section>
+            <Row>
+              {isOpenSeven && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Familiennachzug</ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenSeven && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenSeven}>
+                    Familiennachzug
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenSeven && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Onboarding-Prozess</ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenSeven && (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  {" "}
+                  <ListParagraph open={isOpenSeven}>
+                    Onboarding-Prozess
+                  </ListParagraph>
+                </SingleRow>
+              )}
+              {isOpenSeven && (
+                <SingleRow>
                   <BlueCircle src={bluecircle} alt="blue circle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Integration von ausländischen Fachkräften
-                </ListParagraph>
-              </tr>
-            )}
-          </Table>
-          <HiddenTable>
-            <tr>
-              {" "}
-              <Heading
-                ref={sections[3].ref}
-                isVisible={isVisible[sections[3].id]}
-                colSpan={4}
-              >
-                Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
-                in Deutschland:
-              </Heading>
-            </tr>
-            <tr>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenOne} onClick={toggleOpenOne} />
-              </BlueTriangle>
-              <Zahl open={isOpenOne} onClick={toggleOpenOne}>
-                1
-              </Zahl>
-              <Überschrift open={isOpenOne} onClick={toggleOpenOne} colSpan={2}>
-                Allgemeine Voraussetzungen
-              </Überschrift>
-            </tr>
-            {isOpenOne && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Allgemeine Richtlinien für die Einstellung ausländischer
-                  Fachkräfte
-                </ListParagraph>
-              </tr>
-            )}
-            <tr>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenTwo} onClick={toggleOpenTwo} />
-              </BlueTriangle>
-              <Zahl open={isOpenTwo} onClick={toggleOpenTwo}>
-                2
-              </Zahl>
-              <Überschrift open={isOpenTwo} onClick={toggleOpenTwo} colSpan={2}>
-                Regelungen für Visum und Aufenthaltstitel
-              </Überschrift>
-            </tr>
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Einreisevisum und Aufenthaltstitel
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Fachkräfte mit Berufsausbildung
-                </ListParagraph>
-              </tr>
-            )}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Fachkräfte mit akademischer Ausbildung
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Regelung für ausländische Auszubildende
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenTwo && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Regelung für ausländische Studierende
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenThree} onClick={toggleOpenThree} />
-              </BlueTriangle>
-              <Zahl open={isOpenThree} onClick={toggleOpenThree}>
-                3
-              </Zahl>
-              <Überschrift
-                open={isOpenThree}
-                onClick={toggleOpenThree}
-                colSpan={2}
-              >
-                Beteiligung der Bundesagentur für Arbeit
-              </Überschrift>
-            </tr>
-            {isOpenThree && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Zustimmung der Bundesagentur
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenThree && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Arbeitsmarktzulassung</ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
-              </BlueTriangle>
-              <Zahl open={isOpenFour} onClick={toggleOpenFour}>
-                4
-              </Zahl>
-              <Überschrift
-                open={isOpenFour}
-                onClick={toggleOpenFour}
-                colSpan={2}
-              >
-                Beteiligung der Ausländerbehörde
-              </Überschrift>
-            </tr>
-            {isOpenFour && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Das beschleunigte Fachkräfteverfahren nach §81a
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenFour && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Aufenthaltstitelbentragung und -verlängerung
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenFive} onClick={toggleOpenFive} />
-              </BlueTriangle>
-              <Zahl open={isOpenFive} onClick={toggleOpenFive}>
-                5
-              </Zahl>
-              <Überschrift
-                open={isOpenFive}
-                onClick={toggleOpenFive}
-                colSpan={2}
-              >
-                Anerkennung ausländischer Berufsabschlüsse
-              </Überschrift>
-            </tr>
-            {isOpenFive && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Grundlagen der Anerkennung
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenFive && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Anerkennungsverfahren</ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenFive && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Anerkennungsbescheid / Defizitbescheid
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenSix} onClick={toggleOpenSix} />
-              </BlueTriangle>
-              <Zahl open={isOpenSix} onClick={toggleOpenSix}>
-                6
-              </Zahl>
-              <Überschrift open={isOpenSix} onClick={toggleOpenSix} colSpan={2}>
-                Möglichkeiten der Förderung
-              </Überschrift>
-            </tr>
-            {isOpenSix && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Anforderungen und Optionen zur Antragstellung von
-                  Fördermitteln
-                </ListParagraph>
-              </tr>
-            )}{" "}
-            <tr>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenSeven} onClick={toggleOpenSeven} />
-              </BlueTriangle>
-              <Zahl open={isOpenSeven} onClick={toggleOpenSeven}>
-                7
-              </Zahl>
-              <Überschrift
-                open={isOpenSeven}
-                onClick={toggleOpenSeven}
-                colSpan={2}
-              >
-                Sozialer Aspekt
-              </Überschrift>
-            </tr>
-            {isOpenSeven && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Familiennachzug</ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenSeven && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>Onboarding-Prozess</ListParagraph>
-              </tr>
-            )}{" "}
-            {isOpenSeven && (
-              <tr>
-                <td></td>
-                <td></td>
-                <BlueCircleCell>
-                  <BlueCircle src={bluecircle} alt="bluecircle" />
-                </BlueCircleCell>
-                <ListParagraph colSpan={3}>
-                  Integration von ausländischen Fachkräften
-                </ListParagraph>
-              </tr>
-            )}
-          </HiddenTable>
+                  <ListParagraph open={isOpenSeven}>
+                    Integration von ausländischen Fachkräften
+                  </ListParagraph>
+                </SingleRow>
+              )}
+            </Row>
+          </HiddenSection>
           <HiddenWoman src={woman} alt="woman"></HiddenWoman>
         </Wrapper>
         <Header>Wir zeigen Ihnen wie:</Header>
@@ -832,117 +600,135 @@ const Woman = styled.img`
   position: absolute;
   left: -400px;
   top: 400px;
-  width: 300px;
+  width: 260px;
 
   @media (max-width: 900px) {
     display: none;
   }
 `;
 
-const Table = styled.table`
-  position: relative;
-  border-collapse: collapse;
-  width: 1350px;
-  margin: auto;
+const Container = styled.div`
+  display: flex;
+  justify-content: end;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const SmallContainer = styled.div`
+  width: 50vw;
   margin-top: 300px;
-  margin-bottom: 150px;
-  font-size: 20px;
-  width: 50%;
-  width: 1350px;
-
-  @media (max-width: 1300px) {
-    width: 100%;
-  }
-
-  @media (max-width: 900px) {
-    display: none;
-  }
+  margin-bottom: 100px;
 `;
 
-const SpaceCell = styled.th`
-  width: 50vw;
-`;
-
-const Space = styled.div`
-  width: 50vw;
-`;
-
-const Heading = styled.th`
+const Heading = styled.div`
   font-weight: bold;
   text-align: start;
   font-size: 33px;
-  padding-left: 70px;
-  padding-bottom: 40px;
-  width: 50%;
+  margin-left: 70px;
+  margin-bottom: 40px;
+
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
+    margin-right: 20px;
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    margin-left: 120px;
     transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   }
 
   @media (max-width: 700px) {
-    padding-left: 70px;
+    margin-left: 70px;
   }
 
   @media (max-width: 480px) {
-    padding-left: 30px;
+    margin-left: 30px;
     font-size: 26px;
   }
 `;
 
-const Row = styled.tr``;
+const Section = styled.div`
+  display: flex;
+  flex-direction: row;
 
-const BlueTriangle = styled.th`
-  padding-left: 60px;
-  padding-top: 10px;
-
-  @media (max-width: 1400px) {
+  @media (max-width: 480px) {
+    margin-top: 10px;
   }
+`;
+
+const Row = styled.div`
+  margin-top: -10px;
+`;
+
+const SingleRow = styled.div`
+  display: flex;
+  margin-left: 170px;
+  margin-right: 20px;
+  margin-top: 5px;
 
   @media (max-width: 900px) {
-    padding-left: 120px;
-    width: 0%;
+    margin-left: 225px;
   }
 
   @media (max-width: 700px) {
-    padding-left: 70px;
+    margin-left: 175px;
   }
 
   @media (max-width: 480px) {
-    padding-left: 30px;
+    margin-left: 105px;
+    margin-right: 10px;
   }
 `;
 
-const Zahl = styled.th`
+const BlueTriangle = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+
+  @media (max-width: 1100px) {
+    margin-left: 50px;
+  }
+
+  @media (max-width: 900px) {
+    margin-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    margin-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 30px;
+  }
+`;
+
+const Zahl = styled.div`
   font-size: 90px;
   color: blue;
+  text-align: center;
   font-family: Righteous;
-  width: 5%;
-  padding-top: 10px;
+  width: 70px;
 
   @media (max-width: 480px) {
     font-size: 70px;
+    width: 40px;
   }
 `;
 
-const Überschrift = styled.td`
+const Überschrift = styled.div`
   font-size: 28px;
-  text-align: start;
-  padding-right: 20px;
-  padding-left: 10px;
-  padding-top: 10px;
+  margin: 10px 20px 10px 10px;
+  align-self: center;
 
   @media (max-width: 480px) {
     font-size: 26px;
-    padding-left: 5px;
+    margin-left: 13px;
   }
 
   @media (hover: hover) {
@@ -952,17 +738,8 @@ const Überschrift = styled.td`
   }
 `;
 
-const BlueCircleCell = styled.td`
-  text-align: end;
-  width: 30px;
-  @media (max-width: 900px) {
-    width: 2%;
-  }
-`;
 const BlueCircle = styled.img`
   width: 8px;
-  margin-right: 10px;
-  margin-top: 10px;
 `;
 const WorkshopCircle = styled.div`
   position: absolute;
@@ -995,17 +772,15 @@ const BlueTriangleOne = styled.div`
     border-width: 17px 10px 0 10px;
   }
 `;
-const ListParagraph = styled.th`
+const ListParagraph = styled.div`
   font-size: 20px;
-  text-align: start;
-  padding-top: 7px;
   max-height: ${({ open }) => (open ? "1000px" : "0")};
   overflow: hidden;
   transition: max-height 0.5 ease-in-out;
   color: rgb(0, 0, 0, 0.7);
+  margin-left: 10px;
 
   @media (max-width: 1400px) {
-    padding-right: 20px;
   }
 
   @media (max-width: 700px) {
@@ -1013,7 +788,6 @@ const ListParagraph = styled.th`
 
   @media (max-width: 480px) {
     font-size: 18px;
-    padding-top: 5px;
   }
 `;
 const LastCircle = styled.div`
@@ -1029,26 +803,18 @@ const LastCircle = styled.div`
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
 `;
-const HiddenTable = styled.table`
-  position: relative;
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 300px;
+
+const HiddenSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 250px;
   margin-bottom: 50px;
-  font-size: 20px;
 
   @media (min-width: 901px) {
     display: none;
   }
-
-  @media (max-width: 700px) {
-    margin-top: 250px;
-  }
-  @media (max-width: 480px) {
-    margin-bottom: 30px;
-    margin-top: 170px;
-  }
 `;
+
 const HiddenWoman = styled.img`
   width: 250px;
   margin: auto;
