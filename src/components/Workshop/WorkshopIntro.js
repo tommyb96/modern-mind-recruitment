@@ -306,7 +306,6 @@ const Table = styled.table`
   margin: auto;
   margin-top: 100px;
   margin-bottom: 250px;
-  font-size: 20px;
 
   @media (max-width: 1500px) {
     width: 100%;
@@ -353,7 +352,6 @@ const LeftDiv = styled.th`
   color: black;
   width: 50%;
   padding-right: 100px;
-  font-size: 20px;
   text-align: start;
   padding-bottom: 30px;
   color: white;
@@ -376,7 +374,6 @@ const LeftDiv = styled.th`
     padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 20px;
-    font-size: 18px;
   }
 `;
 

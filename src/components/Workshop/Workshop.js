@@ -656,10 +656,7 @@ const Heading = styled.div`
 const Section = styled.div`
   display: flex;
   flex-direction: row;
-
-  @media (max-width: 480px) {
-    margin-top: 10px;
-  }
+  margin-top: 15px;
 `;
 
 const Row = styled.div`

@@ -1249,6 +1249,8 @@ const LeftBoldHeader = styled.th`
 `;
 
 const Row = styled.tr`
+  width: 50vw;
+
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
