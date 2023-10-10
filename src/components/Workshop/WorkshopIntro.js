@@ -48,11 +48,6 @@ export default function WorkshopIntro() {
       isVisible: false,
     },
     {
-      id: "statement",
-      ref: useRef(null),
-      isVisible: false,
-    },
-    {
       id: "hidden-eading",
       ref: useRef(null),
       isVisible: false,
@@ -123,11 +118,7 @@ export default function WorkshopIntro() {
               die Hand zu nehmen und eventuell sogar eine eigene
               Personalabteilung für ausländische Fachkräfte zu gründen.
             </LeftDiv>
-            <Statement
-              ref={sections[2].ref}
-              isVisible={isVisible[sections[2].id]}
-              rowSpan={3}
-            >
+            <Statement rowSpan={3}>
               WIR MACHEN SIE FIT UM IHREN ERFOLG ZU MAXIMIEREN.
             </Statement>
           </tr>
@@ -152,8 +143,8 @@ export default function WorkshopIntro() {
         <HiddenTable>
           <tr>
             <Heading
-              ref={sections[3].ref}
-              isVisible={isVisible[sections[3].id]}
+              ref={sections[2].ref}
+              isVisible={isVisible[sections[2].id]}
             >
               workshop
             </Heading>
@@ -188,8 +179,8 @@ export default function WorkshopIntro() {
           <tr>
             {" "}
             <Statement
-              ref={sections[4].ref}
-              isVisible={isVisible[sections[4].id]}
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
             >
               WIR MACHEN SIE FIT UM IHREN ERFOLG ZU MAXIMIEREN.
             </Statement>
@@ -317,7 +308,7 @@ const Table = styled.table`
   margin-bottom: 250px;
   font-size: 20px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1500px) {
     width: 100%;
   }
 
@@ -398,11 +389,6 @@ const Statement = styled.th`
   color: white;
   padding-left: 100px;
   padding-right: 50px;
-
-  //animation
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;

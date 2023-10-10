@@ -210,7 +210,7 @@ const Table = styled.table`
   margin-bottom: 120px;
   font-size: 20px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 100%;
   }
 

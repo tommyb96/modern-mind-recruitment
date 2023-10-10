@@ -924,7 +924,7 @@ const FirstTable = styled.table`
   width: 50%;
   width: 1350px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 100%;
   }
 
@@ -1201,7 +1201,7 @@ const SecondTable = styled.table`
 
   margin-bottom: 100px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 100%;
   }
 

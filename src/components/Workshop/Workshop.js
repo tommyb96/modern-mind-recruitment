@@ -803,7 +803,6 @@ const LastCircle = styled.div`
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
 `;
-
 const HiddenSection = styled.div`
   display: flex;
   flex-direction: column;

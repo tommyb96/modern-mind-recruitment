@@ -307,7 +307,7 @@ const FirstTable = styled.table`
   margin-top: 100px;
   margin-bottom: 120px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 100%;
   }
 

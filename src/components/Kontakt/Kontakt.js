@@ -406,7 +406,7 @@ const Table = styled.table`
   margin-top: 15px;
   font-size: 20px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 100%;
   }
 
