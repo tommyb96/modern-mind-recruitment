@@ -806,8 +806,12 @@ const LastCircle = styled.div`
 const HiddenSection = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 250px;
+  margin-top: 300px;
   margin-bottom: 50px;
+
+  @media (max-width: 700px) {
+    margin-top: 250px;
+  }
 
   @media (min-width: 901px) {
     display: none;

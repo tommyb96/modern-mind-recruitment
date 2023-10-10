@@ -61,6 +61,7 @@ const NavContainer = styled.nav`
   display: flex;
   position: fixed;
   z-index: 1000;
+  width: 100%;
   top: 0;
   left: 0;
   opacity: ${({ scrollBackground }) => (scrollBackground ? 0 : 1)};
