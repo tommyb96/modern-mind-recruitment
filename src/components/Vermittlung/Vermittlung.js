@@ -329,13 +329,13 @@ export default function Vermittlung() {
             </tr>
             <tr>
               <LeftDiv>
-                Unsere Expertise liegt in der gezielten Begleitung
-                qualifizierter Fachkräfte aus Nicht-EU-Ländern bei langfristiger
-                Erwerbsmigration. Anders als in der Arbeitnehmerüberlassung
+                Unsere Expertise liegt in der gezielten Begleitung einer
+                langfristigen Erwerbsmigration qualifizierter Fachkräfte aus
+                Nicht-EU-Ländern. Im Gegensatz zur Arbeitnehmerüberlassung
                 setzen wir auf nachhaltige Bindungen statt kurzfristiger
                 Lösungen. Unser zentrales Versprechen ist die aktive Förderung
                 von Personalbindung – eine Eigenschaft, die auf unserer
-                Pro-Seite an erster Stelle steht.
+                Prioritätenliste an erster Stelle steht.
               </LeftDiv>
               <th rowSpan={3}>
                 <Haus src={haus} alt="haus" />
@@ -345,9 +345,11 @@ export default function Vermittlung() {
               <LeftDiv>
                 Unsere Fachkräfte streben danach, ihre bisherige Lebenssituation
                 im Heimatland hinter sich zu lassen und in Deutschland einen
-                Neuanfang zu verwirklichen. Unser Hauptaugenmerk liegt darauf,
-                qualifizierten Fachkräften und ihren Familien dabei zu helfen,
-                eine neue Perspektive aufzubauen.
+                Neuanfang zu verwirklichen. Wir sind nicht nur die
+                Ansprechpartner:innen und Bezugspersonen, sondern auch
+                Wegbegleiter:innen zu einer erfolgreichen Zukunft. Wir sind
+                bestrebt, die Fachkraft und ihre Familie aktiv bei der
+                Verwirklichung ihrer Wünsche in Deutschland zu unterstützen.
               </LeftDiv>
             </tr>
             <tr>
@@ -372,8 +374,8 @@ export default function Vermittlung() {
             </tr>
             <tr>
               <RightDiv>
-                In unserer Mannschaft sind ausschließlich Fachexperten
-                vertreten, die aus Ländern stammen deren Ausbildungsstrukturen
+                In unserem Bewerberpool sind ausschließlich Fachexpert:innen
+                vertreten, die aus Ländern stammen, deren Ausbildungsstrukturen
                 mit denen aus Deutschland vergleichbar sind. Besonders legen wir
                 Wert auf Beziehungen zu den GUS-Staaten, da unser Team in dieser
                 Region verwurzelt ist und uns dies eine besonders
@@ -388,18 +390,19 @@ export default function Vermittlung() {
                 ref={sections[5].ref}
                 isVisible={isVisible[sections[5].id]}
               >
-                Wer sind unsere „Fachkräfte von morgen“?
+                Wer sind unsere „Talente von morgen“?
               </BoldHeader>
             </tr>
             <tr>
               <RightDiv>
-                Der Begriff "Fachkräfte von morgen" kann unterschiedliche
-                Bedeutungen haben. Bei modern mind recruitment beschränken wir
-                uns nicht allein auf hochqualifizierte Akademiker oder
-                Auszubildende. Wir bieten vielfältige Lösungen für verschiedene
-                Anforderungen. Das bedeutet, dass Sie bei uns potenzielle
-                Azubis, Fachkräfte mit abgeschlossener Berufsausbildung sowie
-                hochqualifizierte Akademiker finden können.
+                Bei Modern Mind Recruitment beschränken wir uns nicht allein auf
+                hochqualifizierte Akademiker:innen oder Auszubildende. Unser
+                Angebot umfasst eine breite Palette von Lösungen, um den
+                vielfältigen Anforderungen gerecht zu werden. Das bedeutet, dass
+                Sie bei uns potenzielle Azubis, Fachkräfte mit abgeschlossener
+                Berufsausbildung sowie hochqualifizierte Akademiker:innen finden
+                können. Wir sind bestrebt, für jeden Bedarf die passende
+                Fachkraft zur Verfügung zu stellen.
               </RightDiv>
             </tr>
             <tr>
@@ -423,22 +426,24 @@ export default function Vermittlung() {
             </tr>
             <tr>
               <LeftDiv>
-                Unsere Expertise liegt in der gezielten Begleitung
-                qualifizierter Fachkräfte aus Nicht-EU-Ländern bei langfristiger
-                Erwerbsmigration. Anders als in der Arbeitnehmerüberlassung
+                Unsere Expertise liegt in der gezielten Begleitung einer
+                langfristigen Erwerbsmigration qualifizierter Fachkräfte aus
+                Nicht-EU-Ländern. Im Gegensatz zur Arbeitnehmerüberlassung
                 setzen wir auf nachhaltige Bindungen statt kurzfristiger
                 Lösungen. Unser zentrales Versprechen ist die aktive Förderung
                 von Personalbindung – eine Eigenschaft, die auf unserer
-                Pro-Seite an erster Stelle steht.
+                Prioritätenliste an erster Stelle steht.
               </LeftDiv>
             </tr>
             <tr>
               <LeftDiv>
                 Unsere Fachkräfte streben danach, ihre bisherige Lebenssituation
                 im Heimatland hinter sich zu lassen und in Deutschland einen
-                Neuanfang zu verwirklichen. Unser Hauptaugenmerk liegt darauf,
-                qualifizierten Fachkräften und ihren Familien dabei zu helfen,
-                eine neue Perspektive aufzubauen.
+                Neuanfang zu verwirklichen. Wir sind nicht nur die
+                Ansprechpartner:innen und Bezugspersonen, sondern auch
+                Wegbegleiter:innen zu einer erfolgreichen Zukunft. Wir sind
+                bestrebt, die Fachkraft und ihre Familie aktiv bei der
+                Verwirklichung ihrer Wünsche in Deutschland zu unterstützen.
               </LeftDiv>
             </tr>
             <tr>
@@ -466,8 +471,8 @@ export default function Vermittlung() {
             </tr>
             <tr>
               <RightDiv>
-                In unserer Mannschaft sind ausschließlich Fachexperten
-                vertreten, die aus Ländern stammen deren Ausbildungsstrukturen
+                In unserem Bewerberpool sind ausschließlich Fachexpert:innen
+                vertreten, die aus Ländern stammen, deren Ausbildungsstrukturen
                 mit denen aus Deutschland vergleichbar sind. Besonders legen wir
                 Wert auf Beziehungen zu den GUS-Staaten, da unser Team in dieser
                 Region verwurzelt ist und uns dies eine besonders
@@ -487,18 +492,19 @@ export default function Vermittlung() {
                 ref={sections[10].ref}
                 isVisible={isVisible[sections[10].id]}
               >
-                Wer sind unsere „Fachkräfte von morgen“?
+                Wer sind unsere „Talente von morgen“?
               </BoldHeader>
             </tr>
             <tr>
               <RightDiv>
-                Der Begriff "Fachkräfte von morgen" kann unterschiedliche
-                Bedeutungen haben. Bei modern mind recruitment beschränken wir
-                uns nicht allein auf hochqualifizierte Akademiker oder
-                Auszubildende. Wir bieten vielfältige Lösungen für verschiedene
-                Anforderungen. Das bedeutet, dass Sie bei uns potenzielle
-                Azubis, Fachkräfte mit abgeschlossener Berufsausbildung sowie
-                hochqualifizierte Akademiker finden können.
+                Bei Modern Mind Recruitment beschränken wir uns nicht allein auf
+                hochqualifizierte Akademiker:innen oder Auszubildende. Unser
+                Angebot umfasst eine breite Palette von Lösungen, um den
+                vielfältigen Anforderungen gerecht zu werden. Das bedeutet, dass
+                Sie bei uns potenzielle Azubis, Fachkräfte mit abgeschlossener
+                Berufsausbildung sowie hochqualifizierte Akademiker:innen finden
+                können. Wir sind bestrebt, für jeden Bedarf die passende
+                Fachkraft zur Verfügung zu stellen.
               </RightDiv>
             </tr>
             <tr>
@@ -540,14 +546,17 @@ export default function Vermittlung() {
                 Wir sind stets auf der Suche nach Unternehmen, die eine
                 innovative und vor allem langfristige Lösung für ihren
                 Personalbedarf anstreben. Zudem legen wir großen Wert auf
-                Offenheit und Menschlichkeit innerhalb der Betriebe, damit
-                unsere Fachkräfte mit Herz willkommen geheißen werden. Unser
-                Ziel ist es, unsere Fachleute mit gutem Gewissen an Unternehmen
-                zu vermitteln, in denen die Bedürfnisse der Mitarbeiter
-                berücksichtigt, die persönliche Entwicklung gefördert und
-                Teamarbeit sowie ein gemeinsames Miteinander geschätzt werden.
-                Erfolgreiches Onboarding und die Integration von Fachkräften aus
-                Nicht-EU-Ländern erfordern besondere Rahmenbedingungen.
+                Offenheit innerhalb der Betriebe, damit unsere Fachkräfte mit
+                Herz willkommen geheißen werden. Unser Ziel ist es, unsere
+                Fachleute mit gutem Gewissen an Unternehmen zu vermitteln, in
+                denen die Bedürfnisse der Mitarbeiter:innen berücksichtigt, die
+                persönliche Entwicklung gefördert und Teamarbeit sowie ein
+                gemeinsames Miteinander geschätzt werden. Erfolgreiches
+                Onboarding und die Integration von Fachkräften mit
+                internationaler Herkunft erfordern besondere Rahmenbedingungen.
+                Hierbei stehen wir sowohl dem Unternehmen als auch der Fachkraft
+                aktiv zur Seite und teilen unsere Erfahrungen, um eine bessere
+                Eingliederung zu ermöglichen.
               </LeftDiv>
               <th></th>
             </tr>
@@ -572,7 +581,8 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[14].ref} isVisible={isVisible[sections[14].id]}>
               <Info colSpan={2}>
-                Einführung in die komplexen Verfahren der Erwerbsmigration
+                Grundlegende Einführung und Beratung zu den Verfahren der
+                Erwerbsmigration
               </Info>
             </Row>
             <Row ref={sections[15].ref} isVisible={isVisible[sections[15].id]}>
@@ -584,9 +594,9 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[16].ref} isVisible={isVisible[sections[16].id]}>
               <Info colSpan={2}>
-                Erstellen individuell zugeschnittene Profile, die den
-                gewünschten Anforderungen entsprechen und Vorauswahl
-                potenzieller Bewerber
+                Erstellen individuell zugeschnittener Profile, die den
+                gewünschten Anforderungen entsprechen, und Vorauswahl
+                potenzieller Bewerber:innen
               </Info>
             </Row>
 
@@ -602,8 +612,9 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[18].ref} isVisible={isVisible[sections[18].id]}>
               <Info colSpan={2}>
-                Online-Vorstellungsgespräch über Plattformen wie Microsoft Teams
-                oder Zoom, gegebenenfalls mit Übersetzungsunterstützung
+                Online-Vorstellungsgespräch mithilfe von Plattformen wie
+                Microsoft Teams oder Zoom, gegebenenfalls mit
+                Übersetzungsunterstützung
               </Info>
             </Row>
             <Row ref={sections[19].ref} isVisible={isVisible[sections[19].id]}>
@@ -658,10 +669,8 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[26].ref} isVisible={isVisible[sections[26].id]}>
               <Info colSpan={2}>
-                Unterstützung bei der Suche nach einer Wohnung, Hilfe bei
-                Besuchen bei Behörden wie der Meldebehörde sowie Unterstützung
-                bei organisatorischen Angelegenheiten wie der Eröffnung eines
-                Bankkontos und Fragen zur Versicherung
+                Unterstützung bei der Wohnungssuche, Hilfe bei Behördenbesuchen
+                sowie Unterstützung bei organisatorischen Angelegenheiten
               </Info>
             </Row>
             <Row ref={sections[27].ref} isVisible={isVisible[sections[27].id]}>
@@ -673,9 +682,8 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[28].ref} isVisible={isVisible[sections[28].id]}>
               <Info colSpan={2}>
-                Unterstützung beim Einführungsprozess im Unternehmen
-                (Onboarding) sowie Verlängerung des Aufenthaltstitels und
-                Familiennachzug
+                Unterstützung beim Onboarding im Unternehmen sowie Verlängerung
+                des Aufenthaltstitels und Familiennachzug
               </Info>
             </Row>
           </SecondTable>
@@ -696,14 +704,17 @@ export default function Vermittlung() {
                 Wir sind stets auf der Suche nach Unternehmen, die eine
                 innovative und vor allem langfristige Lösung für ihren
                 Personalbedarf anstreben. Zudem legen wir großen Wert auf
-                Offenheit und Menschlichkeit innerhalb der Betriebe, damit
-                unsere Fachkräfte mit Herz willkommen geheißen werden. Unser
-                Ziel ist es, unsere Fachleute mit gutem Gewissen an Unternehmen
-                zu vermitteln, in denen die Bedürfnisse der Mitarbeiter
-                berücksichtigt, die persönliche Entwicklung gefördert und
-                Teamarbeit sowie ein gemeinsames Miteinander geschätzt werden.
-                Erfolgreiches Onboarding und die Integration von Fachkräften aus
-                Nicht-EU-Ländern erfordern besondere Rahmenbedingungen.
+                Offenheit innerhalb der Betriebe, damit unsere Fachkräfte mit
+                Herz willkommen geheißen werden. Unser Ziel ist es, unsere
+                Fachleute mit gutem Gewissen an Unternehmen zu vermitteln, in
+                denen die Bedürfnisse der Mitarbeiter:innen berücksichtigt, die
+                persönliche Entwicklung gefördert und Teamarbeit sowie ein
+                gemeinsames Miteinander geschätzt werden. Erfolgreiches
+                Onboarding und die Integration von Fachkräften mit
+                internationaler Herkunft erfordern besondere Rahmenbedingungen.
+                Hierbei stehen wir sowohl dem Unternehmen als auch der Fachkraft
+                aktiv zur Seite und teilen unsere Erfahrungen, um eine bessere
+                Eingliederung zu ermöglichen.
               </LeftDiv>
             </tr>
             <tr>
@@ -728,7 +739,8 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[31].ref} isVisible={isVisible[sections[31].id]}>
               <Info colSpan={2}>
-                Einführung in die komplexen Verfahren der Erwerbsmigration
+                Grundlegende Einführung und Beratung zu den Verfahren der
+                Erwerbsmigration
               </Info>
             </Row>
             <Row ref={sections[32].ref} isVisible={isVisible[sections[32].id]}>
@@ -739,9 +751,9 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[33].ref} isVisible={isVisible[sections[33].id]}>
               <Info colSpan={2}>
-                Erstellen individuell zugeschnittene Profile, die den
-                gewünschten Anforderungen entsprechen und Vorauswahl
-                potenzieller Bewerber
+                Erstellen individuell zugeschnittener Profile, die den
+                gewünschten Anforderungen entsprechen, und Vorauswahl
+                potenzieller Bewerber:innen
               </Info>
             </Row>
             <Row ref={sections[34].ref} isVisible={isVisible[sections[34].id]}>
@@ -754,8 +766,9 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[35].ref} isVisible={isVisible[sections[35].id]}>
               <Info colSpan={2}>
-                Online-Vorstellungsgespräch über Plattformen wie Microsoft Teams
-                oder Zoom, gegebenenfalls mit Übersetzungsunterstützung
+                Online-Vorstellungsgespräch mithilfe von Plattformen wie
+                Microsoft Teams oder Zoom, gegebenenfalls mit
+                Übersetzungsunterstützung
               </Info>
             </Row>
             <Row ref={sections[36].ref} isVisible={isVisible[sections[36].id]}>
@@ -804,10 +817,8 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[43].ref} isVisible={isVisible[sections[43].id]}>
               <Info colSpan={2}>
-                Unterstützung bei der Suche nach einer Wohnung, Hilfe bei
-                Besuchen bei Behörden wie der Meldebehörde sowie Unterstützung
-                bei organisatorischen Angelegenheiten wie der Eröffnung eines
-                Bankkontos und Fragen zur Versicherung
+                Unterstützung bei der Wohnungssuche, Hilfe bei Behördenbesuchen
+                sowie Unterstützung bei organisatorischen Angelegenheiten
               </Info>
             </Row>
             <Row ref={sections[44].ref} isVisible={isVisible[sections[44].id]}>
@@ -818,9 +829,8 @@ export default function Vermittlung() {
             </Row>{" "}
             <Row ref={sections[45].ref} isVisible={isVisible[sections[45].id]}>
               <Info colSpan={2}>
-                Unterstützung beim Einführungsprozess im Unternehmen
-                (Onboarding) sowie Verlängerung des Aufenthaltstitels und
-                Familiennachzug
+                Unterstützung beim Onboarding im Unternehmen sowie Verlängerung
+                des Aufenthaltstitels und Familiennachzug
               </Info>
             </Row>
           </HiddenSecondTable>

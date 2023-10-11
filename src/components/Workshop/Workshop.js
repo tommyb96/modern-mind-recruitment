@@ -553,8 +553,8 @@ export default function Workshop() {
         </Wrapper>
         <Header>Wir zeigen Ihnen wie:</Header>
         <StyledDiv>
-          Im Rahmen des Workshops werden alle aufgelisteten Punkte eingehend
-          behandelt und gründlich erläutert. Dabei werden nicht nur die
+          Im Rahmen des Workshops werden alle aufgelisteten Punkte ausführlich
+          behandelt und sorgfältig erläutert. Dabei werden nicht nur die
           grundlegenden Informationen zu jedem Thema dargelegt, sondern auch
           praktische Erkenntnisse jahrelanger Berufserfahrung auf diesem Gebiet
           vermittelt. So erhalten Sie nicht nur eine umfassende Übersicht über

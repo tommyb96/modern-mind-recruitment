@@ -6,6 +6,7 @@ import waves from "../../assets/svg/AboutUs/about_us_waves.png";
 import woman from "../../assets/svg/AboutUs/about-us-woman.svg";
 import hand from "../../assets/svg/AboutUs/about-us-hand.png";
 import checkmark from "../../assets/svg/AboutUs/about-us-checkmark.svg";
+import bluecircle from "../../assets/svg/Workshop/workshop-blue-circle.svg";
 
 const AboutUs = () => {
   const contactButtonRef = useRef(); // Ref für den ContactButton
@@ -131,6 +132,26 @@ const AboutUs = () => {
       ref: useRef(null),
       isVisible: false,
     },
+    {
+      id: "statement",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-statement",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "third-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-third-header",
+      ref: useRef(null),
+      isVisible: false,
+    },
   ];
 
   const [isVisible, setIsVisible] = useState({});
@@ -193,10 +214,14 @@ const AboutUs = () => {
               Personalvermittlung. Als Ihr vertrauenswürdiger Partner in Fragen
               des Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
-              mit qualifizierten Fachkräften zu besetzen. Die Vermittlung der
-              Talente von morgen steht dabei im Mittelpunkt unserer Mission.
+              mit qualifizierten Fachkräften sichern. Die Vermittlung unserer
+              ,,Talente von morgen" steht dabei im Mittelpunkt unserer Mission.
             </BoldText>
-            <Statement rowSpan="2">
+            <Statement
+              ref={sections[18].ref}
+              isVisible={isVisible[sections[18].id]}
+              rowSpan="2"
+            >
               lasst uns gemeinsam <br />
               ihre zukunft gestalten!
             </Statement>
@@ -208,7 +233,7 @@ const AboutUs = () => {
               Herangehensweise an die Personalvermittlung beeinflusst haben. Wir
               brechen bewusst aus dem traditionellen Rahmen aus und legen
               unseren Schwerpunkt auf das unerschlossene Potenzial der
-              internationalen Fachkräfte.
+              <span> internationalen Fachkräfte.</span>
             </LeftDiv>
           </tr>
           <tr>
@@ -238,8 +263,9 @@ const AboutUs = () => {
               Personalvermittlung. Als Ihr vertrauenswürdiger Partner in Fragen
               des Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
-              mit qualifizierten Fachkräften zu besetzen. Die Vermittlung der
-              Talente von morgen steht dabei im Mittelpunkt unserer Mission.
+              mit qualifizierten Fachkräften zu besetzen. Die Vermittlung
+              unserer ,,Talente von morgen" steht dabei im Mittelpunkt unserer
+              Mission.
             </BoldText>
           </tr>
           <tr>
@@ -263,7 +289,10 @@ const AboutUs = () => {
             </LeftDiv>
           </tr>
           <tr>
-            <Statement>
+            <Statement
+              ref={sections[19].ref}
+              isVisible={isVisible[sections[19].id]}
+            >
               {" "}
               lasst uns gemeinsam <br />
               ihre zukunft gestalten!
@@ -301,22 +330,14 @@ const AboutUs = () => {
           </tr>
           <tr>
             <LeftCell>
-              Unser junges Team hat sich als Partner in Personalfragen auf die
-              Organisation und Durchführung der Erwerbsmigration von
-              qualifizierten Fachkräften aus Nicht-EU-Ländern spezialisiert. Als
-              innovatives sächsisches Unternehmen mit einer zukunftsorientierten
-              Strategie bei der Gewinnung von passendem Personal unterstützen
-              wir lokal als auch bundesweit ansässige Unternehmen dabei, das zu
-              großen Teilen unerschlossene Potenzial qualifizierter Fachkräfte
-              aus Nicht-EU-Ländern zu nutzen und mit Blick in die Zukunft offene
-              Stellen langfristig zu besetzen. Um die Zufriedenheit unserer
-              Kunden und die Eignung unserer Kandidaten zu garantieren, arbeiten
-              wir mit ausgewählten Partnern aus Ländern der ehemaligen
-              GUS-Region sowie Mittel- und Südamerika zusammen, in denen das
-              Bildungssystem dem deutschen ähnlich ist. Ihre Bedürfnisse stehen
-              im Mittelpunkt unserer Bemühungen.
+              Unser junges Team hat sich als Partner:innen in Personalfragen auf
+              die Vermittlung qualifizierter Fachkräfte aus Nicht-EU-Ländern
+              spezialisiert und vertritt somit eine ausgesprochen soziale
+              Überzeugung. Wir setzen uns vor allem für Ehrlichkeit und
+              Verlässlichkeit ein, aber noch viel wichtiger ist für uns: die
+              Menschlichkeit.
             </LeftCell>
-            <td>
+            <td rowSpan={3}>
               <Right
                 ref={sections[5].ref}
                 isVisible={isVisible[sections[5].id]}
@@ -367,6 +388,22 @@ const AboutUs = () => {
               </Right>
             </td>
           </tr>
+          <tr>
+            <BoldHeader
+              ref={sections[20].ref}
+              isVisible={isVisible[sections[20].id]}
+            >
+              Welche Ansätze verfolgen wir?
+            </BoldHeader>
+          </tr>
+          <tr>
+            <LeftCell rowSpan={2}>
+              Unsere Strategie verfolgt mehrere Ansätze: Wir unterstützen
+              Unternehmen bei der Besetzung offener Stellen, bekämpfen den
+              Fachkräftemangel und bieten durch Erwerbsmigration Chancen zur
+              Lebensveränderung.
+            </LeftCell>
+          </tr>
         </SecondTable>
         <HiddenSecondTable>
           <tr>
@@ -379,24 +416,33 @@ const AboutUs = () => {
           </tr>
           <tr>
             <LeftCell>
-              Unser junges Team hat sich als Partner in Personalfragen auf die
-              Organisation und Durchführung der Erwerbsmigration von
-              qualifizierten Fachkräften aus Nicht-EU-Ländern spezialisiert. Als
-              innovatives sächsisches Unternehmen mit einer zukunftsorientierten
-              Strategie bei der Gewinnung von passendem Personal unterstützen
-              wir lokal als auch bundesweit ansässige Unternehmen dabei, das zu
-              großen Teilen unerschlossene Potenzial qualifizierter Fachkräfte
-              aus Nicht-EU-Ländern zu nutzen und mit Blick in die Zukunft offene
-              Stellen langfristig zu besetzen. Um die Zufriedenheit unserer
-              Kunden und die Eignung unserer Kandidaten zu garantieren, arbeiten
-              wir mit ausgewählten Partnern aus Ländern der ehemaligen
-              GUS-Region sowie Mittel- und Südamerika zusammen, in denen das
-              Bildungssystem dem deutschen ähnlich ist. Ihre Bedürfnisse stehen
-              im Mittelpunkt unserer Bemühungen.
+              Unser junges Team hat sich als Partner:innen in Personalfragen auf
+              die Vermittlung qualifizierter Fachkräfte aus Nicht-EU-Ländern
+              spezialisiert und vertritt somit eine ausgesprochen soziale
+              Überzeugung. Wir setzen uns vor allem für Ehrlichkeit und
+              Verlässlichkeit ein, aber noch viel wichtiger ist für uns: die
+              Menschlichkeit.
+            </LeftCell>
+          </tr>
+          <tr>
+            <BoldHeader
+              ref={sections[21].ref}
+              isVisible={isVisible[sections[21].id]}
+            >
+              Welche Ansätze verfolgen wir?
+            </BoldHeader>
+          </tr>
+          <tr>
+            <LeftCell>
+              Unsere Strategie verfolgt mehrere Ansätze: Wir unterstützen
+              Unternehmen bei der Besetzung offener Stellen, bekämpfen den
+              Fachkräftemangel und bieten durch Erwerbsmigration Chancen zur
+              Lebensveränderung.
             </LeftCell>
           </tr>
           <tr>
             <RightCell
+              style={{ paddingTop: "10px" }}
               ref={sections[12].ref}
               isVisible={isVisible[sections[12].id]}
             >
@@ -656,6 +702,10 @@ const LeftDiv = styled.th`
   opacity: 0.8;
   padding-bottom: 30px;
 
+  span {
+    font-weight: bold;
+  }
+
   @media (max-width: 1400px) {
     padding-left: 40px;
     padding-right: 50px;
@@ -685,6 +735,10 @@ const Statement = styled.th`
   color: white;
   padding-left: 100px;
   padding-right: 50px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
@@ -692,6 +746,7 @@ const Statement = styled.th`
   }
 
   @media (max-width: 900px) {
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 200px;
@@ -852,6 +907,7 @@ const HeaderCell = styled.th`
   text-align: start;
   font-size: 39px;
   padding-bottom: 20px;
+  padding-top: 20px;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -898,6 +954,37 @@ const LeftCell = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
+  }
+`;
+
+const BoldHeader = styled.th`
+  text-align: start;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 21px;
+
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 140px;
+    padding-top: 0;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    font-size: 20px;
   }
 `;
 

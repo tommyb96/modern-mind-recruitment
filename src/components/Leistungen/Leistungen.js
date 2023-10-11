@@ -132,9 +132,9 @@ export default function Leistungen() {
             <Cell></Cell>
             <FirstText colSpan={1}>
               Unser Fachgebiet erstreckt sich über eine breite Palette von
-              Dienstleistungen, die darauf abzielen, sowohl Unternehmen als auch
-              ausländischen Fachkräften zu helfen, ihr volles Potenzial
-              auszuschöpfen. Mit einem tiefgreifenden Verständnis der
+              Dienstleistungen, die darauf abzielen, Unternehmen und
+              ausländischen Fachkräften gleichermaßen zu helfen, ihr volles
+              Potenzial auszuschöpfen. Mit einem tiefgreifenden Verständnis der
               Bedürfnisse und Herausforderungen im Bereich der internationalen
               Fachkräfterekrutierung haben wir uns auf drei zentrale
               Schwerpunkte spezialisiert:
@@ -170,11 +170,11 @@ export default function Leistungen() {
           <tr>
             <Cell></Cell>
             <SecondText colSpan={2}>
-              Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
-              Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
-              kulturellen Austausch und die Freude an Herausforderungen
-              motivieren uns dazu, Ihnen innovative Lösungen und
-              außergewöhnliche Unterstützung anzubieten
+              Modern Mind Recruitment begleitet Sie von Anfang bis Ende auf
+              Ihrer Reise zur Gewinnung internationaler Fachkräfte. Unsere
+              Begeisterung für kulturellen Austausch und die Freude an
+              Herausforderungen motivieren uns dazu, innovative Lösungen und
+              außergewöhnliche Unterstützung anzubieten.
             </SecondText>
           </tr>
         </FirstTable>
@@ -189,11 +189,10 @@ export default function Leistungen() {
           </tr>
           <tr>
             <FirstText>
-              {" "}
               Unser Fachgebiet erstreckt sich über eine breite Palette von
-              Dienstleistungen, die darauf abzielen, sowohl Unternehmen als auch
-              ausländischen Fachkräften zu helfen, ihr volles Potenzial
-              auszuschöpfen. Mit einem tiefgreifenden Verständnis der
+              Dienstleistungen, die darauf abzielen, Unternehmen und
+              ausländischen Fachkräften gleichermaßen zu helfen, ihr volles
+              Potenzial auszuschöpfen. Mit einem tiefgreifenden Verständnis der
               Bedürfnisse und Herausforderungen im Bereich der internationalen
               Fachkräfterekrutierung haben wir uns auf drei zentrale
               Schwerpunkte spezialisiert:
@@ -228,10 +227,10 @@ export default function Leistungen() {
           </tr>
           <tr>
             <SecondText>
-              Modern Mind Recruitment geleitet Sie gerne auf Ihrer Reise der
-              Gewinnung von internationalen Fachkräften. Unsere Begeisterung für
-              kulturellen Austausch und die Freude an Herausforderungen
-              motivieren uns dazu, Ihnen innovative Lösungen und
+              Modern Mind Recruitment begleitet Sie von Anfang bis Ende auf
+              Ihrer Reise zur Gewinnung internationaler Fachkräfte. Unsere
+              Begeisterung für kulturellen Austausch und die Freude an
+              Herausforderungen motivieren uns dazu, innovative Lösungen und
               außergewöhnliche Unterstützung anzubieten.
             </SecondText>
           </tr>

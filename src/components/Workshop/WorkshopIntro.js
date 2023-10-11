@@ -4,16 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import hand from "../../assets/svg/Workshop/workshop-hand.png";
 
 export default function WorkshopIntro() {
-  const contactButtonRef = useRef(); // Ref für den ContactButton
-
-  // Funktion, um zur gewünschten Abschnitt zu scrollen
-  const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const handleIntersection = (entry, target) => {
     setIsVisible((prevState) => {
       if (entry.isIntersecting) {
@@ -87,10 +77,7 @@ export default function WorkshopIntro() {
         <Line>
           <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
 
-          <ContactButton
-            href="https://calendly.com/modern-mind-recruitment/45min?month=2023-09"
-            ref={contactButtonRef}
-          >
+          <ContactButton href="https://calendly.com/modern-mind-recruitment/45min?month=2023-09">
             <CallToAction>
               jetzt
               <br />
@@ -111,32 +98,33 @@ export default function WorkshopIntro() {
           </tr>
           <tr>
             <LeftDiv>
-              In Ihrer Region wird es immer schwieriger, geeignete Bewerber zu
-              finden, oder Sie möchten Ihr Unternehmen kulturell erweitern.
-              Daher erwägen Sie, international nach qualifizierten Fachkräften
-              zu suchen. Sie planen, den gesamten Recruiting-Prozess selbst in
-              die Hand zu nehmen und eventuell sogar eine eigene
-              Personalabteilung für ausländische Fachkräfte zu gründen.
+              Angesichts der wachsenden Herausforderung, geeignete
+              Bewerber:innen in Ihrer Region zu finden, und dem Wunsch, Ihr
+              Unternehmen kulturell zu erweitern, erwägen Sie, international
+              nach qualifizierten Fachkräften zu suchen. Dabei planen Sie, den
+              gesamten Recruiting-Prozess selbst in die Hand zu nehmen und
+              eventuell sogar eine eigene Personalabteilung für Fachkräfte aus
+              dem Ausland zu gründen. Sie sind sich unsicher, wie und wo Sie
+              beginnen sollen?
             </LeftDiv>
             <Statement rowSpan={3}>
               WIR MACHEN SIE FIT UM IHREN ERFOLG ZU MAXIMIEREN.
             </Statement>
           </tr>
           <tr>
-            <LeftDiv>
-              Sie sind sich unsicher, wie und wo Sie beginnen sollen? Unser
-              Workshop bietet Ihnen den passenden Ansatz. Als Vermittler sind
-              wir mit jedem einzelnen Prozess vertraut und geben Ihnen gern
-              unser Wissen weiter.
-            </LeftDiv>
+            <BoldDiv>
+              Unser Workshop bietet Ihnen den passenden Ansatz! Als
+              Vermittler:innen sind wir mit jedem einzelnen Prozess vertraut und
+              teilen gerne unser Wissen mit Ihnen.
+            </BoldDiv>
           </tr>
           <tr>
             <LeftDiv>
-              Um die Erwerbsmigration für ausländische Fachkräfte zu
-              erleichtern, hat die Bundesregierung am 01.03.2020 das
+              Um die Erwerbsmigration für Fachkräfte aus dem Ausland zu
+              erleichtern, hat die Bundesregierung zum 01.03.2020 das
               Fachkräfteeinwanderungsgesetz eingeführt und neue Voraussetzungen
               geschaffen. Wir bauen auf diesen Bedingungen auf und möchten
-              unseren Kunden zeigen, wie sie davon profitieren können.
+              unseren Kund:innen zeigen, wie sie davon profitieren können.
             </LeftDiv>
           </tr>
         </Table>
@@ -151,29 +139,30 @@ export default function WorkshopIntro() {
           </tr>
           <tr>
             <LeftDiv>
-              In Ihrer Region wird es immer schwieriger, geeignete Bewerber zu
-              finden, oder Sie möchten Ihr Unternehmen kulturell erweitern.
-              Daher erwägen Sie, international nach qualifizierten Fachkräften
-              zu suchen. Sie planen, den gesamten Recruiting-Prozess selbst in
-              die Hand zu nehmen und eventuell sogar eine eigene
-              Personalabteilung für ausländische Fachkräfte zu gründen.
+              Angesichts der wachsenden Herausforderung, geeignete
+              Bewerber:innen in Ihrer Region zu finden, und dem Wunsch, Ihr
+              Unternehmen kulturell zu erweitern, erwägen Sie, international
+              nach qualifizierten Fachkräften zu suchen. Dabei planen Sie, den
+              gesamten Recruiting-Prozess selbst in die Hand zu nehmen und
+              eventuell sogar eine eigene Personalabteilung für Fachkräfte aus
+              dem Ausland zu gründen. Sie sind sich unsicher, wie und wo Sie
+              beginnen sollen?
             </LeftDiv>
           </tr>
           <tr>
-            <LeftDiv>
-              Sie sind sich unsicher, wie und wo Sie beginnen sollen? Unser
-              Workshop bietet Ihnen den passenden Ansatz. Als Vermittler sind
-              wir mit jedem einzelnen Prozess vertraut und geben Ihnen gern
-              unser Wissen weiter.
-            </LeftDiv>
+            <BoldDiv>
+              Unser Workshop bietet Ihnen den passenden Ansatz! Als
+              Vermittler:innen sind wir mit jedem einzelnen Prozess vertraut und
+              teilen gerne unser Wissen mit Ihnen.
+            </BoldDiv>
           </tr>{" "}
           <tr>
             <LeftDiv>
-              Um die Erwerbsmigration für ausländische Fachkräfte zu
-              erleichtern, hat die Bundesregierung am 01.03.2020 das
+              Um die Erwerbsmigration für Fachkräfte aus dem Ausland zu
+              erleichtern, hat die Bundesregierung zum 01.03.2020 das
               Fachkräfteeinwanderungsgesetz eingeführt und neue Voraussetzungen
               geschaffen. Wir bauen auf diesen Bedingungen auf und möchten
-              unseren Kunden zeigen, wie sie davon profitieren können.
+              unseren Kund:innen zeigen, wie sie davon profitieren können.
             </LeftDiv>
           </tr>
           <tr>
@@ -186,10 +175,7 @@ export default function WorkshopIntro() {
             </Statement>
           </tr>
         </HiddenTable>
-        <HiddenContactButton
-          href="https://calendly.com/modern-mind-recruitment/45min?month=2023-09"
-          ref={contactButtonRef}
-        >
+        <HiddenContactButton href="https://calendly.com/modern-mind-recruitment/45min?month=2023-09">
           <HiddenCallToAction>
             jetzt
             <br />
@@ -356,6 +342,38 @@ const LeftDiv = styled.th`
   padding-bottom: 30px;
   color: white;
   opacity: 0.8;
+
+  @media (max-width: 1400px) {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 120px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+`;
+
+const BoldDiv = styled.th`
+  color: black;
+  width: 50%;
+  padding-right: 100px;
+  text-align: start;
+  padding-bottom: 30px;
+  color: white;
+  opacity: 0.8;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
 
   @media (max-width: 1400px) {
     padding-left: 20px;

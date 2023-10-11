@@ -107,10 +107,10 @@ export default function FAQ() {
             open={isOpenOne}
             style={{ display: isOpenOne ? "block" : "none" }}
           >
-            Eine Anerkennung ist von entscheidender Bedeutung, um
-            sicherzustellen, dass Fachkräfte aus Nicht-EU-Ländern, die in einem
-            EU-Land arbeiten möchten, die notwendigen Qualifikationen und
-            Fähigkeiten besitzen. Dieses Verfahren ist ein wesentlicher
+            Die Anerkennung von Qualifikationen ist von entscheidender
+            Bedeutung, um sicherzustellen, dass Fachkräfte aus Nicht-EU-Ländern,
+            die in Deutschland arbeiten möchten, die notwendigen Qualifikationen
+            und Fähigkeiten besitzen. Dieses Verfahren ist ein wesentlicher
             Bestandteil der beruflichen Regulierung und trägt dazu bei, die
             Qualität und Sicherheit von Arbeitsleistungen innerhalb des
             jeweiligen Berufsfelds zu gewährleisten.
@@ -122,11 +122,12 @@ export default function FAQ() {
             Aufgaben kompetent und sicher auszuführen. Dies ist besonders
             wichtig in sensiblen Bereichen wie Gesundheitswesen, Ingenieurwesen
             oder Rechtsberatung, wo Fehler schwerwiegende Auswirkungen haben
-            können. <br /> <br /> Darüber hinaus dient die Anerkennung auch der
+            können.
+            <br /> <br /> Darüber hinaus dient die Anerkennung auch der
             Einhaltung nationaler Rechtsvorschriften und der Sicherung der
             Qualität von Dienstleistungen oder Produkten, die von diesen
             Fachkräften erbracht oder hergestellt werden. Dies schützt nicht nur
-            die Verbraucher, sondern fördert auch das Vertrauen in die
+            die Verbraucher:innen, sondern fördert auch das Vertrauen in die
             Arbeitsmärkte und die Wirtschaft insgesamt.
           </Answer>
           <GrayLine />
@@ -143,15 +144,16 @@ export default function FAQ() {
             style={{ display: isOpenTwo ? "block" : "none" }}
           >
             Das beschleunigte Fachkräfteverfahren gemäß § 81a AufenthG in
-            Deutschland ermöglicht, mit Unterstützung der Ausländerbehörde das
-            Verwaltungsverfahren für ausländische Fachkräfte zu verkürzen, bevor
-            sie nach Deutschland einreisen. Dieses Verfahren wurde im Rahmen des
-            Fachkräfteeinwanderungsgesetzes eingeführt und gilt für verschiedene
-            Personengruppen, darunter Fachkräfte mit Berufsausbildung,
-            akademischer Ausbildung, Auszubildende, Berufsschüler und weitere
-            qualifizierte Beschäftigte. Voraussetzungen sind ein konkretes
-            Arbeitsplatzangebot und die erforderliche Qualifikation für die
-            geplante Tätigkeit in Deutschland.{" "}
+            Deutschland ermöglicht, in Zusammenarbeit mit der Ausländerbehörde,
+            das Verwaltungsverfahren für Fachkräfte aus dem Ausland zu
+            verkürzen, bevor sie nach Deutschland einreisen. Dieses Verfahren
+            wurde im Rahmen des Fachkräfteeinwanderungsgesetzes eingeführt und
+            gilt für verschiedene Personengruppen, darunter Fachkräfte mit
+            Berufsausbildung, akademischer Ausbildung, Auszubildende,
+            Berufsschüler:innen und weitere qualifizierte Beschäftigte.
+            Voraussetzungen sind ein konkretes Arbeitsplatzangebot und die
+            erforderliche Qualifikation für die geplante Tätigkeit in
+            Deutschland.
           </Answer>
           <GrayLine />
           <Row>
@@ -169,9 +171,9 @@ export default function FAQ() {
             Die Dauer des Rekrutierungsprozesses hängt von verschiedenen
             Faktoren ab, darunter das vorhandene Sprachniveau, die vom
             Arbeitgeber gewünschte Sprachkompetenz, das gesuchte Berufsprofil
-            und die Qualifikationen der Fachkraft. In der Regel erstreckt sich
-            der Prozess über einen Zeitraum von etwa 3 bis 6 Monaten, bis die
-            Fachkraft ihren ersten Arbeitstag absolviert.
+            und die Qualifikationen der Person. In der Regel erstreckt sich der
+            Prozess über einen Zeitraum von etwa 3 bis 6 Monaten, bis die Person
+            ihren ersten Arbeitstag absolviert.
           </Answer>
           <GrayLine />
           <Row>
@@ -179,7 +181,7 @@ export default function FAQ() {
               <BlueTriangleOne open={isOpenFour} onClick={toggleOpenFour} />
             </BlueTriangleDiv>
             <Question open={isOpenFour} onClick={toggleOpenFour}>
-              Welche Kosten kommen auf mich als Arbeitgeber zu?
+              Welche Kosten kommen auf uns als Unternehmen zu?
             </Question>
           </Row>{" "}
           <Answer
@@ -210,14 +212,13 @@ export default function FAQ() {
             open={isOpenFive}
             style={{ display: isOpenFive ? "block" : "none" }}
           >
-            Normalerweise verfügen die Kandidat:innen nach Abschluss des
+            Im Normalfall verfügen die Kandidat:innen nach Abschluss des
             Sprachkurses in ihrem Herkunftsland über Deutschkenntnisse auf dem
-            Niveau B1 des Gemeinsamen Europäischen Referenzrahmens (CEF). Bei
-            Bedarf können diese Kenntnisse durch zusätzlichen Sprachunterricht
-            in Deutschland weiter verbessert werden. Es kommt jedoch auch vor,
-            dass einige Kandidat:innen bereits über fortgeschrittenere
-            Deutschkenntnisse verfügen. Das erforderliche Sprachniveau wird im
-            Voraus individuell abgestimmt.
+            Niveau B1 oder in einigen Fällen sogar B2 des Gemeinsamen
+            Europäischen Referenzrahmens (CEF). Bei Bedarf können diese
+            Kenntnisse durch zusätzlichen Sprachunterricht in Deutschland weiter
+            verbessert werden. Das erforderliche Sprachniveau wird im Voraus
+            individuell abgestimmt.
           </Answer>
           <GrayLine />
           <Row>
@@ -240,10 +241,7 @@ export default function FAQ() {
             Entwicklung der Fachkräfte. Besondere Aufmerksamkeit und
             Unterstützung sind während der Einarbeitungsphase erforderlich, da
             sprachliche Herausforderungen und kulturelle Unterschiede in den
-            ersten Monaten eine Hürde darstellen können. Wir bieten Ihnen gerne
-            Beratung, die Erstellung einer "Checkliste" und bei Bedarf ein
-            Training zur erfolgreichen Integration ausländischer Mitarbeitender
-            an.
+            ersten Monaten eine Hürde darstellen können.
           </Answer>
           <GrayLine />
           <Row>
@@ -260,13 +258,13 @@ export default function FAQ() {
               display: isOpenSeven ? "block" : "none",
             }}
           >
-            Wir stehen Ihnen gerne zur Verfügung, um die Integration Ihrer
-            Fachkräfte zu erleichtern. Auf Anfrage unterstützen wir Sie bei
-            verschiedenen Aspekten, darunter Behördengänge, Wohnungssuche,
-            Familienzusammenführung und Kontoeröffnung für die Fachkraft. Unsere
-            oberste Priorität ist die Zufriedenheit unserer Kandidaten und
-            Auftraggeber, da eine erfolgreiche Integration die Grundlage für
-            eine effektive und harmonische Zusammenarbeit bildet
+            Unser Service umfasst Unterstützung in verschiedenen Bereichen,
+            darunter die Abwicklung von Behördengängen, Hilfe bei der
+            Wohnungssuche, Unterstützung bei der Familienzusammenführung sowie
+            die Einrichtung eines Bankkontos für die Fachkraft. Unsere oberste
+            Priorität liegt in der Zufriedenheit unserer Fachkräfte und dessen
+            Unternehmen, da eine erfolgreiche Integration das Fundament für eine
+            effektive und harmonische Zusammenarbeit bildet.
           </Answer>
         </Wrapper>
       </BigWrapper>

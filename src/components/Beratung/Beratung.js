@@ -108,14 +108,14 @@ export default function Beratung() {
           <tr>
             <SecondText>
               Unser Hauptaugenmerk liegt darauf, Ihnen einen klaren und
-              effektiven Weg zur Rekrutierung internationaler Fachkräfte
+              effektiven Weg zur Rekrutierung von Fachkräften aus aller Welt
               aufzuzeigen. Wir sind mit den komplexen bürokratischen Aspekten
               der Arbeitsmigration bestens vertraut und können Ihnen dabei
               helfen, den Prozess reibungslos zu gestalten. Egal, ob es darum
               geht, weltweit die besten Talente zu finden, die Chancen des
               Fachkräfteeinwanderungsgesetzes optimal zu nutzen oder Ihre eigene
-              Personalabteilung für ausländische Fachkräfte zu etablieren – wir
-              unterstützen Sie bei jedem Schritt auf diesem Weg.
+              Personalabteilung für Fachkräfte aus dem Ausland zu etablieren –
+              wir unterstützen Sie bei jedem Schritt auf diesem Weg.
             </SecondText>
             <Cell></Cell>
           </tr>
@@ -143,14 +143,14 @@ export default function Beratung() {
           <tr>
             <SecondText>
               Unser Hauptaugenmerk liegt darauf, Ihnen einen klaren und
-              effektiven Weg zur Rekrutierung internationaler Fachkräfte
+              effektiven Weg zur Rekrutierung von Fachkräften aus aller Welt
               aufzuzeigen. Wir sind mit den komplexen bürokratischen Aspekten
               der Arbeitsmigration bestens vertraut und können Ihnen dabei
               helfen, den Prozess reibungslos zu gestalten. Egal, ob es darum
               geht, weltweit die besten Talente zu finden, die Chancen des
               Fachkräfteeinwanderungsgesetzes optimal zu nutzen oder Ihre eigene
-              Personalabteilung für ausländische Fachkräfte zu etablieren – wir
-              unterstützen Sie bei jedem Schritt auf diesem Weg.
+              Personalabteilung für Fachkräfte aus dem Ausland zu etablieren –
+              wir unterstützen Sie bei jedem Schritt auf diesem Weg.
             </SecondText>
           </tr>
           <tr>
@@ -214,6 +214,10 @@ const Table = styled.table`
     width: 100%;
   }
 
+  @media (max-width: 1200px) {
+    margin-bottom: 70px;
+  }
+
   @media (max-width: 900px) {
     display: none;
   }
@@ -226,6 +230,10 @@ const Line = styled.div`
   bottom: -175px;
   width: 3.5px;
   background-color: rgb(192, 192, 192, 0.5);
+
+  @media (max-width: 1200px) {
+    bottom: -135px;
+  }
 
   @media (max-width: 900px) {
     left: 10%;
@@ -359,10 +367,10 @@ const CardContainer = styled.th`
 `;
 
 const Card = styled.img`
-  width: 480px;
+  width: 450px;
   position: absolute;
   bottom: 80px;
-  left: 200px; /* Startposition */
+  left: 130px; /* Startposition */
   animation: moveSideToSide 8s linear infinite;
   @keyframes moveSideToSide {
     0% {
@@ -372,17 +380,17 @@ const Card = styled.img`
       transform: translateX(0); /* Position in der Mitte */
     }
     50% {
-      transform: translateX(-150px); /* Endposition (150px nach links) */
+      transform: translateX(-100px); /* Endposition (150px nach links) */
     }
     70% {
-      transform: translateX(-150px); /* Position in der Mitte */
+      transform: translateX(-100px); /* Position in der Mitte */
     }
     100% {
       transform: translateX(0); /* Zurück zur Startposition */
     }
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1200px) {
     width: 320px;
     left: 120px;
     @keyframes moveSideToSide {
@@ -411,7 +419,7 @@ const Card = styled.img`
 
 const SecondCard = styled.img`
   margin-top: 30px;
-  width: 350px;
+  width: 328px;
   animation: moveSideTo 7s linear infinite; /* Ändere die Dauer auf 8s für eine 5-Sekunden-Pause zwischen den Bewegungen */
 
   @keyframes moveSideTo {
@@ -422,10 +430,10 @@ const SecondCard = styled.img`
       margin-left: 100px; /* Startposition links */
     }
     50% {
-      margin-left: -100px; /* Endposition rechts */
+      margin-left: -80px; /* Endposition rechts */
     }
     70% {
-      margin-left: -100px; /* Startposition rechts */
+      margin-left: -80px; /* Startposition rechts */
     }
     100% {
       margin-left: 100px; /* Endposition links */
