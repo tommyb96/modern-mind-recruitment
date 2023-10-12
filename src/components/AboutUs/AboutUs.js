@@ -538,13 +538,14 @@ const GreenWrapper = styled.div`
 const GreenLine = styled.div`
   position: absolute;
   left: 50%;
-  top: 10px;
+  top: 20px;
   height: 100%;
   width: 3.5px;
   background-color: rgb(192, 192, 192, 0.5);
 
   @media (max-width: 900px) {
     left: 10%;
+    top: 40px;
   }
 
   @media (max-width: 700px) {
@@ -619,6 +620,7 @@ const FirstTable = styled.table`
   border-collapse: collapse;
   width: 1350px;
   margin: auto;
+  margin-top: 10px;
 
   @media (max-width: 1400px) {
     width: 100%;

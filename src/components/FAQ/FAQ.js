@@ -143,17 +143,19 @@ export default function FAQ() {
             open={isOpenTwo}
             style={{ display: isOpenTwo ? "block" : "none" }}
           >
-            Das beschleunigte Fachkräfteverfahren gemäß § 81a AufenthG in
-            Deutschland ermöglicht, in Zusammenarbeit mit der Ausländerbehörde,
-            das Verwaltungsverfahren für Fachkräfte aus dem Ausland zu
-            verkürzen, bevor sie nach Deutschland einreisen. Dieses Verfahren
-            wurde im Rahmen des Fachkräfteeinwanderungsgesetzes eingeführt und
-            gilt für verschiedene Personengruppen, darunter Fachkräfte mit
-            Berufsausbildung, akademischer Ausbildung, Auszubildende,
-            Berufsschüler:innen und weitere qualifizierte Beschäftigte.
-            Voraussetzungen sind ein konkretes Arbeitsplatzangebot und die
-            erforderliche Qualifikation für die geplante Tätigkeit in
-            Deutschland.
+            Durch das beschleunigte Fachkräfteverfahren nach § 81a des
+            Aufenthaltsgesetzes haben Arbeitgeber in Deutschland die
+            Möglichkeit, mit Hilfe der örtlichen Ausländerbehörde den
+            bürokratischen Prozess bis zur Ankunft der ausländischen Fachkraft
+            zu verkürzen. Dieses Verfahren wurde im Rahmen des
+            Fachkräfteeinwanderungsgesetzes eingeführt. Arbeitgeber können dabei
+            helfen, ihre zukünftige Fachkraft zu unterstützen, indem sie das
+            beschleunigte Verfahren bei der zuständigen Ausländerbehörde in
+            Deutschland in Gang setzen, sofern sie über ein konkretes
+            Arbeitsplatzangebot und die notwendige Vollmacht der Fachkraft
+            verfügen. Allerdings bleibt es der Fachkraft grundsätzlich auch
+            weiterhin möglich, auf herkömmliche Weise über das reguläre
+            Visumverfahren nach Deutschland einzureisen.
           </Answer>
           <GrayLine />
           <Row>
@@ -188,16 +190,19 @@ export default function FAQ() {
             open={isOpenFour}
             style={{ display: isOpenFour ? "block" : "none" }}
           >
-            Die Kosten für unseren Vermittlungs-Service sind abhängig von
-            verschiedenen Faktoren, darunter das Qualifikationsniveau der
-            Fachkraft (Auszubildende:r, Young Professional, Fachkraft,
-            Akademiker:in), die spezifische Berufsbranche und die vereinbarten
-            Leistungen, wie Vermittlung, Betreuung und Sprachschulungen.
-            Zusätzlich können unabhängig davon Gebühren für die Anerkennung von
-            Qualifikationen in Höhe von maximal 800 Euro sowie Gebühren für das
-            beschleunigte Fachkräfteverfahren in Höhe von 411 Euro anfallen. Wir
-            stehen Ihnen gerne zur Verfügung, um Sie ausführlich zu beraten und
-            ein individuelles Angebot zu erstellen.
+            Die genauen Ausgaben im Zusammenhang mit ausländischen Fachkräften
+            sind schwer zu bestimmen, da sie von vielen unterschiedlichen
+            Faktoren beeinflusst werden. Bei einer Vermittlung durch unser
+            Unternehmen erfolgt die Kostenberechnung in der Regel auf Grundlage
+            einer erfolgsbasierten Provision. Diese Provision entspricht in etwa
+            dem dreifachen Bruttomonatslohn der vermittelten Fachkraft.
+            <br /> <br />
+            Für unsere Beratungs- und Schulungsleistungen variieren die Kosten
+            je nach Umfang und individuellen Anforderungen. Wir sind offen für
+            Anfragen und stehen Ihnen gerne zur Verfügung, um Ihre spezifischen
+            Bedürfnisse zu besprechen und Ihnen ein individuell angepasstes
+            Angebot sowohl für die Vermittlung als auch für unsere Beratungs-
+            und Schulungsdienstleistungen zu unterbreiten.
           </Answer>
           <GrayLine />
           <Row>
@@ -215,10 +220,10 @@ export default function FAQ() {
             Im Normalfall verfügen die Kandidat:innen nach Abschluss des
             Sprachkurses in ihrem Herkunftsland über Deutschkenntnisse auf dem
             Niveau B1 oder in einigen Fällen sogar B2 des Gemeinsamen
-            Europäischen Referenzrahmens (CEF). Bei Bedarf können diese
-            Kenntnisse durch zusätzlichen Sprachunterricht in Deutschland weiter
-            verbessert werden. Das erforderliche Sprachniveau wird im Voraus
-            individuell abgestimmt.
+            Europäischen Referenzrahmens (CEF). Falls erforderlich, besteht die
+            Möglichkeit, diese Kenntnisse durch zusätzlichen Sprachunterricht in
+            Deutschland weiter zu vertiefen. Das notwendige Sprachniveau wird im
+            Voraus individuell angepasst und festgelegt.
           </Answer>
           <GrayLine />
           <Row>
@@ -234,13 +239,15 @@ export default function FAQ() {
             style={{ display: isOpenSix ? "block" : "none" }}
           >
             Um ausländische Fachkräfte aus Nicht-EU-Ländern erfolgreich zu
-            integrieren, sollte ein Unternehmen ein unterstützendes und
-            vielfältiges Umfeld schaffen. Dies umfasst die Förderung von
-            kultureller Vielfalt, die Schaffung eines integrativen
+            integrieren, sollte ein Unternehmen nicht nur die Mitarbeiter:innen
+            selbst, sondern auch die eigene Organisation auf die Anforderungen
+            der Integration vorbereiten. Dies bedeutet, dass ein unterstützendes
+            und vielfältiges Umfeld geschaffen werden sollte. Hierzu gehören die
+            Förderung von kultureller Vielfalt, die Schaffung eines integrativen
             Arbeitsumfelds und langfristige Unterstützung für die berufliche
-            Entwicklung der Fachkräfte. Besondere Aufmerksamkeit und
-            Unterstützung sind während der Einarbeitungsphase erforderlich, da
-            sprachliche Herausforderungen und kulturelle Unterschiede in den
+            Entwicklung der Fachkräfte. <br /> <br /> Besondere Aufmerksamkeit
+            und Unterstützung sind während der Einarbeitungsphase erforderlich,
+            da sprachliche Herausforderungen und kulturelle Unterschiede in den
             ersten Monaten eine Hürde darstellen können.
           </Answer>
           <GrayLine />
@@ -258,13 +265,17 @@ export default function FAQ() {
               display: isOpenSeven ? "block" : "none",
             }}
           >
-            Unser Service umfasst Unterstützung in verschiedenen Bereichen,
-            darunter die Abwicklung von Behördengängen, Hilfe bei der
-            Wohnungssuche, Unterstützung bei der Familienzusammenführung sowie
-            die Einrichtung eines Bankkontos für die Fachkraft. Unsere oberste
-            Priorität liegt in der Zufriedenheit unserer Fachkräfte und dessen
-            Unternehmen, da eine erfolgreiche Integration das Fundament für eine
-            effektive und harmonische Zusammenarbeit bildet.
+            Unser Service umfasst eine breite Palette von
+            Unterstützungsleistungen, die verschiedene Bereiche abdecken. Dazu
+            gehören unter anderem die Abwicklung von Behördengängen,
+            Unterstützung bei der Wohnungssuche, Hilfe bei der
+            Familienzusammenführung, die Einrichtung eines Bankkontos für die
+            Fachkraft, Unterstützung im Bereich der Gesundheitsvorsorge und
+            -betreuung sowie die Verwaltung von Visa- und
+            Aufenthaltserlaubnissen. Unsere oberste Priorität liegt in der
+            Zufriedenheit unserer Fachkräfte und dessen Unternehmen, da eine
+            erfolgreiche Integration das Fundament für eine effektive und
+            harmonische Zusammenarbeit bildet.
           </Answer>
         </Wrapper>
       </BigWrapper>
@@ -277,12 +288,16 @@ const BigWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  margin-top: 150px;
+  margin-top: 125px;
   margin-bottom: 100px;
   margin-left: 40px;
   margin-right: 40px;
   font-size: 20px;
   width: 750px;
+
+  @media (max-width: 1200px) {
+    margin-top: 110px;
+  }
 
   @media (max-width: 900px) {
     margin-top: 70px;

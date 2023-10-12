@@ -188,11 +188,11 @@ const Kontakt = () => {
           <tr>
             <LeftDiv rowSpan={6}>
               Sind Sie in der aktuellen Personalbeschaffung auf der Suche nach
-              hochqualifizierten Fachkräften aus Nicht-EU-Ländern, um Ihre
-              offenen Stellen zu besetzen und Ihr Unternehmen auf das nächste
-              Level zu heben? Wir laden Sie herzlich dazu ein, von unserem
-              Angebot für ein kostenloses Erstgespräch Gebrauch zu machen. In
-              diesem Gespräch haben Sie die Gelegenheit, Ihre spezifischen
+              qualifizierten Fachkräften aus Nicht-EU-Ländern, um Ihre offenen
+              Stellen zu besetzen und Ihr Unternehmen auf das nächste Level zu
+              heben? Wir laden Sie herzlich dazu ein, von unserem Angebot für
+              ein kostenloses Erstgespräch Gebrauch zu machen. In diesem
+              Gespräch haben Sie die Gelegenheit, Ihre spezifischen
               Anforderungen und Bedürfnisse im Detail zu besprechen. <br />{" "}
               <br />{" "}
               <Link to="https://calendly.com/modern-mind-recruitment/45min?month=2023-09">
@@ -203,10 +203,9 @@ const Kontakt = () => {
               über das Sie uns eine detaillierte Anfrage senden können. Unsere
               Motivation ist hoch, und wir freuen uns darauf, mit Ihnen
               gemeinsam daran zu arbeiten, die idealen Fachkräfte für Ihr
-              Unternehmen zu finden. Ihr Erfolg ist für uns von großer
-              Bedeutung, und wir sind voller Entschlossenheit, Sie auf diesem
-              Weg bestmöglich zu unterstützen und zum Gelingen Ihres
-              Unternehmens beizutragen.
+              Unternehmen zu finden. Ihr Erfolg hat für uns hohe Priorität, und
+              wir sind entschlossen, Sie bestmöglich auf diesem Weg zu
+              unterstützen und einen Beitrag zu Ihrem Unternehmen zu leisten.
             </LeftDiv>
           </tr>
         </Table>
@@ -224,11 +223,11 @@ const Kontakt = () => {
             <LeftDiv colSpan={2}>
               {" "}
               Sind Sie in der aktuellen Personalbeschaffung auf der Suche nach
-              hochqualifizierten Fachkräften aus Nicht-EU-Ländern, um Ihre
-              offenen Stellen zu besetzen und Ihr Unternehmen auf das nächste
-              Level zu heben? Wir laden Sie herzlich dazu ein, von unserem
-              Angebot für ein kostenloses Erstgespräch Gebrauch zu machen. In
-              diesem Gespräch haben Sie die Gelegenheit, Ihre spezifischen
+              qualifizierten Fachkräften aus Nicht-EU-Ländern, um Ihre offenen
+              Stellen zu besetzen und Ihr Unternehmen auf das nächste Level zu
+              heben? Wir laden Sie herzlich dazu ein, von unserem Angebot für
+              ein kostenloses Erstgespräch Gebrauch zu machen. In diesem
+              Gespräch haben Sie die Gelegenheit, Ihre spezifischen
               Anforderungen und Bedürfnisse im Detail zu besprechen.
             </LeftDiv>
           </tr>
@@ -245,10 +244,9 @@ const Kontakt = () => {
               über das Sie uns eine detaillierte Anfrage senden können. Unsere
               Motivation ist hoch, und wir freuen uns darauf, mit Ihnen
               gemeinsam daran zu arbeiten, die idealen Fachkräfte für Ihr
-              Unternehmen zu finden. Ihr Erfolg ist für uns von großer
-              Bedeutung, und wir sind voller Entschlossenheit, Sie auf diesem
-              Weg bestmöglich zu unterstützen und zum Gelingen Ihres
-              Unternehmens beizutragen.
+              Unternehmen zu finden. Ihr Erfolg hat für uns hohe Priorität, und
+              wir sind entschlossen, Sie bestmöglich auf diesem Weg zu
+              unterstützen und einen Beitrag zu Ihrem Unternehmen zu leisten.
             </LeftDiv>
           </tr>
           <tr>

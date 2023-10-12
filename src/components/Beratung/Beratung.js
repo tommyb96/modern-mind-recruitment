@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 
 import card from "../../assets/svg/Beratung/beratung-card.svg";
+import thumb from "../../assets/svg/Beratung/beratung-thumb.svg";
 
 export default function Beratung() {
   const handleIntersection = (entry, target) => {
@@ -46,6 +47,16 @@ export default function Beratung() {
       ref: useRef(null),
       isVisible: false,
     },
+    {
+      id: "bold-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-bold-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
   ];
 
   const [isVisible, setIsVisible] = useState({});
@@ -75,10 +86,7 @@ export default function Beratung() {
       <PurpleWrapper id="beratung">
         <Line>
           <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
-          <LastCircle
-            ref={sections[1].ref}
-            isVisible={isVisible[sections[1].id]}
-          />
+
           <Card src={card} alt="card" />
         </Line>
         <Table>
@@ -161,37 +169,85 @@ export default function Beratung() {
         </HiddenTable>
       </PurpleWrapper>
       <WhiteWrapper>
-        {/* <TableOne>
-          <tr className="First">
-            <Checkmark>checkmark</Checkmark>
-            <Aufzählung>Aufzählung</Aufzählung>
+        <WhiteLine>
+          {" "}
+          <LastCircle
+            ref={sections[1].ref}
+            isVisible={isVisible[sections[1].id]}
+          />
+        </WhiteLine>
+        <SecondTable>
+          <tr>
+            <ThumbCell rowSpan={2}>
+              <Thumb src={thumb} alt="thumbs up" />
+            </ThumbCell>
+            <BoldHeader
+              ref={sections[4].ref}
+              isVisible={isVisible[sections[4].id]}
+            >
+              Mit uns sind Sie auf der sicheren Seite
+            </BoldHeader>
           </tr>
-          <tr className="Second">
-            <Info colSpan={2}>Information</Info>
+          <tr>
+            <RightText>
+              <div>
+                Viele Unternehmen sind sich der bürokratischen Aspekte der
+                Arbeitsmigration oft nicht ausreichend bewusst und treten daher
+                unwissentlich in rechtliche Fallstricke. Stichprobenartige
+                Zollprüfungen können illegale Arbeitsverhältnisse von
+                Fachkräften aus Nicht-EU-Ländern aufdecken und zu erheblichen
+                Strafen führen.
+              </div>
+              <div>
+                Wir stehen Ihnen zur Seite, sei es bei bereits erfolgten
+                Zollprüfungen, bei Verdacht auf Verstöße oder einfach, um
+                sicherzustellen, dass Ihre Arbeitskräfte und Prozesse den
+                geltenden Vorschriften entsprechen. Unsere Expertise hilft
+                Ihnen, rechtliche Fallstricke zu vermeiden und Ihr Unternehmen
+                in Übereinstimmung mit den Gesetzen zu führen.
+              </div>
+            </RightText>
           </tr>
-        </TableOne> */}
+        </SecondTable>
+        <HiddenSecondTable>
+          <tr>
+            <BoldHeader
+              ref={sections[5].ref}
+              isVisible={isVisible[sections[5].id]}
+            >
+              Mit uns sind Sie auf der sicheren Seite
+            </BoldHeader>
+          </tr>
+          <tr>
+            <RightText>
+              <div>
+                Viele Unternehmen sind sich der bürokratischen Aspekte der
+                Arbeitsmigration oft nicht ausreichend bewusst und treten daher
+                unwissentlich in rechtliche Fallstricke. Stichprobenartige
+                Zollprüfungen können illegale Arbeitsverhältnisse von
+                Fachkräften aus Nicht-EU-Ländern aufdecken und zu erheblichen
+                Strafen führen.
+              </div>
+              <div>
+                Wir stehen Ihnen zur Seite, sei es bei bereits erfolgten
+                Zollprüfungen, bei Verdacht auf Verstöße oder einfach, um
+                sicherzustellen, dass Ihre Arbeitskräfte und Prozesse den
+                geltenden Vorschriften entsprechen. Unsere Expertise hilft
+                Ihnen, rechtliche Fallstricke zu vermeiden und Ihr Unternehmen
+                in Übereinstimmung mit den Gesetzen zu führen.
+              </div>
+            </RightText>
+          </tr>
+          <tr>
+            <ThumbCell>
+              <Thumb src={thumb} alt="thumb up" />
+            </ThumbCell>
+          </tr>
+        </HiddenSecondTable>
       </WhiteWrapper>
     </>
   );
 }
-
-const TableOne = styled.table`
-  tr.Second {
-    display: none;
-    opacity: 0;
-    border: 2px solid black;
-    transition: display 0s, opacity 0.3s ease;
-  }
-
-  tr.First:hover + tr.Second {
-    display: table-row;
-    opacity: 1;
-  }
-
-  tr.First {
-    border: 2px solid black;
-  }
-`;
 
 const PurpleWrapper = styled.div`
   width: 100%;
@@ -224,21 +280,17 @@ const Table = styled.table`
 `;
 
 const Line = styled.div`
+  z-index: 1;
   position: absolute;
   left: 50%;
+  bottom: 0;
   top: 120px;
-  bottom: -175px;
   width: 3.5px;
   background-color: rgb(192, 192, 192, 0.5);
-
-  @media (max-width: 1200px) {
-    bottom: -135px;
-  }
 
   @media (max-width: 900px) {
     left: 10%;
     top: 70px;
-    bottom: -100px;
   }
 
   @media (max-width: 700px) {
@@ -327,7 +379,7 @@ const FirstText = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     padding-right: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -369,7 +421,8 @@ const CardContainer = styled.th`
 const Card = styled.img`
   width: 450px;
   position: absolute;
-  bottom: 80px;
+  bottom: -80px;
+
   left: 130px; /* Startposition */
   animation: moveSideToSide 8s linear infinite;
   @keyframes moveSideToSide {
@@ -391,6 +444,7 @@ const Card = styled.img`
   }
 
   @media (max-width: 1200px) {
+    bottom: -50px;
     width: 320px;
     left: 120px;
     @keyframes moveSideToSide {
@@ -457,6 +511,140 @@ const WhiteWrapper = styled.div`
   position: relative;
 `;
 
+const WhiteLine = styled.div`
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  bottom: -150px;
+  top: 0;
+  width: 3.5px;
+  background-color: rgb(192, 192, 192, 0.5);
+
+  @media (max-width: 1200px) {
+    bottom: -135px;
+  }
+
+  @media (max-width: 900px) {
+    left: 10%;
+    bottom: -100px;
+  }
+
+  @media (max-width: 700px) {
+    left: 5%;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const SecondTable = styled.table`
+  position: relative;
+  border-collapse: collapse;
+  width: 1350px;
+  margin: auto;
+  margin-top: 160px;
+  font-size: 20px;
+
+  @media (max-width: 1400px) {
+    width: 100%;
+  }
+
+  @media (max-width: 1200px) {
+    margin-top: 110px;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const BoldHeader = styled.th`
+  width: 50%;
+  text-align: start;
+  font-weight: bold;
+  font-size: 33px;
+  padding-bottom: 30px;
+  padding-left: 70px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  @media (max-width: 1400px) {
+    padding-right: 40px;
+    padding-left: 50px;
+  }
+
+  @media (max-width: 900px) {
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+    padding-left: 140px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    font-size: 26px;
+    padding-bottom: 20px;
+  }
+`;
+
+const RightText = styled.td`
+  width: 50vw;
+  padding-left: 70px;
+
+  div {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 1400px) {
+    padding-right: 40px;
+    padding-left: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 140px;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 20px;
+    div {
+      margin-bottom: 20px;
+    }
+  }
+`;
+
+const ThumbCell = styled.td`
+  width: 50%;
+  text-align: center;
+`;
+
+const Thumb = styled.img`
+  width: 480px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  @media (max-width: 1200px) {
+    width: 390px;
+  }
+
+  @media (max-width: 900px) {
+    margin-top: 30px;
+  }
+
+  @media (max-width: 480px) {
+    width: 270px;
+  }
+`;
+
 const HiddenTable = styled.table`
   position: relative;
   border-collapse: collapse;
@@ -481,4 +669,16 @@ const LastCircle = styled.div`
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
+`;
+
+const HiddenSecondTable = styled.table`
+  position: relative;
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+  margin-top: 70px;
+
+  @media (min-width: 901px) {
+    display: none;
+  }
 `;
