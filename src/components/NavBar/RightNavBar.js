@@ -92,7 +92,7 @@ const NavContainer = styled.nav`
     opacity: 1;
     ul {
       flex-flow: column nowrap;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.95);
       position: fixed;
       margin: 0;
       top: 0;
