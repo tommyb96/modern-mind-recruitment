@@ -85,6 +85,76 @@ export default function Workshop() {
       ref: useRef(null),
       isVisible: false,
     },
+    // {
+    //   id: "one",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "two",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "three",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "four",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "five",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "six",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "seven",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "hidden-one",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "hidden-two",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "hidden-three",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "hidden-four",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "hidden-five",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "hidden-six",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
+    // {
+    //   id: "hidden-seven",
+    //   ref: useRef(null),
+    //   isVisible: false,
+    // },
   ];
 
   const [isVisible, setIsVisible] = useState({ sections });
