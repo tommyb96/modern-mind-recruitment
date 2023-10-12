@@ -263,9 +263,8 @@ const AboutUs = () => {
               Personalvermittlung. Als Ihr vertrauenswürdiger Partner in Fragen
               des Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
-              mit qualifizierten Fachkräften zu besetzen. Die Vermittlung
-              unserer ,,Talente von morgen" steht dabei im Mittelpunkt unserer
-              Mission.
+              mit qualifizierten Fachkräften zu sichern. Die Vermittlung unserer
+              ,,Talente von morgen" steht dabei im Mittelpunkt unserer Mission.
             </BoldText>
           </tr>
           <tr>
