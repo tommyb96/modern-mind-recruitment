@@ -85,76 +85,76 @@ export default function Workshop() {
       ref: useRef(null),
       isVisible: false,
     },
-    // {
-    //   id: "one",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "two",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "three",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "four",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "five",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "six",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "seven",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "hidden-one",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "hidden-two",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "hidden-three",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "hidden-four",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "hidden-five",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "hidden-six",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
-    // {
-    //   id: "hidden-seven",
-    //   ref: useRef(null),
-    //   isVisible: false,
-    // },
+    {
+      id: "one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "six",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "seven",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-one",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-two",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-three",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-four",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-five",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-six",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "hidden-seven",
+      ref: useRef(null),
+      isVisible: false,
+    },
   ];
 
   const [isVisible, setIsVisible] = useState({ sections });
@@ -206,6 +206,256 @@ export default function Workshop() {
                 Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
                 in Deutschland:
               </Heading>
+              <Animation
+                ref={sections[4].ref}
+                isVisible={isVisible[sections[4].id]}
+              >
+                <Section open={isOpenOne} onClick={toggleOpenOne}>
+                  <BlueTriangle>
+                    <BlueTriangleOne open={isOpenOne} />
+                  </BlueTriangle>
+                  <Zahl>1</Zahl>
+                  <Überschrift> Allgemeine Voraussetzungen</Überschrift>
+                </Section>
+                <Row>
+                  {isOpenOne && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenOne}>
+                        Allgemeine Richtlinien für die Einstellung ausländischer
+                        Fachkräfte
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                </Row>
+              </Animation>
+              <Animation
+                ref={sections[5].ref}
+                isVisible={isVisible[sections[5].id]}
+              >
+                <Section open={isOpenTwo} onClick={toggleOpenTwo}>
+                  <BlueTriangle>
+                    <BlueTriangleOne open={isOpenTwo} />
+                  </BlueTriangle>
+                  <Zahl>2</Zahl>
+                  <Überschrift>
+                    {" "}
+                    Regelungen für Visum und Aufenthaltstitel
+                  </Überschrift>
+                </Section>
+                <Row>
+                  {isOpenTwo && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenTwo}>
+                        Einreisevisum und Aufenthaltstitel
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenTwo && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenTwo}>
+                        Fachkräfte mit Berufsausbildung
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenTwo && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenTwo}>
+                        Fachkräfte mit akademischer Ausbildung
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenTwo && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenTwo}>
+                        Regelung für ausländische Studierende
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                </Row>
+              </Animation>{" "}
+              <Animation
+                ref={sections[6].ref}
+                isVisible={isVisible[sections[6].id]}
+              >
+                <Section open={isOpenThree} onClick={toggleOpenThree}>
+                  <BlueTriangle>
+                    <BlueTriangleOne open={isOpenThree} />
+                  </BlueTriangle>
+                  <Zahl>3</Zahl>
+                  <Überschrift>
+                    Beteiligung der Bundesagentur für Arbeit
+                  </Überschrift>
+                </Section>
+                <Row>
+                  {isOpenThree && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenThree}>
+                        Zustimmung der Bundesagentur
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenThree && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenThree}>
+                        Arbeitsmarktzulassung
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                </Row>
+              </Animation>{" "}
+              <Animation
+                ref={sections[7].ref}
+                isVisible={isVisible[sections[7].id]}
+              >
+                <Section open={isOpenFour} onClick={toggleOpenFour}>
+                  <BlueTriangle>
+                    <BlueTriangleOne open={isOpenFour} />
+                  </BlueTriangle>
+                  <Zahl>4</Zahl>
+                  <Überschrift>Beteiligung der Ausländerbehörde</Überschrift>
+                </Section>
+                <Row>
+                  {isOpenFour && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenFour}>
+                        Das beschleunigte Fachkräfteverfahren nach §81a
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenFour && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenFour}>
+                        Aufenthaltstitelbentragung und -verlängerung
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                </Row>
+              </Animation>{" "}
+              <Animation
+                ref={sections[8].ref}
+                isVisible={isVisible[sections[8].id]}
+              >
+                <Section open={isOpenFive} onClick={toggleOpenFive}>
+                  <BlueTriangle>
+                    <BlueTriangleOne open={isOpenFive} />
+                  </BlueTriangle>
+                  <Zahl>5</Zahl>
+                  <Überschrift>
+                    {" "}
+                    Anerkennung ausländischer Berufsabschlüsse
+                  </Überschrift>
+                </Section>
+                <Row>
+                  {isOpenFive && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenFive}>
+                        Grundlagen der Anerkennung
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenFive && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenFive}>
+                        Anerkennungsverfahren
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenFive && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenFive}>
+                        Anerkennungsbescheid / Defizitbescheid
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                </Row>
+              </Animation>{" "}
+              <Animation
+                ref={sections[9].ref}
+                isVisible={isVisible[sections[9].id]}
+              >
+                <Section open={isOpenSix} onClick={toggleOpenSix}>
+                  <BlueTriangle>
+                    <BlueTriangleOne open={isOpenSix} />
+                  </BlueTriangle>
+                  <Zahl>6</Zahl>
+                  <Überschrift>Möglichkeiten der Förderung</Überschrift>
+                </Section>
+                <Row>
+                  {isOpenSix && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenSix}>
+                        Anforderungen und Optionen zur Antragstellung von
+                        Fördermitteln
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                </Row>
+              </Animation>{" "}
+              <Animation
+                ref={sections[10].ref}
+                isVisible={isVisible[sections[10].id]}
+              >
+                <Section open={isOpenSeven} onClick={toggleOpenSeven}>
+                  <BlueTriangle>
+                    <BlueTriangleOne open={isOpenSeven} />
+                  </BlueTriangle>
+                  <Zahl>7</Zahl>
+                  <Überschrift> Sozialer Aspekt</Überschrift>
+                </Section>
+                <Row>
+                  {isOpenSeven && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenSeven}>
+                        Familiennachzug
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenSeven && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenSeven}>
+                        Onboarding-Prozess
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                  {isOpenSeven && (
+                    <SingleRow>
+                      <BlueCircle src={bluecircle} alt="blue circle" />
+                      <ListParagraph open={isOpenSeven}>
+                        Integration von ausländischen Fachkräften
+                      </ListParagraph>
+                    </SingleRow>
+                  )}
+                </Row>
+              </Animation>
+            </SmallContainer>
+          </Container>
+          <HiddenSection>
+            <Heading
+              ref={sections[3].ref}
+              isVisible={isVisible[sections[3].id]}
+            >
+              Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
+              in Deutschland:
+            </Heading>{" "}
+            <Animation
+              ref={sections[11].ref}
+              isVisible={isVisible[sections[11].id]}
+            >
               <Section open={isOpenOne} onClick={toggleOpenOne}>
                 <BlueTriangle>
                   <BlueTriangleOne open={isOpenOne} />
@@ -224,6 +474,11 @@ export default function Workshop() {
                   </SingleRow>
                 )}
               </Row>
+            </Animation>{" "}
+            <Animation
+              ref={sections[12].ref}
+              isVisible={isVisible[sections[12].id]}
+            >
               <Section open={isOpenTwo} onClick={toggleOpenTwo}>
                 <BlueTriangle>
                   <BlueTriangleOne open={isOpenTwo} />
@@ -268,6 +523,11 @@ export default function Workshop() {
                   </SingleRow>
                 )}
               </Row>
+            </Animation>{" "}
+            <Animation
+              ref={sections[13].ref}
+              isVisible={isVisible[sections[13].id]}
+            >
               <Section open={isOpenThree} onClick={toggleOpenThree}>
                 <BlueTriangle>
                   <BlueTriangleOne open={isOpenThree} />
@@ -295,6 +555,11 @@ export default function Workshop() {
                   </SingleRow>
                 )}
               </Row>
+            </Animation>{" "}
+            <Animation
+              ref={sections[14].ref}
+              isVisible={isVisible[sections[14].id]}
+            >
               <Section open={isOpenFour} onClick={toggleOpenFour}>
                 <BlueTriangle>
                   <BlueTriangleOne open={isOpenFour} />
@@ -320,6 +585,11 @@ export default function Workshop() {
                   </SingleRow>
                 )}
               </Row>
+            </Animation>{" "}
+            <Animation
+              ref={sections[15].ref}
+              isVisible={isVisible[sections[15].id]}
+            >
               <Section open={isOpenFive} onClick={toggleOpenFive}>
                 <BlueTriangle>
                   <BlueTriangleOne open={isOpenFive} />
@@ -356,6 +626,8 @@ export default function Workshop() {
                   </SingleRow>
                 )}
               </Row>
+            </Animation>{" "}
+            <div ref={sections[16].ref} isVisible={isVisible[sections[16].id]}>
               <Section open={isOpenSix} onClick={toggleOpenSix}>
                 <BlueTriangle>
                   <BlueTriangleOne open={isOpenSix} />
@@ -374,6 +646,8 @@ export default function Workshop() {
                   </SingleRow>
                 )}
               </Row>
+            </div>{" "}
+            <div ref={sections[17].ref} isVisible={isVisible[sections[17].id]}>
               <Section open={isOpenSeven} onClick={toggleOpenSeven}>
                 <BlueTriangle>
                   <BlueTriangleOne open={isOpenSeven} />
@@ -407,217 +681,7 @@ export default function Workshop() {
                   </SingleRow>
                 )}
               </Row>
-            </SmallContainer>
-          </Container>
-          <HiddenSection>
-            <Heading
-              ref={sections[3].ref}
-              isVisible={isVisible[sections[3].id]}
-            >
-              Inhalte des Workshops zur Beschäftigung ausländischer Fachkräfte
-              in Deutschland:
-            </Heading>
-            <Section open={isOpenOne} onClick={toggleOpenOne}>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenOne} />
-              </BlueTriangle>
-              <Zahl>1</Zahl>
-              <Überschrift> Allgemeine Voraussetzungen</Überschrift>
-            </Section>
-            <Row>
-              {isOpenOne && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenOne}>
-                    Allgemeine Richtlinien für die Einstellung ausländischer
-                    Fachkräfte
-                  </ListParagraph>
-                </SingleRow>
-              )}
-            </Row>
-            <Section open={isOpenTwo} onClick={toggleOpenTwo}>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenTwo} />
-              </BlueTriangle>
-              <Zahl>2</Zahl>
-              <Überschrift>
-                {" "}
-                Regelungen für Visum und Aufenthaltstitel
-              </Überschrift>
-            </Section>
-            <Row>
-              {isOpenTwo && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenTwo}>
-                    Einreisevisum und Aufenthaltstitel
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenTwo && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenTwo}>
-                    Fachkräfte mit Berufsausbildung
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenTwo && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenTwo}>
-                    Fachkräfte mit akademischer Ausbildung
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenTwo && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenTwo}>
-                    Regelung für ausländische Studierende
-                  </ListParagraph>
-                </SingleRow>
-              )}
-            </Row>
-            <Section open={isOpenThree} onClick={toggleOpenThree}>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenThree} />
-              </BlueTriangle>
-              <Zahl>3</Zahl>
-              <Überschrift>
-                Beteiligung der Bundesagentur für Arbeit
-              </Überschrift>
-            </Section>
-            <Row>
-              {isOpenThree && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenThree}>
-                    Zustimmung der Bundesagentur
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenThree && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenThree}>
-                    Arbeitsmarktzulassung
-                  </ListParagraph>
-                </SingleRow>
-              )}
-            </Row>
-            <Section open={isOpenFour} onClick={toggleOpenFour}>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenFour} />
-              </BlueTriangle>
-              <Zahl>4</Zahl>
-              <Überschrift>Beteiligung der Ausländerbehörde</Überschrift>
-            </Section>
-            <Row>
-              {isOpenFour && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenFour}>
-                    Das beschleunigte Fachkräfteverfahren nach §81a
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenFour && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenFour}>
-                    Aufenthaltstitelbentragung und -verlängerung
-                  </ListParagraph>
-                </SingleRow>
-              )}
-            </Row>
-            <Section open={isOpenFive} onClick={toggleOpenFive}>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenFive} />
-              </BlueTriangle>
-              <Zahl>5</Zahl>
-              <Überschrift>
-                {" "}
-                Anerkennung ausländischer Berufsabschlüsse
-              </Überschrift>
-            </Section>
-            <Row>
-              {isOpenFive && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenFive}>
-                    Grundlagen der Anerkennung
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenFive && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenFive}>
-                    Anerkennungsverfahren
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenFive && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenFive}>
-                    Anerkennungsbescheid / Defizitbescheid
-                  </ListParagraph>
-                </SingleRow>
-              )}
-            </Row>
-            <Section open={isOpenSix} onClick={toggleOpenSix}>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenSix} />
-              </BlueTriangle>
-              <Zahl>6</Zahl>
-              <Überschrift>Möglichkeiten der Förderung</Überschrift>
-            </Section>
-            <Row>
-              {isOpenSix && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenSix}>
-                    Anforderungen und Optionen zur Antragstellung von
-                    Fördermitteln
-                  </ListParagraph>
-                </SingleRow>
-              )}
-            </Row>
-            <Section open={isOpenSeven} onClick={toggleOpenSeven}>
-              <BlueTriangle>
-                <BlueTriangleOne open={isOpenSeven} />
-              </BlueTriangle>
-              <Zahl>7</Zahl>
-              <Überschrift> Sozialer Aspekt</Überschrift>
-            </Section>
-            <Row>
-              {isOpenSeven && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenSeven}>
-                    Familiennachzug
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenSeven && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenSeven}>
-                    Onboarding-Prozess
-                  </ListParagraph>
-                </SingleRow>
-              )}
-              {isOpenSeven && (
-                <SingleRow>
-                  <BlueCircle src={bluecircle} alt="blue circle" />
-                  <ListParagraph open={isOpenSeven}>
-                    Integration von ausländischen Fachkräften
-                  </ListParagraph>
-                </SingleRow>
-              )}
-            </Row>
+            </div>
           </HiddenSection>
           <HiddenWoman src={woman} alt="woman"></HiddenWoman>
         </Wrapper>
@@ -721,6 +785,13 @@ const Heading = styled.div`
     margin-left: 30px;
     font-size: 26px;
   }
+`;
+
+const Animation = styled.div`
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 `;
 
 const Section = styled.div`
