@@ -482,7 +482,11 @@ const Button = styled.button`
   cursor: pointer;
   font-weight: bold;
 
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
+      background-color: orange;
+      color: white;
+    }
   }
 
   @media (max-width: 900px) {
@@ -659,27 +663,6 @@ const StyledLinkMail = styled.a`
   margin-bottom: 70px;
 `;
 
-const CallToAction = styled.div`
-  margin: auto;
-  margin-top: 100px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 33px;
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-
-  @media (max-width: 900px) {
-    margin-top: 60px;
-    font-size: 28px;
-  }
-
-  @media (max-width: 480px) {
-    margin-top: 40px;
-    font-size: 24px;
-    text-align: center;
-  }
-`;
-
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -744,7 +727,8 @@ const StyledButton = styled.button`
 
   @media (hover: hover) {
     &:hover {
-      background-color: rgb(255, 255, 255);
+      background-color: orange;
+      color: white;
     }
   }
 `;

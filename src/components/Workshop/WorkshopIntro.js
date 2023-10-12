@@ -246,20 +246,15 @@ const ContactButton = styled.a`
   border: 6px solid black;
   z-index: 200;
   text-decoration: none;
-
   transition: transform 0.3s ease;
 
-  &:hover {
-    transform: scale(1.02);
-  }
-
-  &:hover img {
-    transform: translateY(-70px) translateX(-100px);
-  }
-
-  @media (hover: none) {
+  @media (hover: hover) {
     &:hover {
-      transform: none;
+      transform: scale(1.02);
+    }
+
+    &:hover img {
+      transform: translateY(-70px) translateX(-100px);
     }
   }
 

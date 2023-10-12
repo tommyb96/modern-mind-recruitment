@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import logo from "../../assets/svg/Home/logo.svg";
 import people from "../../assets/svg/Home/home-people.svg";
 import allpeople from "../../assets/svg/Home/home-big-people.png";
@@ -197,6 +197,12 @@ const Circle = styled.div`
       }
     }
   }
+
+  @media (max-width: 480px) {
+    border: 3px solid rgb(192, 192, 192);
+    width: 10.5vw;
+    height: 10.5vw;
+  }
 `;
 
 const Message = styled.div`
@@ -241,6 +247,25 @@ const Message = styled.div`
       }
       87.5% {
         left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 5vw;
+    @keyframes moveMessage {
+      0%,
+      100% {
+        left: -153%;
+      }
+      37.5% {
+        left: -153%;
+      }
+      50% {
+        left: 10px;
+      }
+      87.5% {
+        left: 10px;
       }
     }
   }

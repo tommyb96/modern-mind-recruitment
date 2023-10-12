@@ -581,15 +581,16 @@ const ContactButton = styled.a`
   border-radius: 50%;
   border: 6px solid black;
   z-index: 100;
-
   transition: transform 0.3s ease;
 
-  &:hover {
-    transform: scale(1.02);
-  }
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.02);
+    }
 
-  &:hover img {
-    transform: translateY(-70px) translateX(100px);
+    &:hover img {
+      transform: translateY(-70px) translateX(100px);
+    }
   }
 
   @media (max-width: 900px) {
@@ -781,9 +782,10 @@ const Woman = styled.img`
   align-self: center;
   margin-left: 1000px;
   margin-top: -140px;
-
-  &:hover {
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   @media (max-width: 1400px) {
