@@ -1263,7 +1263,7 @@ const Row = styled.tr`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transform: translateY(${(props) => (props.isVisible ? 0 : "5px")});
   transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
