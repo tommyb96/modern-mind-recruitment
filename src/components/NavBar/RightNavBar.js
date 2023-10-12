@@ -122,18 +122,20 @@ const NavLink = styled.a`
   font-size: 18px;
   text-transform: uppercase;
 
-  &:hover {
-    &::after {
-      content: "";
-      position: absolute;
-      left: ${({ href }) => (href === "#home" ? "90px" : "0")};
-      right: 0;
-      margin: 0 auto;
-      bottom: -12px;
-      height: 5px;
-      width: 35px;
-      border-radius: 2px;
-      background-color: black;
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        left: ${({ href }) => (href === "#home" ? "90px" : "0")};
+        right: 0;
+        margin: 0 auto;
+        bottom: -12px;
+        height: 5px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: black;
+      }
     }
   }
 
@@ -149,10 +151,11 @@ const NavLink = styled.a`
 
   @media (max-width: 1400px) {
     font-size: 16px;
-
-    &:hover {
-      &::after {
-        left: ${({ href }) => (href === "#home" ? "60px" : "0")};
+    @media (hover: hover) {
+      &:hover {
+        &::after {
+          left: ${({ href }) => (href === "#home" ? "60px" : "0")};
+        }
       }
     }
 
