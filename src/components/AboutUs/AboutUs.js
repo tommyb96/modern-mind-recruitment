@@ -582,6 +582,7 @@ const ContactButton = styled.a`
   border: 6px solid black;
   z-index: 100;
   transition: transform 0.3s ease;
+  cursor: pointer;
 
   @media (hover: hover) {
     &:hover {

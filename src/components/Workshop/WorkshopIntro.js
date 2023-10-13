@@ -247,6 +247,7 @@ const ContactButton = styled.a`
   z-index: 200;
   text-decoration: none;
   transition: transform 0.3s ease;
+  cursor: pointer;
 
   @media (hover: hover) {
     &:hover {
@@ -288,7 +289,7 @@ const Table = styled.table`
   margin-top: 100px;
   margin-bottom: 250px;
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1400px) {
     width: 100%;
   }
 
@@ -311,7 +312,7 @@ const Heading = styled.th`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
   }
 
   @media (max-width: 900px) {
@@ -339,7 +340,7 @@ const LeftDiv = styled.th`
   opacity: 0.8;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 
@@ -371,7 +372,7 @@ const BoldDiv = styled.th`
   font-weight: 500;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 50px;
   }
 

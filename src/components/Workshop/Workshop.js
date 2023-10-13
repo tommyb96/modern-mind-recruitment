@@ -798,6 +798,7 @@ const Section = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 15px;
+  cursor: pointer;
 `;
 
 const Row = styled.div`

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/svg/Home/logo.svg";
 import wave from "../assets/svg/AboutUs/about_us_waves.png";
@@ -8,6 +10,11 @@ import GlobalStyle from "../Styles";
 
 export default function Impressum() {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scrollen zur Oberseite der Seite
@@ -17,6 +24,10 @@ export default function Impressum() {
       <div>
         <GlobalStyle />
         <Wrapper>
+          <BackButton onClick={goBack}>
+            <FaArrowLeft />
+            Zurück
+          </BackButton>
           <Heading>
             <Logo src={logo} alt="logo"></Logo>
             <h1>impressum</h1>
@@ -28,10 +39,10 @@ export default function Impressum() {
                 (TMG).
               </p>
               <p>
-                <span>modern mind recruitment GbR</span> <br />
+                <span>Modern Mind Recruitment</span> <br />
                 Königsbrückerlandstraße 58,
                 <br />
-                01199 Dresden
+                01109 Dresden
                 <br />
                 Deutschland
               </p>
@@ -157,6 +168,22 @@ export default function Impressum() {
     </>
   );
 }
+const BackButton = styled.button`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0 0 20px;
+  color: #007bff; // Ändern Sie die Farbe nach Bedarf
+
+  svg {
+    margin-right: 5px;
+  }
+`;
 
 const Wrapper = styled.div`
   display: flex;

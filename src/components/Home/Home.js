@@ -119,14 +119,17 @@ const MessageWrapper = styled.div`
     100% {
       width: 47%;
     }
-    37.5% {
+    20% {
       width: 47%;
     }
-    50% {
+    28% {
       width: 72%;
     }
-    87.5% {
+    72% {
       width: 72%;
+    }
+    80% {
+      width: 47%;
     }
   }
 
@@ -137,14 +140,17 @@ const MessageWrapper = styled.div`
       100% {
         width: 47%;
       }
-      37.5% {
+      20% {
         width: 47%;
       }
-      50% {
+      28% {
         width: 83%;
       }
-      87.5% {
+      72% {
         width: 83%;
+      }
+      80% {
+        width: 47%;
       }
     }
   }
@@ -167,14 +173,17 @@ const Circle = styled.div`
     100% {
       left: 49%;
     }
-    37.5% {
+    20% {
       left: 49%;
     }
-    50% {
+    28% {
       left: 22.5%;
     }
-    87.5% {
+    72% {
       left: 22.5%;
+    }
+    80% {
+      left: 49%;
     }
   }
 
@@ -186,14 +195,17 @@ const Circle = styled.div`
       100% {
         left: 49%;
       }
-      37.5% {
+      20% {
         left: 49%;
       }
-      50% {
+      28% {
         left: 7%;
       }
-      87.5% {
+      72% {
         left: 7%;
+      }
+      80% {
+        left: 49%;
       }
     }
   }
@@ -221,14 +233,17 @@ const Message = styled.div`
     100% {
       left: -106%;
     }
-    37.5% {
+    20% {
       left: -106%;
     }
-    50% {
+    28% {
       left: 0;
     }
-    87.5% {
+    72% {
       left: 0;
+    }
+    80% {
+      left: -106%;
     }
   }
 
@@ -239,14 +254,17 @@ const Message = styled.div`
       100% {
         left: -153%;
       }
-      37.5% {
+      20% {
         left: -153%;
       }
-      50% {
+      28% {
         left: 0;
       }
-      87.5% {
+      72% {
         left: 0;
+      }
+      80% {
+        left: -153%;
       }
     }
   }

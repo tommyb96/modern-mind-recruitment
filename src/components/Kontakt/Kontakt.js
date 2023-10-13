@@ -402,7 +402,6 @@ const Table = styled.table`
   width: 1350px;
   margin: auto;
   margin-top: 15px;
-  font-size: 20px;
 
   @media (max-width: 1400px) {
     width: 100%;
@@ -724,6 +723,7 @@ const StyledButton = styled.button`
   width: 60%;
   background-color: rgb(255, 255, 255, 0.8);
   color: black;
+  cursor: pointer;
 
   @media (hover: hover) {
     &:hover {

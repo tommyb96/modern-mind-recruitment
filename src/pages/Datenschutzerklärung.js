@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/svg/Home/logo.svg";
 import wave from "../assets/svg/Kontakt/kontakt_waves.png";
@@ -8,6 +10,11 @@ import GlobalStyle from "../Styles";
 
 export default function Datenschutzerklärung() {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scrollen zur Oberseite der Seite
@@ -18,6 +25,10 @@ export default function Datenschutzerklärung() {
       <div>
         <GlobalStyle />
         <Wrapper>
+          <BackButton onClick={goBack}>
+            <FaArrowLeft />
+            Zurück
+          </BackButton>
           <Heading>
             <Logo src={logo} alt="logo"></Logo>
             <h1>Datenschutzerklärung</h1>
@@ -157,9 +168,9 @@ export default function Datenschutzerklärung() {
                 Die verantwortliche Stelle für die Datenverarbeitung auf dieser
                 Website ist:
               </p>
-              <div>modern mind recruitment GbR</div>
-              <div>Bamberger Str. 4 - 6</div>
-              <div>01187 Dresden</div>
+              <div>Modern Mind Recruitment</div>
+              <div>Königsbrückerlandstraße 58</div>
+              <div>01109 Dresden</div>
               <br />
               <div>Telefon: 015202112164</div>
               <div>E-Mail: info@modernmindrecruitment.com</div>
@@ -423,6 +434,23 @@ export default function Datenschutzerklärung() {
     </>
   );
 }
+
+const BackButton = styled.button`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0 0 20px;
+  color: #007bff; // Ändern Sie die Farbe nach Bedarf
+
+  svg {
+    margin-right: 5px;
+  }
+`;
 
 const Wrapper = styled.div`
   display: flex;

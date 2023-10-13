@@ -348,6 +348,7 @@ const Row = styled.div`
   display: flex;
   padding-top: 25px;
   padding-bottom: 25px;
+  cursor: pointer;
 `;
 
 const BlueTriangleDiv = styled.div`

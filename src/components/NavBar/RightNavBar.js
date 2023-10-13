@@ -58,6 +58,7 @@ export default function RightNavBar({ open, setOpen }) {
 }
 
 const NavContainer = styled.nav`
+  cursor: pointer;
   display: flex;
   position: fixed;
   z-index: 1000;
