@@ -290,7 +290,7 @@ const Line = styled.div`
 
   @media (max-width: 900px) {
     left: 10%;
-    top: 70px;
+    top: 90px;
   }
 
   @media (max-width: 700px) {
@@ -349,6 +349,7 @@ const Heading = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     font-size: 33px;
+    transform: translateY(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -589,6 +590,7 @@ const BoldHeader = styled.th`
     padding-left: 30px;
     font-size: 26px;
     padding-bottom: 20px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 

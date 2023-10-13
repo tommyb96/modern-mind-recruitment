@@ -440,6 +440,7 @@ const Heading = styled.th`
     padding-bottom: 30px;
     padding-left: 30px;
     font-size: 33px;
+    transform: translateY(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -506,13 +507,13 @@ const Tom = styled.img`
   margin-left: 50px;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "20px")});
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
   transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
 
   @media (max-width: 900px) {
     margin-top: 40px;
     margin-left: 120px;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-20px")});
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   }
 
   @media (max-width: 700px) {
@@ -521,6 +522,8 @@ const Tom = styled.img`
   @media (max-width: 480px) {
     width: 280px;
     margin-left: 0px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-5px")});
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 `;
 

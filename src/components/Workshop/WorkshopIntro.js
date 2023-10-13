@@ -38,7 +38,12 @@ export default function WorkshopIntro() {
       isVisible: false,
     },
     {
-      id: "hidden-eading",
+      id: "hidden-heading",
+      ref: useRef(null),
+      isVisible: false,
+    },
+    {
+      id: "statement",
       ref: useRef(null),
       isVisible: false,
     },
@@ -107,7 +112,11 @@ export default function WorkshopIntro() {
               dem Ausland zu gründen. Sie sind sich unsicher, wie und wo Sie
               beginnen sollen?
             </LeftDiv>
-            <Statement rowSpan={3}>
+            <Statement
+              ref={sections[4].ref}
+              isVisible={isVisible[sections[4].id]}
+              rowSpan={3}
+            >
               WIR MACHEN SIE FIT UM IHREN ERFOLG ZU MAXIMIEREN.
             </Statement>
           </tr>
@@ -227,7 +236,7 @@ const Circle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
 
   transform: scale(${(props) => (props.isVisible ? 1 : 0.6)});
@@ -327,6 +336,7 @@ const Heading = styled.th`
     padding-bottom: 30px;
     padding-left: 30px;
     font-size: 33px;
+    transform: translateY(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -400,6 +410,10 @@ const Statement = styled.th`
   color: white;
   padding-left: 100px;
   padding-right: 50px;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -411,6 +425,7 @@ const Statement = styled.th`
     padding-bottom: 50px;
     padding-left: 200px;
     padding-right: 50px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   }
 
   @media (max-width: 700px) {
@@ -425,8 +440,7 @@ const Statement = styled.th`
     padding-right: 20px;
     font-size: 40px;
     opacity: 1;
-    transform: translateX(0);
-    transition: none;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 

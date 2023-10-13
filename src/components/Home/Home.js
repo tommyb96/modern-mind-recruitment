@@ -276,14 +276,17 @@ const Message = styled.div`
       100% {
         left: -153%;
       }
-      37.5% {
+      20% {
         left: -153%;
       }
-      50% {
+      28% {
         left: 10px;
       }
-      87.5% {
+      72% {
         left: 10px;
+      }
+      80% {
+        left: -153%;
       }
     }
   }
@@ -338,6 +341,7 @@ const WelcomeMessage = styled.div`
   @media (max-width: 480px) {
     font-size: 43px;
     margin: 20px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 
   //animation

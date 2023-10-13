@@ -330,17 +330,18 @@ const Heading = styled.div`
   }
 
   @media (max-width: 900px) {
-    margin-left: 120px;
+    margin-left: 100px;
   }
 
   @media (max-width: 700px) {
-    margin-left: 70px;
+    margin-left: 30px;
   }
 
   @media (max-width: 480px) {
-    margin-left: 30px;
+    margin-left: 0px;
     font-size: 33px;
     margin-bottom: 20px;
+    transform: translateY(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 

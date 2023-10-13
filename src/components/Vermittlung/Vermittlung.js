@@ -973,6 +973,7 @@ const Heading = styled.th`
     padding-left: 30px;
     padding-bottom: 30px;
     font-size: 33px;
+    transform: translateY(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -1044,6 +1045,7 @@ const BoldText = styled.th`
     padding-left: 30px;
     padding-right: 20px;
     padding-bottom: 20px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -1079,6 +1081,7 @@ const BoldHeader = styled.th`
     padding-left: 30px;
     font-size: 26px;
     padding-top: 30px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -1090,6 +1093,10 @@ const SecondBoldHeader = styled.th`
   padding-left: 90px;
   padding-top: 30px;
   width: 50vw;
+  //animation
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
@@ -1098,6 +1105,7 @@ const SecondBoldHeader = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 140px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
   }
 
   @media (max-width: 700px) {
@@ -1109,6 +1117,7 @@ const SecondBoldHeader = styled.th`
     font-size: 26px;
     padding-top: 30px;
     padding-bottom: 20px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -1255,6 +1264,7 @@ const LeftBoldHeader = styled.th`
     font-size: 26px;
     padding-top: 20px;
     padding-bottom: 20px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 

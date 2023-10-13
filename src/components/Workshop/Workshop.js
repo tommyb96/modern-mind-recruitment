@@ -769,7 +769,7 @@ const Heading = styled.div`
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
-    margin-right: 20px;
+    margin-right: 50px;
   }
 
   @media (max-width: 900px) {
@@ -783,7 +783,9 @@ const Heading = styled.div`
 
   @media (max-width: 480px) {
     margin-left: 30px;
+    margin-right: 20px;
     font-size: 26px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -792,6 +794,14 @@ const Animation = styled.div`
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateY(${(props) => (props.isVisible ? 0 : "5px")});
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  @media (max-width: 1400px) {
+    margin-right: 50px;
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 20px;
+  }
 `;
 
 const Section = styled.div`
@@ -821,7 +831,6 @@ const SingleRow = styled.div`
 
   @media (max-width: 480px) {
     margin-left: 105px;
-    margin-right: 10px;
   }
 `;
 
@@ -882,19 +891,19 @@ const BlueCircle = styled.img`
 `;
 const WorkshopCircle = styled.div`
   position: absolute;
-  top: 300px;
+  top: 330px;
   left: -20px;
   background-color: white;
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
 
   @media (max-width: 700px) {
-    top: 245px;
+    top: 250px;
   }
 `;
 const BlueTriangleOne = styled.div`
@@ -937,7 +946,7 @@ const LastCircle = styled.div`
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3.5px solid darkgray;
+  border: 3.5px solid rgb(192, 192, 192);
   z-index: 200;
   transform: scale(${(props) => (props.isVisible ? 1 : 0.8)});
   transition: transform 0.7s ease;
@@ -945,18 +954,21 @@ const LastCircle = styled.div`
 const HiddenSection = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 300px;
+  margin-top: 330px;
   margin-bottom: 50px;
 
   @media (max-width: 700px) {
     margin-top: 250px;
   }
 
+  @media (max-width: 480px) {
+    margin-top: 180px;
+  }
+
   @media (min-width: 901px) {
     display: none;
   }
 `;
-
 const HiddenWoman = styled.img`
   width: 250px;
   margin: auto;

@@ -662,6 +662,7 @@ const Heading = styled.th`
     padding-bottom: 30px;
     padding-left: 30px;
     font-size: 33px;
+    transform: translateY(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -765,6 +766,7 @@ const Statement = styled.th`
     padding-right: 20px;
     padding-bottom: 0px;
     font-size: 40px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "10px")});
   }
 `;
 
@@ -933,6 +935,7 @@ const HeaderCell = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     font-size: 33px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -989,6 +992,7 @@ const BoldHeader = styled.th`
   @media (max-width: 480px) {
     padding-left: 30px;
     font-size: 20px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
   }
 `;
 
@@ -1030,7 +1034,7 @@ const RightCell = styled.th`
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});
+  transform: translateY(${(props) => (props.isVisible ? 0 : "5px")});
   transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
