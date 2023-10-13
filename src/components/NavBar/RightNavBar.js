@@ -135,7 +135,8 @@ const NavLink = styled.a`
         height: 5px;
         width: 35px;
         border-radius: 2px;
-        background-color: black;
+        background-color: ${({ href }) =>
+          href === "#kontakt" ? "orange" : "black"};
       }
     }
   }

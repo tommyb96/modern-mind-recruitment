@@ -988,7 +988,7 @@ const Header = styled.div`
   font-size: 33px;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
+    padding-left: 40px;
   }
 
   @media (max-width: 1350px) {
@@ -1017,8 +1017,8 @@ const StyledDiv = styled.div`
   max-width: 1350px;
 
   @media (max-width: 1400px) {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   @media (max-width: 1350px) {
@@ -1036,6 +1036,7 @@ const StyledDiv = styled.div`
 
   @media (max-width: 480px) {
     padding-left: 30px;
+    padding-right: 20px;
     font-size: 18px;
   }
 `;

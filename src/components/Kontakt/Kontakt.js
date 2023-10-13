@@ -480,7 +480,8 @@ const Button = styled.button`
   margin: 15px;
   border-radius: 30px;
   cursor: pointer;
-  font-weight: bold;
+  font-family: system-ui;
+  font-weight: normal;
 
   @media (hover: hover) {
     &:hover {
@@ -724,13 +725,13 @@ const StyledButton = styled.button`
   border-radius: 30px;
   font-size: 22px;
   width: 60%;
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255, 0.9);
   color: black;
   cursor: pointer;
 
   @media (hover: hover) {
     &:hover {
-      background-color: orange;
+      background-color: rgb(255, 165, 0);
       color: white;
     }
   }
@@ -830,8 +831,10 @@ const Nav = styled.div`
     padding: 10px;
     font-weight: bold;
 
-    &:hover {
-      color: rgb(255, 255, 255, 1);
+    @media (hover: hover) {
+      &:hover {
+        color: rgb(255, 165, 0);
+      }
     }
   }
 `;
