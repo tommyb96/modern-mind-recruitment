@@ -539,7 +539,7 @@ export default function Vermittlung() {
               >
                 Mit welchen Betrieben arbeiten wir zusammen?
               </LeftBoldHeader>
-              <th></th>
+              <RightCell colSpan={2}></RightCell>
             </tr>
             <tr>
               <LeftDiv>
@@ -558,12 +558,12 @@ export default function Vermittlung() {
                 aktiv zur Seite und teilen unsere Erfahrungen, um eine bessere
                 Eingliederung zu ermöglichen.
               </LeftDiv>
-              <th></th>
+              <RightCell colSpan={2}></RightCell>
             </tr>
             <tr>
-              <th rowSpan={18}>
+              <VisaCell rowSpan={17}>
                 <Visa src={visa} alt="visa" />
-              </th>
+              </VisaCell>
               <SecondBoldHeader
                 colSpan={2}
                 ref={sections[46].ref}
@@ -574,12 +574,12 @@ export default function Vermittlung() {
             </tr>
             <Row ref={sections[13].ref} isVisible={isVisible[sections[13].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung> Vorbereitung von Unternehmen </Aufzählung>{" "}
+              <Aufzählung colSpan={2}>Vorbereitung von Unternehmen</Aufzählung>
             </Row>
             <Row ref={sections[14].ref} isVisible={isVisible[sections[14].id]}>
+              <CheckmarkCell />{" "}
               <Info colSpan={2}>
                 Grundlegende Einführung und Beratung zu den Verfahren der
                 Erwerbsmigration
@@ -587,30 +587,28 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[15].ref} isVisible={isVisible[sections[15].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung> Profiling und Matchmaking</Aufzählung>
+              <Aufzählung colSpan={2}> Profiling und Matchmaking</Aufzählung>
             </Row>
             <Row ref={sections[16].ref} isVisible={isVisible[sections[16].id]}>
+              <CheckmarkCell />{" "}
               <Info colSpan={2}>
                 Erstellen individuell zugeschnittener Profile, die den
                 gewünschten Anforderungen entsprechen, und Vorauswahl
                 potenzieller Bewerber:innen
               </Info>
             </Row>
-
             <Row ref={sections[17].ref} isVisible={isVisible[sections[17].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung>
-                {" "}
+              <Aufzählung colSpan={2}>
                 Organisation und Begleitung des Bewerbungsprozesses
               </Aufzählung>
             </Row>
             <Row ref={sections[18].ref} isVisible={isVisible[sections[18].id]}>
+              <CheckmarkCell />
               <Info colSpan={2}>
                 Online-Vorstellungsgespräch mithilfe von Plattformen wie
                 Microsoft Teams oder Zoom, gegebenenfalls mit
@@ -619,12 +617,12 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[19].ref} isVisible={isVisible[sections[19].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung> Vorbereitung im Heimatland</Aufzählung>{" "}
+              <Aufzählung colSpan={2}> Vorbereitung im Heimatland</Aufzählung>{" "}
             </Row>
             <Row ref={sections[20].ref} isVisible={isVisible[sections[20].id]}>
+              <CheckmarkCell />{" "}
               <Info colSpan={2}>
                 Organisation und Management von Deutsch-Sprachkursen im
                 Heimatland und Vorbereitung auf das Leben und die berufliche
@@ -633,41 +631,39 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[21].ref} isVisible={isVisible[sections[21].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung>
-                {" "}
+              <Aufzählung colSpan={2}>
                 Anerkennung ausländischer Berufsqualifikationen
               </Aufzählung>{" "}
             </Row>
             <Row ref={sections[22].ref} isVisible={isVisible[sections[22].id]}>
+              <CheckmarkCell />
               <Info colSpan={2}>
                 Einleitung, Begleitung und Durchführung des
                 Anerkennungsverfahrens
               </Info>
             </Row>
-
             <Row ref={sections[23].ref} isVisible={isVisible[sections[23].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung>Visabeantragung</Aufzählung>{" "}
+              <Aufzählung colSpan={2}>Visabeantragung</Aufzählung>{" "}
             </Row>
             <Row ref={sections[24].ref} isVisible={isVisible[sections[24].id]}>
+              <CheckmarkCell />
               <Info colSpan={2}>
                 Begleitung des beschleunigten Fachkräfteverfahrens
               </Info>
             </Row>
             <Row ref={sections[25].ref} isVisible={isVisible[sections[25].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung> Integration in Deutschland</Aufzählung>
+              <Aufzählung colSpan={2}> Integration in Deutschland</Aufzählung>
             </Row>
             <Row ref={sections[26].ref} isVisible={isVisible[sections[26].id]}>
+              <CheckmarkCell />
               <Info colSpan={2}>
                 Unterstützung bei der Wohnungssuche, Hilfe bei Behördenbesuchen
                 sowie Unterstützung bei organisatorischen Angelegenheiten
@@ -675,12 +671,12 @@ export default function Vermittlung() {
             </Row>
             <Row ref={sections[27].ref} isVisible={isVisible[sections[27].id]}>
               <CheckmarkCell>
-                {" "}
                 <Checkmark src={checkmark} alt="checkmark" />
               </CheckmarkCell>
-              <Aufzählung> Nachbetreuung</Aufzählung>
+              <Aufzählung colSpan={2}> Nachbetreuung</Aufzählung>
             </Row>
             <Row ref={sections[28].ref} isVisible={isVisible[sections[28].id]}>
+              <CheckmarkCell />
               <Info colSpan={2}>
                 Unterstützung beim Onboarding im Unternehmen sowie Verlängerung
                 des Aufenthaltstitels und Familiennachzug
@@ -719,7 +715,9 @@ export default function Vermittlung() {
             </tr>
             <tr>
               {" "}
-              <th colSpan={2}>{/* <Visa src={visa} alt="visa" /> */}</th>
+              <th colSpan={2}>
+                <Visa src={visa} alt="visa" />{" "}
+              </th>
             </tr>
             <tr>
               {" "}
@@ -951,6 +949,7 @@ const Heading = styled.th`
   text-align: start;
   padding-bottom: 40px;
   color: black;
+  width: 50%;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateY(${(props) => (props.isVisible ? 0 : "-15px")});
@@ -979,7 +978,7 @@ const Heading = styled.th`
 
 const LeftDiv = styled.th`
   color: black;
-  width: 50vw;
+  width: 50%;
   padding-right: 100px;
   text-align: start;
   padding-bottom: 30px;
@@ -1056,11 +1055,12 @@ const BoldHeader = styled.th`
   padding-bottom: 30px;
   padding-left: 70px;
   padding-top: 60px;
-  width: 50vw;
-  //animation
+  width: 50%;
+  // Animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  left: ${(props) => (props.isVisible ? "0" : "15px")};
+  position: relative;
+  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 40px;
@@ -1069,7 +1069,7 @@ const BoldHeader = styled.th`
 
   @media (max-width: 900px) {
     padding-left: 140px;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+    left: ${(props) => (props.isVisible ? "0" : "-15px")};
   }
 
   @media (max-width: 700px) {
@@ -1081,7 +1081,7 @@ const BoldHeader = styled.th`
     padding-left: 30px;
     font-size: 26px;
     padding-top: 30px;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+    left: ${(props) => (props.isVisible ? "0" : "-10px")};
   }
 `;
 
@@ -1092,7 +1092,8 @@ const SecondBoldHeader = styled.th`
   padding-bottom: 30px;
   padding-left: 90px;
   padding-top: 30px;
-  width: 50vw;
+  width: 50%;
+
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
@@ -1100,7 +1101,7 @@ const SecondBoldHeader = styled.th`
 
   @media (max-width: 1400px) {
     padding-right: 40px;
-    padding-left: 80px;
+    padding-left: 50px;
   }
 
   @media (max-width: 900px) {
@@ -1171,6 +1172,10 @@ const SecondWrapper = styled.div`
   position: relative;
 `;
 
+const VisaCell = styled.td`
+  width: 50%;
+`;
+
 const Visa = styled.img`
   width: 500px;
   margin-left: 20px;
@@ -1231,14 +1236,13 @@ const SecondTable = styled.table`
 
 const LeftBoldHeader = styled.th`
   color: black;
-  width: 50vw;
+  width: 50%;
   padding-right: 50px;
   padding-top: 60px;
   font-weight: bold;
   font-size: 33px;
   text-align: start;
   padding-bottom: 30px;
-
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
@@ -1268,8 +1272,12 @@ const LeftBoldHeader = styled.th`
   }
 `;
 
+const RightCell = styled.th`
+  width: 50%;
+`;
+
 const Row = styled.tr`
-  width: 50vw;
+  width: 50%;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -1277,14 +1285,13 @@ const Row = styled.tr`
   transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
 `;
 
-const CheckmarkCell = styled.th`
-  width: 5%;
+const CheckmarkCell = styled.td`
+  width: 10%;
+  text-align: end;
 `;
 
 const Checkmark = styled.img`
   width: 40px;
-  margin-left: 90px;
-  margin-right: 10px;
 
   @media (max-width: 900px) {
     margin-left: 140px;
@@ -1299,10 +1306,10 @@ const Checkmark = styled.img`
   }
 `;
 
-const Aufzählung = styled.td`
+const Aufzählung = styled.th`
   font-size: 33px;
   text-align: start;
-  width: 200px;
+  padding-left: 10px;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
@@ -1321,7 +1328,7 @@ const Aufzählung = styled.td`
 const Info = styled.td`
   text-align: start;
   padding-bottom: 20px;
-  padding-left: 140px;
+  padding-left: 10px;
   opacity: 0.7;
 
   @media (max-width: 1400px) {

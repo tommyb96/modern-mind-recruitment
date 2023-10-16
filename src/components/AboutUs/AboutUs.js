@@ -211,10 +211,10 @@ const AboutUs = () => {
             <BoldText>
               Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
               und ist das Ergebnis unserer langjährigen Erfahrung im Bereich der
-              Personalvermittlung. Als Ihr vertrauenswürdiger Partner in Fragen
+              Personalvermittlung. Als vertrauenswürdige Partner:in in Fragen
               des Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
-              mit qualifizierten Fachkräften sichern. Die Vermittlung unserer
+              mit qualifizierten Fachkräften zu sichern. Die Vermittlung unserer
               ,,Talente von morgen" steht dabei im Mittelpunkt unserer Mission.
             </BoldText>
             <Statement
@@ -229,7 +229,7 @@ const AboutUs = () => {
           <tr>
             <LeftDiv>
               Bei Modern Mind Recruitment schätzen wir unsere vielfältigen
-              Wurzeln, die unsere kulturelle Vielfalt geprägt und unsere
+              Wurzeln, die unsere kulturelle Diversität geprägt und unsere
               Herangehensweise an die Personalvermittlung beeinflusst haben. Wir
               brechen bewusst aus dem traditionellen Rahmen aus und legen
               unseren Schwerpunkt auf das unerschlossene Potenzial der
@@ -260,7 +260,7 @@ const AboutUs = () => {
             <BoldText>
               Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
               und ist das Ergebnis unserer langjährigen Erfahrung im Bereich der
-              Personalvermittlung. Als Ihr vertrauenswürdiger Partner in Fragen
+              Personalvermittlung. Als vertrauenswürdige Partner:in in Fragen
               des Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
               mit qualifizierten Fachkräften zu sichern. Die Vermittlung unserer
@@ -739,10 +739,11 @@ const Statement = styled.th`
   color: white;
   padding-left: 100px;
   padding-right: 50px;
-  //animation
+  // Animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  left: ${(props) => (props.isVisible ? "0" : "15px")};
+  position: relative;
+  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 40px;

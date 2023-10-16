@@ -509,12 +509,12 @@ const Tom = styled.img`
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
-  transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   @media (max-width: 900px) {
     margin-top: 40px;
     margin-left: 120px;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
+    transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
   }
 
   @media (max-width: 700px) {
@@ -523,8 +523,7 @@ const Tom = styled.img`
   @media (max-width: 480px) {
     width: 280px;
     margin-left: 0px;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-5px")});
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "5px")});
   }
 `;
 

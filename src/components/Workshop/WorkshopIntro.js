@@ -210,7 +210,7 @@ const Line = styled.div`
   position: absolute;
   left: 50%;
   top: 110px;
-  height: 100%;
+  bottom: 0;
   width: 3.5px;
   background-color: rgb(192, 192, 192, 0.5);
 
@@ -325,7 +325,7 @@ const Heading = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -355,7 +355,7 @@ const LeftDiv = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -387,7 +387,7 @@ const BoldDiv = styled.th`
   }
 
   @media (max-width: 900px) {
-    padding-left: 120px;
+    padding-left: 140px;
   }
 
   @media (max-width: 700px) {
@@ -410,10 +410,11 @@ const Statement = styled.th`
   color: white;
   padding-left: 100px;
   padding-right: 50px;
-  //animation
+  // Animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: translateX(${(props) => (props.isVisible ? 0 : "15px")});
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  left: ${(props) => (props.isVisible ? "0" : "15px")};
+  position: relative;
+  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
