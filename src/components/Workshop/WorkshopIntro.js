@@ -81,7 +81,6 @@ export default function WorkshopIntro() {
       <Wrapper>
         <Line>
           <Circle ref={sections[0].ref} isVisible={isVisible[sections[0].id]} />
-
           <ContactButton href="https://calendly.com/modern-mind-recruitment/45min?month=2023-09">
             <CallToAction>
               jetzt
@@ -246,7 +245,7 @@ const Circle = styled.div`
 const ContactButton = styled.a`
   display: flex;
   position: absolute;
-  bottom: -40px;
+  bottom: -200px;
   left: -200px;
   background-color: white;
   width: 400px;
