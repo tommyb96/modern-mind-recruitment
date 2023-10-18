@@ -211,8 +211,8 @@ const AboutUs = () => {
             <BoldText>
               Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
               und ist das Ergebnis unserer langjährigen Erfahrung im Bereich der
-              Personalvermittlung. Als vertrauenswürdige Partner:in in Fragen
-              des Personals setzen wir auf moderne und nachhaltige Lösungen, um
+              Personalvermittlung. Als vertrauenswürdige Partner in Fragen des
+              Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
               mit qualifizierten Fachkräften zu sichern. Die Vermittlung unserer
               ,,Talente von morgen" steht dabei im Mittelpunkt unserer Mission.
@@ -260,8 +260,8 @@ const AboutUs = () => {
             <BoldText>
               Unsere Vision erstreckt sich weit über das Hier und Jetzt hinaus
               und ist das Ergebnis unserer langjährigen Erfahrung im Bereich der
-              Personalvermittlung. Als vertrauenswürdige Partner:in in Fragen
-              des Personals setzen wir auf moderne und nachhaltige Lösungen, um
+              Personalvermittlung. Als vertrauenswürdige Partner in Fragen des
+              Personals setzen wir auf moderne und nachhaltige Lösungen, um
               nicht nur offene Positionen zu besetzen, sondern diese langfristig
               mit qualifizierten Fachkräften zu sichern. Die Vermittlung unserer
               ,,Talente von morgen" steht dabei im Mittelpunkt unserer Mission.
@@ -329,8 +329,8 @@ const AboutUs = () => {
           </tr>
           <tr>
             <LeftCell>
-              Unser junges Team hat sich als Partner:innen in Personalfragen auf
-              die Vermittlung qualifizierter Fachkräfte aus Nicht-EU-Ländern
+              Unser junges Team hat sich als Partner in Personalfragen auf die
+              Vermittlung qualifizierter Fachkräfte aus Nicht-EU-Ländern
               spezialisiert und vertritt somit eine ausgesprochen soziale
               Überzeugung. Wir setzen uns vor allem für Ehrlichkeit und
               Verlässlichkeit ein, aber noch viel wichtiger ist für uns: die
@@ -415,8 +415,8 @@ const AboutUs = () => {
           </tr>
           <tr>
             <LeftCell>
-              Unser junges Team hat sich als Partner:innen in Personalfragen auf
-              die Vermittlung qualifizierter Fachkräfte aus Nicht-EU-Ländern
+              Unser junges Team hat sich als Partner in Personalfragen auf die
+              Vermittlung qualifizierter Fachkräfte aus Nicht-EU-Ländern
               spezialisiert und vertritt somit eine ausgesprochen soziale
               Überzeugung. Wir setzen uns vor allem für Ehrlichkeit und
               Verlässlichkeit ein, aber noch viel wichtiger ist für uns: die
@@ -573,7 +573,7 @@ const Circle = styled.div`
 const ContactButton = styled.a`
   display: flex;
   position: absolute;
-  bottom: -200px;
+  bottom: -180px;
   left: -200px;
   background-color: white;
   width: 400px;

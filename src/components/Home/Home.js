@@ -296,6 +296,7 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: row-reverse;
   margin-top: 80px;
+  align-items: center;
 
   @media (max-width: 900px) {
     flex-direction: column;

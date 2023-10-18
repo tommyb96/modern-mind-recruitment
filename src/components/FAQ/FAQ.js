@@ -107,12 +107,12 @@ export default function FAQ() {
             open={isOpenOne}
             style={{ display: isOpenOne ? "block" : "none" }}
           >
-            Die Anerkennung von Qualifikationen ist von entscheidender
-            Bedeutung, um sicherzustellen, dass Fachkräfte aus Nicht-EU-Ländern,
-            die in Deutschland arbeiten möchten, die notwendigen Qualifikationen
-            und Fähigkeiten besitzen. Dieses Verfahren ist ein wesentlicher
-            Bestandteil der beruflichen Regulierung und trägt dazu bei, die
-            Qualität und Sicherheit von Arbeitsleistungen innerhalb des
+            Die Anerkennung von ausländischen Berufsqualifikationen ist von
+            entscheidender Bedeutung, um sicherzustellen, dass Fachkräfte aus
+            dem Ausland, die in Deutschland arbeiten möchten, die notwendigen
+            Qualifikationen und Fähigkeiten besitzen. Dieses Verfahren ist ein
+            wesentlicher Bestandteil der beruflichen Regulierung und trägt dazu
+            bei, die Qualität und Sicherheit von Arbeitsleistungen innerhalb des
             jeweiligen Berufsfelds zu gewährleisten.
             <br /> <br />
             Durch die Anerkennung werden die Qualifikationen der ausländischen

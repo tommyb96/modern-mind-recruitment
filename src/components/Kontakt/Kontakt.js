@@ -337,7 +337,7 @@ const Kontakt = () => {
           )}
           <StyledButton
             type="submit"
-            style={{ backgroundColor: error ? "" : "rgb(148,201,115)" }}
+            style={{ backgroundColor: error ? "" : "orange" }}
           >
             Senden
           </StyledButton>

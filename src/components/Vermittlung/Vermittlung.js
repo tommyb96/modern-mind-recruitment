@@ -402,7 +402,7 @@ export default function Vermittlung() {
                 Sie bei uns potenzielle Azubis, Fachkräfte mit abgeschlossener
                 Berufsausbildung sowie hochqualifizierte Akademiker:innen finden
                 können. Wir sind bestrebt, für jeden Bedarf die passende
-                Fachkraft zur Verfügung zu stellen.
+                Fachkraft zu finden.
               </RightDiv>
             </tr>
             <tr>
@@ -504,7 +504,7 @@ export default function Vermittlung() {
                 Sie bei uns potenzielle Azubis, Fachkräfte mit abgeschlossener
                 Berufsausbildung sowie hochqualifizierte Akademiker:innen finden
                 können. Wir sind bestrebt, für jeden Bedarf die passende
-                Fachkraft zur Verfügung zu stellen.
+                Fachkraft zu finden.
               </RightDiv>
             </tr>
             <tr>
