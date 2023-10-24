@@ -439,8 +439,9 @@ const Statement = styled.th`
     padding-left: 30px;
     padding-right: 20px;
     font-size: 40px;
+    transform: translateX(${(props) => (props.isVisible ? 0 : "0")});
     opacity: 1;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+    left: 0;
   }
 `;
 

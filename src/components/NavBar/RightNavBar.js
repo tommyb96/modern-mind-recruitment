@@ -100,7 +100,7 @@ const NavContainer = styled.nav`
       right: 0;
       height: 100vh;
       width: 230px;
-      padding-top: 6rem;
+      padding-top: 5rem;
       transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
       transition: transform 0.7s ease-in-out;
 
@@ -167,6 +167,6 @@ const NavLink = styled.a`
   }
 
   @media (max-width: 480px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;

@@ -767,7 +767,9 @@ const Statement = styled.th`
     padding-right: 20px;
     padding-bottom: 0px;
     font-size: 40px;
-    transform: translateX(${(props) => (props.isVisible ? 0 : "-10px")});
+    transform: translateX(${(props) => (props.isVisible ? 0 : "0")});
+    opacity: 1;
+    left: 0;
   }
 `;
 
