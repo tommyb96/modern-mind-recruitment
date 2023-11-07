@@ -35,13 +35,10 @@ export default function Impressum() {
             </Heading>{" "}
             <TextWrapper>
               <TextContainer>
+                <p>Angaben gemäß Informationspflicht laut § 5 TMG</p>
                 <p>
-                  Angaben gemäß Informationspflicht laut 8 5 Telemediengesetz
-                  (TMG).
-                </p>
-                <p>
-                  <span>Modern Mind Recruitment</span> <br />
-                  Königsbrückerlandstraße 58,
+                  <span>modern mind recruitment</span> <br />
+                  Königsbrücker Landstraße 58
                   <br />
                   01109 Dresden
                   <br />
@@ -69,12 +66,17 @@ export default function Impressum() {
                 </p>
                 <p>
                   <span>Berufsbezeichnung</span> <br />
-                  Unternehmensberater
+                  Personalvermittler, Unternehmensberater
                 </p>
                 <p>
                   <span>Vertreten durch die Gesellschafter</span>
                   <br />
                   Anna Hoehl, Tom Behrisch
+                </p>
+                <p>
+                  <span>Steuernummer</span>
+                  <br />
+                  202/155/16750
                 </p>
               </TextContainer>
               <TextContainer>
@@ -152,18 +154,16 @@ export default function Impressum() {
                   Sollten Sie auf dieser Webseite Inhalte finden, die das
                   Urheberrecht verletzen, bitten wir Sie uns zu kontaktieren.
                 </p>
-                <TextContainer>
-                  <h1>Bildernachweis</h1>
-                  <p>
-                    Die Bilder, Fotos und Grafiken auf dieser Webseite sind
-                    urheberrechtlich geschützt. Die Bilderrechte liegen bei:
-                  </p>
-                  <p>stock.adobe.com</p>
-                  <p>Alle Texte sind urheberrechtlich geschützt.</p>
-                  <p>
-                    Quelle: Erstellt mit dem Impressum Generator von AdSimple
-                  </p>
-                </TextContainer>
+              </TextContainer>{" "}
+              <TextContainer>
+                <h1>Bildernachweis</h1>
+                <p>
+                  Die Bilder, Fotos und Grafiken auf dieser Webseite sind
+                  urheberrechtlich geschützt. Die Bilderrechte liegen bei:
+                </p>
+                <p>stock.adobe.com</p>
+                <p>Alle Texte sind urheberrechtlich geschützt.</p>
+                <p>Quelle: Erstellt mit dem Impressum Generator von AdSimple</p>
               </TextContainer>
             </TextWrapper>
           </Wrapper>
