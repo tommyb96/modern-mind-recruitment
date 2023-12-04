@@ -236,7 +236,8 @@ const Heading = styled.div`
     text-transform: uppercase;
     font-size: 30px;
     align-self: center;
-    font-family: Comfortaa;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     text-shadow: 0.5px 0 rgb(0, 0, 0);
   }
 

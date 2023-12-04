@@ -358,7 +358,8 @@ const PinnNadel = styled.img`
 
 const Heading = styled.th`
   width: 50%;
-  font-family: Comfortaa;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   font-size: 53px;
   text-transform: uppercase;
   text-shadow: 1px 0 rgb(0, 0, 0);

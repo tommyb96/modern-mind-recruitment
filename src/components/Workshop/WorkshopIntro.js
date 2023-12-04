@@ -309,7 +309,8 @@ const Table = styled.table`
 `;
 
 const Heading = styled.th`
-  font-family: Comfortaa;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   font-size: 55px;
   text-transform: uppercase;
   text-shadow: 1px 0 rgb(0, 0, 0);

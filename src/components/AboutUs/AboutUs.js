@@ -202,7 +202,7 @@ const AboutUs = () => {
               ref={sections[1].ref}
               isVisible={isVisible[sections[1].id]}
             >
-              über uns
+              Über uns
             </Heading>
             <th></th>
           </tr>
@@ -252,7 +252,7 @@ const AboutUs = () => {
               ref={sections[3].ref}
               isVisible={isVisible[sections[3].id]}
             >
-              über uns
+              Über uns
             </Heading>
           </tr>
           <tr>
@@ -634,12 +634,10 @@ const FirstTable = styled.table`
 `;
 
 const Heading = styled.th`
-  font-family: Comfortaa;
-  /* font-family: "futura-pt", sans-serif;
-  font-weight: 400;
-  font-style: normal; */
-  font-size: 53px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   text-transform: uppercase;
+  font-size: 53px;
   text-shadow: 1px 0 rgb(0, 0, 0);
   text-align: start;
   padding-bottom: 40px;
