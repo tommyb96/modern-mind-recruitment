@@ -766,7 +766,9 @@ const SmallContainer = styled.div`
 `;
 
 const Heading = styled.div`
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   text-align: start;
   font-size: 33px;
   margin-left: 70px;
@@ -880,6 +882,9 @@ const Zahl = styled.div`
 
 const Überschrift = styled.div`
   font-size: 28px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   margin: 10px 20px 10px 10px;
   align-self: center;
 
@@ -990,7 +995,9 @@ const Header = styled.div`
   width: 1350px;
   margin: auto;
   font-size: 55px;
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   text-align: start;
   padding-bottom: 30px;
   color: black;

@@ -159,7 +159,7 @@ const MessageWrapper = styled.div`
 const Circle = styled.div`
   position: absolute;
   margin: auto;
-  left: 49%;
+  left: 48%;
   width: 5vw;
   height: 5vw;
   border: 5px solid rgb(192, 192, 192);
@@ -171,10 +171,10 @@ const Circle = styled.div`
   @keyframes moveCircle {
     0%,
     100% {
-      left: 49%;
+      left: 48%;
     }
     20% {
-      left: 49%;
+      left: 48%;
     }
     28% {
       left: 22.5%;
@@ -183,7 +183,7 @@ const Circle = styled.div`
       left: 22.5%;
     }
     80% {
-      left: 49%;
+      left: 48%;
     }
   }
 
@@ -193,10 +193,10 @@ const Circle = styled.div`
     @keyframes moveCircle {
       0%,
       100% {
-        left: 49%;
+        left: 45.1%;
       }
       20% {
-        left: 49%;
+        left: 45.1%;
       }
       28% {
         left: 7%;
@@ -205,7 +205,7 @@ const Circle = styled.div`
         left: 7%;
       }
       80% {
-        left: 49%;
+        left: 45.1%;
       }
     }
   }
@@ -223,7 +223,9 @@ const Message = styled.div`
   left: -106%;
   text-transform: uppercase;
   color: white;
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   line-height: 84%;
   z-index: -1;
   font-size: 3.3vw;
@@ -314,22 +316,25 @@ const WelcomeMessage = styled.div`
   position: relative;
   color: black;
   max-width: 45%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 6vw;
-  margin: 10% 0 5% 5%;
+  margin: 10% 0 10% 5%;
 
   p {
-    font-weight: bold;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     color: rgba(0, 167, 155);
-    font-size: 4.5vw;
+    font-size: 6vw;
 
     @media (max-width: 900px) {
-      font-size: 8vw;
+      font-size: 10vw;
     }
 
     @media (max-width: 480px) {
-      font-size: 35px;
+      font-size: 43px;
     }
   }
 

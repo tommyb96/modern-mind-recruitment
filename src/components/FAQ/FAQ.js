@@ -374,7 +374,7 @@ const BlueTriangleOne = styled.div`
 
 const Question = styled.div`
   font-size: 23px;
-  font-family: Arial, Helvetica, sans-serif;
+
   margin-left: 20px;
 
   @media (max-width: 480px) {

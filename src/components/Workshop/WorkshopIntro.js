@@ -275,7 +275,9 @@ const ContactButton = styled.a`
 const CallToAction = styled.div`
   text-transform: uppercase;
   margin: 20px;
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 38px;
   text-align: center;
   align-self: center;
@@ -403,8 +405,9 @@ const BoldDiv = styled.th`
 const Statement = styled.th`
   text-transform: uppercase;
   text-align: start;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 53px;
   color: white;
   padding-left: 100px;
@@ -483,7 +486,9 @@ const HiddenContactButton = styled.a`
 const HiddenCallToAction = styled.div`
   text-transform: uppercase;
   margin: 20px;
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 4.5vw;
   text-align: center;
   align-self: center;

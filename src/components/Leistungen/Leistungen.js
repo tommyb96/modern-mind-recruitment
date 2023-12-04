@@ -429,6 +429,9 @@ const StyledDiv = styled.div`
   color: white;
   padding-right: 10px;
   padding-left: 70px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});

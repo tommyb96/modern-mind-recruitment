@@ -6,7 +6,6 @@ import waves from "../../assets/svg/AboutUs/about_us_waves.png";
 import woman from "../../assets/svg/AboutUs/about-us-woman.svg";
 import hand from "../../assets/svg/AboutUs/about-us-hand.png";
 import checkmark from "../../assets/svg/AboutUs/about-us-checkmark.svg";
-import bluecircle from "../../assets/svg/Workshop/workshop-blue-circle.svg";
 
 const AboutUs = () => {
   const contactButtonRef = useRef(); // Ref für den ContactButton
@@ -602,7 +601,9 @@ const ContactButton = styled.a`
 const CallToAction = styled.div`
   text-transform: uppercase;
   margin: 20px;
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 38px;
   text-align: center;
   align-self: center;
@@ -634,6 +635,9 @@ const FirstTable = styled.table`
 
 const Heading = styled.th`
   font-family: Comfortaa;
+  /* font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
   font-size: 53px;
   text-transform: uppercase;
   text-shadow: 1px 0 rgb(0, 0, 0);
@@ -733,8 +737,9 @@ const LeftDiv = styled.th`
 const Statement = styled.th`
   text-transform: uppercase;
   text-align: start;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 53px;
   color: white;
   padding-left: 100px;
@@ -872,8 +877,10 @@ const HiddenContactButton = styled.a`
 
 const HiddenCallToAction = styled.div`
   text-transform: uppercase;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   margin: 20px;
-  font-weight: bold;
   font-size: 4.5vw;
   text-align: center;
   align-self: center;
@@ -917,6 +924,9 @@ const HeaderCell = styled.th`
   font-size: 39px;
   padding-bottom: 20px;
   padding-top: 20px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
@@ -1012,6 +1022,9 @@ const Checkmark = styled.img`
 const Right = styled.div`
   font-size: 33px;
   padding-left: 30px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateY(${(props) => (props.isVisible ? 0 : "10px")});

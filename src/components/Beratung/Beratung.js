@@ -563,7 +563,9 @@ const SecondTable = styled.table`
 const BoldHeader = styled.th`
   width: 50%;
   text-align: start;
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 33px;
   padding-bottom: 30px;
   padding-left: 70px;

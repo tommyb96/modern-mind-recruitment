@@ -528,7 +528,9 @@ const Tom = styled.img`
 `;
 
 const StyledDiv = styled.div`
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 33px;
   color: white;
   padding-left: 70px;

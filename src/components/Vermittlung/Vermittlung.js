@@ -1049,7 +1049,9 @@ const BoldText = styled.th`
 `;
 
 const BoldHeader = styled.th`
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 33px;
   text-align: start;
   padding-bottom: 30px;
@@ -1086,7 +1088,9 @@ const BoldHeader = styled.th`
 `;
 
 const SecondBoldHeader = styled.th`
-  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 33px;
   text-align: start;
   padding-bottom: 30px;
@@ -1239,10 +1243,12 @@ const LeftBoldHeader = styled.th`
   width: 50%;
   padding-right: 50px;
   padding-top: 60px;
-  font-weight: bold;
   font-size: 33px;
   text-align: start;
   padding-bottom: 30px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   //animation
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
   transform: translateX(${(props) => (props.isVisible ? 0 : "-15px")});
@@ -1310,6 +1316,9 @@ const Aufzählung = styled.th`
   font-size: 33px;
   text-align: start;
   padding-left: 10px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 
   @media (max-width: 1400px) {
     padding-right: 20px;
